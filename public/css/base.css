@@ -1,0 +1,212 @@
+@import url("http://lib.jamie.sh/reset.min.css");
+html, body {
+  height: 100%; }
+
+body {
+  font-family: "museo-slab", serif;
+  font-weight: 300;
+  font-size: 14px;
+  background: #ffffff; }
+
+nav {
+  background: #222629;
+  width: 300px;
+  position: fixed;
+  left: 0;
+  top: 0;
+  height: 100%;
+  color: #ffffff;
+  text-align: center; }
+  nav .sponge-logo {
+    width: 150px;
+    margin: 30px 0 50px; }
+  nav ul {
+    cursor: pointer; }
+    nav ul li {
+      padding: 20px 30px;
+      font-size: 18px;
+      text-align: left;
+      list-style-type: none; }
+      nav ul li i {
+        width: 40px; }
+      nav ul li:hover {
+        background: #f24a33; }
+
+#main {
+  margin-left: 300px;
+  padding: 20px 30px; }
+  #main header {
+    width: 100%;
+    font-size: 10px;
+    font-weight: 500;
+    margin-bottom: 30px;
+    text-transform: uppercase; }
+    #main header .crumbtrail {
+      display: inline-block; }
+      #main header .crumbtrail li {
+        display: inline-block;
+        padding: 5px;
+        border: 1px solid #2F2927;
+        line-height: normal; }
+        #main header .crumbtrail li.current {
+          background: #2F2927;
+          color: #ffffff;
+          border-color: #2F2927; }
+        #main header .crumbtrail li:hover {
+          background: #2F2927;
+          border: 1px solid #2F2927;
+          color: #fff; }
+    #main header .account {
+      padding: 5px;
+      border: 1px solid #2F2927;
+      float: right; }
+      #main header .account:hover {
+        background: #2F2927;
+        border: 1px solid #2F2927;
+        color: #fff; }
+  #main a {
+    color: #2F2927;
+    text-decoration: none;
+    border-bottom: 1px dotted #2F2927; }
+    #main a:hover {
+      color: #8BCEDC;
+      border-color: #8BCEDC; }
+    #main a.action {
+      font-size: 10px;
+      text-transform: uppercase;
+      font-weight: 500;
+      padding: 5px;
+      /*background: $highlight;
+      color: $background;
+      border: none;*/
+      background: #f24a33;
+      border: 1px solid #f24a33;
+      color: #ffffff; }
+      #main a.action:hover {
+        background: #8BCEDC;
+        border-color: #8BCEDC;
+        color: #ffffff; }
+      #main a.action.secondary {
+        background: none;
+        border: 1px solid #2F2927;
+        color: #2F2927; }
+      #main a.action.right {
+        float: right; }
+  #main h1 {
+    font-size: 32px;
+    color: #f24a33;
+    margin-bottom: 20px; }
+  #main h2 {
+    font-size: 20px;
+    color: #2F2927;
+    font-weight: 700;
+    margin: 30px 0 10px 0; }
+  #main h3 {
+    font-size: 12px;
+    margin: 0 0 10px; }
+    #main h3 strong {
+      color: #f24a33; }
+  #main input {
+    display: inline-block;
+    clear: left;
+    font-family: "museo-slab", serif;
+    font-size: 12px;
+    min-width: 200px;
+    float: right; }
+    #main input.filter {
+      padding: 5px; }
+
+p {
+  line-height: 16px;
+  margin-bottom: 15px; }
+
+.info-box {
+  border: 1px dashed #2F2927;
+  display: inline-block;
+  float: right;
+  padding: 10px;
+  min-width: 250px;
+  margin: 0 0 10px 10px;
+  clear: both; }
+  .info-box hr {
+    margin: 0.5em 0;
+    border-style: dashed; }
+  .info-box li {
+    line-height: 24px; }
+    .info-box li strong {
+      background: #7E7772;
+      color: #ffffff;
+      padding: 5px;
+      line-height: 30px;
+      margin-right: 10px; }
+  .info-box table td {
+    padding: 10px; }
+
+.project-info {
+  margin-top: 30px;
+  display: block; }
+  .project-info li {
+    font-weight: 700; }
+    .project-info li strong {
+      background: #7E7772;
+      color: #ffffff;
+      padding: 5px;
+      line-height: 30px;
+      margin-right: 10px; }
+
+strong {
+  font-weight: 700; }
+
+textarea {
+  font-family: "museo-slab", serif;
+  min-width: 50%;
+  min-height: 50px;
+  padding: 10px;
+  font-size: 14px;
+  font-weight: 300;
+  margin: 10px 0; }
+
+hr {
+  display: block;
+  height: 1px;
+  border: 0;
+  border-top: 1px solid #ccc;
+  margin: 1em 0;
+  padding: 0; }
+
+table.full {
+  width: 100%;
+  margin-top: 20px;
+  cursor: pointer; }
+  table.full th, table.full td {
+    padding: 10px;
+    text-align: left; }
+  table.full th {
+    font-weight: 700;
+    min-width: 50px; }
+  table.full td.priority {
+    border-right: 5px solid #e6e6e6; }
+    table.full td.priority.high {
+      border-color: #f24a33; }
+    table.full td.priority.medium {
+      border-color: #FEBD19; }
+    table.full td.priority.low {
+      border-color: #8BCEDC; }
+  table.full tr {
+    background: #fff; }
+    table.full tr:first-child {
+      background: none; }
+      table.full tr:first-child:hover {
+        background: none; }
+    table.full tr:nth-of-type(2n) {
+      background: #eee; }
+    table.full tr:hover {
+      background: #dddddd; }
+    table.full tr.resolved {
+      background: none;
+      opacity: 0.3; }
+      table.full tr.resolved:hover {
+        background: #dddddd;
+        opacity: 1; }
+      table.full tr.resolved td.priority {
+        border: none; }

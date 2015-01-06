@@ -11,12 +11,12 @@
                 h=d.documentElement,t=setTimeout(function(){h.className=h.className.replace(/\bwf-loading\b/g,"")+" wf-inactive";},config.scriptTimeout),tk=d.createElement("script"),f=false,s=d.getElementsByTagName("script")[0],a;h.className+=" wf-loading";tk.src='//use.typekit.net/'+config.kitId+'.js';tk.async=true;tk.onload=tk.onreadystatechange=function(){a=this.readyState;if(f||a&&a!="complete"&&a!="loaded")return;f=true;clearTimeout(t);try{Typekit.load(config)}catch(e){}};s.parentNode.insertBefore(tk,s)
         })(document);
     </script>
-    {{ HTML::style( asset('assets/css/base.css') ) }}
-    {{ HTML::style( asset('//netdna.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css') ) }}
+    <link media="all" type="text/css" rel="stylesheet" href="/css/base.css">
+    <link media="all" type="text/css" rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css">
 </head>
 <body>
     <nav>
-        <img class="sponge-logo" src="assets/images/sponge-logo.svg">
+        <img class="sponge-logo" src="/images/sponge-logo.svg">
         <ul>
             <li><i class="fa fa-desktop"></i>Dashboard</li>
             <li><i class="fa fa-user"></i>Clients</li>
@@ -30,13 +30,13 @@
                 <li><i class="fa fa-bug"></i> Issues</li>
                 <li>Sports Direct</li>
                 <li>On the Job</li>
-                <li class="current">Issue &#35;3728</li>
+                <li class="current">Issue &#35;{{ $id }}</li>
             </ul>
             <span class="account">
                 <i class="fa fa-lock"></i> Account
             </span>
         </header>
-        <h1>Issue &#35;3728</h1>
+        <h1>Issue &#35;{{ $id }}</h1>
         <h2>Description</h2>
         <div class="info-box">
             <table>

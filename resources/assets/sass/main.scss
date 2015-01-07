@@ -28,6 +28,44 @@ nav {
   height: 100%;
   color: $background;
   text-align: center;
+  &.login {
+    position: static;
+    margin: 100px auto;
+    padding: 20px;
+    width: 260px;
+    height: auto;
+    form {
+      text-align: left;
+      label {
+        display: block;
+        text-align: left;
+        margin: 10px 0;
+      }
+      input {
+        display: block;
+        padding: 10px;
+        margin-bottom: 10px;
+        border: none;
+      }
+      input[type="text"], input[type="password"] {
+        width: 240px;
+      }
+      input[type="submit"] {
+        margin-top: 10px;
+        display: inline-block;
+        background: $highlight;
+        color: $background;
+      }
+      span {
+        display: block;
+        &.extra {
+          font-size: 11px;
+          color: #999999;
+          margin-top: 20px;
+        }
+      }
+    }
+  }
   .sponge-logo {
     width: 150px;
     margin: 30px 0 50px;
@@ -145,7 +183,6 @@ nav {
   input {
     display: inline-block;
     clear: left;
-    font-family: "museo-slab", serif;
     font-size: 12px;
     min-width: 200px;
     float: right;
@@ -157,6 +194,9 @@ nav {
 p {
   line-height: 16px;
   margin-bottom: 15px;
+}
+input, textarea {
+  font-family: "museo-slab", serif;
 }
 .info-box {
   border: 1px dashed $foreground;
@@ -204,7 +244,6 @@ strong {
   font-weight: 700;
 }
 textarea {
-  font-family: "museo-slab", serif;
   min-width: 50%;
   min-height: 50px;
   padding: 10px;

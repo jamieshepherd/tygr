@@ -18,11 +18,35 @@ nav {
   color: #ffffff;
   text-align: center; }
   nav.login {
-    background: #f60;
     position: static;
-    margin: 0 auto; }
+    margin: 100px auto;
+    padding: 20px;
+    width: 260px;
+    height: auto; }
     nav.login form {
-      background: #f60; }
+      text-align: left; }
+      nav.login form label {
+        display: block;
+        text-align: left;
+        margin: 10px 0; }
+      nav.login form input {
+        display: block;
+        padding: 10px;
+        margin-bottom: 10px;
+        border: none; }
+      nav.login form input[type="text"], nav.login form input[type="password"] {
+        width: 240px; }
+      nav.login form input[type="submit"] {
+        margin-top: 10px;
+        display: inline-block;
+        background: #f24a33;
+        color: #ffffff; }
+      nav.login form span {
+        display: block; }
+        nav.login form span.extra {
+          font-size: 11px;
+          color: #999999;
+          margin-top: 20px; }
   nav .sponge-logo {
     width: 150px;
     margin: 30px 0 50px; }
@@ -115,7 +139,6 @@ nav {
   #main input {
     display: inline-block;
     clear: left;
-    font-family: "museo-slab", serif;
     font-size: 12px;
     min-width: 200px;
     float: right; }
@@ -125,6 +148,9 @@ nav {
 p {
   line-height: 16px;
   margin-bottom: 15px; }
+
+input, textarea {
+  font-family: "museo-slab", serif; }
 
 .info-box {
   border: 1px dashed #2F2927;
@@ -164,7 +190,6 @@ strong {
   font-weight: 700; }
 
 textarea {
-  font-family: "museo-slab", serif;
   min-width: 50%;
   min-height: 50px;
   padding: 10px;

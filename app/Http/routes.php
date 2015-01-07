@@ -11,18 +11,31 @@
 |
 */
 
-Route::get('/', 'WelcomeController@index');
+//Route::get('/', 'WelcomeController@index');
 
-Route::get('home', 'HomeController@index');
+Route::get('/', function()
+{
+	return View::make('login');
+});
 
-Route::get('issues', 'IssueController@index');
-Route::get('issues/create', 'IssueController@create');
-Route::get('issues/{id}', 'IssueController@show');
-
-Route::get('project', 'ProjectController@index');
-Route::get('project/create', 'ProjectController@create');
 
 Route::controllers([
 	'auth' => 'Auth\AuthController',
 	'password' => 'Auth\PasswordController'
 ]);
+
+Route::get('auth/login', function()
+{
+	return View::make('login');
+});
+
+Route::group(array('middleware' => 'auth'), function() {
+	Route::get('home', 'HomeController@index');
+
+	Route::get('issues', 'IssueController@index');
+	Route::get('issues/create', 'IssueController@create');
+	Route::get('issues/{id}', 'IssueController@show');
+
+	Route::get('project', 'ProjectController@index');
+	Route::get('project/create', 'ProjectController@create');
+});

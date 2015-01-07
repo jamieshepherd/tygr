@@ -18,6 +18,13 @@ body {
   font-weight: 300;
   font-size: 14px;
   background: $background;
+  &.photo {
+    background: url('../images/login-photo.jpg') no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+  }
 }
 nav {
   background: #222629;
@@ -28,48 +35,6 @@ nav {
   height: 100%;
   color: $background;
   text-align: center;
-  &.login {
-    position: static;
-    margin: 100px auto;
-    padding: 20px;
-    width: 260px;
-    height: auto;
-    form {
-      text-align: left;
-      label {
-        display: block;
-        text-align: left;
-        margin: 10px 0;
-      }
-      input {
-        display: block;
-        padding: 10px;
-        margin-bottom: 10px;
-        border: none;
-      }
-      input[type="text"], input[type="password"] {
-        width: 240px;
-      }
-      input[type="submit"] {
-        margin-top: 10px;
-        display: inline-block;
-        background: $highlight;
-        color: $background;
-      }
-      span {
-        display: block;
-        &.extra {
-          font-size: 11px;
-          color: #999999;
-          margin-top: 20px;
-        }
-      }
-    }
-  }
-  .sponge-logo {
-    width: 150px;
-    margin: 30px 0 50px;
-  }
   ul {
     cursor: pointer;
     li {
@@ -82,6 +47,61 @@ nav {
       }
       &:hover {
         background: $highlight;
+      }
+    }
+  }
+}
+.sponge-logo {
+  width: 150px;
+  margin: 30px 0 50px;
+}
+.login {
+  background: #222629;
+  color: $background;
+  text-align: center;
+  position: static;
+  margin: 50px auto;
+  padding: 20px;
+  width: 260px;
+  height: auto;
+  form {
+    text-align: left;
+    label {
+      display: block;
+      text-align: left;
+      margin: 10px 0;
+      .checkbox {
+        background: #f60;
+      }
+    }
+    input {
+      display: block;
+      padding: 10px;
+      margin-bottom: 10px;
+      border: none;
+    }
+    input[type='text'], input[type='password'] {
+      width: 240px;
+    }
+    input[type='submit'] {
+      margin-top: 10px;
+      display: inline-block;
+      background: $highlight;
+      color: $background;
+    }
+    input[type='checkbox'] {
+      display: inline-block;
+    }
+    span {
+      &.remember {
+        font-size: 11px;
+        margin-left: 2px;
+      }
+      &.extra {
+        display: block;
+        font-size: 11px;
+        color: #999999;
+        margin-top: 20px;
       }
     }
   }

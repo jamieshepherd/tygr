@@ -14,17 +14,19 @@
     <link media="all" type="text/css" rel="stylesheet" href="/css/main.css">
     <link media="all" type="text/css" rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css">
 </head>
-<body>
-    <nav class="login">
+<body class="photo">
+    <div class="login">
         <img class="sponge-logo" src="/images/sponge-logo.svg">
-        <form>
+        <form action="/auth/login" method="POST">
             <label for="email">Email address</label>
             <input name="email" type="text" placeholder="Email address">
             <label for="email">Password</label>
             <input name="password" type="password" placeholder="Password">
+            <input name="remember" type="checkbox"><span class="remember">Remember me</span><br/>
+            <input type="hidden" name="_token" value="{{ csrf_token() }}">
             <input type="submit" value="Sign in">
-            <span class="extra"><i class="fa fa-key"></i> Forgotten your password?</span>
+            <span class="extra"><i class="fa fa-key"></i> Reset password</span>
         </form>
-    </nav>
+    </div>
 </body>
 </html>

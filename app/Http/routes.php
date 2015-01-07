@@ -13,25 +13,23 @@
 
 //Route::get('/', 'WelcomeController@index');
 
-Route::get('/', function()
-{
-	return View::make('login');
-});
-
-
 Route::controllers([
 	'auth' => 'Auth\AuthController',
 	'password' => 'Auth\PasswordController'
 ]);
 
-Route::get('auth/login', function()
-{
-	return View::make('login');
-});
+Route::get('auth/login', 'AuthController@getLogin');
+Route::get('auth/logout', 'AuthController@getLogout');
 
 Route::group(array('middleware' => 'auth'), function() {
+	Route::get('/', function()
+	{
+		return View::make('auth/login');
+	});
+
 	Route::get('home', 'HomeController@index');
 
+	Route::post('auth/login', 'AuthController@getLogin');
 	Route::get('issues', 'IssueController@index');
 	Route::get('issues/create', 'IssueController@create');
 	Route::get('issues/{id}', 'IssueController@show');

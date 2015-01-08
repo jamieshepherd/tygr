@@ -1,5 +1,8 @@
 <?php
 
+use App\Client;
+use App\User;
+
 /*
 |--------------------------------------------------------------------------
 | Application Routes
@@ -22,12 +25,20 @@ Route::get('auth/login', 'AuthController@getLogin');
 Route::get('auth/logout', 'AuthController@getLogout');
 
 Route::group(array('middleware' => 'auth'), function() {
+
 	Route::get('/', function()
 	{
-		return View::make('auth/login');
+		// Testing dashboard get all information to see what's what
+
+		$clients = Client::all();
+		$users = User::all();
+
+		return View::make('dashboard', compact('clients','users'));
 	});
 
 	Route::get('home', 'HomeController@index');
+
+	Route::get('clients/{stub}', 'ClientController@show');
 
 	Route::post('auth/login', 'AuthController@getLogin');
 	Route::get('issues', 'IssueController@index');

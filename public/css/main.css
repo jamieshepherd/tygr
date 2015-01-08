@@ -67,14 +67,13 @@ nav {
       color: #ffffff; }
     .login form input[type='checkbox'] {
       display: inline-block; }
-    .login form span.remember {
-      font-size: 11px;
-      margin-left: 2px; }
-    .login form span.extra {
-      display: block;
-      font-size: 11px;
-      color: #999999;
-      margin-top: 20px; }
+    .login form span {
+      font-size: 11px; }
+      .login form span.remember {
+        margin-left: 2px; }
+      .login form span.extra {
+        color: #cccccc;
+        margin-left: 10px; }
 
 #main {
   margin-left: 300px;
@@ -84,30 +83,29 @@ nav {
     font-size: 10px;
     font-weight: 500;
     margin-bottom: 30px;
-    text-transform: uppercase; }
-    #main header .crumbtrail {
-      display: inline-block; }
-      #main header .crumbtrail li {
-        display: inline-block;
-        padding: 5px;
-        border: 1px solid #2F2927;
-        line-height: normal; }
-        #main header .crumbtrail li.current {
-          background: #2F2927;
-          color: #ffffff;
-          border-color: #2F2927; }
-        #main header .crumbtrail li:hover {
-          background: #2F2927;
-          border: 1px solid #2F2927;
-          color: #fff; }
-    #main header .account {
+    text-transform: uppercase;
+    float: left; }
+    #main header a {
+      border: none; }
+    #main header li {
+      display: inline-block;
       padding: 5px;
       border: 1px solid #2F2927;
-      float: right; }
-      #main header .account:hover {
+      line-height: normal; }
+      #main header li:hover {
         background: #2F2927;
         border: 1px solid #2F2927;
         color: #fff; }
+      #main header li.current {
+        background: #2F2927;
+        color: #ffffff;
+        border-color: #2F2927; }
+    #main header .crumbtrail {
+      display: inline-block;
+      float: left; }
+    #main header .account {
+      display: inline-block;
+      float: right; }
   #main a {
     color: #2F2927;
     text-decoration: none;

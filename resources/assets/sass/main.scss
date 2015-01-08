@@ -93,15 +93,13 @@ nav {
       display: inline-block;
     }
     span {
+      font-size: 11px;
       &.remember {
-        font-size: 11px;
         margin-left: 2px;
       }
       &.extra {
-        display: block;
-        font-size: 11px;
-        color: #999999;
-        margin-top: 20px;
+        color: #cccccc;
+        margin-left: 10px;
       }
     }
   }
@@ -115,34 +113,33 @@ nav {
     font-weight: 500;
     margin-bottom: 30px;
     text-transform: uppercase;
-    .crumbtrail {
-      display: inline-block;
-      li {
-        display: inline-block;
-        padding: 5px;
-        border: 1px solid $foreground;
-        line-height: normal;
-        &.current {
-          background: $foreground;
-          color: $background;
-          border-color: $foreground;
-        }
-        &:hover {
-          background: $foreground;
-          border: 1px solid $foreground;
-          color: #fff;
-        }
-      }
+    float: left;
+    a {
+      border: none;
     }
-    .account {
+    li {
+      display: inline-block;
       padding: 5px;
       border: 1px solid $foreground;
-      float: right;
+      line-height: normal;
       &:hover {
         background: $foreground;
         border: 1px solid $foreground;
         color: #fff;
       }
+      &.current {
+        background: $foreground;
+        color: $background;
+        border-color: $foreground;
+      }
+    }
+    .crumbtrail {
+      display: inline-block;
+      float: left;
+    }
+    .account {
+      display: inline-block;
+      float: right;
     }
   }
   a {

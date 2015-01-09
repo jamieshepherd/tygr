@@ -39,6 +39,7 @@ Route::group(array('middleware' => 'auth'), function() {
 	Route::get('home', 'HomeController@index');
 
 	Route::get('clients/{stub}', 'ClientController@show');
+	Route::get('clients/{cstub}/projects/{pstub}', 'ProjectController@show');
 
 	Route::post('auth/login', 'AuthController@getLogin');
 	Route::get('issues', 'IssueController@index');

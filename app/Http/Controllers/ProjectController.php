@@ -2,6 +2,8 @@
 
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
+use App\Client;
+use App\Project;
 
 class ProjectController extends Controller {
 
@@ -38,12 +40,16 @@ class ProjectController extends Controller {
 	/**
 	 * Display the specified resource.
 	 *
-	 * @param  int  $id
+	 * @param  string  $cstub
+	 * @param  string  $pstub
 	 * @return Response
 	 */
-	public function show($id)
+	public function show($cstub,$pstub)
 	{
-		//
+
+		$client = Client::where('stub', '=', $cstub)->firstOrFail();
+		$project = Project::where('stub', '=', $pstub)->firstOrFail();
+		return view('project')->with('client', $client)->with('project', $project);
 	}
 
 	/**

@@ -16,7 +16,7 @@ class Client extends Model {
 	 *
 	 * @var array
 	 */
-	protected $fillable = ['name'];
+	protected $fillable = ['name','stub'];
 
 	/**
 	 * The attributes excluded from the model's JSON form.

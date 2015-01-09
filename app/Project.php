@@ -9,14 +9,14 @@ class Project extends Model {
 	 *
 	 * @var string
 	 */
-	protected $table = 'clients';
+	protected $table = 'projects';
 
 	/**
 	 * The attributes that are mass assignable.
 	 *
 	 * @var array
 	 */
-	protected $fillable = ['name'];
+	protected $fillable = ['name','stub','client'];
 
 	/**
 	 * The attributes excluded from the model's JSON form.

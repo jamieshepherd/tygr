@@ -5,8 +5,8 @@
     <div id="main">
         <header>
             <ul class="crumbtrail">
-                <li><i class="fa fa-home"></i> Home</li>
-                <li class="current">{{ $client->name }}</li>
+                <a href="/"><li><i class="fa fa-home"></i> Home</li></a>
+                <a href="#"><li class="current">{{ $client->name }}</li></a>
             </ul>
             <ul class="account">
                 <a href="#"><li><i class="fa fa-lock"></i> Account</li></a>

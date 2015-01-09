@@ -2,17 +2,26 @@
 
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
+use App\Client;
+use App\Project;
+use App\Issue;
 
 class IssueController extends Controller {
 
 	/**
 	 * Display a listing of the resource.
 	 *
+	 * @param  string  $cstub;
+	 * @param  string  $pstub;
 	 * @return Response
 	 */
-	public function index()
+	public function index($cstub, $pstub)
 	{
-		return view('issues');
+
+		$client = Client::where('stub', '=', $cstub)->firstOrFail();
+		$project = Project::where('stub', '=', $pstub)->firstOrFail();
+		$issues = Issue::all();
+		return view('issues')->with('client', $client)->with('project', $project)->with('issues', $issues);
 	}
 
 	/**

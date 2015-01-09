@@ -10,13 +10,13 @@
                 <a href="#"><li class="current">{{{ $project->name }}}</li></a>
             </ul>
             <ul class="account">
-                <a href="#"><li><i class="fa fa-lock"></i> Account</li></a>
+                <a href="/account"><li><i class="fa fa-lock"></i> Account</li></a>
                 <a href="/auth/logout"><li><i class="fa fa-sign-out"></i> Sign out</li></a>
             </ul>
         </header>
         <h1>{{{ $project->name }}}</h1>
         <a class="action" href="/posts/create"><i class="fa fa-plus-circle"></i> New post</a>
-        <a class="action" href="/clients/{{{ $client->stub }}}/projects/{{{ $project->stub }}}/issues/"><i class="fa fa-bug"></i> View issues</a>
+        <a class="action" href="/clients/{{{ $client->stub }}}/projects/{{{ $project->stub }}}/issues"><i class="fa fa-bug"></i> View issues</a>
         <a class="action" href="review/"><i class="fa fa-desktop"></i> Review area</a>
         <div class="info-box">
             <table>

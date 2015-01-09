@@ -28,90 +28,15 @@
                 <th>Date</th>
                 <th>Status</th>
             </tr>
-            <tr>
-                <td>b-05</td>
-                <td>Text amend</td>
-                <td>Could we please change the intro text to read something else lorem ipsum dolor sit amet...</td>
-                <td>14/03/15</td>
-                <td class="priority high">Open</td>
+            @foreach($issues as $issue)
+            <tr onclick="document.location='/clients/{{{ $client->stub }}}/projects/{{{ $project->stub }}}/issues/{{{ $issue->id }}}';">
+                <td>{{{ $issue->reference }}}</td>
+                <td>{{{ $issue->type }}}</td>
+                <td>{{{ $issue->description }}}</td>
+                <td>{{{ $issue->created_at }}}</td>
+                <td class="priority medium">{{{ $issue->status }}}</td>
             </tr>
-            <tr>
-                <td>b-05</td>
-                <td>Text amend</td>
-                <td>Could we please change the intro text to re...</td>
-                <td>14/03/15</td>
-                <td class="priority high">Open</td>
-            </tr>
-            <tr>
-                <td>b-15</td>
-                <td>Bug fix</td>
-                <td>There is an error when opening the narrative...</td>
-                <td>15/03/15</td>
-                <td class="priority medium">Open</td>
-            </tr>
-            <tr>
-                <td>b-15</td>
-                <td>Bug fix</td>
-                <td>There is an error when opening the narrative...</td>
-                <td>15/03/15</td>
-                <td class="priority medium">Open</td>
-            </tr>
-            <tr>
-                <td>b-15</td>
-                <td>Bug fix</td>
-                <td>There is an error when opening the narrative...</td>
-                <td>15/03/15</td>
-                <td class="priority medium">Open</td>
-            </tr>
-            <tr>
-                <td>b-15</td>
-                <td>Bug fix</td>
-                <td>There is an error when opening the narrative...</td>
-                <td>15/03/15</td>
-                <td class="priority medium">Open</td>
-            </tr>
-            <tr>
-                <td>b-15</td>
-                <td>Bug fix</td>
-                <td>There is an error when opening the narrative...</td>
-                <td>15/03/15</td>
-                <td class="priority medium">Open</td>
-            </tr>
-            <tr>
-                <td>b-25</td>
-                <td>Text amend</td>
-                <td>Could we please change the intro text to re...</td>
-                <td>16/03/15</td>
-                <td class="priority low">Open</td>
-            </tr>
-            <tr>
-                <td>b-25</td>
-                <td>Text amend</td>
-                <td>Could we please change the intro text to re...</td>
-                <td>16/03/15</td>
-                <td class="priority low">Pending</td>
-            </tr>
-            <tr>
-                <td>b-05</td>
-                <td>Text amend</td>
-                <td>Could we please change the intro text to re...</td>
-                <td>14/03/15</td>
-                <td class="priority low">Pending</td>
-            </tr>
-            <tr class="resolved">
-                <td>b-15</td>
-                <td>Bug fix</td>
-                <td>There is an error when opening the narrative...</td>
-                <td>15/03/15</td>
-                <td class="priority low">Resolved</td>
-            </tr>
-            <tr class="resolved">
-                <td>b-25</td>
-                <td>Text amend</td>
-                <td>Could we please change the intro text to re...</td>
-                <td>16/03/15</td>
-                <td class="priority low">Resolved</td>
-            </tr>
+            @endforeach
         </table>
     </div>
 </body>

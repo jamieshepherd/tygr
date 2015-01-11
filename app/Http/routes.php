@@ -26,14 +26,18 @@ Route::get('auth/logout', 'AuthController@getLogout');
 
 Route::group(array('middleware' => 'auth'), function() {
 
+	/*
 	Route::get('/', function()
 	{
-		// Testing dashboard get all information to see what's what
-
 		$clients = Client::all();
 		$users = User::all();
 
 		return View::make('dashboard', compact('clients','users'));
+	});
+	*/
+
+	Route::get('/', function() {
+		return Redirect::to('clients/sportsdirect');
 	});
 
 	Route::get('home', 'HomeController@index');

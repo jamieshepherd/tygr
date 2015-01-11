@@ -31,6 +31,9 @@ nav {
         width: 40px; }
       nav ul li:hover {
         background: #f24a33; }
+  nav a {
+    color: #fff;
+    text-decoration: none; }
 
 .sponge-logo {
   width: 150px;
@@ -41,7 +44,7 @@ nav {
   color: #ffffff;
   text-align: center;
   position: static;
-  margin: 50px auto;
+  margin: 20px auto;
   padding: 20px;
   width: 260px;
   height: auto; }

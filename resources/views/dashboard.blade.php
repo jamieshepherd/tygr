@@ -21,7 +21,7 @@
         <h2>List of clients</h2>
         <ul>
             @foreach ($clients as $client)
-                <li>{{ $client->name }}</li>
+                <a href="/clients/{{{ $client->stub }}}"><li>{{ $client->name }}</li></a>
             @endforeach
         </ul>
         <h2>List of users</h2>

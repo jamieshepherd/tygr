@@ -142,6 +142,34 @@ nav {
       float: right;
     }
   }
+  .project-preview {
+    width: 31%;
+    margin-right: 2%;
+    margin-top: 20px;
+    display: inline-block;
+    border: 1px solid $highlight;
+    border-radius: 5px;
+    h3 {
+      font-size: 16px;
+      background: $highlight;
+      color: $background;
+      padding: 10px;
+      margin: 0;
+    }
+    p {
+      padding: 10px;
+    }
+    ul {
+      padding: 10px;
+      line-height: 20px;
+    }
+    &:nth-of-type(3n) {
+      margin: 0;
+    }
+    .actions {
+      padding: 0 10px 20px 10px;
+    }
+  }
   a {
     color: $foreground;
     text-decoration: none;
@@ -149,6 +177,18 @@ nav {
     &:hover {
       color: #8BCEDC;
       border-color: #8BCEDC;
+    }
+    &.blank {
+      color: inherit;
+      background: inherit;
+      text-decoration: none;
+      border: none;
+      &:hover {
+        color: inherit;
+        background: inherit;
+        text-decoration: none;
+        border: none;
+      }
     }
     &.action {
       font-size: 10px;
@@ -272,7 +312,7 @@ hr {
   display: block;
   height: 1px;
   border: 0;
-  border-top: 1px solid #ccc;
+  border-top: 1px dotted #ccc;
   margin: 1em 0;
   padding: 0;
 }

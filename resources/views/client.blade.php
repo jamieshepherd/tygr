@@ -14,10 +14,18 @@
             </ul>
         </header>
         <h1>{{ $client->name }}</h1>
-        <h2>Quick list of modules</h2>
-        <ul>
-
-        </ul>
+        <h2><i class="fa fa-rocket"></i> Projects</h2>
+            @foreach ($projects as $project)
+                <div class="project-preview">
+                    <h3>{{ $project->name }}</h3>
+                    <ul>
+                        <li><strong>Project manager: </strong>Andrea Kinsman</li>
+                        <li><strong>Project status: </strong>In development</li>
+                        <li><strong>Current version: </strong>2.0</li>
+                        <li><strong>View project: </strong><a href="/clients/{{{ $client->stub }}}/projects/{{{ $project->stub }}}">Click here</a></li>
+                    </ul>
+                </div>
+            @endforeach
     </div>
 </body>
 @stop

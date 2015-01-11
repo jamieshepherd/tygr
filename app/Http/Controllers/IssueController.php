@@ -47,12 +47,17 @@ class IssueController extends Controller {
 	/**
 	 * Display the specified resource.
 	 *
+	 * @param  string  $cstub
+	 * @param  string  $pstub
 	 * @param  int  $id
 	 * @return Response
 	 */
-	public function show($id)
+	public function show($cstub, $pstub, $id)
 	{
-		return view('issue-full')->with('id', $id);
+		$client = Client::where('stub', '=', $cstub)->firstOrFail();
+		$project = Project::where('stub', '=', $pstub)->firstOrFail();
+		$issue = Issue::where('id', '=', $id)->firstOrFail();
+		return view('issue')->with('client', $client)->with('project', $project)->with('issue', $issue);
 	}
 
 	/**

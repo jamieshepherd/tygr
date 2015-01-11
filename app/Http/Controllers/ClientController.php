@@ -3,6 +3,7 @@
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 use App\Client;
+use App\Project;
 
 class ClientController extends Controller {
 
@@ -14,7 +15,7 @@ class ClientController extends Controller {
 	public function index()
 	{
 		$clients = Client::all();
-		return view('clients');
+		return view('clients')->with('clients', $clients);
 	}
 
 	/**
@@ -46,7 +47,8 @@ class ClientController extends Controller {
 	public function show($stub)
 	{
 		$client = Client::where('stub', '=', $stub)->firstOrFail();
-		return view('client')->with('client', $client);
+		$projects = Project::all();
+		return view('client')->with('client', $client)->with('projects', $projects);
 	}
 
 	/**

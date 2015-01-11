@@ -16,12 +16,13 @@ class CreateIssuesTable extends Migration {
 		{
 			$table->increments('id');
 			$table->integer('author');
+			$table->integer('project');
 			$table->string('version');
 			$table->string('reference');
 			$table->string('type');
-			$table->string('description');
+			$table->text('description');
 			$table->string('status');
-			$table->tinyInteger('priority');
+			$table->string('priority');
 			$table->timestamps();
 		});
 	}

@@ -191,6 +191,11 @@ nav {
     float: right; }
     #main input.filter {
       padding: 5px; }
+  #main select {
+    display: inline-block;
+    min-width: 200px;
+    float: right;
+    text-indent: 5px; }
 
 p {
   line-height: 16px;

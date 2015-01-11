@@ -16,7 +16,12 @@
             </ul>
         </header>
         <h1>All issues</h1>
-        <input class="filter" type="text" placeholder="Filter issues">
+        <select id="version-selection" onchange="issueVersion()">
+            <option value="v1">Version 1.0</option>
+            <option value="v2">Version 2.0</option>
+            <option value="v3">Version 3.0</option>
+            <option value="extra">Extras</option>
+        </select>
         <a class="action" href="#"><i class="fa fa-plus-circle"></i> New issue</a>
         <a class="action" href="#"><i class="fa fa-bug"></i> All issues</a>
         <a class="action" href="#"><i class="fa fa-bug"></i> Assigned to me</a>

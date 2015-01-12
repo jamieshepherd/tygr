@@ -1,0 +1,16 @@
+misc
+--
+
+
+GROUPS TABLE
+
+pk  id      increment
+    name    string
+fk  user    integer
+
+
+ISSUE ACTIVITY
+
+pk  id      increment
+    type    string
+

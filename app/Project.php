@@ -25,4 +25,14 @@ class Project extends Model {
 	 */
 	protected $hidden = [];
 
+	public function client()
+	{
+		return $this->belongsTo('Client');
+	}
+
+	public function issues()
+	{
+		return $this->hasMany('Issue');
+	}
+
 }

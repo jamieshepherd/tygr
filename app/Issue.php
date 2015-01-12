@@ -29,4 +29,13 @@ class Issue extends Model {
 	 */
 	protected $hidden = ['password', 'remember_token'];
 
+	public function project()
+	{
+		return $this->belongsTo('Project');
+	}
+
+	public function user()
+	{
+		return $this->hasOne('User');
+	}
 }

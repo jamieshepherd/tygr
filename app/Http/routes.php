@@ -45,11 +45,15 @@ Route::group(array('middleware' => 'auth'), function() {
 	Route::get('clients/{stub}', 'ClientController@show');
 	Route::get('clients/{cstub}/projects/{pstub}', 'ProjectController@show');
 	Route::get('clients/{cstub}/projects/{pstub}/issues', 'IssueController@index');
-	Route::get('clients/{cstub}/projects/{pstub}/issues/{id}', 'IssueController@show');
+	Route::get('clients/{cstub}/projects/{pstub}/issues/version/{id}', 'IssueController@version');
+	Route::get('clients/{cstub}/projects/{pstub}/issues/create', 'IssueController@create');
+	Route::post('clients/{cstub}/projects/{pstub}/issues/create', 'IssueController@create');
+	Route::get('clients/{cstub}/projects/{pstub}/issues/edit/{id}', 'IssueController@edit');
+	Route::post('clients/{cstub}/projects/{pstub}/issues/edit/{id}', 'IssueController@edit');
+	Route::get('clients/{cstub}/projects/{pstub}/issues/show/{id}', 'IssueController@show');
 
 	Route::post('auth/login', 'AuthController@getLogin');
 	Route::get('issues', 'IssueController@index');
-	Route::get('issues/create', 'IssueController@create');
 	Route::get('issues/{id}', 'IssueController@show');
 
 	Route::get('project', 'ProjectController@index');

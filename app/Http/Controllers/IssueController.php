@@ -17,7 +17,6 @@ class IssueController extends Controller {
 	 */
 	public function index($cstub, $pstub)
 	{
-
 		$client = Client::where('stub', '=', $cstub)->firstOrFail();
 		$project = Project::where('stub', '=', $pstub)->firstOrFail();
 		$issues = Issue::all();
@@ -27,11 +26,15 @@ class IssueController extends Controller {
 	/**
 	 * Show the form for creating a new resource.
 	 *
+	 * @param  string  $cstub;
+	 * @param  string  $pstub;
 	 * @return Response
 	 */
-	public function create()
+	public function create($cstub, $pstub)
 	{
-		return "create issue";
+		$client = Client::where('stub', '=', $cstub)->firstOrFail();
+		$project = Project::where('stub', '=', $pstub)->firstOrFail();
+		return view("issue-create")->with('client', $client)->with('project', $project);
 	}
 
 	/**

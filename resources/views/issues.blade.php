@@ -22,9 +22,9 @@
             <option value="v3">Version 3.0</option>
             <option value="extra">Extras</option>
         </select>
-        <a class="action" href="#"><i class="fa fa-plus-circle"></i> New issue</a>
-        <a class="action" href="#"><i class="fa fa-bug"></i> All issues</a>
-        <a class="action" href="#"><i class="fa fa-bug"></i> Assigned to me</a>
+        <a class="action" href="/clients/{{ $client->stub }}/projects/{{ $project->stub }}/issues/create"><i class="fa fa-plus-circle"></i> New issue</a>
+        <a class="action" href=""><i class="fa fa-bug"></i> All issues</a>
+        <a class="action" href=""><i class="fa fa-bug"></i> Assigned to me</a>
         <table class="full">
             <tr>
                 <th>Ref.</th>
@@ -34,7 +34,7 @@
                 <th>Status</th>
             </tr>
             @foreach($issues as $issue)
-            <tr onclick="document.location='/clients/{{{ $client->stub }}}/projects/{{{ $project->stub }}}/issues/{{{ $issue->id }}}';">
+            <tr onclick="document.location='/clients/{{{ $client->stub }}}/projects/{{{ $project->stub }}}/issues/show/{{{ $issue->id }}}';">
                 <td>{{{ $issue->reference }}}</td>
                 <td>{{{ $issue->type }}}</td>
                 <td>{{{ substr($issue->description,0,72) }}}...</td>

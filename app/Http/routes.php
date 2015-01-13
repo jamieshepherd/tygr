@@ -42,7 +42,7 @@ Route::group(array('middleware' => 'auth'), function() {
 
 	Route::get('home', 'HomeController@index');
 
-	Route::group(array('middleware' => 'trespass'), function() {
+	Route::group(array('middleware' => 'restrict'), function() {
 		Route::get('clients/{stub}', 'ClientController@show');
 		Route::get('clients/{cstub}/projects/{pstub}', 'ProjectController@show');
 		Route::get('clients/{cstub}/projects/{pstub}/issues', 'IssueController@index');

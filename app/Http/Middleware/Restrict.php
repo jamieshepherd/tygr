@@ -1,8 +1,10 @@
 <?php namespace App\Http\Middleware;
 
 use Closure;
+use App\Client;
+use App\User;
 
-class CheckTrespass {
+class Restrict {
 
 	/**
 	 * Handle an incoming request.
@@ -13,12 +15,13 @@ class CheckTrespass {
 	 */
 	public function handle($request, Closure $next)
 	{
-		if($request) {
-			echo \Auth::user()->client()->stub();
-			echo $request->segment(2);
-		} else {
+		$client = \Auth::user()->client;
+
+		if($client != null && $request->segment(2) != $client->stub) {
 			return response('Unauthorized.', 401);
 		}
+
+		return $next($request);
 	}
 
 }

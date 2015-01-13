@@ -14,9 +14,11 @@ class CheckTrespass {
 	public function handle($request, Closure $next)
 	{
 		if($request) {
-			dd($request);
+			echo \Auth::user()->client()->stub();
+			echo $request->segment(2);
+		} else {
+			return response('Unauthorized.', 401);
 		}
-		return response('Unauthorized.', 401);
 	}
 
 }

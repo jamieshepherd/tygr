@@ -40,9 +40,15 @@ Route::group(array('middleware' => 'auth'), function() {
 		return Redirect::to('clients/sportsdirect');
 	});
 
-	Route::get('home', 'HomeController@index');
+	Route::group(array('middleware' => 'admin'), function() {
+		Route::get('dashboard', 'DashboardController@show');
+		Route::get('clients', 'ClientController@index');
+		Route::get('clients/create', 'ClientController@create');
+		Route::get('clients/edit/{id}', 'ClientController@edit');
+		Route::get('clients/delete/{id}', 'ClientController@delete');
+	});
 
-	Route::group(array('middleware' => 'restrict'), function() {
+	Route::group(array('middleware' => 'client'), function() {
 		Route::get('clients/{stub}', 'ClientController@show');
 		Route::get('clients/{cstub}/projects/{pstub}', 'ProjectController@show');
 		Route::get('clients/{cstub}/projects/{pstub}/issues', 'IssueController@index');

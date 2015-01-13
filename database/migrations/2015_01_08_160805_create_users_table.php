@@ -17,6 +17,7 @@ class CreateUsersTable extends Migration {
 			$table->increments('id');
 			$table->integer('client_id')->unsigned()->nullable();
 			$table->foreign('client_id')->references('id')->on('clients');
+			$table->integer('level');
 			$table->string('name');
 			$table->string('email')->unique();
 			$table->string('password', 60);

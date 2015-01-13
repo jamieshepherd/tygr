@@ -2,10 +2,8 @@
 
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
-use App\Client;
-use App\Project;
 
-class ClientController extends Controller {
+class DashboardController extends Controller {
 
 	/**
 	 * Display a listing of the resource.
@@ -14,8 +12,7 @@ class ClientController extends Controller {
 	 */
 	public function index()
 	{
-		$clients = Client::all();
-		return view('clients')->with('clients', $clients);
+		//
 	}
 
 	/**
@@ -25,7 +22,7 @@ class ClientController extends Controller {
 	 */
 	public function create()
 	{
-		return 'create client';
+		//
 	}
 
 	/**
@@ -41,14 +38,12 @@ class ClientController extends Controller {
 	/**
 	 * Display the specified resource.
 	 *
-	 * @param  string  $stub
+	 * @param  int  $id
 	 * @return Response
 	 */
-	public function show($stub)
+	public function show($id)
 	{
-		$client = Client::where('stub', '=', $stub)->firstOrFail();
-		$projects = Project::all();
-		return view('client')->with('client', $client)->with('projects', $projects);
+		//
 	}
 
 	/**

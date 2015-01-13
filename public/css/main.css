@@ -257,10 +257,12 @@ hr {
   margin: 1em 0;
   padding: 0; }
 
+*[data-href] {
+  cursor: pointer; }
+
 table.full {
   width: 100%;
-  margin-top: 20px;
-  cursor: pointer; }
+  margin-top: 20px; }
   table.full th, table.full td {
     padding: 10px;
     text-align: left; }

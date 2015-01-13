@@ -1,10 +1,8 @@
 <?php namespace App\Http\Middleware;
 
 use Closure;
-use App\Client;
-use App\User;
 
-class Restrict {
+class RestrictAdmin {
 
 	/**
 	 * Handle an incoming request.
@@ -17,7 +15,7 @@ class Restrict {
 	{
 		$client = \Auth::user()->client;
 
-		if($client != null && $request->segment(2) != $client->stub) {
+		if($client != null) {
 			return response('Unauthorized.', 401);
 		}
 

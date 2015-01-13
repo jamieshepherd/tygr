@@ -34,7 +34,7 @@
                 <th>Status</th>
             </tr>
             @foreach($issues as $issue)
-            <tr onclick="document.location='/clients/{{{ $client->stub }}}/projects/{{{ $project->stub }}}/issues/show/{{{ $issue->id }}}';">
+            <tr onclick="document.location='/clients/{{{ $client->stub }}}/projects/{{{ $project->stub }}}/issues/show/{{{ $issue->id }}}';" style="cursor:pointer">
                 <td>{{{ $issue->reference }}}</td>
                 <td>{{{ $issue->type }}}</td>
                 <td>{{{ substr($issue->description,0,72) }}}...</td>

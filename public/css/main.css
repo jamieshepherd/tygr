@@ -62,7 +62,11 @@ nav {
       margin-bottom: 10px;
       border: none; }
     .login form input[type='text'], .login form input[type='password'] {
-      width: 240px; }
+      border-left: 5px solid #666666;
+      width: 235px; }
+      .login form input[type='text']:focus, .login form input[type='password']:focus {
+        border-color: #71C8B5;
+        outline: none; }
     .login form input[type='submit'] {
       margin-top: 10px;
       display: inline-block;
@@ -183,18 +187,48 @@ nav {
     margin: 0 0 10px; }
     #main h3 strong {
       color: #f24a33; }
+  #main label {
+    display: block;
+    margin: 20px 0 5px 0;
+    font-weight: 600; }
+    #main label.radio {
+      font-weight: 300;
+      display: inline;
+      margin: 0 10px 0 3px; }
   #main input {
     display: inline-block;
-    clear: left;
     font-size: 12px;
     min-width: 200px;
-    float: right; }
+    padding: 5px; }
     #main input.filter {
-      padding: 5px; }
+      clear: left;
+      float: right; }
+  #main input[type='text'], #main textarea {
+    border: 1px solid #bbbbbb;
+    border-left: 5px solid #bbbbbb;
+    width: 235px;
+    outline: none;
+    padding: 8px; }
+    #main input[type='text']:focus, #main textarea:focus {
+      border-left: 5px solid #8BCEDC;
+      outline: none; }
+  #main button {
+    font-family: "museo-slab", serif;
+    font-size: 12px; }
+    #main button[type='submit'] {
+      min-width: 0;
+      margin-top: 10px;
+      padding: 7px 8px;
+      display: inline-block;
+      background: #f24a33;
+      color: #ffffff;
+      border: none;
+      cursor: pointer; }
+      #main button[type='submit']:hover {
+        background: #8BCEDC; }
   #main select {
     display: inline-block;
     min-width: 200px;
-    float: right;
     text-indent: 5px; }
 
 p {
@@ -248,6 +282,8 @@ textarea {
   font-size: 14px;
   font-weight: 300;
   margin: 10px 0; }
+  textarea.large {
+    min-height: 150px; }
 
 hr {
   display: block;

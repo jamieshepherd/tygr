@@ -19,7 +19,7 @@
         <h1>All clients</h1>
         <div id="clients">
         <input class="filter search" placeholder="Search" />
-        <a class="action" href=""><i class="fa fa-users"></i> Client name</a>
+        <a class="action" href="/clients/create"><i class="fa fa-plus-circle"></i> New client</a>
 
         <table class="full">
             <tr>

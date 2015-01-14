@@ -9,7 +9,7 @@
         @endif
             <!--li><i class="fa fa-rocket"></i>Projects</li>
             <li><i class="fa fa-bug"></i>Issues</li-->
-        <hr/>
+
         <a href="/account"><li><i class="fa fa-lock"></i>Account</li></a>
         <a href="/auth/logout"><li><i class="fa fa-sign-out"></i>Sign out</li></a>
     </ul>

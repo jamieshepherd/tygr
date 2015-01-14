@@ -85,7 +85,12 @@ nav {
       border: none;
     }
     input[type='text'], input[type='password'] {
-      width: 240px;
+      border-left: 5px solid #666666;
+      width: 235px;
+      &:focus {
+        border-color: $secondary;
+        outline: none;
+      }
     }
     input[type='submit'] {
       margin-top: 10px;
@@ -241,20 +246,57 @@ nav {
       color: $highlight;
     }
   }
+  label {
+    display: block;
+    margin: 20px 0 5px 0;
+    font-weight:600;
+    &.radio {
+      font-weight: 300;
+      display: inline;
+      margin: 0 10px 0 3px;
+    }
+  }
   input {
     display: inline-block;
-    clear: left;
     font-size: 12px;
     min-width: 200px;
-    float: right;
+    padding: 5px;
     &.filter {
-      padding: 5px;
+      clear: left;
+      float: right;
+    }
+  }
+  input[type='text'], textarea {
+    border: 1px solid #bbbbbb;
+    border-left: 5px solid #bbbbbb;
+    width: 235px;
+    outline: none;
+    padding: 8px;
+    &:focus {
+      border-left: 5px solid $tertiary;
+      outline: none;
+    }
+  }
+  button {
+    font-family: "museo-slab", serif;
+    font-size: 12px;
+    &[type='submit'] {
+      min-width: 0;
+      margin-top: 10px;
+      padding: 7px 8px;
+      display: inline-block;
+      background: $highlight;
+      color: $background;
+      border: none;
+      cursor: pointer;
+      &:hover {
+        background: $tertiary;
+      }
     }
   }
   select {
     display: inline-block;
     min-width: 200px;
-    float: right;
     text-indent: 5px;
   }
 }
@@ -317,6 +359,9 @@ textarea {
   font-size: 14px;
   font-weight: 300;
   margin: 10px 0;
+  &.large {
+    min-height: 150px;
+  }
 }
 hr {
   display: block;

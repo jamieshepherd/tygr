@@ -3,7 +3,7 @@
 <body class="photo">
     <div class="login">
         <img class="sponge-logo" src="/images/sponge-logo.svg">
-        <form action="/auth/login" method="POST">
+        <form action="/auth/login" method="POST" autocomplete="off">
             <input type="hidden" name="_token" value="{{ csrf_token() }}">
             <label for="email">Email address</label>
             <input name="email" type="text" placeholder="Email address">

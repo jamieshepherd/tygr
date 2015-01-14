@@ -1,0 +1,49 @@
+.login {
+  background: #222629;
+  color: $background;
+  text-align: center;
+  position: static;
+  margin: 20px auto;
+  padding: 20px;
+  width: 260px;
+  height: auto;
+  form {
+    text-align: left;
+    label {
+      display: block;
+      text-align: left;
+      margin: 10px 0;
+      .checkbox {
+        background: #f60;
+      }
+    }
+    input {
+      display: block;
+      padding: 10px;
+      margin-bottom: 10px;
+      border: none;
+    }
+    input[type='text'], input[type='password'] {
+      width: 235px;
+    }
+    input[type='submit'] {
+      margin-top: 10px;
+      display: inline-block;
+      background: $highlight;
+      color: $background;
+    }
+    input[type='checkbox'] {
+      display: inline-block;
+    }
+    span {
+      font-size: 11px;
+      &.remember {
+        margin-left: 2px;
+      }
+      &.extra {
+        color: #cccccc;
+        margin-left: 10px;
+      }
+    }
+  }
+}

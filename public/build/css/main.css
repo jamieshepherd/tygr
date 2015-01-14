@@ -1,4 +1,36 @@
-@import url("http://lib.jamie.sh/reset.min.css");
+/* http://meyerweb.com/eric/tools/css/reset/
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline; }
+
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section {
+  display: block; }
+
+body {
+  line-height: 1; }
+
+ol, ul {
+  list-style: none; }
+
+blockquote, q {
+  quotes: none; }
+
+blockquote:before, blockquote:after, q:before, q:after {
+  content: '';
+  content: none; }
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0; }
+
 html, body {
   height: 100%; }
 
@@ -7,69 +39,39 @@ body {
   font-weight: 300;
   font-size: 14px;
   background: #ffffff; }
+  body.photo {
+    background: url('../images/login-photo.jpg') no-repeat center center fixed;
+    background-size: cover; }
 
-nav {
-  background: #222629;
-  width: 300px;
-  position: fixed;
-  left: 0;
-  top: 0;
-  height: 100%;
-  color: #ffffff;
-  text-align: center; }
-  nav.login {
-    background: #f60;
-    position: static;
-    margin: 0 auto; }
-    nav.login form {
-      background: #f60; }
-  nav .sponge-logo {
-    width: 150px;
-    margin: 30px 0 50px; }
-  nav ul {
-    cursor: pointer; }
-    nav ul li {
-      padding: 20px 30px;
-      font-size: 18px;
-      text-align: left;
-      list-style-type: none; }
-      nav ul li i {
-        width: 40px; }
-      nav ul li:hover {
-        background: #f24a33; }
+.sponge-logo {
+  width: 150px;
+  margin: 30px 0 50px; }
 
 #main {
   margin-left: 300px;
   padding: 20px 30px; }
-  #main header {
-    width: 100%;
-    font-size: 10px;
-    font-weight: 500;
-    margin-bottom: 30px;
-    text-transform: uppercase; }
-    #main header .crumbtrail {
-      display: inline-block; }
-      #main header .crumbtrail li {
-        display: inline-block;
-        padding: 5px;
-        border: 1px solid #2F2927;
-        line-height: normal; }
-        #main header .crumbtrail li.current {
-          background: #2F2927;
-          color: #ffffff;
-          border-color: #2F2927; }
-        #main header .crumbtrail li:hover {
-          background: #2F2927;
-          border: 1px solid #2F2927;
-          color: #fff; }
-    #main header .account {
-      padding: 5px;
-      border: 1px solid #2F2927;
-      float: right; }
-      #main header .account:hover {
-        background: #2F2927;
-        border: 1px solid #2F2927;
-        color: #fff; }
+  #main .project-preview {
+    width: 31%;
+    margin-right: 2%;
+    margin-top: 20px;
+    display: inline-block;
+    border: 1px solid #f24a33;
+    border-radius: 5px; }
+    #main .project-preview h3 {
+      font-size: 16px;
+      background: #f24a33;
+      color: #ffffff;
+      padding: 10px;
+      margin: 0; }
+    #main .project-preview p {
+      padding: 10px; }
+    #main .project-preview ul {
+      padding: 10px;
+      line-height: 20px; }
+    #main .project-preview:nth-of-type(3n) {
+      margin: 0; }
+    #main .project-preview .actions {
+      padding: 0 10px 20px 10px; }
   #main a {
     color: #2F2927;
     text-decoration: none;
@@ -77,6 +79,16 @@ nav {
     #main a:hover {
       color: #8BCEDC;
       border-color: #8BCEDC; }
+    #main a.blank {
+      color: inherit;
+      background: inherit;
+      text-decoration: none;
+      border: none; }
+      #main a.blank:hover {
+        color: inherit;
+        background: inherit;
+        text-decoration: none;
+        border: none; }
     #main a.action {
       font-size: 10px;
       text-transform: uppercase;
@@ -112,15 +124,6 @@ nav {
     margin: 0 0 10px; }
     #main h3 strong {
       color: #f24a33; }
-  #main input {
-    display: inline-block;
-    clear: left;
-    font-family: "museo-slab", serif;
-    font-size: 12px;
-    min-width: 200px;
-    float: right; }
-    #main input.filter {
-      padding: 5px; }
 
 p {
   line-height: 16px;
@@ -164,26 +167,29 @@ strong {
   font-weight: 700; }
 
 textarea {
-  font-family: "museo-slab", serif;
   min-width: 50%;
   min-height: 50px;
   padding: 10px;
   font-size: 14px;
   font-weight: 300;
   margin: 10px 0; }
+  textarea.large {
+    min-height: 150px; }
 
 hr {
   display: block;
   height: 1px;
   border: 0;
-  border-top: 1px solid #ccc;
+  border-top: 1px dotted #ccc;
   margin: 1em 0;
   padding: 0; }
 
+*[data-href] {
+  cursor: pointer; }
+
 table.full {
   width: 100%;
-  margin-top: 20px;
-  cursor: pointer; }
+  margin-top: 20px; }
   table.full th, table.full td {
     padding: 10px;
     text-align: left; }
@@ -216,3 +222,143 @@ table.full {
         opacity: 1; }
       table.full tr.resolved td.priority {
         border: none; }
+
+nav {
+  background: #222629;
+  width: 300px;
+  position: fixed;
+  left: 0;
+  top: 0;
+  height: 100%;
+  color: #ffffff;
+  text-align: center; }
+  nav ul {
+    cursor: pointer; }
+    nav ul li {
+      padding: 20px 30px;
+      font-size: 18px;
+      text-align: left;
+      list-style-type: none; }
+      nav ul li i {
+        width: 40px; }
+      nav ul li:hover {
+        background: #f24a33; }
+  nav a {
+    color: #fff;
+    text-decoration: none; }
+
+#main header {
+  width: 100%;
+  display: inline-block;
+  clear: both;
+  font-size: 10px;
+  font-weight: 500;
+  margin-bottom: 30px; }
+  #main header ul {
+    display: inline-block;
+    text-transform: uppercase; }
+    #main header ul a {
+      border: none; }
+    #main header ul li {
+      display: inline-block;
+      padding: 5px;
+      border: 1px solid #2F2927;
+      line-height: normal; }
+      #main header ul li:hover, #main header ul li.current {
+        background: #2F2927;
+        border: 1px solid #2F2927;
+        color: #fff; }
+    #main header ul.crumbtrail {
+      float: left; }
+    #main header ul.account {
+      float: right; }
+
+label {
+  display: block;
+  margin: 20px 0 5px 0;
+  font-weight: 600; }
+  label.radio {
+    font-weight: 300;
+    display: inline;
+    margin: 0 10px 0 3px; }
+
+input {
+  display: inline-block;
+  font-size: 12px;
+  min-width: 200px;
+  padding: 5px; }
+  input.filter {
+    clear: left;
+    float: right; }
+
+input[type='text'], textarea {
+  border: 1px solid #bbbbbb;
+  border-left: 5px solid #bbbbbb;
+  width: 235px;
+  outline: none;
+  padding: 8px; }
+  input[type='text']:focus, textarea:focus {
+    border-left: 5px solid #8BCEDC;
+    outline: none; }
+
+button {
+  font-family: "museo-slab", serif;
+  font-size: 12px; }
+  button[type='submit'] {
+    min-width: 0;
+    margin-top: 10px;
+    padding: 7px 8px;
+    display: inline-block;
+    background: #f24a33;
+    color: #ffffff;
+    border: none;
+    cursor: pointer; }
+    button[type='submit']:hover {
+      background: #8BCEDC; }
+
+select {
+  display: inline-block;
+  min-width: 200px;
+  text-indent: 5px; }
+
+input, textarea {
+  font-family: "museo-slab", serif; }
+
+.login {
+  background: #222629;
+  color: #ffffff;
+  text-align: center;
+  position: static;
+  margin: 20px auto;
+  padding: 20px;
+  width: 260px;
+  height: auto; }
+  .login form {
+    text-align: left; }
+    .login form label {
+      display: block;
+      text-align: left;
+      margin: 10px 0; }
+      .login form label .checkbox {
+        background: #f60; }
+    .login form input {
+      display: block;
+      padding: 10px;
+      margin-bottom: 10px;
+      border: none; }
+    .login form input[type='text'], .login form input[type='password'] {
+      width: 235px; }
+    .login form input[type='submit'] {
+      margin-top: 10px;
+      display: inline-block;
+      background: #f24a33;
+      color: #ffffff; }
+    .login form input[type='checkbox'] {
+      display: inline-block; }
+    .login form span {
+      font-size: 11px; }
+      .login form span.remember {
+        margin-left: 2px; }
+      .login form span.extra {
+        color: #cccccc;
+        margin-left: 10px; }

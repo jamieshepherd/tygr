@@ -1,0 +1,33 @@
+#main header {
+  width: 100%;
+  display: inline-block;
+  clear: both;
+  font-size: 10px;
+  font-weight: 500;
+  margin-bottom: 30px;
+  ul {
+    display: inline-block;
+    text-transform: uppercase;
+    a {
+      border: none;
+    }
+    li {
+      display: inline-block;
+      padding: 5px;
+      border: 1px solid $foreground;
+      line-height: normal;
+      &:hover, &.current {
+        background: $foreground;
+        border: 1px solid $foreground;
+        color: #fff;
+      }
+    }
+    &.crumbtrail {
+      float: left;
+    }
+    &.account {
+      float: right;
+    }
+  }
+
+}

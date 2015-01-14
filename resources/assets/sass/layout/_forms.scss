@@ -1,0 +1,56 @@
+label {
+  display: block;
+  margin: 20px 0 5px 0;
+  font-weight:600;
+  &.radio {
+    font-weight: 300;
+    display: inline;
+    margin: 0 10px 0 3px;
+  }
+}
+input {
+  display: inline-block;
+  font-size: 12px;
+  min-width: 200px;
+  padding: 5px;
+  &.filter {
+    clear: left;
+    float: right;
+  }
+}
+input[type='text'], textarea {
+  border: 1px solid #bbbbbb;
+  border-left: 5px solid #bbbbbb;
+  width: 235px;
+  outline: none;
+  padding: 8px;
+  &:focus {
+    border-left: 5px solid $tertiary;
+    outline: none;
+  }
+}
+button {
+  font-family: "museo-slab", serif;
+  font-size: 12px;
+  &[type='submit'] {
+    min-width: 0;
+    margin-top: 10px;
+    padding: 7px 8px;
+    display: inline-block;
+    background: $highlight;
+    color: $background;
+    border: none;
+    cursor: pointer;
+    &:hover {
+      background: $tertiary;
+    }
+  }
+}
+select {
+  display: inline-block;
+  min-width: 200px;
+  text-indent: 5px;
+}
+input, textarea {
+  font-family: "museo-slab", serif;
+}

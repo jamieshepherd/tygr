@@ -1,0 +1,30 @@
+//noinspection ALL
+nav {
+  background: #222629;
+  width: 300px;
+  position: fixed;
+  left: 0;
+  top: 0;
+  height: 100%;
+  color: $background;
+  text-align: center;
+  ul {
+    cursor: pointer;
+    li {
+      padding: 20px 30px;
+      font-size: 18px;
+      text-align: left;
+      list-style-type: none;
+      i {
+        width: 40px;
+      }
+      &:hover {
+        background: $highlight;
+      }
+    }
+  }
+  a {
+    color: #fff;
+    text-decoration: none;
+  }
+}

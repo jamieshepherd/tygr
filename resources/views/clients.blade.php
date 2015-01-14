@@ -1,4 +1,7 @@
 @extends('layout.base')
+@section('headlinks')
+<!--script src="http://listjs.com/no-cdn/list.js"></script-->
+@stop
 @section('body')
     <body>
     @include('layout.nav')
@@ -14,8 +17,10 @@
             </ul>
         </header>
         <h1>All clients</h1>
-        <input type="text" class="filter" placeholder="Filter clients">
+        <div id="clients">
+        <input class="filter search" placeholder="Search" />
         <a class="action" href=""><i class="fa fa-users"></i> Client name</a>
+
         <table class="full">
             <tr>
                 <th>Name</th>
@@ -24,16 +29,24 @@
                 <th>Projects</th>
                 <th>Reviewarea</th>
             </tr>
+            <tbody class="list">
             @foreach($clients as $client)
-            <tr onclick="document.location='/clients/{{{ $client->stub }}}/projects';" style="cursor:pointer">
-                <td>{{{ $client->name }}}</td>
+            <tr onclick="document.location='/clients/{{{ $client->stub }}}';" style="cursor:pointer">
+                <td class="name">{{{ $client->name }}}</td>
                 <td>{{{ $client->stub }}}</td>
                 <td>Client</td>
                 <td><a href="/clients/{{{ $client->stub }}}">View projects</a></td>
                 <td><a href="http://reviewarea.co.uk/Secure/{{{ $client->stub }}}">Reviewarea</a></td>
             </tr>
             @endforeach
+            </tbody>
         </table>
+        </div>
+        <script src="/js/list.js"></script>
+        <script>
+            var options = { valueNames: ['name'] };
+            var userList = new List('clients', options);
+        </script>
     </div>
 </body>
 @stop

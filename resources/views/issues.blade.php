@@ -16,15 +16,12 @@
             </ul>
         </header>
         <h1>All issues</h1>
-        <select id="version-selection" onchange="issueVersion()">
-            <option value="v1">Version 1.0</option>
-            <option value="v2">Version 2.0</option>
-            <option value="v3">Version 3.0</option>
-            <option value="extra">Extras</option>
-        </select>
+        <div id="issues">
+        <input class="filter search" placeholder="Search" />
         <a class="action" href="/clients/{{ $client->stub }}/projects/{{ $project->stub }}/issues/create"><i class="fa fa-plus-circle"></i> New issue</a>
         <a class="action" href=""><i class="fa fa-bug"></i> All issues</a>
         <a class="action" href=""><i class="fa fa-bug"></i> Assigned to me</a>
+
         <table class="full">
             <tr>
                 <th>Ref.</th>
@@ -33,16 +30,24 @@
                 <th>Date</th>
                 <th>Status</th>
             </tr>
+            <tbody class="list">
             @foreach($issues as $issue)
             <tr onclick="document.location='/clients/{{{ $client->stub }}}/projects/{{{ $project->stub }}}/issues/show/{{{ $issue->id }}}';" style="cursor:pointer">
-                <td>{{{ $issue->reference }}}</td>
-                <td>{{{ $issue->type }}}</td>
-                <td>{{{ substr($issue->description,0,72) }}}...</td>
-                <td>{{ date("m-d-y",strtotime($issue->created_at)) }}</td>
+                <td class="reference">{{{ $issue->reference }}}</td>
+                <td class="type">{{{ $issue->type }}}</td>
+                <td class="description">{{{ substr($issue->description,0,72) }}}...</td>
+                <td class="date">{{ date("m-d-y",strtotime($issue->created_at)) }}</td>
                 <td class="priority {{ $issue->priority }}">{{{ $issue->status }}}</td>
             </tr>
             @endforeach
+            </tbody>
         </table>
+        </div>
+        <script src="/js/list.js"></script>
+        <script>
+            var options = { valueNames: ['reference', 'type', 'description', 'date'] };
+            var userList = new List('issues', options);
+        </script>
     </div>
 </body>
 @stop

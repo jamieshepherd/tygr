@@ -37,27 +37,29 @@ Route::group(array('middleware' => 'auth'), function() {
 	*/
 
 	Route::get('/', function() {
-		return Redirect::to('clients/sportsdirect');
+		return Redirect::to('projects');
 	});
+
+	Route::get('projects', 'ProjectController@index');
 
 	Route::group(array('middleware' => 'admin'), function() {
 		Route::get('dashboard', 'DashboardController@show');
 		Route::get('clients', 'ClientController@index');
+		Route::get('clients/{stub}', 'ClientController@show');
 		Route::get('clients/create', 'ClientController@create');
 		Route::get('clients/edit/{id}', 'ClientController@edit');
 		Route::get('clients/delete/{id}', 'ClientController@delete');
 	});
 
 	Route::group(array('middleware' => 'client'), function() {
-		Route::get('clients/{stub}', 'ClientController@show');
-		Route::get('clients/{cstub}/projects/{pstub}', 'ProjectController@show');
-		Route::get('clients/{cstub}/projects/{pstub}/issues', 'IssueController@index');
-		Route::get('clients/{cstub}/projects/{pstub}/issues/version/{id}', 'IssueController@version');
-		Route::get('clients/{cstub}/projects/{pstub}/issues/create', 'IssueController@create');
-		Route::post('clients/{cstub}/projects/{pstub}/issues/create', 'IssueController@create');
-		Route::get('clients/{cstub}/projects/{pstub}/issues/edit/{id}', 'IssueController@edit');
-		Route::post('clients/{cstub}/projects/{pstub}/issues/edit/{id}', 'IssueController@edit');
-		Route::get('clients/{cstub}/projects/{pstub}/issues/show/{id}', 'IssueController@show');
+		Route::get('projects/{stub}', 'ProjectController@show');
+		Route::get('projects/{stub}/issues', 'IssueController@index');
+		Route::get('projects/{stub}/issues/version/{id}', 'IssueController@version');
+		Route::get('projects/{stub}/issues/create', 'IssueController@create');
+		Route::post('projects/{stub}/issues/create', 'IssueController@create');
+		Route::get('projects/{stub}/issues/edit/{id}', 'IssueController@edit');
+		Route::post('projects/{stub}/issues/edit/{id}', 'IssueController@edit');
+		Route::get('projects/{stub}/issues/show/{id}', 'IssueController@show');
 	});
 
 	Route::post('auth/login', 'AuthController@getLogin');

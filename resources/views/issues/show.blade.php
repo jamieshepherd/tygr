@@ -1,21 +1,16 @@
 @extends('layout.base')
+@section('crumbtrail')
+    <a href="/"><li><i class="fa fa-home"></i> Home</li></a>
+    <a href="/projects"><li>Projects</li></a>
+    <a href="/projects/{{{ $project->stub }}}"><li>{{{ $project->name }}}</li></a>
+    <a href="/projects/{{{ $project->stub }}}/issues"><li>Issues</li></a>
+    <li class="current">{{ $issue->id }}</li>
+@stop
 @section('body')
     <body>
     @include('layout.nav')
     <div id="main">
-        <header>
-            <ul class="crumbtrail">
-                <a href="/"><li><i class="fa fa-home"></i> Home</li></a>
-                <a href="/clients/{{{ $client->stub }}}"><li>{{{ $client->name }}}</li></a>
-                <a href="/clients/{{{ $client->stub }}}/projects/{{{ $project->stub }}}"><li>{{{ $project->name }}}</li></a>
-                <a href="/clients/{{{ $client->stub }}}/projects/{{{ $project->stub }}}/issues"><li>Issues</li></a>
-                <li class="current">{{ $issue->id }}</li>
-            </ul>
-            <ul class="account">
-                <a href="#"><li><i class="fa fa-lock"></i> Account</li></a>
-                <a href="/auth/logout"><li><i class="fa fa-sign-out"></i> Sign out</li></a>
-            </ul>
-        </header>
+        @include('layout.header')
         <h1>Issue details</h1>
         <h2>Description</h2>
         <div class="info-box">
@@ -41,6 +36,7 @@
         <p>There are no comments.</p>
         <textarea placeholder="Enter a comment here"></textarea><br/>
         <a class="action" href="#"><i class="fa fa-arrow-circle-right"></i> Post comment</a>
+        <a class="action" href="#"><i class="fa fa-check-circle"></i> Mark as resolved</a>
     </div>
 </body>
 @stop

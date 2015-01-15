@@ -15,8 +15,8 @@ class CreateUsersTable extends Migration {
 		Schema::create('users', function(Blueprint $table)
 		{
 			$table->increments('id');
-			$table->integer('client_id')->unsigned()->nullable();
-			$table->foreign('client_id')->references('id')->on('clients');
+			$table->integer('client')->unsigned()->nullable();
+			$table->foreign('client')->references('id')->on('clients');
 			$table->integer('level');
 			$table->string('name');
 			$table->string('email')->unique();

@@ -14,7 +14,7 @@ class ProjectController extends Controller {
 	 */
 	public function index()
 	{
-		return view("project");
+		return "list of projects available";
 	}
 
 	/**
@@ -40,16 +40,13 @@ class ProjectController extends Controller {
 	/**
 	 * Display the specified resource.
 	 *
-	 * @param  string  $cstub
-	 * @param  string  $pstub
+	 * @param  string  $stub
 	 * @return Response
 	 */
-	public function show($cstub,$pstub)
+	public function show($stub)
 	{
-
-		$client = Client::where('stub', '=', $cstub)->firstOrFail();
-		$project = Project::where('stub', '=', $pstub)->firstOrFail();
-		return view('project')->with('client', $client)->with('project', $project);
+		$project = Project::where('stub', '=', $stub)->firstOrFail();
+		return view('project')->with('project', $project);
 	}
 
 	/**

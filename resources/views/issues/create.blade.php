@@ -1,9 +1,9 @@
 @extends('layout.base')
 @section('crumbtrail')
     <a href="/"><li><i class="fa fa-home"></i> Home</li></a>
-    <a href="/clients/{{{ $client->stub }}}"><li>{{{ $client->name }}}</li></a>
-    <a href="/clients/{{{ $client->stub }}}/projects/{{{ $project->stub }}}"><li>{{{ $project->name }}}</li></a>
-    <a href="/clients/{{{ $client->stub }}}/projects/{{{ $project->stub }}}/issues"><li>Issues</li></a>
+    <a href="/projects"><li>Projects</li></a>
+    <a href="/projects/{{{ $project->stub }}}"><li>{{{ $project->name }}}</li></a>
+    <a href="/projects/{{{ $project->stub }}}/issues"><li>Issues</li></a>
     <li class="current">Create</li>
 @stop
 @section('body')
@@ -15,7 +15,7 @@
         <form action="" method="POST" accept-charset="UTF-8">
 
             <label>What type of issue is this?</label>
-            <input type="text" placeholder="LMS error, text amend, graphic amend" autofocus>
+            <input type="text" placeholder="e.g. Bug, text amend, design" autofocus>
 
             <label>Where did this happen?</label>
             <input type="text" placeholder="e.g. Page 7 or b-09">

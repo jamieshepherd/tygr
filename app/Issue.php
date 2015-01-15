@@ -1,10 +1,6 @@
 <?php namespace App;
 
-use Illuminate\Auth\Authenticatable;
 use Illuminate\Database\Eloquent\Model;
-use Illuminate\Auth\Passwords\CanResetPassword;
-use Illuminate\Contracts\Auth\Authenticatable as AuthenticatableContract;
-use Illuminate\Contracts\Auth\CanResetPassword as CanResetPasswordContract;
 
 class Issue extends Model {
 
@@ -20,22 +16,27 @@ class Issue extends Model {
 	 *
 	 * @var array
 	 */
-	protected $fillable = ['name', 'email', 'password'];
+	protected $fillable = [];
 
 	/**
 	 * The attributes excluded from the model's JSON form.
 	 *
 	 * @var array
 	 */
-	protected $hidden = ['password', 'remember_token'];
+	protected $hidden = [];
 
 	public function project()
 	{
-		return $this->belongsTo('Project');
+		return $this->belongsTo('App\Project', 'project');
 	}
 
-	public function user()
+	public function author()
 	{
-		return $this->hasOne('User');
+		return $this->belongsTo('App\User', 'author');
+	}
+
+	public function assigned_to()
+	{
+		return $this->belongsTo('App\User', 'assigned_to');
 	}
 }

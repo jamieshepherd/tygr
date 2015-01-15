@@ -11,30 +11,26 @@ class IssueController extends Controller {
 	/**
 	 * Display a listing of the resource.
 	 *
-	 * @param  string  $cstub;
-	 * @param  string  $pstub;
+	 * @param  string  $stub;
 	 * @return Response
 	 */
-	public function index($cstub, $pstub)
+	public function index($stub)
 	{
-		$client = Client::where('stub', '=', $cstub)->firstOrFail();
-		$project = Project::where('stub', '=', $pstub)->firstOrFail();
-		$issues = Issue::all();
-		return view('issues')->with('client', $client)->with('project', $project)->with('issues', $issues);
+		$project = Project::where('stub', '=', $stub)->firstOrFail();
+		$issues = $project->issues;
+		return view('issues')->with('project', $project)->with('issues', $issues);
 	}
 
 	/**
 	 * Show the form for creating a new resource.
 	 *
-	 * @param  string  $cstub;
-	 * @param  string  $pstub;
+	 * @param  string  $stub;
 	 * @return Response
 	 */
-	public function create($cstub, $pstub)
+	public function create($stub)
 	{
-		$client = Client::where('stub', '=', $cstub)->firstOrFail();
-		$project = Project::where('stub', '=', $pstub)->firstOrFail();
-		return view("issues.create")->with('client', $client)->with('project', $project);
+		$project = Project::where('stub', '=', $stub)->firstOrFail();
+		return view("issues.create")->with('project', $project);
 	}
 
 	/**
@@ -50,17 +46,15 @@ class IssueController extends Controller {
 	/**
 	 * Display the specified resource.
 	 *
-	 * @param  string  $cstub
-	 * @param  string  $pstub
+	 * @param  string  $stub
 	 * @param  int  $id
 	 * @return Response
 	 */
-	public function show($cstub, $pstub, $id)
+	public function show($stub, $id)
 	{
-		$client = Client::where('stub', '=', $cstub)->firstOrFail();
-		$project = Project::where('stub', '=', $pstub)->firstOrFail();
-		$issue = Issue::where('id', '=', $id)->firstOrFail();
-		return view('issue')->with('client', $client)->with('project', $project)->with('issue', $issue);
+		$project = Project::where('stub', '=', $stub)->firstOrFail();
+		$issue = Issue::where('project', '=', $project->id)->where('id', '=', $id)->firstOrFail();
+		return view('issues.show')->with('project', $project)->with('issue', $issue);
 	}
 
 	/**

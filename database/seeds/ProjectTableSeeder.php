@@ -14,6 +14,12 @@ class ProjectTableSeeder extends Seeder {
             'stub'    => 'onthejob',
             'client'  => 1
         ));
+
+        Project::create(array(
+            'name'    => 'Another Project',
+            'stub'    => 'another',
+            'client'  => 2
+        ));
     }
 
 }

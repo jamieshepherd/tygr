@@ -5,7 +5,7 @@
             <a href="/dashboard"><li><i class="fa fa-desktop"></i>Dashboard</li></a>
             <a href="/clients"><li><i class="fa fa-user"></i>Clients</li></a>
         @else
-            <a href="/clients/{{{ $client->stub }}}"><li><i class="fa fa-rocket"></i>Projects</li></a>
+            <a href="/projects"><li><i class="fa fa-rocket"></i>Projects</li></a>
         @endif
             <!--li><i class="fa fa-rocket"></i>Projects</li>
             <li><i class="fa fa-bug"></i>Issues</li-->

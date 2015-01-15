@@ -15,8 +15,12 @@ class CreateIssuesTable extends Migration {
 		Schema::create('issues', function(Blueprint $table)
 		{
 			$table->increments('id');
-			$table->integer('author');
-			$table->integer('project');
+			$table->integer('author')->unsigned();
+			$table->foreign('author')->references('id')->on('users');
+			$table->integer('assigned_to')->unsigned();
+			$table->foreign('assigned_to')->references('id')->on('users');
+			$table->integer('project')->unsigned();
+			$table->foreign('project')->references('id')->on('projects');
 			$table->string('version');
 			$table->string('reference');
 			$table->string('type');

@@ -27,12 +27,12 @@ class Project extends Model {
 
 	public function client()
 	{
-		return $this->belongsTo('Client');
+		return $this->belongsTo('App\Client', 'client');
 	}
 
 	public function issues()
 	{
-		return $this->hasMany('Issue');
+		return $this->hasMany('App\Issue', 'project');
 	}
 
 }

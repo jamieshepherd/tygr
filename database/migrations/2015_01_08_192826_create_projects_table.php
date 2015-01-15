@@ -17,7 +17,8 @@ class CreateProjectsTable extends Migration {
 			$table->increments('id');
 			$table->string('name');
 			$table->string('stub');
-			$table->integer('client');
+			$table->integer('client')->unsigned();
+			$table->foreign('client')->references('id')->on('clients');
 			$table->string('current_version');
 			$table->timestamps();
 		});

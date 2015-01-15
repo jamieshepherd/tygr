@@ -25,9 +25,14 @@ class Client extends Model {
 	 */
 	protected $hidden = [];
 
+	public function users()
+	{
+		return $this->hasMany('App\User');
+	}
+
 	public function projects()
 	{
-		return $this->hasMany('Project');
+		return $this->hasMany('App\Project');
 	}
 
 }

@@ -14,12 +14,11 @@
         <h1>Log an issue</h1>
         <form action="" method="POST" accept-charset="UTF-8">
 
-            <label>Where did this happen?</label>
-            <input type="text" placeholder="e.g. Page 7 or b-09" autofocus>
-
             <label>What type of issue is this?</label>
-            <input type="text" placeholder="LMS error, text amend, graphic amend">
+            <input type="text" placeholder="LMS error, text amend, graphic amend" autofocus>
 
+            <label>Where did this happen?</label>
+            <input type="text" placeholder="e.g. Page 7 or b-09">
 
             <label>Describe the issue</label>
             <textarea name="description" class="large" placeholder="Please be as specific as you can, including details on how to reproduce the issue, browser (IE/Chrome) and operating system."></textarea>

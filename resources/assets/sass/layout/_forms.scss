@@ -3,12 +3,24 @@ form {
 }
 input, textarea {
   font-family: "museo-slab", serif;
+  font-size: 14px;
+  font-weight: 300;
   margin-bottom: 30px;
+  border: 1px solid #dddddd;
+  padding: 10px;
+  margin-bottom: 10px;
+  min-width: 300px;
+  outline: none;
+  border-radius:3px;
+  &:focus {
+    border-color: $tertiary;
+    outline: none;
+  }
 }
 label {
   display: block;
-  margin: 20px 0 5px 0;
-  font-weight:600;
+  margin: 20px 0 10px 0;
+  font-weight:500;
   &.radio {
     font-weight: 300;
     display: inline;
@@ -17,24 +29,9 @@ label {
 }
 input {
   display: inline-block;
-  font-size: 14px;
-  font-weight: 300;
-  min-width: 200px;
-  padding: 10px 0;
-  margin-bottom: 10px;
   &.filter {
     clear: left;
     float: right;
-  }
-}
-input[type='text'] {
-  border: none;
-  border-bottom: 2px dotted #cccccc;
-  width: 350px;
-  outline: none;
-  &:focus {
-    border-color: $tertiary;
-    outline: none;
   }
 }
 button {
@@ -61,20 +58,9 @@ select {
 }
 textarea {
   width: 100%;
-  max-width: 800px;
+  max-width: 700px;
   min-height: 100px;
-  padding: 10px 0;
-  margin-bottom: 10px;
-  font-weight: 300;
-  font-size: 14px;
   line-height: 22px;
-  border: none;
-  border-bottom: 2px dotted #cccccc;
-  //border-radius: 3px;
-  outline: none;
-  &:focus {
-    border-color: $tertiary;
-  }
 }
 .group {
   &.full {

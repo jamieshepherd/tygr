@@ -265,36 +265,33 @@ form {
 
 input, textarea {
   font-family: "museo-slab", serif;
-  margin-bottom: 30px; }
+  font-size: 14px;
+  font-weight: 300;
+  margin-bottom: 30px;
+  border: 1px solid #dddddd;
+  padding: 10px;
+  margin-bottom: 10px;
+  min-width: 300px;
+  outline: none;
+  border-radius: 3px; }
+  input:focus, textarea:focus {
+    border-color: #8BCEDC;
+    outline: none; }
 
 label {
   display: block;
-  margin: 20px 0 5px 0;
-  font-weight: 600; }
+  margin: 20px 0 10px 0;
+  font-weight: 500; }
   label.radio {
     font-weight: 300;
     display: inline;
     margin: 0 10px 0 3px; }
 
 input {
-  display: inline-block;
-  font-size: 14px;
-  font-weight: 300;
-  min-width: 200px;
-  padding: 10px 0;
-  margin-bottom: 10px; }
+  display: inline-block; }
   input.filter {
     clear: left;
     float: right; }
-
-input[type='text'] {
-  border: none;
-  border-bottom: 2px dotted #cccccc;
-  width: 350px;
-  outline: none; }
-  input[type='text']:focus {
-    border-color: #8BCEDC;
-    outline: none; }
 
 button {
   font-family: "museo-slab", serif;
@@ -318,18 +315,9 @@ select {
 
 textarea {
   width: 100%;
-  max-width: 800px;
+  max-width: 700px;
   min-height: 100px;
-  padding: 10px 0;
-  margin-bottom: 10px;
-  font-weight: 300;
-  font-size: 14px;
-  line-height: 22px;
-  border: none;
-  border-bottom: 2px dotted #cccccc;
-  outline: none; }
-  textarea:focus {
-    border-color: #8BCEDC; }
+  line-height: 22px; }
 
 .group.full {
   clear: both;

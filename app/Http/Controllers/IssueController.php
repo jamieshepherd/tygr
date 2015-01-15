@@ -34,7 +34,7 @@ class IssueController extends Controller {
 	{
 		$client = Client::where('stub', '=', $cstub)->firstOrFail();
 		$project = Project::where('stub', '=', $pstub)->firstOrFail();
-		return view("issues-create")->with('client', $client)->with('project', $project);
+		return view("issues.create")->with('client', $client)->with('project', $project);
 	}
 
 	/**

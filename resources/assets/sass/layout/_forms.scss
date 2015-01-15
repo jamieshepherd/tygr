@@ -54,3 +54,14 @@ select {
 input, textarea {
   font-family: "museo-slab", serif;
 }
+textarea {
+  min-width: 50%;
+  min-height: 50px;
+  padding: 10px;
+  font-size: 14px;
+  font-weight: 300;
+  margin: 10px 0;
+  &.large {
+    min-height: 150px;
+  }
+}

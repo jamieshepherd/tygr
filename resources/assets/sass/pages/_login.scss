@@ -1,3 +1,10 @@
+.photo {
+  background: url('/images/login-photo.jpg') no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
 .login {
   background: #222629;
   color: $background;

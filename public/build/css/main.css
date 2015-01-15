@@ -31,6 +31,30 @@ table {
   border-collapse: collapse;
   border-spacing: 0; }
 
+h1 {
+  font-size: 32px;
+  color: #f24a33;
+  margin-bottom: 20px; }
+
+h2 {
+  font-size: 20px;
+  color: #2F2927;
+  font-weight: 700;
+  margin: 30px 0 10px 0; }
+
+h3 {
+  font-size: 12px;
+  margin: 0 0 10px; }
+  h3 strong {
+    color: #f24a33; }
+
+p {
+  line-height: 16px;
+  margin-bottom: 15px; }
+
+strong {
+  font-weight: 700; }
+
 html, body {
   height: 100%; }
 
@@ -39,13 +63,30 @@ body {
   font-weight: 300;
   font-size: 14px;
   background: #ffffff; }
-  body.photo {
-    background: url('../images/login-photo.jpg') no-repeat center center fixed;
-    background-size: cover; }
 
 .sponge-logo {
   width: 150px;
   margin: 30px 0 50px; }
+
+.project-info {
+  margin-top: 30px;
+  display: block; }
+  .project-info li {
+    font-weight: 700; }
+    .project-info li strong {
+      background: #7E7772;
+      color: #ffffff;
+      padding: 5px;
+      line-height: 30px;
+      margin-right: 10px; }
+
+hr {
+  display: block;
+  height: 1px;
+  border: 0;
+  border-top: 1px dotted #ccc;
+  margin: 1em 0;
+  padding: 0; }
 
 #main {
   margin-left: 300px;
@@ -110,118 +151,6 @@ body {
         color: #2F2927; }
       #main a.action.right {
         float: right; }
-  #main h1 {
-    font-size: 32px;
-    color: #f24a33;
-    margin-bottom: 20px; }
-  #main h2 {
-    font-size: 20px;
-    color: #2F2927;
-    font-weight: 700;
-    margin: 30px 0 10px 0; }
-  #main h3 {
-    font-size: 12px;
-    margin: 0 0 10px; }
-    #main h3 strong {
-      color: #f24a33; }
-
-p {
-  line-height: 16px;
-  margin-bottom: 15px; }
-
-.info-box {
-  border: 1px dashed #2F2927;
-  display: inline-block;
-  float: right;
-  padding: 10px;
-  min-width: 250px;
-  margin: 0 0 10px 10px;
-  clear: both; }
-  .info-box hr {
-    margin: 0.5em 0;
-    border-style: dashed; }
-  .info-box li {
-    line-height: 24px; }
-    .info-box li strong {
-      background: #7E7772;
-      color: #ffffff;
-      padding: 5px;
-      line-height: 30px;
-      margin-right: 10px; }
-  .info-box table td {
-    padding: 10px; }
-
-.project-info {
-  margin-top: 30px;
-  display: block; }
-  .project-info li {
-    font-weight: 700; }
-    .project-info li strong {
-      background: #7E7772;
-      color: #ffffff;
-      padding: 5px;
-      line-height: 30px;
-      margin-right: 10px; }
-
-strong {
-  font-weight: 700; }
-
-textarea {
-  min-width: 50%;
-  min-height: 50px;
-  padding: 10px;
-  font-size: 14px;
-  font-weight: 300;
-  margin: 10px 0; }
-  textarea.large {
-    min-height: 150px; }
-
-hr {
-  display: block;
-  height: 1px;
-  border: 0;
-  border-top: 1px dotted #ccc;
-  margin: 1em 0;
-  padding: 0; }
-
-*[data-href] {
-  cursor: pointer; }
-
-table.full {
-  width: 100%;
-  margin-top: 20px; }
-  table.full th, table.full td {
-    padding: 10px;
-    text-align: left; }
-  table.full th {
-    font-weight: 700;
-    min-width: 50px; }
-  table.full td.priority {
-    border-right: 5px solid #e6e6e6; }
-    table.full td.priority.high {
-      border-color: #f24a33; }
-    table.full td.priority.medium {
-      border-color: #FEBD19; }
-    table.full td.priority.low {
-      border-color: #8BCEDC; }
-  table.full tr {
-    background: #fff; }
-    table.full tr:first-child {
-      background: none; }
-      table.full tr:first-child:hover {
-        background: none; }
-    table.full tr:nth-of-type(2n) {
-      background: #eee; }
-    table.full tr:hover {
-      background: #dddddd; }
-    table.full tr.resolved {
-      background: none;
-      opacity: 0.3; }
-      table.full tr.resolved:hover {
-        background: #dddddd;
-        opacity: 1; }
-      table.full tr.resolved td.priority {
-        border: none; }
 
 nav {
   background: #222629;
@@ -273,6 +202,64 @@ nav {
     #main header ul.account {
       float: right; }
 
+table.full {
+  width: 100%;
+  margin-top: 20px; }
+  table.full th, table.full td {
+    padding: 10px;
+    text-align: left; }
+  table.full th {
+    font-weight: 700;
+    min-width: 50px; }
+  table.full td.priority {
+    border-right: 5px solid #e6e6e6; }
+    table.full td.priority.high {
+      border-color: #f24a33; }
+    table.full td.priority.medium {
+      border-color: #FEBD19; }
+    table.full td.priority.low {
+      border-color: #8BCEDC; }
+  table.full tr {
+    background: #fff; }
+    table.full tr:first-child {
+      background: none; }
+      table.full tr:first-child:hover {
+        background: none; }
+    table.full tr:nth-of-type(2n) {
+      background: #eee; }
+    table.full tr:hover {
+      background: #dddddd; }
+    table.full tr.resolved {
+      background: none;
+      opacity: 0.3; }
+      table.full tr.resolved:hover {
+        background: #dddddd;
+        opacity: 1; }
+      table.full tr.resolved td.priority {
+        border: none; }
+
+.info-box {
+  border: 1px dashed #2F2927;
+  display: inline-block;
+  float: right;
+  padding: 10px;
+  min-width: 250px;
+  margin: 0 0 10px 10px;
+  clear: both; }
+  .info-box hr {
+    margin: 0.5em 0;
+    border-style: dashed; }
+  .info-box li {
+    line-height: 24px; }
+    .info-box li strong {
+      background: #7E7772;
+      color: #ffffff;
+      padding: 5px;
+      line-height: 30px;
+      margin-right: 10px; }
+  .info-box table td {
+    padding: 10px; }
+
 label {
   display: block;
   margin: 20px 0 5px 0;
@@ -323,6 +310,20 @@ select {
 
 input, textarea {
   font-family: "museo-slab", serif; }
+
+textarea {
+  min-width: 50%;
+  min-height: 50px;
+  padding: 10px;
+  font-size: 14px;
+  font-weight: 300;
+  margin: 10px 0; }
+  textarea.large {
+    min-height: 150px; }
+
+.photo {
+  background: url('/images/login-photo.jpg') no-repeat center center fixed;
+  background-size: cover; }
 
 .login {
   background: #222629;

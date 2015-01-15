@@ -1,0 +1,81 @@
+#main {
+  margin-left: 300px;
+  padding: 20px 30px;
+  .project-preview {
+    width: 31%;
+    margin-right: 2%;
+    margin-top: 20px;
+    display: inline-block;
+    border: 1px solid $highlight;
+    border-radius: 5px;
+    h3 {
+      font-size: 16px;
+      background: $highlight;
+      color: $background;
+      padding: 10px;
+      margin: 0;
+    }
+    p {
+      padding: 10px;
+    }
+    ul {
+      padding: 10px;
+      line-height: 20px;
+    }
+    &:nth-of-type(3n) {
+      margin: 0;
+    }
+    .actions {
+      padding: 0 10px 20px 10px;
+    }
+  }
+  a {
+    color: $foreground;
+    text-decoration: none;
+    border-bottom: 1px dotted $foreground;
+    &:hover {
+      color: #8BCEDC;
+      border-color: #8BCEDC;
+    }
+    &.blank {
+      color: inherit;
+      background: inherit;
+      text-decoration: none;
+      border: none;
+      &:hover {
+        color: inherit;
+        background: inherit;
+        text-decoration: none;
+        border: none;
+      }
+    }
+    &.action {
+      font-size: 10px;
+      text-transform: uppercase;
+      font-weight: 500;
+      padding: 5px;
+      /*background: $highlight;
+      color: $background;
+      border: none;*/
+
+      background: $highlight;
+      border: 1px solid $highlight;
+      color: $background;
+
+      &:hover {
+        background: $tertiary;
+        border-color: $tertiary;
+        color: $background;
+      }
+
+      &.secondary {
+        background: none;
+        border: 1px solid $foreground;
+        color: $foreground;
+      }
+      &.right {
+        float: right;
+      }
+    }
+  }
+}

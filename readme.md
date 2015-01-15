@@ -1,6 +1,6 @@
-## Sponge UK - Issue Management
+## Tygr - Issue management system
 
-This repository hosts the source code for the Sponge UK Issue Management system, developed for Sponge UK by @jamieshepherd. The project is open source under the MIT license.
+This repository hosts the source code for the tygr issue management system, a project and issue management system developed primarily for companies in the elearning industry. The project is open source under the MIT license.
 
 ### Development requirements
 

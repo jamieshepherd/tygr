@@ -1,8 +1,5 @@
 <?php
 
-use App\Client;
-use App\User;
-
 /*
 |--------------------------------------------------------------------------
 | Application Routes
@@ -14,8 +11,6 @@ use App\User;
 |
 */
 
-//Route::get('/', 'WelcomeController@index');
-
 Route::controllers([
 	'auth' => 'Auth\AuthController',
 	'password' => 'Auth\PasswordController'
@@ -24,24 +19,13 @@ Route::controllers([
 Route::get('auth/login', 'AuthController@getLogin');
 Route::get('auth/logout', 'AuthController@getLogout');
 
+//> Make sure user is signed in
 Route::group(array('middleware' => 'auth'), function() {
 
-	/*
-	Route::get('/', function()
-	{
-		$clients = Client::all();
-		$users = User::all();
-
-		return View::make('dashboard', compact('clients','users'));
-	});
-	*/
-
-	Route::get('/', function() {
-		return Redirect::to('projects');
-	});
-
+	Route::get('/', function() { return Redirect::to('projects'); });
 	Route::get('projects', 'ProjectController@index');
 
+    //>> Make sure user has at least ADMINISTRATOR priviliges
 	Route::group(array('middleware' => 'admin'), function() {
 		Route::get('dashboard', 'DashboardController@show');
 		Route::get('clients', 'ClientController@index');
@@ -51,6 +35,7 @@ Route::group(array('middleware' => 'auth'), function() {
 		Route::get('clients/delete/{id}', 'ClientController@delete');
 	});
 
+    //>> Make sure user has at least CLIENT priviliges
 	Route::group(array('middleware' => 'client'), function() {
 		Route::get('projects/{stub}', 'ProjectController@show');
 		Route::get('projects/{stub}/issues', 'IssueController@index');
@@ -61,11 +46,4 @@ Route::group(array('middleware' => 'auth'), function() {
 		Route::post('projects/{stub}/issues/edit/{id}', 'IssueController@edit');
 		Route::get('projects/{stub}/issues/show/{id}', 'IssueController@show');
 	});
-
-	Route::post('auth/login', 'AuthController@getLogin');
-	Route::get('issues', 'IssueController@index');
-	Route::get('issues/{id}', 'IssueController@show');
-
-	Route::get('project', 'ProjectController@index');
-	Route::get('project/create', 'ProjectController@create');
 });

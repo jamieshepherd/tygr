@@ -14,7 +14,9 @@ class ProjectController extends Controller {
 	 */
 	public function index()
 	{
-		return "list of projects available";
+        $client = \Auth::user()->client;
+        $projects = Project::where('client', '=', $client->id)->all();
+        return view('projects.index')->with('projects', $projects);
 	}
 
 	/**
@@ -45,8 +47,9 @@ class ProjectController extends Controller {
 	 */
 	public function show($stub)
 	{
-		$project = Project::where('stub', '=', $stub)->firstOrFail();
-		return view('project')->with('project', $project);
+        $client = \Auth::user()->client;
+		$project = Project::where('client','=',$client->id)->where('stub', '=', $stub)->firstOrFail();
+		return view('projects.show')->with('project', $project);
 	}
 
 	/**

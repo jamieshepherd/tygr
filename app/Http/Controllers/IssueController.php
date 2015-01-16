@@ -18,7 +18,7 @@ class IssueController extends Controller {
 	{
 		$project = Project::where('stub', '=', $stub)->firstOrFail();
 		$issues = $project->issues;
-		return view('issues')->with('project', $project)->with('issues', $issues);
+		return view('issues.index')->with('project', $project)->with('issues', $issues);
 	}
 
 	/**

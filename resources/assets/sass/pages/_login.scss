@@ -14,6 +14,7 @@
   padding: 20px;
   width: 260px;
   height: auto;
+  border-radius: 5px;
   form {
     text-align: left;
     label {
@@ -29,22 +30,28 @@
       padding: 10px;
       margin-bottom: 10px;
       border: none;
-    }
-    input[type='text'], input[type='password'] {
-      width: 235px;
+      min-width: 0;
+      width: 100%;
+
+      -webkit-box-sizing: border-box; /* Safari/Chrome, other WebKit */
+      -moz-box-sizing: border-box;    /* Firefox, other Gecko */
+      box-sizing: border-box;         /* Opera/IE 8+ */
     }
     input[type='submit'] {
+      padding: 10px;
       margin-top: 10px;
-      display: inline-block;
       background: $highlight;
       color: $background;
     }
     input[type='checkbox'] {
+      margin-top: 10px;
+      width: auto;
       display: inline-block;
     }
     span {
-      font-size: 11px;
+      font-size: 12px;
       &.remember {
+        display: inline;
         margin-left: 2px;
       }
       &.extra {

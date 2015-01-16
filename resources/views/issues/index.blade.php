@@ -1,20 +1,15 @@
 @extends('layout.base')
+@section('crumbtrail')
+<a href="/"><li><i class="fa fa-home"></i> Home</li></a>
+<a href="/projects"><li>Projects</li></a>
+<a href="/projects/{{{ $project->stub }}}"><li>{{{ $project->name }}}</li></a>
+<li class="current">Issues</li>
+@stop
 @section('body')
     <body>
     @include('layout.nav')
     <div id="main">
-        <header>
-            <ul class="crumbtrail">
-                <a href="/"><li><i class="fa fa-home"></i> Home</li></a>
-                <a href="/projects"><li>Projects</li></a>
-                <a href="/projects/{{{ $project->stub }}}"><li>{{{ $project->name }}}</li></a>
-                <li class="current">Issues</li>
-            </ul>
-            <ul class="account">
-                <a href="#"><li><i class="fa fa-lock"></i> Account</li></a>
-                <a href="/auth/logout"><li><i class="fa fa-sign-out"></i> Sign out</li></a>
-            </ul>
-        </header>
+        @include('layout.header')
         <h1>All issues</h1>
         <div id="issues">
         <input class="filter search" placeholder="Search" />

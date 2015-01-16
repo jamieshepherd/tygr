@@ -9,7 +9,7 @@
             <input name="email" type="text" placeholder="Email address">
             <label for="email">Password</label>
             <input name="password" type="password" placeholder="Password">
-            <input name="remember" type="checkbox"><span class="remember">Remember me</span><br/>
+            <input name="remember" type="checkbox"><span class="remember">Remember me</span>
             <input type="submit" value="Sign in">
         </form>
     </div>

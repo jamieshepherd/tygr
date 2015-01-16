@@ -16,14 +16,14 @@ class CreateIssuesTable extends Migration {
 		{
 			$table->increments('id');
             // Author
-			$table->integer('author')->unsigned();
-			$table->foreign('author')->references('id')->on('users');
+			$table->integer('author_id')->unsigned();
+			$table->foreign('author_id')->references('id')->on('users');
             // Assigned to
-			$table->integer('assigned_to')->unsigned();
-			$table->foreign('assigned_to')->references('id')->on('users');
+			$table->integer('assigned_to_id')->unsigned();
+			$table->foreign('assigned_to_id')->references('id')->on('users');
             // Project
-			$table->integer('project')->unsigned();
-			$table->foreign('project')->references('id')->on('projects');
+			$table->integer('project_id')->unsigned();
+			$table->foreign('project_id')->references('id')->on('projects');
             // Project version
 			$table->string('version');
             // Page reference

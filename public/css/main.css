@@ -220,13 +220,14 @@ table.full {
     table.full td.priority.low {
       border-color: #8BCEDC; }
   table.full tr {
-    background: #fff; }
-    table.full tr:first-child {
+    background: #eeeeee;
+    border-radius: 5px; }
+    table.full tr.head {
       background: none; }
-      table.full tr:first-child:hover {
+      table.full tr.head:hover {
         background: none; }
     table.full tr:nth-of-type(2n) {
-      background: #eee; }
+      background: #ffffff; }
     table.full tr:hover {
       background: #dddddd; }
     table.full tr.resolved {
@@ -292,6 +293,10 @@ input {
   input.filter {
     clear: left;
     float: right; }
+  input.filter {
+    font-size: 12px;
+    margin-top: -10px;
+    margin-bottom: 20px; }
 
 button {
   font-family: "museo-slab", serif;

@@ -35,7 +35,7 @@ class User extends Model implements AuthenticatableContract, CanResetPasswordCon
 
 	public function client()
 	{
-		return $this->belongsTo('App\Client', 'client');
+		return $this->belongsTo('App\Client', 'client_id');
 	}
 
 /*	public function group()

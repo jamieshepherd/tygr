@@ -15,12 +15,12 @@
         <h2>Description</h2>
         <div class="info-box">
             <table>
-                <tr><td><strong>Assigned to</strong></td><td>Jamie Shepherd</td></tr>
+                <tr><td><strong>Assigned to</strong></td><td>Sponge - Development</td></tr>
                 <tr><td><strong>Reference</strong></td><td>{{{ $issue->reference }}}</td></tr>
                 <tr><td><strong>Issue type</strong></td><td>{{{ $issue->type }}}</td></tr>
-                <tr><td><strong>Author</strong></td><td>{{ $issue->author }}</td></tr>
+                <tr><td><strong>Author</strong></td><td>{{ $issue->author->name }}</td></tr>
                 <tr><td><strong>Status</strong></td><td>{{ $issue->status }}</td></tr>
-                <tr><td><strong>Priority</strong></td><td><i class="fa fa-exclamation-circle"></i> {{ ucfirst($issue->priority) }}</td></tr>
+                <tr><td><strong>Priority</strong></td><td>{{ ucfirst($issue->priority) }}</td></tr>
             </table>
             <hr/>
             <table>

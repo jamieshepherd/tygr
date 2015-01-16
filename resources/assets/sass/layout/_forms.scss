@@ -33,6 +33,11 @@ input {
     clear: left;
     float: right;
   }
+  &.filter {
+    font-size: 12px;
+    margin-top: -10px;
+    margin-bottom: 20px;
+  }
 }
 button {
   font-family: "museo-slab", serif;

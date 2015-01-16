@@ -15,6 +15,7 @@ class ClientController extends Controller {
 	public function index()
 	{
 		$clients = Client::all();
+
 		return view('clients.index')->with('clients', $clients);
 	}
 
@@ -47,7 +48,9 @@ class ClientController extends Controller {
 	public function show($stub)
 	{
 		$client = Client::where('stub', '=', $stub)->firstOrFail();
+
 		$projects = Project::all();
+
 		return view('client')->with('client', $client)->with('projects', $projects);
 	}
 

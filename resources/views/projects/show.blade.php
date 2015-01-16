@@ -1,19 +1,14 @@
 @extends('layout.base')
+@section('crumbtrail')
+<a href="/"><li><i class="fa fa-home"></i> Home</li></a>
+<a href="/projects"><li>Projects</li></a>
+<li class="current">{{{ $project->name }}}</li>
+@stop
 @section('body')
     <body>
     @include('layout.nav')
     <div id="main">
-        <header>
-            <ul class="crumbtrail">
-                <a href="/"><li><i class="fa fa-home"></i> Home</li></a>
-                <a href="/projects"><li>Projects</li></a>
-                <a href=""><li class="current">{{{ $project->name }}}</li></a>
-            </ul>
-            <ul class="account">
-                <a href="/account"><li><i class="fa fa-lock"></i> Account</li></a>
-                <a href="/auth/logout"><li><i class="fa fa-sign-out"></i> Sign out</li></a>
-            </ul>
-        </header>
+        @include('layout.header')
         <h1>{{{ $project->name }}}</h1>
         <!--a class="action" href="/posts/create"><i class="fa fa-plus-circle"></i> New post</a-->
         <a class="action" href="{{ Request::url() }}/issues"><i class="fa fa-bug"></i> View issues</a>
@@ -24,9 +19,9 @@
             </table>
             <hr/>
             <table>
-                <tr><td><strong>Project manager</strong></td><td>{{{ $project->project_manager }}}</td></tr>
-                <tr><td><strong>Lead developer</strong></td><td>{{{ $project->lead_developer }}}</td></tr>
-                <tr><td><strong>Lead designer</strong></td><td>{{{ $project->lead_designer }}}</td></tr>
+                <tr><td><strong>Project manager</strong></td><td>{{{ $project->project_manager->name }}}</td></tr>
+                <tr><td><strong>Lead developer</strong></td><td>{{{ $project->lead_developer->name }}}</td></tr>
+                <tr><td><strong>Lead designer</strong></td><td>{{{ $project->lead_designer->name }}}</td></tr>
             </table>
             <hr/>
             <table>

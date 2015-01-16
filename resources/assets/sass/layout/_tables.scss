@@ -24,15 +24,16 @@ table.full {
     }
   }
   tr {
-    background: #fff;
-    &:first-child {
+    background: #eeeeee;
+    border-radius: 5px;
+    &.head {
       background: none;
       &:hover {
         background: none;
       }
     }
     &:nth-of-type(2n) {
-      background: #eee;
+      background: #ffffff;
     }
     &:hover {
       background: #dddddd;

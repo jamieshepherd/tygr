@@ -12,13 +12,13 @@
         @include('layout.header')
         <h1>All issues</h1>
         <div id="issues">
-        <input class="filter search" placeholder="Search" />
+        <input class="filter search" placeholder="Search" autofocus/>
         <a class="action" href="/projects/{{ $project->stub }}/issues/create"><i class="fa fa-plus-circle"></i> New issue</a>
         <a class="action" href=""><i class="fa fa-bug"></i> All issues</a>
         <a class="action" href="{{ Request::url() }}/me"><i class="fa fa-check-square-o"></i> Assigned to me</a>
 
         <table class="full">
-            <tr>
+            <tr class="head">
                 <th>Ref.</th>
                 <th>Type</th>
                 <th>Description</th>
@@ -27,7 +27,8 @@
             </tr>
             <tbody class="list">
             @foreach($issues as $issue)
-            <tr onclick="document.location='{{{ Request::url() }}}/show/{{{ $issue->id }}}';" style="cursor:pointer">
+            <tr onclick="document.location='{{{ Request::url() }}}/show/{{{ $issue->id }}}';" style="cursor:pointer" @if($issue->status == 'Resolved') class="resolved" @endif
+                    >
                 <td class="reference">{{{ $issue->reference }}}</td>
                 <td class="type">{{{ $issue->type }}}</td>
                 <td class="description">{{{ substr($issue->description,0,72) }}}...</td>

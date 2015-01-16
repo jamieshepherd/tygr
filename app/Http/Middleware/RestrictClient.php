@@ -13,11 +13,11 @@ class RestrictClient {
 	 */
 	public function handle($request, Closure $next)
 	{
-		$client = \Auth::user()->client;
+		$client = \Auth::user()->client_id;
 		$stub = $request->segment(2);
 		$project = Project::where('stub', '=', $stub)->firstOrFail();
 
-		if($client != 1 && $project->client != $client) {
+		if($client != 1 && $project->client_id != $client) {
 			return response('Unauthorized.', 401);
 		}
 

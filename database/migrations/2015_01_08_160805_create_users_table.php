@@ -16,10 +16,10 @@ class CreateUsersTable extends Migration {
 		{
 			$table->increments('id');
             // Client association
-			$table->integer('client')->unsigned();
-			$table->foreign('client')->references('id')->on('clients');
-            // Permissions level
-			$table->integer('level');
+			$table->integer('client_id')->unsigned();
+			$table->foreign('client_id')->references('id')->on('clients');
+            // Permissions rank
+			$table->integer('rank');
             // Full name
 			$table->string('name');
             // Email address

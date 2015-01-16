@@ -15,13 +15,9 @@ class ProjectController extends Controller {
 	 */
 	public function index()
 	{
-        $client = \Auth::user()->client;
+        $client = \Auth::user()->client_id;
 
-		if($client == 1) {
-			$projects = Project::all();
-		} else {
-			$projects = Project::where('client', '=', $client)->get();
-		}
+		$projects = Project::where('client_id', '=', $client)->get();
 
         return view('projects.index')->with('projects', $projects);
 	}
@@ -54,15 +50,13 @@ class ProjectController extends Controller {
 	 */
 	public function show($stub)
 	{
-        $client = \Auth::user()->client;
+        $client = \Auth::user()->client_id;
 
 		if($client == 1) {
-			$project = Project::with('project_manager')
-				->where('stub', '=', $stub)
+			$project = Project::where('stub', '=', $stub)
 				->firstOrFail();
 		} else {
-			$project = Project::with('project_manager')
-				->where('client', '=', $client)
+			$project = Project::where('client_id', '=', $client)
 				->where('stub', '=', $stub)
 				->firstOrFail();
 		}

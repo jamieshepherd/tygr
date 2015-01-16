@@ -53,7 +53,7 @@ class IssueController extends Controller {
 	public function show($stub, $id)
 	{
 		$project = Project::where('stub', '=', $stub)->firstOrFail();
-		$issue = Issue::where('project', '=', $project->id)->where('id', '=', $id)->firstOrFail();
+		$issue = Issue::where('project_id', '=', $project->id)->where('id', '=', $id)->firstOrFail();
 		return view('issues.show')->with('project', $project)->with('issue', $issue);
 	}
 

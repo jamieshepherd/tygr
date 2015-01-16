@@ -27,16 +27,16 @@ class Issue extends Model {
 
 	public function project()
 	{
-		return $this->belongsTo('App\Project', 'project');
+		return $this->belongsTo('App\Project', 'project_id');
 	}
 
 	public function author()
 	{
-		return $this->belongsTo('App\User', 'author');
+		return $this->belongsTo('App\User', 'author_id');
 	}
 
 	public function assigned_to()
 	{
-		return $this->belongsTo('App\User', 'assigned_to');
+		return $this->belongsTo('App\User', 'assigned_to_id');
 	}
 }

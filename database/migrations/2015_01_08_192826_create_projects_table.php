@@ -20,17 +20,17 @@ class CreateProjectsTable extends Migration {
             // URI stub
 			$table->string('stub');
             // Client
-			$table->integer('client')->unsigned();
-			$table->foreign('client')->references('id')->on('clients');
+			$table->integer('client_id')->unsigned();
+			$table->foreign('client_id')->references('id')->on('clients');
             // Project manager
-            $table->integer('project_manager')->unsigned()->nullable();
-            $table->foreign('project_manager')->references('id')->on('users');
+            $table->integer('project_manager_id')->unsigned()->nullable();
+            $table->foreign('project_manager_id')->references('id')->on('users');
             // Lead developer
-            $table->integer('lead_developer')->unsigned()->nullable();
-            $table->foreign('lead_developer')->references('id')->on('users');
+            $table->integer('lead_developer_id')->unsigned()->nullable();
+            $table->foreign('lead_developer_id')->references('id')->on('users');
             // Lead designer
-            $table->integer('lead_designer')->unsigned()->nullable();
-            $table->foreign('lead_designer')->references('id')->on('users');
+            $table->integer('lead_designer_id')->unsigned()->nullable();
+            $table->foreign('lead_designer_id')->references('id')->on('users');
             // Current version
 			$table->string('current_version');
             // Timestamps

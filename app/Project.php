@@ -27,27 +27,27 @@ class Project extends Model {
 
 	public function client()
 	{
-		return $this->belongsTo('App\Client', 'client');
+		return $this->belongsTo('App\Client', 'client_id');
 	}
 
     public function project_manager()
     {
-        return $this->belongsTo('App\User', 'project_manager');
+        return $this->belongsTo('App\User', 'project_manager_id');
     }
 
     public function lead_developer()
     {
-        return $this->belongsTo('App\User', 'lead_developer');
+        return $this->belongsTo('App\User', 'lead_developer_id');
     }
 
     public function lead_designer()
     {
-        return $this->belongsTo('App\User', 'lead_designer');
+        return $this->belongsTo('App\User', 'lead_designer_id');
     }
 
 	public function issues()
 	{
-		return $this->hasMany('App\Issue', 'project');
+		return $this->hasMany('App\Issue', 'project_id');
 	}
 
 }

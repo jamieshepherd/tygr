@@ -17,7 +17,7 @@ class RestrictClient {
 		$stub = $request->segment(2);
 		$project = Project::where('stub', '=', $stub)->firstOrFail();
 
-		if($client != null && $project->client != $client) {
+		if($client != 1 && $project->client != $client) {
 			return response('Unauthorized.', 401);
 		}
 

@@ -8,6 +8,9 @@ class ClientTableSeeder extends Seeder {
 
     public function run()
     {
+        Client::create(array(
+            'name'    => 'Sponge UK'
+        ));
 
         Client::create(array(
             'name'    => 'Sports Direct'

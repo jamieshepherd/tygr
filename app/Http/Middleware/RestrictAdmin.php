@@ -15,7 +15,7 @@ class RestrictAdmin {
 	{
 		$client = \Auth::user()->client;
 
-		if($client != null) {
+		if($client != 1) {
 			return response('Unauthorized.', 401);
 		}
 

@@ -20,13 +20,13 @@
         <a class="action" href="{{ Request::url() }}/review/"><i class="fa fa-desktop"></i> Review area</a>
         <div class="info-box">
             <table>
-                <tr><td><strong>Current version</strong></td><td>2.0</td></tr>
+                <tr><td><strong>Current version</strong></td><td>{{{ $project->current_version }}}</td></tr>
             </table>
             <hr/>
             <table>
-                <tr><td><strong>Project manager</strong></td><td>Andrea Kinsman</td></tr>
-                <tr><td><strong>Lead developer</strong></td><td>Jamie Shepherd</td></tr>
-                <tr><td><strong>Lead designer</strong></td><td>Alex Stewart</td></tr>
+                <tr><td><strong>Project manager</strong></td><td>{{{ $project->project_manager }}}</td></tr>
+                <tr><td><strong>Lead developer</strong></td><td>{{{ $project->lead_developer }}}</td></tr>
+                <tr><td><strong>Lead designer</strong></td><td>{{{ $project->lead_designer }}}</td></tr>
             </table>
             <hr/>
             <table>

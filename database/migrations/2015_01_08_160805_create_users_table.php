@@ -16,7 +16,7 @@ class CreateUsersTable extends Migration {
 		{
 			$table->increments('id');
             // Client association
-			$table->integer('client')->unsigned()->nullable();
+			$table->integer('client')->unsigned();
 			$table->foreign('client')->references('id')->on('clients');
             // Permissions level
 			$table->integer('level');

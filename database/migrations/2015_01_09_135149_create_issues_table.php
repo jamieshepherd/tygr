@@ -15,18 +15,28 @@ class CreateIssuesTable extends Migration {
 		Schema::create('issues', function(Blueprint $table)
 		{
 			$table->increments('id');
+            // Author
 			$table->integer('author')->unsigned();
 			$table->foreign('author')->references('id')->on('users');
+            // Assigned to
 			$table->integer('assigned_to')->unsigned();
 			$table->foreign('assigned_to')->references('id')->on('users');
+            // Project
 			$table->integer('project')->unsigned();
 			$table->foreign('project')->references('id')->on('projects');
+            // Project version
 			$table->string('version');
+            // Page reference
 			$table->string('reference');
+            // Issue type
 			$table->string('type');
+            // Description
 			$table->text('description');
+            // Status
 			$table->string('status');
+            // Priority
 			$table->string('priority');
+            // Timestamps
 			$table->timestamps();
 		});
 	}

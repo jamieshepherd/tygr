@@ -10,18 +10,15 @@ class ClientTableSeeder extends Seeder {
     {
 
         Client::create(array(
-            'name'    => 'Sports Direct',
-            'stub'    => 'sportsdirect'
+            'name'    => 'Sports Direct'
         ));
 
         Client::create(array(
-            'name'    => 'Farmfoods',
-            'stub'    => 'farmfoods'
+            'name'    => 'Farmfoods'
         ));
 
         Client::create(array(
-            'name'    => 'Toyota',
-            'stub'    => 'toyota'
+            'name'    => 'Toyota'
         ));
     }
 

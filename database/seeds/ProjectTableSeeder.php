@@ -16,8 +16,38 @@ class ProjectTableSeeder extends Seeder {
         ));
 
         Project::create(array(
-            'name'    => 'Another Project',
-            'stub'    => 'another',
+            'name'    => 'Sales and Service',
+            'stub'    => 'salesandservice',
+            'client'  => 1
+        ));
+
+        Project::create(array(
+            'name'    => 'Introduction to Sports Direct',
+            'stub'    => 'introtosportsdirect',
+            'client'  => 1
+        ));
+
+        Project::create(array(
+            'name'    => 'Session 1',
+            'stub'    => 'session1',
+            'client'  => 2
+        ));
+
+        Project::create(array(
+            'name'    => 'Session 2',
+            'stub'    => 'session2',
+            'client'  => 2
+        ));
+
+        Project::create(array(
+            'name'    => 'Session 3',
+            'stub'    => 'session3',
+            'client'  => 2
+        ));
+
+        Project::create(array(
+            'name'    => 'Session 4',
+            'stub'    => 'session4',
             'client'  => 2
         ));
     }

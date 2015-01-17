@@ -17,6 +17,10 @@ class CreateClientsTable extends Migration {
 			$table->increments('id');
             // Client name
 			$table->string('name');
+			// Client stub
+			$table->string('stub');
+			// Client type
+			$table->string('type');
             // Timestamps
 			$table->timestamps();
 		});

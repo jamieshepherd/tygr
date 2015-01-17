@@ -4,6 +4,7 @@ use App\Http\Requests;
 use App\Http\Controllers\Controller;
 use App\Client;
 use App\Project;
+use Input;
 
 class ClientController extends Controller {
 
@@ -26,7 +27,7 @@ class ClientController extends Controller {
 	 */
 	public function create()
 	{
-		return 'create client';
+		return view('clients.create');
 	}
 
 	/**
@@ -36,7 +37,11 @@ class ClientController extends Controller {
 	 */
 	public function store()
 	{
-		//
+		$client = new Client();
+		$client->name	= Input::get('name');
+		$client->stub	= Input::get('stub');
+		$client->type	= Input::get('type');
+		$client->save();
 	}
 
 	/**
@@ -49,9 +54,7 @@ class ClientController extends Controller {
 	{
 		$client = Client::where('stub', '=', $stub)->firstOrFail();
 
-		$projects = Project::all();
-
-		return view('client')->with('client', $client)->with('projects', $projects);
+		return view('clients.show')->with('client', $client);
 	}
 
 	/**
@@ -62,7 +65,9 @@ class ClientController extends Controller {
 	 */
 	public function edit($id)
 	{
-		//
+		$client = Client::where('id', '=', $id)->firstOrFail();
+
+		return view('clients.edit')->with('client', $client);
 	}
 
 	/**
@@ -73,7 +78,14 @@ class ClientController extends Controller {
 	 */
 	public function update($id)
 	{
-		//
+		$client = Client::where('id', '=', $id)->firstOrFail();
+		$client->name	= Input::get('name');
+		$client->stub	= Input::get('stub');
+		$client->type	= Input::get('type');
+		$result = $client->save();
+		if($result) {
+			return redirect('/clients/show/'.$client->stub);
+		}
 	}
 
 	/**

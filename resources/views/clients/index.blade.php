@@ -19,17 +19,17 @@
         <table class="full">
             <tr class="head">
                 <th>Name</th>
+                <th>Stub</th>
                 <th>Type</th>
-                <th>Projects</th>
                 <th>Reviewarea</th>
             </tr>
             <tbody class="list">
             @foreach($clients as $client)
-            <tr onclick="document.location='/projects/{{{ $client->stub }}}';" style="cursor:pointer">
+            <tr onclick="document.location='/clients/show/{{{ $client->stub }}}';" style="cursor:pointer">
                 <td class="name">{{{ $client->name }}}</td>
-                <td>Client</td>
-                <td><a href="/projects/{{{ $client->stub }}}">View projects</a></td>
-                <td><a href="http://reviewarea.co.uk/Secure/{{{ $client->stub }}}">Reviewarea</a></td>
+                <td class="stub">{{{ $client->stub }}}</td>
+                <td>{{{ $client->type }}}</td>
+                <td><a href="http://reviewarea.co.uk/Secure/{{{ $client->stub }}}">reviewarea.co.uk/Secure/{{{ $client->stub }}}</a></td>
             </tr>
             @endforeach
             </tbody>

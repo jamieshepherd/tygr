@@ -8,8 +8,8 @@
     @include('layout.nav')
     <div id="main">
         @include('layout.header')
-        <h1>Your projects</h1>
-            @foreach ($projects as $project)
+        <h1>Projects <em>{{{ $client->name }}}</em></h1>
+            @foreach ($client->projects as $project)
                 <div class="project-preview">
                     <h3>{{ $project->name }}</h3>
                     <ul>

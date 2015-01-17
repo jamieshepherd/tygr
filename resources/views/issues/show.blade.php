@@ -12,6 +12,8 @@
     <div id="main">
         @include('layout.header')
         <h1>Issue details</h1>
+        <a class="action" href="/clients/create"><i class="fa fa-plus-circle"></i> Edit issue</a>
+        <a class="action" href="/clients/create"><i class="fa fa-check-circle"></i> Mark as resolved</a>
         <h2>Description</h2>
         <div class="info-box">
             <table>

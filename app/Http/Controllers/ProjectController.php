@@ -4,7 +4,7 @@ use App\Http\Requests;
 use App\Http\Controllers\Controller;
 use App\Client;
 use App\Project;
-use App\Users;
+use App\User;
 
 class ProjectController extends Controller {
 
@@ -15,11 +15,9 @@ class ProjectController extends Controller {
 	 */
 	public function index()
 	{
-        $client = \Auth::user()->client_id;
-
-		$projects = Project::where('client_id', '=', $client)->get();
-
-        return view('projects.index')->with('projects', $projects);
+        $client_id = \Auth::user()->client_id;
+		$client = Client::where('id', '=', $client_id)->firstOrFail();
+        return view('projects.index')->with('client', $client);
 	}
 
 	/**

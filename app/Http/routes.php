@@ -29,9 +29,11 @@ Route::group(array('middleware' => 'auth'), function() {
 	Route::group(array('middleware' => 'admin'), function() {
 		Route::get('dashboard', 'DashboardController@show');
 		Route::get('clients', 'ClientController@index');
-		Route::get('clients/{stub}', 'ClientController@show');
+		Route::get('clients/show/{stub}', 'ClientController@show');
 		Route::get('clients/create', 'ClientController@create');
+		Route::post('clients/create', 'ClientController@store');
 		Route::get('clients/edit/{id}', 'ClientController@edit');
+		Route::post('clients/edit/{id}', 'ClientController@update');
 		Route::get('clients/delete/{id}', 'ClientController@delete');
 	});
 

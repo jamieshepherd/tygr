@@ -35,6 +35,8 @@ h1 {
   font-size: 32px;
   color: #f24a33;
   margin-bottom: 20px; }
+  h1 em {
+    color: #999999; }
 
 h2 {
   font-size: 20px;

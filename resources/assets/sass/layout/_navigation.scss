@@ -24,7 +24,10 @@ nav {
     }
   }
   a {
-    color: #fff;
+    color: $background;
     text-decoration: none;
+    &:hover {
+      color: $background;
+    }
   }
 }

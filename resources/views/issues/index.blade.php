@@ -1,4 +1,7 @@
 @extends('layout.base')
+@section('headlinks')
+<script src="/js/list.min.js"></script>
+@stop
 @section('crumbtrail')
 <a href="/"><li><i class="fa fa-home"></i> Home</li></a>
 <a href="/projects"><li>Projects</li></a>
@@ -39,7 +42,6 @@
             </tbody>
         </table>
         </div>
-        <script src="/js/list.js"></script>
         <script>
             var options = { valueNames: ['reference', 'type', 'description', 'date'] };
             var userList = new List('issues', options);

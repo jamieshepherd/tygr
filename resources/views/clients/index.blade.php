@@ -1,6 +1,6 @@
 @extends('layout.base')
 @section('headlinks')
-<!--script src="http://listjs.com/no-cdn/list.js"></script-->
+<script src="/js/list.min.js"></script>
 @stop
 @section('crumbtrail')
 <a href="/"><li><i class="fa fa-home"></i> Home</li></a>
@@ -35,7 +35,6 @@
             </tbody>
         </table>
         </div>
-        <script src="/js/list.js"></script>
         <script>
             var options = { valueNames: ['name'] };
             var userList = new List('clients', options);

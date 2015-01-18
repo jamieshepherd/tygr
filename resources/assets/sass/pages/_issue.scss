@@ -1,0 +1,45 @@
+section {
+  max-width: 722px;
+  border-top: 1px dotted $accent;
+  margin-top: 20px;
+  h2 {
+    margin: 20px 0 15px;
+  }
+  .details {
+    margin: 20px 0;
+    li {
+      display: inline-block;
+      width: 40%;
+      margin-right: 10px;
+      margin-bottom: 12px;
+      strong {
+        background: $accent;
+        padding: 3px 5px;
+      }
+    }
+  }
+    .update {
+      display: block;
+      border: 1px solid #cccccc;
+      border-left: 3px solid #bbbbbb;
+      padding: 10px;
+      margin: 10px 0;
+      border-radius: 3px;
+      &:hover {
+        border-color: #999;
+      }
+      h3 {
+        color: #333;
+        margin-bottom: 15px;
+        em {
+          font-weight: 300;
+          color: #999999;
+        }
+      }
+      p {
+        margin: 0;
+        color: #666;
+      }
+    }
+
+}

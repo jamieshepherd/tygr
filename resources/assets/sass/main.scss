@@ -13,13 +13,16 @@
 'layout/navigation',
 'layout/header',
 'layout/tables',
-'layout/forms';
+'layout/forms',
+'layout/updates';
 
 @import
-'components/buttons';
+'components/buttons',
+'components/dropzone';
 
 @import
-'pages/login';
+'pages/login',
+'pages/issue';
 
 @import
 'themes/sponge';

@@ -35,6 +35,7 @@ Route::group(array('middleware' => 'auth'), function() {
 		Route::get('clients/edit/{id}', 'ClientController@edit');
 		Route::post('clients/edit/{id}', 'ClientController@update');
 		Route::get('clients/delete/{id}', 'ClientController@delete');
+		Route::get('clients/delete/{id}/confirm', 'ClientController@destroy');
 	});
 
     //>> Make sure user has at least CLIENT priviliges

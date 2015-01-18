@@ -26,3 +26,12 @@ p {
 strong {
   font-weight: 700;
 }
+a {
+  color: $foreground;
+  text-decoration: none;
+  border-bottom: 1px dotted $foreground;
+  &:hover {
+    color: #8BCEDC;
+    border-color: #8BCEDC;
+  }
+}

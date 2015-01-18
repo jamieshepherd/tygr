@@ -57,6 +57,14 @@ p {
 strong {
   font-weight: 700; }
 
+a {
+  color: #2F2927;
+  text-decoration: none;
+  border-bottom: 1px dotted #2F2927; }
+  a:hover {
+    color: #8BCEDC;
+    border-color: #8BCEDC; }
+
 html, body {
   height: 100%; }
 
@@ -115,44 +123,6 @@ hr {
       margin: 0; }
     #main .project-preview .actions {
       padding: 0 10px 20px 10px; }
-  #main a {
-    color: #2F2927;
-    text-decoration: none;
-    border-bottom: 1px dotted #2F2927; }
-    #main a:hover {
-      color: #8BCEDC;
-      border-color: #8BCEDC; }
-    #main a.blank {
-      color: inherit;
-      background: inherit;
-      text-decoration: none;
-      border: none; }
-      #main a.blank:hover {
-        color: inherit;
-        background: inherit;
-        text-decoration: none;
-        border: none; }
-    #main a.action {
-      font-size: 10px;
-      text-transform: uppercase;
-      font-weight: 500;
-      padding: 5px;
-      /*background: $highlight;
-      color: $background;
-      border: none;*/
-      background: #f24a33;
-      border: 1px solid #f24a33;
-      color: #ffffff; }
-      #main a.action:hover {
-        background: #8BCEDC;
-        border-color: #8BCEDC;
-        color: #ffffff; }
-      #main a.action.secondary {
-        background: none;
-        border: 1px solid #2F2927;
-        color: #2F2927; }
-      #main a.action.right {
-        float: right; }
 
 nav {
   background: #222629;
@@ -333,6 +303,29 @@ textarea {
 .group.small {
   float: left;
   margin-right: 100px; }
+
+a.action {
+  font-size: 10px;
+  text-transform: uppercase;
+  font-weight: 500;
+  padding: 5px;
+  background: #f24a33;
+  border: 1px solid #f24a33;
+  color: #ffffff; }
+  a.action:hover {
+    background: #8BCEDC;
+    border-color: #8BCEDC;
+    color: #ffffff; }
+  a.action.secondary {
+    background: #ddd;
+    border: 1px solid #ddd;
+    color: #2F2927; }
+    a.action.secondary:hover {
+      background: #8BCEDC;
+      border-color: #8BCEDC;
+      color: #ffffff; }
+  a.action.right {
+    float: right; }
 
 .photo {
   background: url('/images/login-photo.jpg') no-repeat center center fixed;

@@ -1,0 +1,29 @@
+a {
+  &.action {
+    font-size: 10px;
+    text-transform: uppercase;
+    font-weight: 500;
+    padding: 5px;
+    background: $highlight;
+    border: 1px solid $highlight;
+    color: $background;
+    &:hover {
+      background: $tertiary;
+      border-color: $tertiary;
+      color: $background;
+    }
+    &.secondary {
+      background: $accent;
+      border: 1px solid $accent;
+      color: $foreground;
+      &:hover {
+        background: $tertiary;
+        border-color: $tertiary;
+        color: $background;
+      }
+    }
+    &.right {
+      float: right;
+    }
+  }
+}

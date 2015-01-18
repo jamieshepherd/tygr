@@ -41,7 +41,10 @@ class ClientController extends Controller {
 		$client->name	= Input::get('name');
 		$client->stub	= Input::get('stub');
 		$client->type	= Input::get('type');
-		$client->save();
+		$result = $client->save();
+		if($result) {
+			return redirect('/clients/show/'.$client->stub);
+		}
 	}
 
 	/**
@@ -89,6 +92,19 @@ class ClientController extends Controller {
 	}
 
 	/**
+	 * Show confirmation for deletion of a resource.
+	 *
+	 * @param  int  $id
+	 * @return Response
+	 */
+	public function delete($id)
+	{
+		$client = Client::where('id', '=', $id)->firstOrFail();
+
+		return view ('clients.delete')->with('client', $client);
+	}
+
+	/**
 	 * Remove the specified resource from storage.
 	 *
 	 * @param  int  $id
@@ -96,7 +112,9 @@ class ClientController extends Controller {
 	 */
 	public function destroy($id)
 	{
-		//
+		Client::destroy($id);
+
+		return redirect('/clients');
 	}
 
 }

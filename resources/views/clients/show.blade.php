@@ -17,6 +17,7 @@
         <input class="filter search" placeholder="Search" autofocus/>
         <a class="action" href="/clients/create"><i class="fa fa-plus-circle"></i> New project</a>
         <a class="action" href="/clients/edit/{{ $client->id }}"><i class="fa fa-edit"></i> Edit client</a>
+        <a class="action" href="/clients/delete/{{ $client->id }}"><i class="fa fa-exclamation-circle"></i> Delete client</a>
         <table class="full">
             <tr class="head">
                 <th>Client</th>

@@ -8,7 +8,10 @@
     @include('layout.nav')
     <div id="main">
         @include('layout.header')
-        <h1>Projects <em>{{{ $client->name }}}</em></h1>
+        <h1>Projects</h1>
+            @if(count($client->projects)==0)
+                <p>Sorry, there are no projects listed for this client yet.</p>
+            @endif
             @foreach ($client->projects as $project)
                 <div class="project-preview">
                     <h3>{{ $project->name }}</h3>

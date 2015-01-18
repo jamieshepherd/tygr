@@ -37,29 +37,31 @@
         </section>
         <section>
             <h2>Issue history</h2>
-            <div class="update">
-                <h3><i class="fa fa-user"></i> John Smith <em>1 day ago</em></h3>
-                <p><strong><i class="fa fa-check-circle"></i> Issue changed to resolved</strong></p>
+            <div class="update status">
+                <div class="timestamp">14 Feb @ 3:55pm</div>
+                <h3><i class="fa fa-check-circle"></i> Issue changed to resolved <em>by John Smith</em></h3>
             </div>
-            <div class="update">
-                <h3><i class="fa fa-user"></i> Jamie Shepherd <em>1 day ago</em></h3>
-                <p><strong><i class="fa fa-info-circle"></i> Issue assigned to</strong> Sports Direct</p>
+            <div class="update status">
+                <div class="timestamp">14 Feb @ 3:55pm</div>
+                <h3><i class="fa fa-info-circle"></i> Issue assigned to Sports Direct <em>by Jamie Shepherd</em> </h3>
             </div>
-            <div class="update">
-                <h3><i class="fa fa-user"></i> Jamie Shepherd <em>1 day ago</em></h3>
+            <div class="update comment">
+                <div class="timestamp">14 Feb @ 3:55pm</div>
+                <h3><i class="fa fa-user"></i> Jamie Shepherd <span class="tag">Sponge UK</span></h3>
                 <p>Hi John, think we've nailed the issue now. Please check through and resolve the issue when you're happy that it's been fixed!</p>
             </div>
-            <div class="update">
-                <h3><i class="fa fa-user"></i> Jamie Shepherd <em>2 days ago</em></h3>
-                <p><strong><i class="fa fa-info-circle"></i> Issue assigned to</strong> Sponge UK Developers</p>
+            <div class="update status">
+                <div class="timestamp">14 Feb @ 3:55pm</div>
+                <h3><i class="fa fa-info-circle"></i> Issue assigned to Sponge UK Developers <em>by Jamie Shepherd</em></h3>
             </div>
-            <div class="update">
-                <h3><i class="fa fa-user"></i> Jamie Shepherd</h3>
+            <div class="update comment">
+                <div class="timestamp">14 Feb @ 3:55pm</div>
+                <h3><i class="fa fa-user"></i> Jamie Shepherd <span class="tag">Sponge UK</span></h3>
                 <p>I think this is an important issue. We'll have to get back to you after some internal testing to make sure this component works correctly, at the moment it does not.</p>
             </div>
-            <div class="update">
-                <h3><i class="fa fa-user"></i> John Smith <em>5 days ago</em></h3>
-                <p><strong><i class="fa fa-exclamation-circle"></i> Issue was created</strong></p>
+            <div class="update status">
+                <div class="timestamp">14 Feb @ 3:55pm</div>
+                <h3><i class="fa fa-exclamation-circle"></i> Issue was created <em>by John Smith</em></h3>
             </div>
         </section>
 

@@ -333,6 +333,31 @@ button {
     button[type='submit']:hover {
       background: #8BCEDC; }
 
+a.version-dropdown {
+  background: #f24a33;
+  color: #ffffff;
+  position: relative;
+  min-width: 150px;
+  cursor: pointer; }
+  a.version-dropdown ul {
+    border-top: 1px solid #ffffff;
+    position: absolute;
+    top: 25px;
+    left: 0;
+    display: none; }
+    a.version-dropdown ul a {
+      display: inline; }
+  a.version-dropdown:hover ul {
+    display: block;
+    margin-left: -1px; }
+    a.version-dropdown:hover ul li {
+      min-width: 100px;
+      padding: 8px;
+      background: #f24a33;
+      color: #ffffff; }
+      a.version-dropdown:hover ul li:hover {
+        background: #8BCEDC; }
+
 .dropzone, .dropzone *, .dropzone-previews, .dropzone-previews * {
   box-sizing: border-box; }
 

@@ -17,8 +17,16 @@
         <div id="issues">
         <input class="filter search" placeholder="Search" autofocus/>
         <a class="action" href="/projects/{{ $project->stub }}/issues/create"><i class="fa fa-plus-circle"></i> New issue</a>
-        <a class="action" href=""><i class="fa fa-bug"></i> All issues</a>
-        <a class="action" href="{{ Request::url() }}/me"><i class="fa fa-check-square-o"></i> Assigned to me</a>
+        <a class="action version-dropdown">
+            <i class="fa fa-chevron-circle-down"></i> All issues
+            <ul>
+                <li onclick="document.location='{{{ Request::url() }}}/version/v1';"><i class="fa fa-angle-right"></i> Version 1</li>
+                <li onclick="document.location='{{{ Request::url() }}}/version/v2';"><i class="fa fa-angle-right"></i> Version 2</li>
+                <li onclick="document.location='{{{ Request::url() }}}/version/v3';"><i class="fa fa-angle-right"></i> Version 3</li>
+            </ul>
+        </a>
+        <!--a class="action" href=""><i class="fa fa-bug"></i> All issues</a-->
+        <!--a class="action" href="{{ Request::url() }}/me"><i class="fa fa-check-square-o"></i> Assigned to me</a-->
 
         <table class="full">
             <tr class="head">

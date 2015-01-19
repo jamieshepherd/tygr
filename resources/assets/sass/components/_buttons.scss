@@ -46,3 +46,35 @@ button {
     }
   }
 }
+a {
+  &.version-dropdown {
+    background: $highlight;
+    color: $background;
+    position: relative;
+    min-width: 150px;
+    cursor: pointer;
+    ul {
+      border-top: 1px solid #ffffff;
+      position: absolute;
+      top: 25px;
+      left: 0;
+      display: none;
+      a {
+        display: inline;
+      }
+    }
+    &:hover ul {
+      display: block;
+      margin-left: -1px;
+      li {
+        min-width: 100px;
+        padding: 8px;
+        background: $highlight;
+        color: $background;
+        &:hover {
+          background: $tertiary;
+        }
+      }
+    }
+  }
+}

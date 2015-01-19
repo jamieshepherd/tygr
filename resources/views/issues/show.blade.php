@@ -13,7 +13,7 @@
         @include('layout.header')
         <h1>Issue details</h1>
         <a class="action" href="/clients/create"><i class="fa fa-plus-circle"></i> Edit issue</a>
-        <a class="action" href="/clients/create"><i class="fa fa-check-circle"></i> Resolve issue</a>
+        <a class="action" href="{{ Request::url() }}/resolve"><i class="fa fa-check-circle"></i> Resolve issue</a>
         <section>
             <h2>Details</h2>
             <ul class="details">

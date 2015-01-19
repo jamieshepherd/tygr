@@ -48,5 +48,6 @@ Route::group(array('middleware' => 'auth'), function() {
 		Route::get('projects/{stub}/issues/edit/{id}', 'IssueController@edit');
 		Route::post('projects/{stub}/issues/edit/{id}', 'IssueController@edit');
 		Route::get('projects/{stub}/issues/show/{id}', 'IssueController@show');
+		Route::get('projects/{stub}/issues/show/{id}/resolve', 'IssueController@resolve');
 	});
 });

@@ -113,4 +113,19 @@ class IssueController extends Controller {
 		//
 	}
 
+	/**
+	 * Set an issue's status to resolved.
+	 *
+	 * @param  string  $stub
+	 * @param  int  $id
+	 * @return Response
+	 */
+	public function resolve($stub, $id)
+	{
+		$issue = Issue::where('id', '=', $id)->firstOrFail();
+		$issue->status = 'Resolved';
+		$issue->save();
+		return redirect('projects/'.$stub.'/issues');
+	}
+
 }

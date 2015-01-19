@@ -277,8 +277,7 @@ input {
 
 select {
   display: inline-block;
-  min-width: 200px;
-  text-indent: 5px; }
+  min-width: 250px; }
 
 textarea {
   width: 100%;

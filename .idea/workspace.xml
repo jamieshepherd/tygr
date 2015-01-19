@@ -2,9 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ab4cf7f0-b20d-488a-a8be-dd1edad98773" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/Controllers/IssueController.php" afterPath="$PROJECT_DIR$/app/Http/Controllers/IssueController.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/routes.php" afterPath="$PROJECT_DIR$/app/Http/routes.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/issues/show.blade.php" afterPath="$PROJECT_DIR$/resources/views/issues/show.blade.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/assets/sass/layout/_forms.scss" afterPath="$PROJECT_DIR$/resources/assets/sass/layout/_forms.scss" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/composer.lock" afterPath="$PROJECT_DIR$/composer.lock" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="sponge.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -39,11 +39,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="_forms.scss" pinned="false" current-in-tab="false">
+      <file leaf-file-name="_forms.scss" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/resources/assets/sass/layout/_forms.scss">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="1419" max-vertical-offset="2343">
-              <caret line="43" column="1" selection-start-line="43" selection-start-column="1" selection-end-line="43" selection-end-column="1" />
+            <state vertical-scroll-proportion="0.8325688" vertical-offset="792" max-vertical-offset="2310">
+              <caret line="46" column="19" selection-start-line="46" selection-start-column="19" selection-end-line="46" selection-end-column="19" />
               <folding />
             </state>
           </provider>
@@ -79,10 +79,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="IssueController.php" pinned="false" current-in-tab="true">
+      <file leaf-file-name="IssueController.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/Http/Controllers/IssueController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.5080275" vertical-offset="3649" max-vertical-offset="4521">
+            <state vertical-scroll-proportion="0.0" vertical-offset="3649" max-vertical-offset="4521">
               <caret line="124" column="61" selection-start-line="124" selection-start-column="61" selection-end-line="124" selection-end-column="61" />
               <folding>
                 <element signature="e#39#61#0#PHP" expanded="true" />
@@ -184,12 +184,12 @@
         <option value="$PROJECT_DIR$/app/Issue.php" />
         <option value="$PROJECT_DIR$/database/seeds/IssueHistoryTableSeeder.php" />
         <option value="$PROJECT_DIR$/resources/views/clients/delete.blade.php" />
-        <option value="$PROJECT_DIR$/resources/assets/sass/layout/_forms.scss" />
         <option value="$PROJECT_DIR$/resources/assets/sass/components/_buttons.scss" />
         <option value="$PROJECT_DIR$/resources/views/clients/create.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/issues/show.blade.php" />
         <option value="$PROJECT_DIR$/app/Http/routes.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/IssueController.php" />
+        <option value="$PROJECT_DIR$/resources/assets/sass/layout/_forms.scss" />
       </list>
     </option>
   </component>
@@ -961,7 +961,7 @@
     <property name="options.splitter.details.proportions" value="0.2" />
     <property name="FullScreen" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
-    <property name="SearchEverywhereHistoryKey" value="clientcont&#9;FILE&#9;file:///Users/jamie/Google Drive/Web/tygr/app/Http/Controllers/ClientController.php&#10;issuecontro&#9;FILE&#9;file:///Users/jamie/Google Drive/Web/tygr/app/Http/Controllers/IssueController.php&#10;issuetab&#9;FILE&#9;file:///Users/jamie/Google Drive/Web/tygr/database/migrations/2015_01_09_135149_create_issues_table.php&#10;issue/show&#9;FILE&#9;file:///Users/jamie/Google Drive/Web/tygr/resources/views/issues/show.blade.php&#10;issuecon&#9;FILE&#9;file:///Users/jamie/Google Drive/Web/tygr/app/Http/Controllers/IssueController.php&#10;routes&#9;FILE&#9;file:///Users/jamie/Google Drive/Web/tygr/app/Http/routes.php&#10;issue/create&#9;FILE&#9;file:///Users/jamie/Google Drive/Web/tygr/resources/views/issues/create.blade.php&#10;buttons&#9;FILE&#9;file://D:/Web/tygr/resources/assets/sass/components/_buttons.scss&#10;clients/delete&#9;FILE&#9;file://D:/Web/tygr/resources/views/clients/delete.blade.php&#10;clients/create&#9;FILE&#9;file://D:/Web/tygr/resources/views/clients/create.blade.php&#10;forms&#9;FILE&#9;file://D:/Web/tygr/resources/assets/sass/layout/_forms.scss&#10;createissuehist&#9;FILE&#9;file:///Users/jamie/Google Drive/Web/tygr/database/migrations/2015_01_19_131140_create_issue_history_table.php&#10;issues/show&#9;FILE&#9;file:///Users/jamie/Google Drive/Web/tygr/resources/views/issues/show.blade.php&#10;tables&#9;FILE&#9;file:///Users/jamie/Google Drive/Web/tygr/resources/assets/sass/layout/_tables.scss&#10;issues/index&#9;FILE&#9;file:///Users/jamie/Google Drive/Web/tygr/resources/views/issues/index.blade.php&#10;issue&#9;FILE&#9;file:///Users/jamie/Google Drive/Web/tygr/database/seeds/IssueTableSeeder.php&#10;createissues&#9;FILE&#9;file:///Users/jamie/Google Drive/Web/tygr/database/migrations/2015_01_09_135149_create_issues_table.php&#10;clientcon&#9;FILE&#9;file:///Users/jamie/Google Drive/Web/tygr/app/Http/Controllers/ClientController.php&#10;typ&#9;FILE&#9;file:///Users/jamie/Google Drive/Web/tygr/resources/assets/sass/utils/_typography.scss&#10;login&#9;FILE&#9;file:///Users/jamie/Google Drive/Web/tygr/resources/views/auth/login.blade.php&#10;but&#9;FILE&#9;file:///Users/jamie/Google Drive/Web/tygr/resources/assets/sass/components/_buttons.scss&#10;projectcon&#9;FILE&#9;file:///Users/jamie/Google Drive/Web/tygr/app/Http/Controllers/ProjectController.php&#10;clientcontr&#9;FILE&#9;file:///Users/jamie/Google Drive/Web/tygr/app/Http/Controllers/ClientController.php&#10;middleware/&#9;FILE&#9;file:///Users/jamie/Google Drive/Web/tygr/app/Http/Middleware&#10;clientcontrol&#9;FILE&#9;file:///Users/jamie/Google Drive/Web/tygr/app/Http/Controllers/ClientController.php&#10;clienttable&#9;FILE&#9;file:///Users/jamie/Google Drive/Web/tygr/database/migrations/2015_01_08_160804_create_clients_table.php&#10;typogra&#9;FILE&#9;file:///Users/jamie/Google Drive/Web/tygr/resources/assets/sass/utils/_typography.scss&#10;projectcontroll&#9;FILE&#9;file:///Users/jamie/Google Drive/Web/tygr/app/Http/Controllers/ProjectController.php&#10;projects/inde&#9;FILE&#9;file:///Users/jamie/Google Drive/Web/tygr/resources/views/projects/index.blade.php&#10;clientsee&#9;FILE&#9;file:///Users/jamie/Google Drive/Web/tygr/database/seeds/ClientTableSeeder.php&#10;clients/inde&#9;FILE&#9;file:///Users/jamie/Google Drive/Web/tygr/resources/views/clients/index.blade.php&#10;clients/show&#9;FILE&#9;file:///Users/jamie/Google Drive/Web/tygr/resources/views/clients/show.blade.php&#10;client_tabl&#9;FILE&#9;file:///Users/jamie/Google Drive/Web/tygr/database/migrations/2015_01_08_160804_create_clients_table.php&#10;clienttab&#9;FILE&#9;file:///Users/jamie/Google Drive/Web/tygr/database/seeds/ClientTableSeeder.php&#10;createclient&#9;FILE&#9;file:///Users/jamie/Google Drive/Web/tygr/database/migrations/2015_01_08_160804_create_clients_table.php&#10;create_proj&#9;FILE&#9;file:///Users/jamie/Google Drive/Web/tygr/database/migrations/2015_01_08_192826_create_projects_table.php&#10;projectcontrol&#9;FILE&#9;file:///Users/jamie/Google Drive/Web/tygr/app/Http/Controllers/ProjectController.php&#10;projects/in&#9;FILE&#9;file:///Users/jamie/Google Drive/Web/tygr/resources/views/projects/index.blade.php&#10;base&#9;FILE&#9;file:///Users/jamie/Google Drive/Web/tygr/resources/views/layout/base.blade.php&#10;typog&#9;FILE&#9;file:///Users/jamie/Google Drive/Web/tygr/resources/assets/sass/utils/_typography.scss&#10;users&#9;FILE&#9;file:///Users/jamie/Google Drive/Web/tygr/database/migrations/2015_01_08_160805_create_users_table.php&#10;scss&#9;FILE&#9;file:///Users/jamie/Google Drive/Web/sponge/resources/assets/sass/main.scss&#10;issuecontroller&#9;FILE&#9;file:///Users/jamie/Google Drive/Web/sponge/app/Http/Controllers/IssueController.php" />
+    <property name="SearchEverywhereHistoryKey" value="forms&#9;FILE&#9;file:///Users/jamie/Google Drive/Web/tygr/resources/assets/sass/layout/_forms.scss&#10;clientcont&#9;FILE&#9;file:///Users/jamie/Google Drive/Web/tygr/app/Http/Controllers/ClientController.php&#10;issuecontro&#9;FILE&#9;file:///Users/jamie/Google Drive/Web/tygr/app/Http/Controllers/IssueController.php&#10;issuetab&#9;FILE&#9;file:///Users/jamie/Google Drive/Web/tygr/database/migrations/2015_01_09_135149_create_issues_table.php&#10;issue/show&#9;FILE&#9;file:///Users/jamie/Google Drive/Web/tygr/resources/views/issues/show.blade.php&#10;issuecon&#9;FILE&#9;file:///Users/jamie/Google Drive/Web/tygr/app/Http/Controllers/IssueController.php&#10;routes&#9;FILE&#9;file:///Users/jamie/Google Drive/Web/tygr/app/Http/routes.php&#10;issue/create&#9;FILE&#9;file:///Users/jamie/Google Drive/Web/tygr/resources/views/issues/create.blade.php&#10;buttons&#9;FILE&#9;file://D:/Web/tygr/resources/assets/sass/components/_buttons.scss&#10;clients/delete&#9;FILE&#9;file://D:/Web/tygr/resources/views/clients/delete.blade.php&#10;clients/create&#9;FILE&#9;file://D:/Web/tygr/resources/views/clients/create.blade.php&#10;createissuehist&#9;FILE&#9;file:///Users/jamie/Google Drive/Web/tygr/database/migrations/2015_01_19_131140_create_issue_history_table.php&#10;issues/show&#9;FILE&#9;file:///Users/jamie/Google Drive/Web/tygr/resources/views/issues/show.blade.php&#10;tables&#9;FILE&#9;file:///Users/jamie/Google Drive/Web/tygr/resources/assets/sass/layout/_tables.scss&#10;issues/index&#9;FILE&#9;file:///Users/jamie/Google Drive/Web/tygr/resources/views/issues/index.blade.php&#10;issue&#9;FILE&#9;file:///Users/jamie/Google Drive/Web/tygr/database/seeds/IssueTableSeeder.php&#10;createissues&#9;FILE&#9;file:///Users/jamie/Google Drive/Web/tygr/database/migrations/2015_01_09_135149_create_issues_table.php&#10;clientcon&#9;FILE&#9;file:///Users/jamie/Google Drive/Web/tygr/app/Http/Controllers/ClientController.php&#10;typ&#9;FILE&#9;file:///Users/jamie/Google Drive/Web/tygr/resources/assets/sass/utils/_typography.scss&#10;login&#9;FILE&#9;file:///Users/jamie/Google Drive/Web/tygr/resources/views/auth/login.blade.php&#10;but&#9;FILE&#9;file:///Users/jamie/Google Drive/Web/tygr/resources/assets/sass/components/_buttons.scss&#10;projectcon&#9;FILE&#9;file:///Users/jamie/Google Drive/Web/tygr/app/Http/Controllers/ProjectController.php&#10;clientcontr&#9;FILE&#9;file:///Users/jamie/Google Drive/Web/tygr/app/Http/Controllers/ClientController.php&#10;middleware/&#9;FILE&#9;file:///Users/jamie/Google Drive/Web/tygr/app/Http/Middleware&#10;clientcontrol&#9;FILE&#9;file:///Users/jamie/Google Drive/Web/tygr/app/Http/Controllers/ClientController.php&#10;clienttable&#9;FILE&#9;file:///Users/jamie/Google Drive/Web/tygr/database/migrations/2015_01_08_160804_create_clients_table.php&#10;typogra&#9;FILE&#9;file:///Users/jamie/Google Drive/Web/tygr/resources/assets/sass/utils/_typography.scss&#10;projectcontroll&#9;FILE&#9;file:///Users/jamie/Google Drive/Web/tygr/app/Http/Controllers/ProjectController.php&#10;projects/inde&#9;FILE&#9;file:///Users/jamie/Google Drive/Web/tygr/resources/views/projects/index.blade.php&#10;clientsee&#9;FILE&#9;file:///Users/jamie/Google Drive/Web/tygr/database/seeds/ClientTableSeeder.php&#10;clients/inde&#9;FILE&#9;file:///Users/jamie/Google Drive/Web/tygr/resources/views/clients/index.blade.php&#10;clients/show&#9;FILE&#9;file:///Users/jamie/Google Drive/Web/tygr/resources/views/clients/show.blade.php&#10;client_tabl&#9;FILE&#9;file:///Users/jamie/Google Drive/Web/tygr/database/migrations/2015_01_08_160804_create_clients_table.php&#10;clienttab&#9;FILE&#9;file:///Users/jamie/Google Drive/Web/tygr/database/seeds/ClientTableSeeder.php&#10;createclient&#9;FILE&#9;file:///Users/jamie/Google Drive/Web/tygr/database/migrations/2015_01_08_160804_create_clients_table.php&#10;create_proj&#9;FILE&#9;file:///Users/jamie/Google Drive/Web/tygr/database/migrations/2015_01_08_192826_create_projects_table.php&#10;projectcontrol&#9;FILE&#9;file:///Users/jamie/Google Drive/Web/tygr/app/Http/Controllers/ProjectController.php&#10;projects/in&#9;FILE&#9;file:///Users/jamie/Google Drive/Web/tygr/resources/views/projects/index.blade.php&#10;base&#9;FILE&#9;file:///Users/jamie/Google Drive/Web/tygr/resources/views/layout/base.blade.php&#10;typog&#9;FILE&#9;file:///Users/jamie/Google Drive/Web/tygr/resources/assets/sass/utils/_typography.scss&#10;users&#9;FILE&#9;file:///Users/jamie/Google Drive/Web/tygr/database/migrations/2015_01_08_160805_create_users_table.php&#10;scss&#9;FILE&#9;file:///Users/jamie/Google Drive/Web/sponge/resources/assets/sass/main.scss&#10;issuecontroller&#9;FILE&#9;file:///Users/jamie/Google Drive/Web/sponge/app/Http/Controllers/IssueController.php" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
@@ -1388,14 +1388,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/resources/assets/sass/layout/_forms.scss">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="1476" max-vertical-offset="2556">
-          <caret line="43" column="1" selection-start-line="43" selection-start-column="1" selection-end-line="43" selection-end-column="1" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/resources/assets/sass/components/_buttons.scss">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1908">
@@ -1454,11 +1446,19 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/Http/Controllers/IssueController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.5080275" vertical-offset="3649" max-vertical-offset="4521">
+        <state vertical-scroll-proportion="0.0" vertical-offset="3649" max-vertical-offset="4521">
           <caret line="124" column="61" selection-start-line="124" selection-start-column="61" selection-end-line="124" selection-end-column="61" />
           <folding>
             <element signature="e#39#61#0#PHP" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/assets/sass/layout/_forms.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.8325688" vertical-offset="792" max-vertical-offset="2310">
+          <caret line="46" column="19" selection-start-line="46" selection-start-column="19" selection-end-line="46" selection-end-column="19" />
+          <folding />
         </state>
       </provider>
     </entry>

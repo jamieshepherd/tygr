@@ -18,7 +18,7 @@
             <h2>Details</h2>
             <ul class="details">
                 <li><strong>Created by:</strong> {{{ $issue->author->name }}}</li>
-                <li><strong>Assigned to:</strong> {{{ $issue->assigned_to->name }}}</li>
+                <li><strong>Assigned to:</strong> {{{ isset($issue->assigned_to) ? $issue->assigned_to->name : '' }}}</li>
                 <li><strong>Reference:</strong> {{{ $issue->reference }}}</li>
                 <li><strong>Issue type:</strong> {{{ $issue->type }}}</li>
                 <li><strong>Status:</strong> {{{ $issue->status }}}</li>
@@ -37,32 +37,25 @@
         </section>
         <section>
             <h2>Issue history</h2>
-            <div class="update status">
-                <div class="timestamp">14 Feb @ 3:55pm</div>
-                <h3><i class="fa fa-check-circle"></i> Issue changed to resolved <em>by John Smith</em></h3>
-            </div>
-            <div class="update status">
-                <div class="timestamp">14 Feb @ 3:55pm</div>
-                <h3><i class="fa fa-info-circle"></i> Issue assigned to Sports Direct <em>by Jamie Shepherd</em> </h3>
-            </div>
-            <div class="update comment">
-                <div class="timestamp">14 Feb @ 3:55pm</div>
-                <h3><i class="fa fa-user"></i> Jamie Shepherd <span class="tag">Sponge UK</span></h3>
-                <p>Hi John, think we've nailed the issue now. Please check through and resolve the issue when you're happy that it's been fixed!</p>
-            </div>
-            <div class="update status">
-                <div class="timestamp">14 Feb @ 3:55pm</div>
-                <h3><i class="fa fa-info-circle"></i> Issue assigned to Sponge UK Developers <em>by Jamie Shepherd</em></h3>
-            </div>
-            <div class="update comment">
-                <div class="timestamp">14 Feb @ 3:55pm</div>
-                <h3><i class="fa fa-user"></i> Jamie Shepherd <span class="tag">Sponge UK</span></h3>
-                <p>I think this is an important issue. We'll have to get back to you after some internal testing to make sure this component works correctly, at the moment it does not.</p>
-            </div>
-            <div class="update status">
-                <div class="timestamp">14 Feb @ 3:55pm</div>
-                <h3><i class="fa fa-exclamation-circle"></i> Issue was created <em>by John Smith</em></h3>
-            </div>
+            @foreach($issue->issue_history as $update)
+                <div class="update {{ $update->type }}">
+                    <div class="timestamp">{{ $update->created_at }}</div>
+                    @if($update->type == 'comment')
+                        <h3><i class="fa fa-user"></i> {{{ $update->author->name }}} <span class="tag">Sponge UK</span></h3>
+                        <p>{{{ $update->comment }}}</p>
+                    @elseif($update->type == 'status')
+                        @if($update->status == 'created')
+                        <h3><i class="fa fa-exclamation-circle"></i> {{{ $update->comment }}} <em>by {{{ $issue->author->name }}}</em></h3>
+                        @endif
+                        @if($update->status == 'assigned')
+                            <h3><i class="fa fa-info-circle"></i> {{{ $update->comment }}} <em>by {{{ $issue->author->name }}}</em></h3>
+                        @endif
+                        @if($update->status == 'resolved')
+                            <h3><i class="fa fa-check-circle"></i> {{{ $update->comment }}} <em>by {{{ $issue->author->name }}}</em></h3>
+                        @endif
+                    @endif
+                </div>
+            @endforeach
         </section>
 
     </div>

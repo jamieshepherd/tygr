@@ -18,7 +18,7 @@ class IssueTableSeeder extends Seeder {
             'type'       => 'Bug fix',
             'status'     => 'New',
             'description'=> file_get_contents('http://loripsum.net/api/1/short/plaintext'),
-            'priority'   => 'high'
+            'priority'   => 'High'
         ));
 
         Issue::create(array(
@@ -30,7 +30,7 @@ class IssueTableSeeder extends Seeder {
             'type'       => 'Bug fix',
             'status'     => 'New',
             'description'=> file_get_contents('http://loripsum.net/api/1/short/plaintext'),
-            'priority'   => 'high'
+            'priority'   => 'High'
         ));
 
         Issue::create(array(
@@ -42,7 +42,7 @@ class IssueTableSeeder extends Seeder {
             'type'       => 'Bug fix',
             'status'     => 'New',
             'description'=> file_get_contents('http://loripsum.net/api/1/short/plaintext'),
-            'priority'   => 'high'
+            'priority'   => 'High'
         ));
 
         Issue::create(array(
@@ -54,7 +54,7 @@ class IssueTableSeeder extends Seeder {
             'type'       => 'Bug fix',
             'status'     => 'New',
             'description'=> file_get_contents('http://loripsum.net/api/1/short/plaintext'),
-            'priority'   => 'medium'
+            'priority'   => 'Medium'
         ));
 
         Issue::create(array(
@@ -66,7 +66,7 @@ class IssueTableSeeder extends Seeder {
             'type'       => 'Bug fix',
             'status'     => 'New',
             'description'=> file_get_contents('http://loripsum.net/api/1/short/plaintext'),
-            'priority'   => 'medium'
+            'priority'   => 'Medium'
         ));
 
         Issue::create(array(
@@ -78,7 +78,7 @@ class IssueTableSeeder extends Seeder {
             'type'       => 'Bug fix',
             'status'     => 'Assigned',
             'description'=> file_get_contents('http://loripsum.net/api/1/short/plaintext'),
-            'priority'   => 'low'
+            'priority'   => 'Low'
         ));
 
         Issue::create(array(
@@ -90,7 +90,7 @@ class IssueTableSeeder extends Seeder {
             'type'       => 'Bug fix',
             'status'     => 'Assigned',
             'description'=> file_get_contents('http://loripsum.net/api/1/short/plaintext'),
-            'priority'   => 'low'
+            'priority'   => 'Low'
         ));
 
         Issue::create(array(
@@ -102,7 +102,7 @@ class IssueTableSeeder extends Seeder {
             'type'       => 'Bug fix',
             'status'     => 'Assigned',
             'description'=> file_get_contents('http://loripsum.net/api/1/short/plaintext'),
-            'priority'   => 'low'
+            'priority'   => 'Low'
         ));
 
         Issue::create(array(
@@ -114,7 +114,7 @@ class IssueTableSeeder extends Seeder {
             'type'       => 'Bug fix',
             'status'     => 'Assigned',
             'description'=> file_get_contents('http://loripsum.net/api/1/short/plaintext'),
-            'priority'   => 'low'
+            'priority'   => 'Low'
         ));
 
         Issue::create(array(
@@ -126,7 +126,7 @@ class IssueTableSeeder extends Seeder {
             'type'       => 'Bug fix',
             'status'     => 'Resolved',
             'description'=> file_get_contents('http://loripsum.net/api/1/short/plaintext'),
-            'priority'   => 'low'
+            'priority'   => 'Low'
         ));
 
         Issue::create(array(
@@ -138,7 +138,7 @@ class IssueTableSeeder extends Seeder {
             'type'       => 'Bug fix',
             'status'     => 'Resolved',
             'description'=> file_get_contents('http://loripsum.net/api/1/short/plaintext'),
-            'priority'   => 'low'
+            'priority'   => 'Low'
         ));
 
         Issue::create(array(
@@ -150,7 +150,7 @@ class IssueTableSeeder extends Seeder {
             'type'       => 'Bug fix',
             'status'     => 'Resolved',
             'description'=> file_get_contents('http://loripsum.net/api/1/short/plaintext'),
-            'priority'   => 'low'
+            'priority'   => 'Low'
         ));
     }
 

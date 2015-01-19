@@ -10,7 +10,7 @@
     <div id="main">
         @include('layout.header')
         <h1>Create a client</h1>
-        <form action="" method="POST" accept-charset="UTF-8">
+        <form action="{{{ Request::url() }}}" method="POST" accept-charset="UTF-8">
         <input type="hidden" name="_token" value="<?php echo csrf_token(); ?>">
 
             <label>Client type</label>

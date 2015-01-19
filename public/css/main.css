@@ -188,11 +188,11 @@ table.full {
     min-width: 50px; }
   table.full td.priority {
     border-right: 5px solid #e6e6e6; }
-    table.full td.priority.high {
+    table.full td.priority.High {
       border-color: #f24a33; }
-    table.full td.priority.medium {
+    table.full td.priority.Medium {
       border-color: #FEBD19; }
-    table.full td.priority.low {
+    table.full td.priority.Low {
       border-color: #8BCEDC; }
   table.full tr {
     background: #eeeeee;

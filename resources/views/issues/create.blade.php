@@ -15,6 +15,7 @@
         @include('layout.header')
         <h1>Log an issue</h1>
         <form action="{{{ Request::url() }}}" method="POST" accept-charset="UTF-8">
+        <input type="hidden" name="_token" value="<?php echo csrf_token(); ?>">
 
             <label>What type of issue is this?</label>
             <input name="type" type="text" placeholder="e.g. Bug, text amend, design" autofocus>

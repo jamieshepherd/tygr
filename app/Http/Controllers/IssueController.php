@@ -5,6 +5,7 @@ use App\Http\Controllers\Controller;
 use App\Client;
 use App\Project;
 use App\Issue;
+use Input;
 
 class IssueController extends Controller {
 
@@ -37,18 +38,23 @@ class IssueController extends Controller {
 	/**
 	 * Store a newly created resource in storage.
 	 *
+	 * @param  string  $stub;
 	 * @return Response
 	 */
-	public function store()
+	public function store($stub)
 	{
-        $stub = $request->segment(2);
 		$issue = new Issue();
+		$project = Project::where('stub', '=', $stub)->firstOrFail();
+		$issue->author_id   = \Auth::user()->id;
+		$issue->project_id  = $project->id;
         $issue->type        = Input::get('type');
+		$issue->status      = 'New';
+		$issue->priority    = 'Medium';
         $issue->reference   = Input::get('reference');
         $issue->description = Input::get('description');
         $result = $issue->save();
         if($result) {
-            return redirect('projects/'.$stub.'/issue/show/'.$issue->id);
+            return redirect('projects/'.$stub.'/issues/show/'.$issue->id);
         }
 	}
 

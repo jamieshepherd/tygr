@@ -38,6 +38,11 @@ class User extends Model implements AuthenticatableContract, CanResetPasswordCon
 		return $this->belongsTo('App\Client', 'client_id');
 	}
 
+	public function issue_history()
+	{
+		return $this->hasMany('App\IssueHistory');
+	}
+
 /*	public function group()
 	{
 		return $this->hasMany('Group');

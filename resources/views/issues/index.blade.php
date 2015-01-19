@@ -36,7 +36,7 @@
                 <td class="type">{{{ $issue->type }}}</td>
                 <td class="description">{{{ substr($issue->description,0,72) }}}...</td>
                 <td class="date">{{ date("m-d-y",strtotime($issue->created_at)) }}</td>
-                <td @if(Auth::user()->client_id == 1) id class="priority @endif {{ $issue->priority }}">{{{ $issue->status }}}</td>
+                <td class="priority @if(Auth::user()->rank < 3) {{ $issue->priority }} @endif">{{{ $issue->status }}}</td>
             </tr>
             @endforeach
             </tbody>

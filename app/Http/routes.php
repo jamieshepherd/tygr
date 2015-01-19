@@ -44,7 +44,7 @@ Route::group(array('middleware' => 'auth'), function() {
 		Route::get('projects/{stub}/issues', 'IssueController@index');
 		Route::get('projects/{stub}/issues/version/{id}', 'IssueController@version');
 		Route::get('projects/{stub}/issues/create', 'IssueController@create');
-		Route::post('projects/{stub}/issues/create', 'IssueController@create');
+		Route::post('projects/{stub}/issues/create', 'IssueController@store');
 		Route::get('projects/{stub}/issues/edit/{id}', 'IssueController@edit');
 		Route::post('projects/{stub}/issues/edit/{id}', 'IssueController@edit');
 		Route::get('projects/{stub}/issues/show/{id}', 'IssueController@show');

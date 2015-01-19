@@ -13,7 +13,7 @@
         @include('layout.header')
         <h1>Issue details</h1>
         <a class="action" href="/clients/create"><i class="fa fa-plus-circle"></i> Edit issue</a>
-        <a class="action" href="/clients/create"><i class="fa fa-check-circle"></i> Close issue</a>
+        <a class="action" href="/clients/create"><i class="fa fa-check-circle"></i> Resolve issue</a>
         <section>
             <h2>Details</h2>
             <ul class="details">
@@ -32,7 +32,14 @@
         <section>
             <h2>Update issue</h2>
             <textarea placeholder="Enter a comment here" autofocus></textarea><br/>
-            <input name="resolved" type="checkbox"><span class="remember">Mark as resolved</span><br/><br/>
+            Assign issue <select name="select">
+                <option value="client">Sports Direct</option>
+                <option value="project_management" selected>Sponge UK (Project Management)</option>
+                <option value="development">Sponge UK (Development)</option>
+                <option value="visual_design">Sponge UK (Visual Design)</option>
+                <option value="instructional_design">Sponge UK (Instructional Design)</option>
+            </select>
+            <input name="resolved" type="checkbox">Mark as resolved<br/><br/>
             <a class="action" href="#"><i class="fa fa-arrow-circle-right"></i> Update issue</a>
         </section>
         <section>

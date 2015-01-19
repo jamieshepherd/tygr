@@ -5,6 +5,7 @@ use App\Http\Controllers\Controller;
 use App\Client;
 use App\Project;
 use App\Issue;
+use App\IssueHistory;
 use Input;
 
 class IssueController extends Controller {
@@ -47,15 +48,23 @@ class IssueController extends Controller {
 		$project = Project::where('stub', '=', $stub)->firstOrFail();
 		$issue->author_id   = \Auth::user()->id;
 		$issue->project_id  = $project->id;
-        $issue->type        = Input::get('type');
+		$issue->type        = Input::get('type');
 		$issue->status      = 'New';
 		$issue->priority    = 'Medium';
-        $issue->reference   = Input::get('reference');
-        $issue->description = Input::get('description');
-        $result = $issue->save();
-        if($result) {
-            return redirect('projects/'.$stub.'/issues/show/'.$issue->id);
-        }
+		$issue->reference   = Input::get('reference');
+		$issue->description = Input::get('description');
+		$result = $issue->save();
+
+		if($result) {
+			$update = new IssueHistory();
+			$update->issue_id   = $issue->id;
+			$update->author_id  = $issue->author->id;
+			$update->type		= 'status';
+			$update->status     = 'created';
+			$update->comment    = 'Issue was created';
+			$update->save();
+			return redirect('projects/'.$stub.'/issues/show/'.$issue->id);
+		}
 	}
 
 	/**

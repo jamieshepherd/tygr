@@ -272,21 +272,8 @@ input {
     font-size: 12px;
     margin-top: -10px;
     margin-bottom: 20px; }
-
-button {
-  font-family: "museo-slab", serif;
-  font-size: 12px; }
-  button[type='submit'] {
-    min-width: 0;
-    margin-top: 10px;
-    padding: 7px 8px;
-    display: inline-block;
-    background: #f24a33;
-    color: #ffffff;
-    border: none;
-    cursor: pointer; }
-    button[type='submit']:hover {
-      background: #8BCEDC; }
+  input[type='radio'], input[type='checkbox'] {
+    min-width: 0; }
 
 select {
   display: inline-block;
@@ -311,7 +298,8 @@ a.action {
   font-size: 10px;
   text-transform: uppercase;
   font-weight: 500;
-  padding: 5px;
+  margin-top: -1px;
+  padding: 6px 8px 6px 8px;
   background: #f24a33;
   border: 1px solid #f24a33;
   color: #ffffff; }
@@ -329,6 +317,22 @@ a.action {
       color: #ffffff; }
   a.action.right {
     float: right; }
+
+button {
+  font-family: "museo-slab", serif;
+  font-size: 10px;
+  text-transform: uppercase; }
+  button[type='submit'] {
+    min-width: 0;
+    margin-top: 10px;
+    padding: 7px 8px;
+    display: inline-block;
+    background: #f24a33;
+    color: #ffffff;
+    border: none;
+    cursor: pointer; }
+    button[type='submit']:hover {
+      background: #8BCEDC; }
 
 .dropzone, .dropzone *, .dropzone-previews, .dropzone-previews * {
   box-sizing: border-box; }

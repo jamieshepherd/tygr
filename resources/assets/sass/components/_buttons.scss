@@ -3,7 +3,8 @@ a {
     font-size: 10px;
     text-transform: uppercase;
     font-weight: 500;
-    padding: 5px;
+    margin-top: -1px;
+    padding: 6px 8px 6px 8px;
     background: $highlight;
     border: 1px solid $highlight;
     color: $background;
@@ -24,6 +25,24 @@ a {
     }
     &.right {
       float: right;
+    }
+  }
+}
+button {
+  font-family: "museo-slab", serif;
+  font-size: 10px;
+  text-transform: uppercase;
+  &[type='submit'] {
+    min-width: 0;
+    margin-top: 10px;
+    padding: 7px 8px;
+    display: inline-block;
+    background: $highlight;
+    color: $background;
+    border: none;
+    cursor: pointer;
+    &:hover {
+      background: $tertiary;
     }
   }
 }

@@ -24,6 +24,7 @@
             <input name="stub" type="text" placeholder="e.g. spongeuk">
 
             <br/><button type="submit"><i class="fa fa-arrow-circle-right"></i> Create client</button>
+            <a class="action secondary" href="javascript:history.back()"><i class="fa fa-times-circle"></i> Cancel</a>
         </form>
 
     </div>

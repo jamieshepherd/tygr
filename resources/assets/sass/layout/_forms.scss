@@ -38,22 +38,8 @@ input {
     margin-top: -10px;
     margin-bottom: 20px;
   }
-}
-button {
-  font-family: "museo-slab", serif;
-  font-size: 12px;
-  &[type='submit'] {
+  &[type='radio'], &[type='checkbox'] {
     min-width: 0;
-    margin-top: 10px;
-    padding: 7px 8px;
-    display: inline-block;
-    background: $highlight;
-    color: $background;
-    border: none;
-    cursor: pointer;
-    &:hover {
-      background: $tertiary;
-    }
   }
 }
 select {

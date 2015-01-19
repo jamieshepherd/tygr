@@ -30,6 +30,7 @@ class IssueController extends Controller {
 	public function create($stub)
 	{
 		$project = Project::where('stub', '=', $stub)->firstOrFail();
+
 		return view("issues.create")->with('project', $project);
 	}
 
@@ -40,7 +41,15 @@ class IssueController extends Controller {
 	 */
 	public function store()
 	{
-		//
+        $stub = $request->segment(2);
+		$issue = new Issue();
+        $issue->type        = Input::get('type');
+        $issue->reference   = Input::get('reference');
+        $issue->description = Input::get('description');
+        $result = $issue->save();
+        if($result) {
+            return redirect('projects/'.$stub.'/issue/show/'.$issue->id);
+        }
 	}
 
 	/**

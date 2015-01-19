@@ -17,10 +17,10 @@
         <form action="{{{ Request::url() }}}" method="POST" accept-charset="UTF-8">
 
             <label>What type of issue is this?</label>
-            <input type="text" placeholder="e.g. Bug, text amend, design" autofocus>
+            <input name="type" type="text" placeholder="e.g. Bug, text amend, design" autofocus>
 
             <label>Where did this happen?</label>
-            <input type="text" placeholder="e.g. Page 7 or b-09">
+            <input name="reference" type="text" placeholder="e.g. Page 7 or b-09">
 
             <label>Describe the issue</label>
             <textarea name="description" class="large" placeholder="Please be as specific as you can, including details on how to reproduce the issue, browser (IE/Chrome) and operating system."></textarea>

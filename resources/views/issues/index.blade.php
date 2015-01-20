@@ -55,5 +55,8 @@
             var userList = new List('issues', options);
         </script>
     </div>
+    <div class="notify-box">
+        <i class="fa fa-check-circle"></i> Your issue was created successfully.
+    </div>
 </body>
 @stop

@@ -12,8 +12,13 @@
     <div id="main">
         @include('layout.header')
         <h1>Issue details</h1>
-        <a class="action" href="/clients/create"><i class="fa fa-plus-circle"></i> Edit issue</a>
-        <a class="action" href="{{ Request::url() }}/resolve"><i class="fa fa-check-circle"></i> Resolve issue</a>
+        <a class="action" href="/projects/{{{ $issue->project->stub }}}/issues/edit/{{ $issue->id }}"><i class="fa fa-plus-circle"></i> Edit issue</a>
+        @if($issue->status == 'Resolved')
+            <a class="action" href="{{ Request::url() }}/reopen"><i class="fa fa-exclamation-circle"></i> Reopen issue</a>
+            <a class="action" href="{{ Request::url() }}/close"><i class="fa fa-check-circle"></i> Close issue</a>
+        @else
+            <a class="action" href="{{ Request::url() }}/resolve"><i class="fa fa-check-circle"></i> Resolve issue</a>
+        @endif
         <section>
             <h2>Details</h2>
             <ul class="details">

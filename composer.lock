@@ -4,7 +4,7 @@
         "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "3ff82d8ba513a05b38e4e75bdfc62939",
+    "hash": "0d6df6970162888aba81e272df13cfa0",
     "packages": [
         {
             "name": "classpreloader/classpreloader",
@@ -2485,12 +2485,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/sebastianbergmann/global-state.git",
-                "reference": "0b46bd9fbe4b639757d2ee5682db207a99bc137b"
+                "reference": "ca49c5c32a3f629da2376eb9b7b8d3506923a434"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sebastianbergmann/global-state/zipball/0b46bd9fbe4b639757d2ee5682db207a99bc137b",
-                "reference": "0b46bd9fbe4b639757d2ee5682db207a99bc137b",
+                "url": "https://api.github.com/repos/sebastianbergmann/global-state/zipball/ca49c5c32a3f629da2376eb9b7b8d3506923a434",
+                "reference": "ca49c5c32a3f629da2376eb9b7b8d3506923a434",
                 "shasum": ""
             },
             "require": {
@@ -2528,7 +2528,7 @@
             "keywords": [
                 "global state"
             ],
-            "time": "2015-01-01 09:36:21"
+            "time": "2015-01-20 00:36:33"
         },
         {
             "name": "sebastian/version",

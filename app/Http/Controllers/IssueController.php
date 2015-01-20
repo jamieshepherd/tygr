@@ -63,6 +63,8 @@ class IssueController extends Controller {
 			$update->status     = 'created';
 			$update->comment    = 'Issue was created';
 			$update->save();
+
+			\Session::flash('message', 'Your issue was created successfully');
 			return redirect('projects/'.$stub.'/issues/show/'.$issue->id);
 		}
 	}
@@ -89,6 +91,7 @@ class IssueController extends Controller {
 	 */
 	public function edit($id)
 	{
+		return "Edit the issue";
 	}
 
 	/**
@@ -99,7 +102,7 @@ class IssueController extends Controller {
 	 */
 	public function update($id)
 	{
-		//
+		\Session::flash('message', 'The issue was updated.');
 	}
 
 	/**
@@ -110,7 +113,7 @@ class IssueController extends Controller {
 	 */
 	public function destroy($id)
 	{
-		//
+		\Session::flash('message', 'The issue was removed successfully.');
 	}
 
 	/**
@@ -125,6 +128,42 @@ class IssueController extends Controller {
 		$issue = Issue::where('id', '=', $id)->firstOrFail();
 		$issue->status = 'Resolved';
 		$issue->save();
+
+		\Session::flash('message', 'This issue was marked as resolved.');
+		return redirect('projects/'.$stub.'/issues');
+	}
+
+	/**
+	 * Set an issue's status to resolved.
+	 *
+	 * @param  string  $stub
+	 * @param  int  $id
+	 * @return Response
+	 */
+	public function close($stub, $id)
+	{
+		$issue = Issue::where('id', '=', $id)->firstOrFail();
+		$issue->status = 'Closed';
+		$issue->save();
+
+		\Session::flash('message', 'This issue is now closed. Thanks!');
+		return redirect('projects/'.$stub.'/issues');
+	}
+
+	/**
+	 * Set an issue's status to resolved.
+	 *
+	 * @param  string  $stub
+	 * @param  int  $id
+	 * @return Response
+	 */
+	public function reopen($stub, $id)
+	{
+		$issue = Issue::where('id', '=', $id)->firstOrFail();
+		$issue->status = 'Assigned';
+		$issue->save();
+
+		\Session::flash('message', 'This issue was reopened.');
 		return redirect('projects/'.$stub.'/issues');
 	}
 

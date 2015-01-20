@@ -366,8 +366,7 @@ a.version-dropdown {
   width: 350px;
   position: fixed;
   bottom: 20px;
-  left: 0;
-  right: 0;
+  right: 20px;
   margin: 0 auto;
   padding: 25px 0;
   text-align: center;

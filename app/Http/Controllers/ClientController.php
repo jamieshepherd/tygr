@@ -43,6 +43,7 @@ class ClientController extends Controller {
 		$client->type	= Input::get('type');
 		$result = $client->save();
 		if($result) {
+			\Session::flash('message', $client->name.' was created successfully.');
 			return redirect('/clients/show/'.$client->stub);
 		}
 	}
@@ -87,6 +88,7 @@ class ClientController extends Controller {
 		$client->type	= Input::get('type');
 		$result = $client->save();
 		if($result) {
+			\Session::flash('message', $client->name.' was updated successfully.');
 			return redirect('/clients/show/'.$client->stub);
 		}
 	}
@@ -114,6 +116,7 @@ class ClientController extends Controller {
 	{
 		Client::destroy($id);
 
+		\Session::flash('message', 'This client was removed successfully.');
 		return redirect('/clients');
 	}
 

@@ -2,7 +2,7 @@
 @section('crumbtrail')
     <a href="/"><li><i class="fa fa-home"></i> Home</li></a>
     <a href="/clients"><li>Clients</li></a>
-    <li class="current">Create</li>
+    <li class="current">Edit</li>
 @stop
 @section('body')
     <body>

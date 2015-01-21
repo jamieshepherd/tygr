@@ -10,8 +10,8 @@
     @include('layout.nav')
     <div id="main">
         @include('layout.header')
-        <h1>503</h1>
-        <p>Your content goes here!</p>
+        <h1>401</h1>
+        <p>Unauthorised.</p>
     </div>
 </body>
 @stop

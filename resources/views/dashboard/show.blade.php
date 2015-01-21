@@ -10,7 +10,7 @@
     @include('layout.nav')
     <div id="main">
         @include('layout.header')
-        <h1>503</h1>
+        <h1>Dashboard</h1>
         <p>Your content goes here!</p>
     </div>
 </body>

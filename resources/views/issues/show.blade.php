@@ -36,16 +36,25 @@
         </section>
         <section>
             <h2>Update issue</h2>
-            <textarea placeholder="Enter a comment here" autofocus></textarea><br/>
-            Assign issue <select name="select">
-                <option value="client">Sports Direct</option>
-                <option value="project_management" selected>Sponge UK (Project Management)</option>
-                <option value="development">Sponge UK (Development)</option>
-                <option value="visual_design">Sponge UK (Visual Design)</option>
-                <option value="instructional_design">Sponge UK (Instructional Design)</option>
-            </select>
-            <input name="resolved" type="checkbox">Mark as resolved<br/><br/>
-            <a class="action" href="#"><i class="fa fa-arrow-circle-right"></i> Update issue</a>
+            <form action="" method="POST" accept-charset="UTF-8">
+            <input type="hidden" name="_token" value="<?php echo csrf_token(); ?>">
+                <textarea placeholder="Enter a comment here" autofocus></textarea><br/>
+                Assign issue <select name="select">
+                    @if(Auth::user()->rank == 3)
+                        <option value="client">{{{ $issue->project->client->name }}}</option>
+                        <option value="sponge_uk" selected>Sponge UK</option>
+                    @else
+                        <option value="client">{{{ $issue->project->client->name }}}</option>
+                        <option value="sponge_uk" selected>Sponge UK</option>
+                        <option value="sponge_uk_project_management">Sponge UK (Project Management)</option>
+                        <option value="sponge_uk_development">Sponge UK (Development)</option>
+                        <option value="sponge_uk_visual_design">Sponge UK (Visual Design)</option>
+                        <option value="sponge_uk_instructional_design">Sponge UK (Instructional Design)</option>
+                    @endif
+                </select>
+                <input name="resolved" type="checkbox">Mark as resolved<br/>
+                <button type="submit"><i class="fa fa-arrow-circle-right"></i> Update issue</button>
+            </form>
         </section>
         <section>
             <h2>Issue history</h2>

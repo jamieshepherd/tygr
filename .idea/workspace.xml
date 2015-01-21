@@ -2,11 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ab4cf7f0-b20d-488a-a8be-dd1edad98773" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Group.php" afterPath="$PROJECT_DIR$/app/Group.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Issue.php" afterPath="$PROJECT_DIR$/app/Issue.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/database/seeds/IssueTableSeeder.php" afterPath="$PROJECT_DIR$/database/seeds/IssueTableSeeder.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/User.php" afterPath="$PROJECT_DIR$/app/User.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/routes.php" afterPath="$PROJECT_DIR$/app/Http/routes.php" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/views/clients/create.blade[Conflict].php" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/issues/show.blade.php" afterPath="$PROJECT_DIR$/resources/views/issues/show.blade.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
@@ -36,8 +32,48 @@
       <file leaf-file-name="show.blade.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/resources/views/issues/show.blade.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.45412844" vertical-offset="429" max-vertical-offset="2673">
-              <caret line="25" column="85" selection-start-line="25" selection-start-column="85" selection-end-line="25" selection-end-column="85" />
+            <state vertical-scroll-proportion="0.79472476" vertical-offset="1089" max-vertical-offset="2970">
+              <caret line="54" column="76" selection-start-line="54" selection-start-column="76" selection-end-line="54" selection-end-column="76" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="edit.blade.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/resources/views/clients/edit.blade.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0" vertical-offset="99" max-vertical-offset="1188">
+              <caret line="25" column="103" selection-start-line="25" selection-start-column="12" selection-end-line="25" selection-end-column="103" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="nav.blade.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/resources/views/layout/nav.blade.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="561">
+              <caret line="2" column="8" selection-start-line="2" selection-start-column="8" selection-end-line="3" selection-end-column="36" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="2015_01_09_135149_create_issues_table.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/database/migrations/2015_01_09_135149_create_issues_table.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0" vertical-offset="528" max-vertical-offset="1947">
+              <caret line="27" column="29" selection-start-line="27" selection-start-column="29" selection-end-line="27" selection-end-column="29" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="IssueController.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/Http/Controllers/IssueController.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0" vertical-offset="2758" max-vertical-offset="5610">
+              <caret line="93" column="32" selection-start-line="93" selection-start-column="32" selection-end-line="93" selection-end-column="32" />
               <folding />
             </state>
           </provider>
@@ -46,7 +82,7 @@
       <file leaf-file-name="Issue.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/Issue.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="679" max-vertical-offset="1749">
+            <state vertical-scroll-proportion="0.0" vertical-offset="712" max-vertical-offset="1749">
               <caret line="39" column="42" selection-start-line="39" selection-start-column="42" selection-end-line="39" selection-end-column="42" />
               <folding />
             </state>
@@ -61,7 +97,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/app/Http/Middleware/RestrictClient.php" />
         <option value="$PROJECT_DIR$/resources/views/layout/base.blade.php" />
         <option value="$PROJECT_DIR$/database/migrations/2015_01_08_160804_create_clients_table.php" />
         <option value="$PROJECT_DIR$/database/seeds/ClientTableSeeder.php" />
@@ -111,6 +146,7 @@
         <option value="$PROJECT_DIR$/app/Issue.php" />
         <option value="$PROJECT_DIR$/app/Group.php" />
         <option value="$PROJECT_DIR$/database/seeds/IssueTableSeeder.php" />
+        <option value="$PROJECT_DIR$/app/IssueStatus.php" />
         <option value="$PROJECT_DIR$/resources/views/issues/show.blade.php" />
       </list>
     </option>
@@ -161,6 +197,134 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="tygr" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="tygr" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="tygr" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="resources" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="views" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="tygr" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="tygr" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="resources" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="views" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="layout" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="tygr" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="tygr" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="resources" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="views" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="issues" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="tygr" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="tygr" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="resources" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="views" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="errors" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="tygr" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="tygr" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="resources" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="views" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="clients" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="tygr" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="tygr" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="resources" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="views" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="auth" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -576,7 +740,7 @@
     <property name="options.splitter.details.proportions" value="0.2" />
     <property name="FullScreen" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
-    <property name="SearchEverywhereHistoryKey" value="issue&#9;FILE&#9;file:///Users/jamie/Web/tygr/app/Issue.php&#10;issue/show&#9;FILE&#9;file:///Users/jamie/Web/tygr/resources/views/issues/show.blade.php&#10;routes&#9;FILE&#9;file:///Users/jamie/Web/tygr/app/Http/routes.php&#10;notification&#9;FILE&#9;file:///Users/jamie/Web/tygr/resources/assets/sass/components/_notifications.scss&#10;issuecon&#9;FILE&#9;file:///Users/jamie/Web/tygr/app/Http/Controllers/IssueController.php&#10;project/show&#9;FILE&#9;file:///Users/jamie/Web/tygr/resources/views/projects/show.blade.php&#10;clientcon&#9;FILE&#9;file:///Users/jamie/Web/tygr/app/Http/Controllers/ClientController.php&#10;clients/edit&#9;FILE&#9;file:///Users/jamie/Web/tygr/resources/views/clients/edit.blade.php&#10;notific&#9;FILE&#9;file:///Users/jamie/Web/tygr/resources/assets/sass/components/_notifications.scss&#10;issuecontr&#9;FILE&#9;file:///Users/jamie/Web/tygr/app/Http/Controllers/IssueController.php&#10;issues/inde&#9;FILE&#9;file:///Users/jamie/Google Drive/Web/tygr/resources/views/issues/index.blade.php&#10;forms&#9;FILE&#9;file:///Users/jamie/Google Drive/Web/tygr/resources/assets/sass/layout/_forms.scss&#10;clientcont&#9;FILE&#9;file:///Users/jamie/Google Drive/Web/tygr/app/Http/Controllers/ClientController.php&#10;issuecontro&#9;FILE&#9;file:///Users/jamie/Google Drive/Web/tygr/app/Http/Controllers/IssueController.php&#10;issuetab&#9;FILE&#9;file:///Users/jamie/Google Drive/Web/tygr/database/migrations/2015_01_09_135149_create_issues_table.php&#10;issue/create&#9;FILE&#9;file:///Users/jamie/Google Drive/Web/tygr/resources/views/issues/create.blade.php&#10;buttons&#9;FILE&#9;file://D:/Web/tygr/resources/assets/sass/components/_buttons.scss&#10;clients/delete&#9;FILE&#9;file://D:/Web/tygr/resources/views/clients/delete.blade.php&#10;clients/create&#9;FILE&#9;file://D:/Web/tygr/resources/views/clients/create.blade.php&#10;createissuehist&#9;FILE&#9;file:///Users/jamie/Google Drive/Web/tygr/database/migrations/2015_01_19_131140_create_issue_history_table.php&#10;issues/show&#9;FILE&#9;file:///Users/jamie/Google Drive/Web/tygr/resources/views/issues/show.blade.php&#10;tables&#9;FILE&#9;file:///Users/jamie/Google Drive/Web/tygr/resources/assets/sass/layout/_tables.scss&#10;issues/index&#9;FILE&#9;file:///Users/jamie/Google Drive/Web/tygr/resources/views/issues/index.blade.php&#10;createissues&#9;FILE&#9;file:///Users/jamie/Google Drive/Web/tygr/database/migrations/2015_01_09_135149_create_issues_table.php&#10;typ&#9;FILE&#9;file:///Users/jamie/Google Drive/Web/tygr/resources/assets/sass/utils/_typography.scss&#10;login&#9;FILE&#9;file:///Users/jamie/Google Drive/Web/tygr/resources/views/auth/login.blade.php&#10;but&#9;FILE&#9;file:///Users/jamie/Google Drive/Web/tygr/resources/assets/sass/components/_buttons.scss&#10;projectcon&#9;FILE&#9;file:///Users/jamie/Google Drive/Web/tygr/app/Http/Controllers/ProjectController.php&#10;clientcontr&#9;FILE&#9;file:///Users/jamie/Google Drive/Web/tygr/app/Http/Controllers/ClientController.php&#10;middleware/&#9;FILE&#9;file:///Users/jamie/Google Drive/Web/tygr/app/Http/Middleware&#10;clientcontrol&#9;FILE&#9;file:///Users/jamie/Google Drive/Web/tygr/app/Http/Controllers/ClientController.php&#10;clienttable&#9;FILE&#9;file:///Users/jamie/Google Drive/Web/tygr/database/migrations/2015_01_08_160804_create_clients_table.php&#10;typogra&#9;FILE&#9;file:///Users/jamie/Google Drive/Web/tygr/resources/assets/sass/utils/_typography.scss&#10;projectcontroll&#9;FILE&#9;file:///Users/jamie/Google Drive/Web/tygr/app/Http/Controllers/ProjectController.php&#10;projects/inde&#9;FILE&#9;file:///Users/jamie/Google Drive/Web/tygr/resources/views/projects/index.blade.php&#10;clientsee&#9;FILE&#9;file:///Users/jamie/Google Drive/Web/tygr/database/seeds/ClientTableSeeder.php&#10;clients/inde&#9;FILE&#9;file:///Users/jamie/Google Drive/Web/tygr/resources/views/clients/index.blade.php&#10;clients/show&#9;FILE&#9;file:///Users/jamie/Google Drive/Web/tygr/resources/views/clients/show.blade.php&#10;client_tabl&#9;FILE&#9;file:///Users/jamie/Google Drive/Web/tygr/database/migrations/2015_01_08_160804_create_clients_table.php&#10;clienttab&#9;FILE&#9;file:///Users/jamie/Google Drive/Web/tygr/database/seeds/ClientTableSeeder.php&#10;createclient&#9;FILE&#9;file:///Users/jamie/Google Drive/Web/tygr/database/migrations/2015_01_08_160804_create_clients_table.php&#10;create_proj&#9;FILE&#9;file:///Users/jamie/Google Drive/Web/tygr/database/migrations/2015_01_08_192826_create_projects_table.php&#10;projectcontrol&#9;FILE&#9;file:///Users/jamie/Google Drive/Web/tygr/app/Http/Controllers/ProjectController.php&#10;projects/in&#9;FILE&#9;file:///Users/jamie/Google Drive/Web/tygr/resources/views/projects/index.blade.php&#10;base&#9;FILE&#9;file:///Users/jamie/Google Drive/Web/tygr/resources/views/layout/base.blade.php&#10;typog&#9;FILE&#9;file:///Users/jamie/Google Drive/Web/tygr/resources/assets/sass/utils/_typography.scss&#10;users&#9;FILE&#9;file:///Users/jamie/Google Drive/Web/tygr/database/migrations/2015_01_08_160805_create_users_table.php&#10;scss&#9;FILE&#9;file:///Users/jamie/Google Drive/Web/sponge/resources/assets/sass/main.scss&#10;issuecontroller&#9;FILE&#9;file:///Users/jamie/Google Drive/Web/sponge/app/Http/Controllers/IssueController.php" />
+    <property name="SearchEverywhereHistoryKey" value="nav&#9;FILE&#9;file:///Users/jamie/Web/tygr/resources/views/layout/nav.blade.php&#10;issue/show&#9;FILE&#9;file:///Users/jamie/Web/tygr/resources/views/issues/show.blade.php&#10;issuecon&#9;FILE&#9;file:///Users/jamie/Web/tygr/app/Http/Controllers/IssueController.php&#10;issue&#9;FILE&#9;file:///Users/jamie/Web/tygr/app/Issue.php&#10;routes&#9;FILE&#9;file:///Users/jamie/Web/tygr/app/Http/routes.php&#10;notification&#9;FILE&#9;file:///Users/jamie/Web/tygr/resources/assets/sass/components/_notifications.scss&#10;project/show&#9;FILE&#9;file:///Users/jamie/Web/tygr/resources/views/projects/show.blade.php&#10;clientcon&#9;FILE&#9;file:///Users/jamie/Web/tygr/app/Http/Controllers/ClientController.php&#10;clients/edit&#9;FILE&#9;file:///Users/jamie/Web/tygr/resources/views/clients/edit.blade.php&#10;notific&#9;FILE&#9;file:///Users/jamie/Web/tygr/resources/assets/sass/components/_notifications.scss&#10;issuecontr&#9;FILE&#9;file:///Users/jamie/Web/tygr/app/Http/Controllers/IssueController.php&#10;issues/inde&#9;FILE&#9;file:///Users/jamie/Google Drive/Web/tygr/resources/views/issues/index.blade.php&#10;forms&#9;FILE&#9;file:///Users/jamie/Google Drive/Web/tygr/resources/assets/sass/layout/_forms.scss&#10;clientcont&#9;FILE&#9;file:///Users/jamie/Google Drive/Web/tygr/app/Http/Controllers/ClientController.php&#10;issuecontro&#9;FILE&#9;file:///Users/jamie/Google Drive/Web/tygr/app/Http/Controllers/IssueController.php&#10;issuetab&#9;FILE&#9;file:///Users/jamie/Google Drive/Web/tygr/database/migrations/2015_01_09_135149_create_issues_table.php&#10;issue/create&#9;FILE&#9;file:///Users/jamie/Google Drive/Web/tygr/resources/views/issues/create.blade.php&#10;buttons&#9;FILE&#9;file://D:/Web/tygr/resources/assets/sass/components/_buttons.scss&#10;clients/delete&#9;FILE&#9;file://D:/Web/tygr/resources/views/clients/delete.blade.php&#10;clients/create&#9;FILE&#9;file://D:/Web/tygr/resources/views/clients/create.blade.php&#10;createissuehist&#9;FILE&#9;file:///Users/jamie/Google Drive/Web/tygr/database/migrations/2015_01_19_131140_create_issue_history_table.php&#10;issues/show&#9;FILE&#9;file:///Users/jamie/Google Drive/Web/tygr/resources/views/issues/show.blade.php&#10;tables&#9;FILE&#9;file:///Users/jamie/Google Drive/Web/tygr/resources/assets/sass/layout/_tables.scss&#10;issues/index&#9;FILE&#9;file:///Users/jamie/Google Drive/Web/tygr/resources/views/issues/index.blade.php&#10;createissues&#9;FILE&#9;file:///Users/jamie/Google Drive/Web/tygr/database/migrations/2015_01_09_135149_create_issues_table.php&#10;typ&#9;FILE&#9;file:///Users/jamie/Google Drive/Web/tygr/resources/assets/sass/utils/_typography.scss&#10;login&#9;FILE&#9;file:///Users/jamie/Google Drive/Web/tygr/resources/views/auth/login.blade.php&#10;but&#9;FILE&#9;file:///Users/jamie/Google Drive/Web/tygr/resources/assets/sass/components/_buttons.scss&#10;projectcon&#9;FILE&#9;file:///Users/jamie/Google Drive/Web/tygr/app/Http/Controllers/ProjectController.php&#10;clientcontr&#9;FILE&#9;file:///Users/jamie/Google Drive/Web/tygr/app/Http/Controllers/ClientController.php&#10;middleware/&#9;FILE&#9;file:///Users/jamie/Google Drive/Web/tygr/app/Http/Middleware&#10;clientcontrol&#9;FILE&#9;file:///Users/jamie/Google Drive/Web/tygr/app/Http/Controllers/ClientController.php&#10;clienttable&#9;FILE&#9;file:///Users/jamie/Google Drive/Web/tygr/database/migrations/2015_01_08_160804_create_clients_table.php&#10;typogra&#9;FILE&#9;file:///Users/jamie/Google Drive/Web/tygr/resources/assets/sass/utils/_typography.scss&#10;projectcontroll&#9;FILE&#9;file:///Users/jamie/Google Drive/Web/tygr/app/Http/Controllers/ProjectController.php&#10;projects/inde&#9;FILE&#9;file:///Users/jamie/Google Drive/Web/tygr/resources/views/projects/index.blade.php&#10;clientsee&#9;FILE&#9;file:///Users/jamie/Google Drive/Web/tygr/database/seeds/ClientTableSeeder.php&#10;clients/inde&#9;FILE&#9;file:///Users/jamie/Google Drive/Web/tygr/resources/views/clients/index.blade.php&#10;clients/show&#9;FILE&#9;file:///Users/jamie/Google Drive/Web/tygr/resources/views/clients/show.blade.php&#10;client_tabl&#9;FILE&#9;file:///Users/jamie/Google Drive/Web/tygr/database/migrations/2015_01_08_160804_create_clients_table.php&#10;clienttab&#9;FILE&#9;file:///Users/jamie/Google Drive/Web/tygr/database/seeds/ClientTableSeeder.php&#10;createclient&#9;FILE&#9;file:///Users/jamie/Google Drive/Web/tygr/database/migrations/2015_01_08_160804_create_clients_table.php&#10;create_proj&#9;FILE&#9;file:///Users/jamie/Google Drive/Web/tygr/database/migrations/2015_01_08_192826_create_projects_table.php&#10;projectcontrol&#9;FILE&#9;file:///Users/jamie/Google Drive/Web/tygr/app/Http/Controllers/ProjectController.php&#10;projects/in&#9;FILE&#9;file:///Users/jamie/Google Drive/Web/tygr/resources/views/projects/index.blade.php&#10;base&#9;FILE&#9;file:///Users/jamie/Google Drive/Web/tygr/resources/views/layout/base.blade.php&#10;typog&#9;FILE&#9;file:///Users/jamie/Google Drive/Web/tygr/resources/assets/sass/utils/_typography.scss&#10;users&#9;FILE&#9;file:///Users/jamie/Google Drive/Web/tygr/database/migrations/2015_01_08_160805_create_users_table.php&#10;scss&#9;FILE&#9;file:///Users/jamie/Google Drive/Web/sponge/resources/assets/sass/main.scss&#10;issuecontroller&#9;FILE&#9;file:///Users/jamie/Google Drive/Web/sponge/app/Http/Controllers/IssueController.php" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
@@ -817,13 +981,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/database/migrations/2015_01_09_135149_create_issues_table.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.37844038" vertical-offset="528" max-vertical-offset="1947">
-          <caret line="27" column="29" selection-start-line="27" selection-start-column="29" selection-end-line="27" selection-end-column="29" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/clients/create.blade.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.4701835" vertical-offset="151" max-vertical-offset="1221">
@@ -880,13 +1037,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/clients/edit.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1188">
-          <caret line="4" column="28" selection-start-line="4" selection-start-column="28" selection-end-line="4" selection-end-column="28" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/Http/Controllers/ClientController.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="4125">
@@ -912,14 +1062,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1419">
           <caret line="8" column="26" selection-start-line="8" selection-start-column="26" selection-end-line="8" selection-end-column="26" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/IssueController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="2692" max-vertical-offset="5610">
-          <caret line="93" column="32" selection-start-line="93" selection-start-column="32" selection-end-line="93" selection-end-column="32" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -987,7 +1129,7 @@
         <state vertical-scroll-proportion="0.0" vertical-offset="165" max-vertical-offset="1056">
           <caret line="22" column="41" selection-start-line="22" selection-start-column="41" selection-end-line="22" selection-end-column="41" />
           <folding>
-            <element signature="e#7#38#0#PHP" expanded="true" />
+            <element signature="e#7#38#0#PHP" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -997,7 +1139,7 @@
         <state vertical-scroll-proportion="0.0" vertical-offset="184" max-vertical-offset="1254">
           <caret line="29" column="32" selection-start-line="29" selection-start-column="31" selection-end-line="29" selection-end-column="32" />
           <folding>
-            <element signature="e#7#38#0#PHP" expanded="true" />
+            <element signature="e#7#38#0#PHP" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1025,7 +1167,7 @@
         <state vertical-scroll-proportion="0.0" vertical-offset="778" max-vertical-offset="2013">
           <caret line="47" column="39" selection-start-line="47" selection-start-column="39" selection-end-line="47" selection-end-column="39" />
           <folding>
-            <element signature="e#22#58#0#PHP" expanded="true" />
+            <element signature="e#22#58#0#PHP" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1046,6 +1188,30 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/database/migrations/2015_01_09_135149_create_issues_table.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="528" max-vertical-offset="1947">
+          <caret line="27" column="29" selection-start-line="27" selection-start-column="29" selection-end-line="27" selection-end-column="29" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/IssueController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="2758" max-vertical-offset="5610">
+          <caret line="93" column="32" selection-start-line="93" selection-start-column="32" selection-end-line="93" selection-end-column="32" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/layout/nav.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="561">
+          <caret line="2" column="8" selection-start-line="2" selection-start-column="8" selection-end-line="3" selection-end-column="36" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/app/Issue.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="877" max-vertical-offset="1749">
@@ -1054,10 +1220,18 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/clients/edit.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="99" max-vertical-offset="1188">
+          <caret line="25" column="103" selection-start-line="25" selection-start-column="12" selection-end-line="25" selection-end-column="103" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/issues/show.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.45412844" vertical-offset="429" max-vertical-offset="2673">
-          <caret line="25" column="85" selection-start-line="25" selection-start-column="85" selection-end-line="25" selection-end-column="85" />
+        <state vertical-scroll-proportion="0.79472476" vertical-offset="1089" max-vertical-offset="2970">
+          <caret line="54" column="76" selection-start-line="54" selection-start-column="76" selection-end-line="54" selection-end-column="76" />
           <folding />
         </state>
       </provider>

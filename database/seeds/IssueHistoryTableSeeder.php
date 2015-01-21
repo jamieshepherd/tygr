@@ -27,14 +27,14 @@ class IssueHistoryTableSeeder extends Seeder {
 
         IssueHistory::create(array(
             'issue_id'   => 1,
-            'author_id'  => 2,
+            'author_id'  => 4,
             'type'       => 'comment',
             'comment'    => 'What the hell, I do not want to work on this!'
         ));
 
         IssueHistory::create(array(
             'issue_id'   => 1,
-            'author_id'  => 2,
+            'author_id'  => 4,
             'type'       => 'status',
             'status'     => 'assigned',
             'comment'    => 'Issue was assigned to Jamie Shepherd'

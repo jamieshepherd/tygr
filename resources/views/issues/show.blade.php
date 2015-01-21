@@ -38,21 +38,22 @@
             <h2>Update issue</h2>
             <form action="" method="POST" accept-charset="UTF-8">
             <input type="hidden" name="_token" value="<?php echo csrf_token(); ?>">
-                <textarea placeholder="Enter a comment here" autofocus></textarea><br/>
-                Assign issue <select name="select">
-                    @if(Auth::user()->rank == 3)
-                        <option value="client">{{{ $issue->project->client->name }}}</option>
-                        <option value="sponge_uk" selected>Sponge UK</option>
-                    @else
-                        <option value="client">{{{ $issue->project->client->name }}}</option>
-                        <option value="sponge_uk" selected>Sponge UK</option>
-                        <option value="sponge_uk_project_management">Sponge UK (Project Management)</option>
-                        <option value="sponge_uk_development">Sponge UK (Development)</option>
-                        <option value="sponge_uk_visual_design">Sponge UK (Visual Design)</option>
-                        <option value="sponge_uk_instructional_design">Sponge UK (Instructional Design)</option>
-                    @endif
-                </select>
-                <input name="resolved" type="checkbox">Mark as resolved<br/>
+                <textarea placeholder="Enter a comment here" autofocus></textarea>
+
+                <label>Assign issue</label>
+                @if(Auth::user()->rank == 3)
+                    <input type="radio" name="assigned_to" value="Client" checked> {{{ $issue->project->client->name }}}<br/>
+                    <input type="radio" name="assigned_to" value="Pitch"> Sponge UK
+                @else
+                    <input type="radio" name="assigned_to" value="Client" checked> {{{ $issue->project->client->name }}} (Client)<br/>
+                    <input type="radio" name="assigned_to" value="Pitch"> Sponge UK<br/>
+                    <input type="radio" name="assigned_to" value="Pitch"> Sponge UK (Project Management)<br/>
+                    <input type="radio" name="assigned_to" value="Pitch"> Sponge UK (Development)<br/>
+                    <input type="radio" name="assigned_to" value="Pitch"> Sponge UK (Visual Design)<br/>
+                    <input type="radio" name="assigned_to" value="Pitch"> Sponge UK (Instructional Design)
+                @endif
+                <label>Mark as resolved</label>
+                <input name="resolved" type="checkbox"> Resolved<br/>
                 <button type="submit"><i class="fa fa-arrow-circle-right"></i> Update issue</button>
             </form>
         </section>

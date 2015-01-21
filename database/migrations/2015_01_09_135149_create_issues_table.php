@@ -20,7 +20,7 @@ class CreateIssuesTable extends Migration {
 			$table->foreign('author_id')->references('id')->on('users');
             // Assigned to
 			$table->integer('assigned_to_id')->unsigned()->nullable();
-			$table->foreign('assigned_to_id')->references('id')->on('users');
+			$table->foreign('assigned_to_id')->references('id')->on('groups');
             // Project
 			$table->integer('project_id')->unsigned();
 			$table->foreign('project_id')->references('id')->on('projects');

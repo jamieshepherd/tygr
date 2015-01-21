@@ -38,19 +38,19 @@
             <h2>Update issue</h2>
             <form action="" method="POST" accept-charset="UTF-8">
             <input type="hidden" name="_token" value="<?php echo csrf_token(); ?>">
-                <textarea placeholder="Enter a comment here" autofocus></textarea>
+                <textarea name="comment" placeholder="Enter a comment here" autofocus></textarea>
 
                 <label>Assign issue</label>
                 @if(Auth::user()->rank == 3)
-                    <input type="radio" name="assigned_to" value="Client" checked> {{{ $issue->project->client->name }}}<br/>
-                    <input type="radio" name="assigned_to" value="Pitch"> Sponge UK
+                    <input type="radio" name="assigned_to" value="1" checked> {{{ $issue->project->client->name }}}<br/>
+                    <input type="radio" name="assigned_to" value="2"> Sponge UK
                 @else
-                    <input type="radio" name="assigned_to" value="Client" checked> {{{ $issue->project->client->name }}} (Client)<br/>
-                    <input type="radio" name="assigned_to" value="Pitch"> Sponge UK<br/>
-                    <input type="radio" name="assigned_to" value="Pitch"> Sponge UK (Project Management)<br/>
-                    <input type="radio" name="assigned_to" value="Pitch"> Sponge UK (Development)<br/>
-                    <input type="radio" name="assigned_to" value="Pitch"> Sponge UK (Visual Design)<br/>
-                    <input type="radio" name="assigned_to" value="Pitch"> Sponge UK (Instructional Design)
+                    <input type="radio" name="assigned_to" value="1" checked> {{{ $issue->project->client->name }}} (Client)<br/>
+                    <input type="radio" name="assigned_to" value="2"> Sponge UK<br/>
+                    <input type="radio" name="assigned_to" value="3"> Sponge UK (Project Management)<br/>
+                    <input type="radio" name="assigned_to" value="4"> Sponge UK (Development)<br/>
+                    <input type="radio" name="assigned_to" value="5"> Sponge UK (Visual Design)<br/>
+                    <input type="radio" name="assigned_to" value="6"> Sponge UK (Instructional Design)
                 @endif
                 <label>Mark as resolved</label>
                 <input name="resolved" type="checkbox"> Resolved<br/>

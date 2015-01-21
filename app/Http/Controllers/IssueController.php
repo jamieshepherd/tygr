@@ -106,6 +106,59 @@ class IssueController extends Controller {
 	}
 
 	/**
+	 * Update the specified resource in storage.
+	 *
+	 * @param  string  $stub
+	 * @param  int  $id
+	 * @return Response
+	 */
+	public function updateIssueHistory($stub, $id)
+	{
+		$issue = Issue::find($id);
+
+		if(Input::get('comment')) {
+			$update = new IssueHistory();
+			$update->issue_id   = $issue->id;
+			$update->author_id  = \Auth::user()->id;
+			$update->type		= 'comment';
+			$update->comment    = Input::get('comment');
+			$update->save();
+		}
+
+		if(Input::get('assigned_to') != $issue->assigned_to->id) {
+
+			$issue->assigned_to_id = Input::get('assigned_to');
+			$issue->push();
+			$issue = Issue::find($id);
+
+			$update = new IssueHistory();
+			$update->issue_id   = $issue->id;
+			$update->author_id  = \Auth::user()->id;
+			$update->type		= 'status';
+			$update->status     = 'assigned';
+			$update->comment    = 'Issue was assigned to '.$issue->assigned_to->name;
+			$update->save();
+		}
+
+		if(Input::get('resolved')) {
+			$issue->status	= 'Resolved';
+			$issue->push();
+
+			$update = new IssueHistory();
+			$update->issue_id   = $issue->id;
+			$update->author_id  = \Auth::user()->id;
+			$update->type		= 'status';
+			$update->status     = 'resolved';
+			$update->comment    = 'Issue was changed to resolved';
+			$update->save();
+		}
+
+		\Session::flash('message', 'The issue was updated.');
+		return redirect('projects/'.$stub.'/issues/show/'.$issue->id);
+
+	}
+
+	/**
 	 * Remove the specified resource from storage.
 	 *
 	 * @param  int  $id

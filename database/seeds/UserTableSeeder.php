@@ -17,14 +17,6 @@ class UserTableSeeder extends Seeder {
         ));
 
         User::create(array(
-            'name'        => 'Tom Stembridge',
-            'client_id'   => 1,
-            'rank'        => 2,
-            'email'       => 'thomas.stembridge@spongeuk.com',
-            'password'    => Hash::make('password')
-        ));
-
-        User::create(array(
             'name'        => 'Andrea Kinsman',
             'client_id'   => 1,
             'rank'        => 1,
@@ -37,6 +29,14 @@ class UserTableSeeder extends Seeder {
             'client_id'   => 1,
             'rank'        => 2,
             'email'       => 'alex.stewart@spongeuk.com',
+            'password'    => Hash::make('password')
+        ));
+
+        User::create(array(
+            'name'        => 'Tom Stembridge',
+            'client_id'   => 1,
+            'rank'        => 2,
+            'email'       => 'thomas.stembridge@spongeuk.com',
             'password'    => Hash::make('password')
         ));
 

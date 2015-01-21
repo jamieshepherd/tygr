@@ -2,23 +2,18 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ab4cf7f0-b20d-488a-a8be-dd1edad98773" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/Group.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/database/seeds/GroupTableSeeder.php" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.env.example" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/build/css/main-8e7c8742.css" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/Controllers/ClientController.php" afterPath="$PROJECT_DIR$/app/Http/Controllers/ClientController.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/Controllers/IssueController.php" afterPath="$PROJECT_DIR$/app/Http/Controllers/IssueController.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/assets/sass/components/_notifications.scss" afterPath="$PROJECT_DIR$/resources/assets/sass/components/_notifications.scss" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/composer.lock" afterPath="$PROJECT_DIR$/composer.lock" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/clients/edit.blade.php" afterPath="$PROJECT_DIR$/resources/views/clients/edit.blade.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/layout/footer.blade.php" afterPath="$PROJECT_DIR$/resources/views/layout/footer.blade.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/issues/index.blade.php" afterPath="$PROJECT_DIR$/resources/views/issues/index.blade.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/database/seeds/GroupUserTableSeeder.php" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/build/css/main-c4824cc3.css" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/database/seeds/DatabaseSeeder.php" afterPath="$PROJECT_DIR$/database/seeds/DatabaseSeeder.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Group.php" afterPath="$PROJECT_DIR$/app/Group.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/database/seeds/GroupTableSeeder.php" afterPath="$PROJECT_DIR$/database/seeds/GroupTableSeeder.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/User.php" afterPath="$PROJECT_DIR$/app/User.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/database/seeds/UserTableSeeder.php" afterPath="$PROJECT_DIR$/database/seeds/UserTableSeeder.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/assets/sass/pages/_issue.scss" afterPath="$PROJECT_DIR$/resources/assets/sass/pages/_issue.scss" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/build/css/main.css" afterPath="$PROJECT_DIR$/public/build/css/main.css" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/css/main.css" afterPath="$PROJECT_DIR$/public/css/main.css" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/build/rev-manifest.json" afterPath="$PROJECT_DIR$/public/build/rev-manifest.json" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/routes.php" afterPath="$PROJECT_DIR$/app/Http/routes.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/issues/show.blade.php" afterPath="$PROJECT_DIR$/resources/views/issues/show.blade.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/projects/show.blade.php" afterPath="$PROJECT_DIR$/resources/views/projects/show.blade.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="sponge.iws" />
@@ -44,22 +39,50 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="show.blade.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/resources/views/issues/show.blade.php">
+      <file leaf-file-name="GroupTableSeeder.php" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/database/seeds/GroupTableSeeder.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="198" max-vertical-offset="2673">
-              <caret line="14" column="97" selection-start-line="14" selection-start-column="97" selection-end-line="14" selection-end-column="97" />
-              <folding />
+            <state vertical-scroll-proportion="0.1880734" vertical-offset="265" max-vertical-offset="1386">
+              <caret line="13" column="11" selection-start-line="13" selection-start-column="11" selection-end-line="13" selection-end-column="11" />
+              <folding>
+                <element signature="e#7#38#0#PHP" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="IssueController.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/Http/Controllers/IssueController.php">
+      <file leaf-file-name="User.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/User.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="2692" max-vertical-offset="5610">
-              <caret line="93" column="32" selection-start-line="93" selection-start-column="32" selection-end-line="93" selection-end-column="32" />
-              <folding />
+            <state vertical-scroll-proportion="0.0" vertical-offset="1009" max-vertical-offset="1881">
+              <caret line="47" column="41" selection-start-line="47" selection-start-column="41" selection-end-line="47" selection-end-column="41" />
+              <folding>
+                <element signature="e#22#58#0#PHP" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="DatabaseSeeder.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/database/seeds/DatabaseSeeder.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0" vertical-offset="165" max-vertical-offset="1056">
+              <caret line="22" column="41" selection-start-line="22" selection-start-column="41" selection-end-line="22" selection-end-column="41" />
+              <folding>
+                <element signature="e#7#38#0#PHP" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="routes.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/Http/routes.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0" vertical-offset="99" max-vertical-offset="1848">
+              <caret line="28" column="34" selection-start-line="28" selection-start-column="34" selection-end-line="28" selection-end-column="34" />
+              <folding>
+                <element signature="e#30#415#0#PHP" expanded="false" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -68,78 +91,30 @@
         <entry file="file://$PROJECT_DIR$/app/Group.php">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0" vertical-offset="382" max-vertical-offset="1254">
-              <caret line="29" column="52" selection-start-line="29" selection-start-column="52" selection-end-line="29" selection-end-column="52" />
+              <caret line="29" column="45" selection-start-line="29" selection-start-column="45" selection-end-line="29" selection-end-column="45" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="2015_01_20_135826_create_group_user_table.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/database/migrations/2015_01_20_135826_create_group_user_table.php">
+      <file leaf-file-name="UserTableSeeder.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/database/seeds/UserTableSeeder.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1452">
-              <caret line="22" column="69" selection-start-line="22" selection-start-column="69" selection-end-line="22" selection-end-column="69" />
+            <state vertical-scroll-proportion="0.0" vertical-offset="462" max-vertical-offset="1815">
+              <caret line="40" column="11" selection-start-line="40" selection-start-column="11" selection-end-line="40" selection-end-column="11" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="2015_01_20_135240_create_groups_table.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/database/migrations/2015_01_20_135240_create_groups_table.php">
+      <file leaf-file-name="GroupUserTableSeeder.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/database/seeds/GroupUserTableSeeder.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1320">
-              <caret line="19" column="25" selection-start-line="19" selection-start-column="25" selection-end-line="19" selection-end-column="25" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="GroupTableSeeder.php" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/database/seeds/GroupTableSeeder.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.37844038" vertical-offset="0" max-vertical-offset="1320">
-              <caret line="12" column="36" selection-start-line="12" selection-start-column="36" selection-end-line="12" selection-end-column="36" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="2015_01_08_160806_create_password_resets_table.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/database/migrations/2015_01_08_160806_create_password_resets_table.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1287">
-              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="2015_01_08_192826_create_projects_table.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/database/migrations/2015_01_08_192826_create_projects_table.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="363" max-vertical-offset="1848">
-              <caret line="22" column="53" selection-start-line="22" selection-start-column="53" selection-end-line="23" selection-end-column="74" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Project.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/Project.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="877" max-vertical-offset="1947">
-              <caret line="50" column="5" selection-start-line="50" selection-start-column="5" selection-end-line="50" selection-end-column="5" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="routes.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/Http/routes.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="778" max-vertical-offset="1716">
-              <caret line="51" column="59" selection-start-line="51" selection-start-column="59" selection-end-line="51" selection-end-column="59" />
-              <folding />
+            <state vertical-scroll-proportion="0.0" vertical-offset="184" max-vertical-offset="1254">
+              <caret line="29" column="32" selection-start-line="29" selection-start-column="31" selection-end-line="29" selection-end-column="32" />
+              <folding>
+                <element signature="e#7#38#0#PHP" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -152,7 +127,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/resources/views/layout/nav.blade.php" />
         <option value="$PROJECT_DIR$/app/Http/Middleware/RestrictClient.php" />
         <option value="$PROJECT_DIR$/resources/views/layout/base.blade.php" />
         <option value="$PROJECT_DIR$/database/migrations/2015_01_08_160804_create_clients_table.php" />
@@ -171,18 +145,14 @@
         <option value="$PROJECT_DIR$/resources/assets/sass/utils/_typography.scss" />
         <option value="$PROJECT_DIR$/resources/assets/sass/layout/_base.scss" />
         <option value="$PROJECT_DIR$/resources/assets/sass/layout/_updates.scss" />
-        <option value="$PROJECT_DIR$/resources/assets/sass/pages/_issue.scss" />
         <option value="$PROJECT_DIR$/resources/views/projects/index.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/issues/create.blade.php" />
         <option value="$PROJECT_DIR$/database/migrations/2015_01_09_135149_create_issues_table.php" />
         <option value="$PROJECT_DIR$/app/Project.php" />
         <option value="$PROJECT_DIR$/database/seeds/IssueTableSeeder.php" />
         <option value="$PROJECT_DIR$/resources/assets/sass/layout/_tables.scss" />
-        <option value="$PROJECT_DIR$/database/seeds/DatabaseSeeder.php" />
         <option value="$PROJECT_DIR$/app/IssueHistory.php" />
-        <option value="$PROJECT_DIR$/app/User.php" />
         <option value="$PROJECT_DIR$/database/migrations/2015_01_19_131140_create_issue_history_table.php" />
-        <option value="$PROJECT_DIR$/database/seeds/UserTableSeeder.php" />
         <option value="$PROJECT_DIR$/app/Issue.php" />
         <option value="$PROJECT_DIR$/database/seeds/IssueHistoryTableSeeder.php" />
         <option value="$PROJECT_DIR$/resources/views/clients/delete.blade.php" />
@@ -196,13 +166,18 @@
         <option value="$PROJECT_DIR$/resources/views/clients/edit.blade.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/ClientController.php" />
         <option value="$PROJECT_DIR$/resources/views/projects/show.blade.php" />
-        <option value="$PROJECT_DIR$/app/Http/routes.php" />
         <option value="$PROJECT_DIR$/resources/views/issues/show.blade.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/IssueController.php" />
-        <option value="$PROJECT_DIR$/app/Group.php" />
         <option value="$PROJECT_DIR$/database/migrations/2015_01_20_135826_create_group_user_table.php" />
         <option value="$PROJECT_DIR$/database/migrations/2015_01_20_135240_create_groups_table.php" />
+        <option value="$PROJECT_DIR$/resources/assets/sass/pages/_issue.scss" />
+        <option value="$PROJECT_DIR$/database/seeds/UserTableSeeder.php" />
+        <option value="$PROJECT_DIR$/app/Group.php" />
+        <option value="$PROJECT_DIR$/app/Http/routes.php" />
+        <option value="$PROJECT_DIR$/app/User.php" />
+        <option value="$PROJECT_DIR$/database/seeds/DatabaseSeeder.php" />
         <option value="$PROJECT_DIR$/database/seeds/GroupTableSeeder.php" />
+        <option value="$PROJECT_DIR$/database/seeds/GroupUserTableSeeder.php" />
       </list>
     </option>
   </component>
@@ -252,6 +227,68 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="tygr" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="tygr" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="tygr" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="resources" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="tygr" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="tygr" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="resources" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="assets" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="sass" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="tygr" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="tygr" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="resources" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="assets" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="sass" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="pages" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -605,12 +642,12 @@
     <property name="options.splitter.details.proportions" value="0.2" />
     <property name="FullScreen" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
-    <property name="SearchEverywhereHistoryKey" value="routes&#9;FILE&#9;file:///Users/jamie/Web/tygr/app/Http/routes.php&#10;issuecon&#9;FILE&#9;file:///Users/jamie/Web/tygr/app/Http/Controllers/IssueController.php&#10;issue/show&#9;FILE&#9;file:///Users/jamie/Web/tygr/resources/views/issues/show.blade.php&#10;project/show&#9;FILE&#9;file:///Users/jamie/Web/tygr/resources/views/projects/show.blade.php&#10;clientcon&#9;FILE&#9;file:///Users/jamie/Web/tygr/app/Http/Controllers/ClientController.php&#10;clients/edit&#9;FILE&#9;file:///Users/jamie/Web/tygr/resources/views/clients/edit.blade.php&#10;notific&#9;FILE&#9;file:///Users/jamie/Web/tygr/resources/assets/sass/components/_notifications.scss&#10;issuecontr&#9;FILE&#9;file:///Users/jamie/Web/tygr/app/Http/Controllers/IssueController.php&#10;issues/inde&#9;FILE&#9;file:///Users/jamie/Google Drive/Web/tygr/resources/views/issues/index.blade.php&#10;forms&#9;FILE&#9;file:///Users/jamie/Google Drive/Web/tygr/resources/assets/sass/layout/_forms.scss&#10;clientcont&#9;FILE&#9;file:///Users/jamie/Google Drive/Web/tygr/app/Http/Controllers/ClientController.php&#10;issuecontro&#9;FILE&#9;file:///Users/jamie/Google Drive/Web/tygr/app/Http/Controllers/IssueController.php&#10;issuetab&#9;FILE&#9;file:///Users/jamie/Google Drive/Web/tygr/database/migrations/2015_01_09_135149_create_issues_table.php&#10;issue/create&#9;FILE&#9;file:///Users/jamie/Google Drive/Web/tygr/resources/views/issues/create.blade.php&#10;buttons&#9;FILE&#9;file://D:/Web/tygr/resources/assets/sass/components/_buttons.scss&#10;clients/delete&#9;FILE&#9;file://D:/Web/tygr/resources/views/clients/delete.blade.php&#10;clients/create&#9;FILE&#9;file://D:/Web/tygr/resources/views/clients/create.blade.php&#10;createissuehist&#9;FILE&#9;file:///Users/jamie/Google Drive/Web/tygr/database/migrations/2015_01_19_131140_create_issue_history_table.php&#10;issues/show&#9;FILE&#9;file:///Users/jamie/Google Drive/Web/tygr/resources/views/issues/show.blade.php&#10;tables&#9;FILE&#9;file:///Users/jamie/Google Drive/Web/tygr/resources/assets/sass/layout/_tables.scss&#10;issues/index&#9;FILE&#9;file:///Users/jamie/Google Drive/Web/tygr/resources/views/issues/index.blade.php&#10;issue&#9;FILE&#9;file:///Users/jamie/Google Drive/Web/tygr/database/seeds/IssueTableSeeder.php&#10;createissues&#9;FILE&#9;file:///Users/jamie/Google Drive/Web/tygr/database/migrations/2015_01_09_135149_create_issues_table.php&#10;typ&#9;FILE&#9;file:///Users/jamie/Google Drive/Web/tygr/resources/assets/sass/utils/_typography.scss&#10;login&#9;FILE&#9;file:///Users/jamie/Google Drive/Web/tygr/resources/views/auth/login.blade.php&#10;but&#9;FILE&#9;file:///Users/jamie/Google Drive/Web/tygr/resources/assets/sass/components/_buttons.scss&#10;projectcon&#9;FILE&#9;file:///Users/jamie/Google Drive/Web/tygr/app/Http/Controllers/ProjectController.php&#10;clientcontr&#9;FILE&#9;file:///Users/jamie/Google Drive/Web/tygr/app/Http/Controllers/ClientController.php&#10;middleware/&#9;FILE&#9;file:///Users/jamie/Google Drive/Web/tygr/app/Http/Middleware&#10;clientcontrol&#9;FILE&#9;file:///Users/jamie/Google Drive/Web/tygr/app/Http/Controllers/ClientController.php&#10;clienttable&#9;FILE&#9;file:///Users/jamie/Google Drive/Web/tygr/database/migrations/2015_01_08_160804_create_clients_table.php&#10;typogra&#9;FILE&#9;file:///Users/jamie/Google Drive/Web/tygr/resources/assets/sass/utils/_typography.scss&#10;projectcontroll&#9;FILE&#9;file:///Users/jamie/Google Drive/Web/tygr/app/Http/Controllers/ProjectController.php&#10;projects/inde&#9;FILE&#9;file:///Users/jamie/Google Drive/Web/tygr/resources/views/projects/index.blade.php&#10;clientsee&#9;FILE&#9;file:///Users/jamie/Google Drive/Web/tygr/database/seeds/ClientTableSeeder.php&#10;clients/inde&#9;FILE&#9;file:///Users/jamie/Google Drive/Web/tygr/resources/views/clients/index.blade.php&#10;clients/show&#9;FILE&#9;file:///Users/jamie/Google Drive/Web/tygr/resources/views/clients/show.blade.php&#10;client_tabl&#9;FILE&#9;file:///Users/jamie/Google Drive/Web/tygr/database/migrations/2015_01_08_160804_create_clients_table.php&#10;clienttab&#9;FILE&#9;file:///Users/jamie/Google Drive/Web/tygr/database/seeds/ClientTableSeeder.php&#10;createclient&#9;FILE&#9;file:///Users/jamie/Google Drive/Web/tygr/database/migrations/2015_01_08_160804_create_clients_table.php&#10;create_proj&#9;FILE&#9;file:///Users/jamie/Google Drive/Web/tygr/database/migrations/2015_01_08_192826_create_projects_table.php&#10;projectcontrol&#9;FILE&#9;file:///Users/jamie/Google Drive/Web/tygr/app/Http/Controllers/ProjectController.php&#10;projects/in&#9;FILE&#9;file:///Users/jamie/Google Drive/Web/tygr/resources/views/projects/index.blade.php&#10;base&#9;FILE&#9;file:///Users/jamie/Google Drive/Web/tygr/resources/views/layout/base.blade.php&#10;typog&#9;FILE&#9;file:///Users/jamie/Google Drive/Web/tygr/resources/assets/sass/utils/_typography.scss&#10;users&#9;FILE&#9;file:///Users/jamie/Google Drive/Web/tygr/database/migrations/2015_01_08_160805_create_users_table.php&#10;scss&#9;FILE&#9;file:///Users/jamie/Google Drive/Web/sponge/resources/assets/sass/main.scss&#10;issuecontroller&#9;FILE&#9;file:///Users/jamie/Google Drive/Web/sponge/app/Http/Controllers/IssueController.php" />
+    <property name="SearchEverywhereHistoryKey" value="routes&#9;FILE&#9;file:///Users/jamie/Web/tygr/app/Http/routes.php&#10;notification&#9;FILE&#9;file:///Users/jamie/Web/tygr/resources/assets/sass/components/_notifications.scss&#10;issuecon&#9;FILE&#9;file:///Users/jamie/Web/tygr/app/Http/Controllers/IssueController.php&#10;issue/show&#9;FILE&#9;file:///Users/jamie/Web/tygr/resources/views/issues/show.blade.php&#10;project/show&#9;FILE&#9;file:///Users/jamie/Web/tygr/resources/views/projects/show.blade.php&#10;clientcon&#9;FILE&#9;file:///Users/jamie/Web/tygr/app/Http/Controllers/ClientController.php&#10;clients/edit&#9;FILE&#9;file:///Users/jamie/Web/tygr/resources/views/clients/edit.blade.php&#10;notific&#9;FILE&#9;file:///Users/jamie/Web/tygr/resources/assets/sass/components/_notifications.scss&#10;issuecontr&#9;FILE&#9;file:///Users/jamie/Web/tygr/app/Http/Controllers/IssueController.php&#10;issues/inde&#9;FILE&#9;file:///Users/jamie/Google Drive/Web/tygr/resources/views/issues/index.blade.php&#10;forms&#9;FILE&#9;file:///Users/jamie/Google Drive/Web/tygr/resources/assets/sass/layout/_forms.scss&#10;clientcont&#9;FILE&#9;file:///Users/jamie/Google Drive/Web/tygr/app/Http/Controllers/ClientController.php&#10;issuecontro&#9;FILE&#9;file:///Users/jamie/Google Drive/Web/tygr/app/Http/Controllers/IssueController.php&#10;issuetab&#9;FILE&#9;file:///Users/jamie/Google Drive/Web/tygr/database/migrations/2015_01_09_135149_create_issues_table.php&#10;issue/create&#9;FILE&#9;file:///Users/jamie/Google Drive/Web/tygr/resources/views/issues/create.blade.php&#10;buttons&#9;FILE&#9;file://D:/Web/tygr/resources/assets/sass/components/_buttons.scss&#10;clients/delete&#9;FILE&#9;file://D:/Web/tygr/resources/views/clients/delete.blade.php&#10;clients/create&#9;FILE&#9;file://D:/Web/tygr/resources/views/clients/create.blade.php&#10;createissuehist&#9;FILE&#9;file:///Users/jamie/Google Drive/Web/tygr/database/migrations/2015_01_19_131140_create_issue_history_table.php&#10;issues/show&#9;FILE&#9;file:///Users/jamie/Google Drive/Web/tygr/resources/views/issues/show.blade.php&#10;tables&#9;FILE&#9;file:///Users/jamie/Google Drive/Web/tygr/resources/assets/sass/layout/_tables.scss&#10;issues/index&#9;FILE&#9;file:///Users/jamie/Google Drive/Web/tygr/resources/views/issues/index.blade.php&#10;issue&#9;FILE&#9;file:///Users/jamie/Google Drive/Web/tygr/database/seeds/IssueTableSeeder.php&#10;createissues&#9;FILE&#9;file:///Users/jamie/Google Drive/Web/tygr/database/migrations/2015_01_09_135149_create_issues_table.php&#10;typ&#9;FILE&#9;file:///Users/jamie/Google Drive/Web/tygr/resources/assets/sass/utils/_typography.scss&#10;login&#9;FILE&#9;file:///Users/jamie/Google Drive/Web/tygr/resources/views/auth/login.blade.php&#10;but&#9;FILE&#9;file:///Users/jamie/Google Drive/Web/tygr/resources/assets/sass/components/_buttons.scss&#10;projectcon&#9;FILE&#9;file:///Users/jamie/Google Drive/Web/tygr/app/Http/Controllers/ProjectController.php&#10;clientcontr&#9;FILE&#9;file:///Users/jamie/Google Drive/Web/tygr/app/Http/Controllers/ClientController.php&#10;middleware/&#9;FILE&#9;file:///Users/jamie/Google Drive/Web/tygr/app/Http/Middleware&#10;clientcontrol&#9;FILE&#9;file:///Users/jamie/Google Drive/Web/tygr/app/Http/Controllers/ClientController.php&#10;clienttable&#9;FILE&#9;file:///Users/jamie/Google Drive/Web/tygr/database/migrations/2015_01_08_160804_create_clients_table.php&#10;typogra&#9;FILE&#9;file:///Users/jamie/Google Drive/Web/tygr/resources/assets/sass/utils/_typography.scss&#10;projectcontroll&#9;FILE&#9;file:///Users/jamie/Google Drive/Web/tygr/app/Http/Controllers/ProjectController.php&#10;projects/inde&#9;FILE&#9;file:///Users/jamie/Google Drive/Web/tygr/resources/views/projects/index.blade.php&#10;clientsee&#9;FILE&#9;file:///Users/jamie/Google Drive/Web/tygr/database/seeds/ClientTableSeeder.php&#10;clients/inde&#9;FILE&#9;file:///Users/jamie/Google Drive/Web/tygr/resources/views/clients/index.blade.php&#10;clients/show&#9;FILE&#9;file:///Users/jamie/Google Drive/Web/tygr/resources/views/clients/show.blade.php&#10;client_tabl&#9;FILE&#9;file:///Users/jamie/Google Drive/Web/tygr/database/migrations/2015_01_08_160804_create_clients_table.php&#10;clienttab&#9;FILE&#9;file:///Users/jamie/Google Drive/Web/tygr/database/seeds/ClientTableSeeder.php&#10;createclient&#9;FILE&#9;file:///Users/jamie/Google Drive/Web/tygr/database/migrations/2015_01_08_160804_create_clients_table.php&#10;create_proj&#9;FILE&#9;file:///Users/jamie/Google Drive/Web/tygr/database/migrations/2015_01_08_192826_create_projects_table.php&#10;projectcontrol&#9;FILE&#9;file:///Users/jamie/Google Drive/Web/tygr/app/Http/Controllers/ProjectController.php&#10;projects/in&#9;FILE&#9;file:///Users/jamie/Google Drive/Web/tygr/resources/views/projects/index.blade.php&#10;base&#9;FILE&#9;file:///Users/jamie/Google Drive/Web/tygr/resources/views/layout/base.blade.php&#10;typog&#9;FILE&#9;file:///Users/jamie/Google Drive/Web/tygr/resources/assets/sass/utils/_typography.scss&#10;users&#9;FILE&#9;file:///Users/jamie/Google Drive/Web/tygr/database/migrations/2015_01_08_160805_create_users_table.php&#10;scss&#9;FILE&#9;file:///Users/jamie/Google Drive/Web/sponge/resources/assets/sass/main.scss&#10;issuecontroller&#9;FILE&#9;file:///Users/jamie/Google Drive/Web/sponge/app/Http/Controllers/IssueController.php" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/database/seeds" />
       <recent name="$PROJECT_DIR$/app" />
+      <recent name="$PROJECT_DIR$/database/seeds" />
       <recent name="$PROJECT_DIR$/resources/views/clients" />
       <recent name="$PROJECT_DIR$/resources/assets/sass" />
       <recent name="$PROJECT_DIR$/resources/views" />
@@ -664,7 +701,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1440" height="900" extended-state="0" />
-    <editor active="false" />
+    <editor active="true" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -672,7 +709,7 @@
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.30694443" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.30625" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -720,20 +757,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/database/seeds/UserTableSeeder.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="720" max-vertical-offset="1692">
-          <caret line="22" column="36" selection-start-line="22" selection-start-column="36" selection-end-line="22" selection-end-column="36" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/User.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="1332" max-vertical-offset="1692">
-          <caret line="42" column="39" selection-start-line="42" selection-start-column="39" selection-end-line="42" selection-end-column="39" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/layout/header.blade.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="429">
@@ -833,27 +856,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/database/seeds/DatabaseSeeder.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.12029161" vertical-offset="0" max-vertical-offset="990">
-          <caret line="3" column="31" selection-start-line="3" selection-start-column="31" selection-end-line="3" selection-end-column="31" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/User.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="1512" max-vertical-offset="1872">
-          <caret line="47" column="39" selection-start-line="47" selection-start-column="39" selection-end-line="47" selection-end-column="39" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/database/seeds/UserTableSeeder.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="1044" max-vertical-offset="1980">
-          <caret line="31" column="36" selection-start-line="31" selection-start-column="36" selection-end-line="31" selection-end-column="36" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/IssueHistory.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="596" max-vertical-offset="1452">
@@ -910,19 +912,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/resources/assets/sass/pages/_issue.scss">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="2508">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/resources/assets/sass/utils/_typography.scss">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="528" max-vertical-offset="1419">
           <caret line="17" column="20" selection-start-line="17" selection-start-column="20" selection-end-line="17" selection-end-column="20" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -930,7 +923,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1320">
           <caret line="8" column="1" selection-start-line="8" selection-start-column="1" selection-end-line="8" selection-end-column="1" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -938,7 +930,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="792" max-vertical-offset="2310">
           <caret line="46" column="19" selection-start-line="46" selection-start-column="19" selection-end-line="46" selection-end-column="19" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -946,7 +937,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="1570" max-vertical-offset="2805">
           <caret line="54" column="20" selection-start-line="54" selection-start-column="20" selection-end-line="54" selection-end-column="20" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -954,7 +944,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="495" max-vertical-offset="1056">
           <caret line="15" column="15" selection-start-line="15" selection-start-column="15" selection-end-line="15" selection-end-column="15" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -962,15 +951,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="561">
           <caret line="1" column="14" selection-start-line="1" selection-start-column="14" selection-end-line="1" selection-end-column="14" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/assets/sass/components/_notifications.scss">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1155">
-          <caret line="8" column="13" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -978,7 +958,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="943" max-vertical-offset="2112">
           <caret line="37" column="17" selection-start-line="37" selection-start-column="17" selection-end-line="37" selection-end-column="17" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -986,7 +965,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1188">
           <caret line="4" column="28" selection-start-line="4" selection-start-column="28" selection-end-line="4" selection-end-column="28" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -994,7 +972,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="4125">
           <caret line="118" column="47" selection-start-line="118" selection-start-column="47" selection-end-line="118" selection-end-column="47" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1002,7 +979,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="429">
           <caret line="3" column="24" selection-start-line="3" selection-start-column="24" selection-end-line="3" selection-end-column="24" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1010,7 +986,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="627">
           <caret line="3" column="31" selection-start-line="3" selection-start-column="31" selection-end-line="3" selection-end-column="31" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1018,7 +993,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1419">
           <caret line="8" column="26" selection-start-line="8" selection-start-column="26" selection-end-line="8" selection-end-column="26" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1026,15 +1000,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="198" max-vertical-offset="2673">
           <caret line="14" column="97" selection-start-line="14" selection-start-column="97" selection-end-line="14" selection-end-column="97" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/routes.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="481" max-vertical-offset="1716">
-          <caret line="51" column="59" selection-start-line="51" selection-start-column="59" selection-end-line="51" selection-end-column="59" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1042,31 +1007,21 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="2692" max-vertical-offset="5610">
           <caret line="93" column="32" selection-start-line="93" selection-start-column="32" selection-end-line="93" selection-end-column="32" />
-          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/Project.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="877" max-vertical-offset="1947">
+        <state vertical-scroll-proportion="0.8864679" vertical-offset="877" max-vertical-offset="1947">
           <caret line="50" column="5" selection-start-line="50" selection-start-column="5" selection-end-line="50" selection-end-column="5" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Group.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="382" max-vertical-offset="1254">
-          <caret line="29" column="52" selection-start-line="29" selection-start-column="52" selection-end-line="29" selection-end-column="52" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/database/migrations/2015_01_08_192826_create_projects_table.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="363" max-vertical-offset="1848">
+        <state vertical-scroll-proportion="0.37844038" vertical-offset="363" max-vertical-offset="1848">
           <caret line="22" column="53" selection-start-line="22" selection-start-column="53" selection-end-line="23" selection-end-column="74" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1074,7 +1029,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1287">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1082,23 +1036,94 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1452">
           <caret line="22" column="69" selection-start-line="22" selection-start-column="69" selection-end-line="22" selection-end-column="69" />
-          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/assets/sass/components/_notifications.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.8325688" vertical-offset="0" max-vertical-offset="1155">
+          <caret line="22" column="0" selection-start-line="22" selection-start-column="0" selection-end-line="22" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/assets/sass/pages/_issue.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.49197248" vertical-offset="0" max-vertical-offset="2508">
+          <caret line="13" column="21" selection-start-line="13" selection-start-column="21" selection-end-line="13" selection-end-column="21" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/database/migrations/2015_01_20_135240_create_groups_table.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1320">
+        <state vertical-scroll-proportion="0.68119264" vertical-offset="0" max-vertical-offset="1320">
           <caret line="19" column="25" selection-start-line="19" selection-start-column="25" selection-end-line="19" selection-end-column="25" />
           <folding />
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/database/seeds/UserTableSeeder.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="99" max-vertical-offset="1815">
+          <caret line="40" column="11" selection-start-line="40" selection-start-column="11" selection-end-line="40" selection-end-column="11" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/routes.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="99" max-vertical-offset="1848">
+          <caret line="28" column="34" selection-start-line="28" selection-start-column="34" selection-end-line="28" selection-end-column="34" />
+          <folding>
+            <element signature="e#30#415#0#PHP" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Group.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="382" max-vertical-offset="1254">
+          <caret line="29" column="45" selection-start-line="29" selection-start-column="45" selection-end-line="29" selection-end-column="45" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/User.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="1009" max-vertical-offset="1881">
+          <caret line="47" column="41" selection-start-line="47" selection-start-column="41" selection-end-line="47" selection-end-column="41" />
+          <folding>
+            <element signature="e#22#58#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/database/seeds/DatabaseSeeder.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="165" max-vertical-offset="1056">
+          <caret line="22" column="41" selection-start-line="22" selection-start-column="41" selection-end-line="22" selection-end-column="41" />
+          <folding>
+            <element signature="e#7#38#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/database/seeds/GroupUserTableSeeder.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="184" max-vertical-offset="1254">
+          <caret line="29" column="32" selection-start-line="29" selection-start-column="31" selection-end-line="29" selection-end-column="32" />
+          <folding>
+            <element signature="e#7#38#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/database/seeds/GroupTableSeeder.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.37844038" vertical-offset="0" max-vertical-offset="1320">
-          <caret line="12" column="36" selection-start-line="12" selection-start-column="36" selection-end-line="12" selection-end-column="36" />
-          <folding />
+        <state vertical-scroll-proportion="0.1880734" vertical-offset="265" max-vertical-offset="1386">
+          <caret line="13" column="11" selection-start-line="13" selection-start-column="11" selection-end-line="13" selection-end-column="11" />
+          <folding>
+            <element signature="e#7#38#0#PHP" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

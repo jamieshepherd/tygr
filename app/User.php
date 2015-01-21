@@ -5,8 +5,8 @@ use Illuminate\Database\Eloquent\Model;
 use Illuminate\Auth\Passwords\CanResetPassword;
 use Illuminate\Contracts\Auth\Authenticatable as AuthenticatableContract;
 use Illuminate\Contracts\Auth\CanResetPassword as CanResetPasswordContract;
-use App\Client as Client;
-//use App\Group as Group;
+use App\Client;
+use App\Group;
 
 class User extends Model implements AuthenticatableContract, CanResetPasswordContract {
 
@@ -43,9 +43,9 @@ class User extends Model implements AuthenticatableContract, CanResetPasswordCon
 		return $this->hasMany('App\IssueHistory');
 	}
 
-/*	public function group()
+    public function groups()
 	{
-		return $this->hasMany('Group');
+		return $this->belongsToMany('App\Group');
 	}
-*/
+
 }

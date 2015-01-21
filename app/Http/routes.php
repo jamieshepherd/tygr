@@ -1,5 +1,6 @@
 <?php
 
+use \App\User as User;
 /*
 |--------------------------------------------------------------------------
 | Application Routes
@@ -24,6 +25,9 @@ Route::group(array('middleware' => 'auth'), function() {
 
 	Route::get('/', function() { return Redirect::to('projects'); });
 	Route::get('projects', 'ProjectController@index');
+	Route::get('users', function() {
+		dd(User::find(1)->groups);
+	});
 
     //>> Make sure user has at least ADMINISTRATOR priviliges
 	Route::group(array('middleware' => 'admin'), function() {

@@ -11,7 +11,7 @@ class IssueTableSeeder extends Seeder {
 
         Issue::create(array(
             'author_id'     => 1,
-            'assigned_to_id'=> 1,
+            'assigned_to_id'=> 2,
             'project_id'    => 1,
             'version'    => 'v1',
             'reference'  => 'b-01',
@@ -23,7 +23,7 @@ class IssueTableSeeder extends Seeder {
 
         Issue::create(array(
             'author_id'     => 1,
-            'assigned_to_id'=> 1,
+            'assigned_to_id'=> 2,
             'project_id'    => 1,
             'version'    => 'v1',
             'reference'  => 'b-06',
@@ -35,7 +35,7 @@ class IssueTableSeeder extends Seeder {
 
         Issue::create(array(
             'author_id'     => 1,
-            'assigned_to_id'=> 1,
+            'assigned_to_id'=> 2,
             'project_id'    => 1,
             'version'    => 'v1',
             'reference'  => 'b-02',
@@ -47,7 +47,7 @@ class IssueTableSeeder extends Seeder {
 
         Issue::create(array(
             'author_id'     => 1,
-            'assigned_to_id'=> 1,
+            'assigned_to_id'=> 2,
             'project_id'    => 1,
             'version'    => 'v1',
             'reference'  => 'b-03',
@@ -59,7 +59,7 @@ class IssueTableSeeder extends Seeder {
 
         Issue::create(array(
             'author_id'     => 1,
-            'assigned_to_id'=> 1,
+            'assigned_to_id'=> 2,
             'project_id'    => 1,
             'version'    => 'v1',
             'reference'  => 'b-03',
@@ -71,7 +71,7 @@ class IssueTableSeeder extends Seeder {
 
         Issue::create(array(
             'author_id'     => 1,
-            'assigned_to_id'=> 1,
+            'assigned_to_id'=> 2,
             'project_id'    => 1,
             'version'    => 'v1',
             'reference'  => 'b-03',
@@ -83,7 +83,7 @@ class IssueTableSeeder extends Seeder {
 
         Issue::create(array(
             'author_id'     => 1,
-            'assigned_to_id'=> 1,
+            'assigned_to_id'=> 2,
             'project_id'    => 1,
             'version'    => 'v1',
             'reference'  => 'b-03',
@@ -95,7 +95,7 @@ class IssueTableSeeder extends Seeder {
 
         Issue::create(array(
             'author_id'     => 1,
-            'assigned_to_id'=> 1,
+            'assigned_to_id'=> 2,
             'project_id'    => 1,
             'version'    => 'v1',
             'reference'  => 'b-03',
@@ -107,7 +107,7 @@ class IssueTableSeeder extends Seeder {
 
         Issue::create(array(
             'author_id'     => 1,
-            'assigned_to_id'=> 1,
+            'assigned_to_id'=> 2,
             'project_id'    => 1,
             'version'    => 'v1',
             'reference'  => 'b-03',
@@ -119,7 +119,7 @@ class IssueTableSeeder extends Seeder {
 
         Issue::create(array(
             'author_id'     => 1,
-            'assigned_to_id'=> 1,
+            'assigned_to_id'=> 2,
             'project_id'    => 1,
             'version'    => 'v1',
             'reference'  => 'b-03',
@@ -131,7 +131,7 @@ class IssueTableSeeder extends Seeder {
 
         Issue::create(array(
             'author_id'     => 1,
-            'assigned_to_id'=> 1,
+            'assigned_to_id'=> 2,
             'project_id'    => 1,
             'version'    => 'v1',
             'reference'  => 'b-03',
@@ -143,7 +143,7 @@ class IssueTableSeeder extends Seeder {
 
         Issue::create(array(
             'author_id'     => 1,
-            'assigned_to_id'=> 1,
+            'assigned_to_id'=> 2,
             'project_id'    => 1,
             'version'    => 'v1',
             'reference'  => 'b-03',

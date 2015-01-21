@@ -37,7 +37,7 @@ class Issue extends Model {
 
 	public function assigned_to()
 	{
-		return $this->belongsTo('App\User', 'assigned_to_id');
+		return $this->belongsTo('App\Group', 'assigned_to_id');
 	}
 
 	public function issue_history()

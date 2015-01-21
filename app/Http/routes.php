@@ -26,7 +26,25 @@ Route::group(array('middleware' => 'auth'), function() {
 	Route::get('/', function() { return Redirect::to('projects'); });
 	Route::get('projects', 'ProjectController@index');
 	Route::get('users', function() {
-		dd(User::find(1)->groups);
+		$user = User::find(1);
+
+		if($user->belongsToGroup('Sponge UK')) {
+			echo "he is sponge uk<br/>";
+		} else {
+			echo "he is not sponge uk<br/>";
+		}
+
+		if($user->belongsToGroup('Sponge UK (Development)')) {
+			echo "he is sponge uk (Development)<br/>";
+		} else {
+			echo "he is not sponge uk (Development)<br/>";
+		}
+
+		if($user->belongsToGroup('Client')) {
+			echo "he is client<br/>";
+		} else {
+			echo "he is not client<br/>";
+		}
 	});
 
     //>> Make sure user has at least ADMINISTRATOR priviliges

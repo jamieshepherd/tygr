@@ -23,7 +23,7 @@
             <h2>Details</h2>
             <ul class="details">
                 <li><strong>Created by:</strong> {{{ $issue->author->name }}}</li>
-                <li><strong>Assigned to:</strong> {{{ isset($issue->assigned_to) ? $issue->assigned_to->name : '' }}}</li>
+                <li><strong>Assigned to:</strong> {{{ isset($issue->assigned_to->name) ? $issue->assigned_to->name : '' }}}</li>
                 <li><strong>Reference:</strong> {{{ $issue->reference }}}</li>
                 <li><strong>Issue type:</strong> {{{ $issue->type }}}</li>
                 <li><strong>Status:</strong> {{{ $issue->status }}}</li>

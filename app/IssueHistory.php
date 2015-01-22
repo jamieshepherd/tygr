@@ -16,7 +16,7 @@ class IssueHistory extends Model {
 	 *
 	 * @var array
 	 */
-	protected $fillable = [];
+	protected $fillable = ['issue_id', 'author_id', 'type', 'status', 'comment'];
 
 	/**
 	 * The attributes excluded from the model's JSON form.

@@ -2,12 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ab4cf7f0-b20d-488a-a8be-dd1edad98773" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/build/css/main-2d513ee8.css" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Issue.php" afterPath="$PROJECT_DIR$/app/Issue.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/assets/sass/pages/_issue.scss" afterPath="$PROJECT_DIR$/resources/assets/sass/pages/_issue.scss" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/build/css/main.css" afterPath="$PROJECT_DIR$/public/build/css/main.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/css/main.css" afterPath="$PROJECT_DIR$/public/css/main.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/build/rev-manifest.json" afterPath="$PROJECT_DIR$/public/build/rev-manifest.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Console/Commands/Inspire.php" afterPath="$PROJECT_DIR$/app/Console/Commands/Inspire.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/Controllers/IssueController.php" afterPath="$PROJECT_DIR$/app/Http/Controllers/IssueController.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/issues/show.blade.php" afterPath="$PROJECT_DIR$/resources/views/issues/show.blade.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
@@ -37,28 +33,58 @@
       <file leaf-file-name="show.blade.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/resources/views/issues/show.blade.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="495" max-vertical-offset="3003">
-              <caret line="25" column="168" selection-start-line="25" selection-start-column="16" selection-end-line="25" selection-end-column="168" />
+            <state vertical-scroll-proportion="0.0" vertical-offset="1537" max-vertical-offset="3003">
+              <caret line="52" column="98" selection-start-line="52" selection-start-column="98" selection-end-line="52" selection-end-column="98" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="_issue.scss" pinned="false" current-in-tab="true">
+      <file leaf-file-name="_issue.scss" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/resources/assets/sass/pages/_issue.scss">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.45412844" vertical-offset="0" max-vertical-offset="2541">
+            <state vertical-scroll-proportion="0.0" vertical-offset="396" max-vertical-offset="2541">
               <caret line="12" column="19" selection-start-line="12" selection-start-column="19" selection-end-line="12" selection-end-column="19" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="IssueController.php" pinned="false" current-in-tab="false">
+      <file leaf-file-name="footer.blade.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/resources/views/layout/footer.blade.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="429">
+              <caret line="3" column="67" selection-start-line="3" selection-start-column="67" selection-end-line="3" selection-end-column="67" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Inspire.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/Console/Commands/Inspire.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1221">
+              <caret line="7" column="13" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="IssueController.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/Http/Controllers/IssueController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="4375" max-vertical-offset="7359">
-              <caret line="141" column="0" selection-start-line="141" selection-start-column="0" selection-end-line="141" selection-end-column="0" />
+            <state vertical-scroll-proportion="0.73509175" vertical-offset="3880" max-vertical-offset="7722">
+              <caret line="143" column="43" selection-start-line="143" selection-start-column="43" selection-end-line="143" selection-end-column="43" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ClientController.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/Http/Controllers/ClientController.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0" vertical-offset="3154" max-vertical-offset="4125">
+              <caret line="119" column="8" selection-start-line="119" selection-start-column="8" selection-end-line="119" selection-end-column="36" />
               <folding />
             </state>
           </provider>
@@ -82,7 +108,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/resources/views/layout/base.blade.php" />
         <option value="$PROJECT_DIR$/database/migrations/2015_01_08_160804_create_clients_table.php" />
         <option value="$PROJECT_DIR$/database/seeds/ClientTableSeeder.php" />
         <option value="$PROJECT_DIR$/app/Client.php" />
@@ -110,7 +135,6 @@
         <option value="$PROJECT_DIR$/resources/assets/sass/components/_buttons.scss" />
         <option value="$PROJECT_DIR$/resources/assets/sass/main.scss" />
         <option value="$PROJECT_DIR$/resources/assets/sass/components/_notifications.scss" />
-        <option value="$PROJECT_DIR$/resources/views/layout/footer.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/clients/edit.blade.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/ClientController.php" />
         <option value="$PROJECT_DIR$/resources/views/projects/show.blade.php" />
@@ -129,10 +153,12 @@
         <option value="$PROJECT_DIR$/app/Http/routes.php" />
         <option value="$PROJECT_DIR$/database/migrations/2015_01_09_135149_create_issues_table.php" />
         <option value="$PROJECT_DIR$/database/seeds/DatabaseSeeder.php" />
-        <option value="$PROJECT_DIR$/app/Http/Controllers/IssueController.php" />
         <option value="$PROJECT_DIR$/app/Issue.php" />
-        <option value="$PROJECT_DIR$/resources/views/issues/show.blade.php" />
         <option value="$PROJECT_DIR$/resources/assets/sass/pages/_issue.scss" />
+        <option value="$PROJECT_DIR$/resources/views/layout/footer.blade.php" />
+        <option value="$PROJECT_DIR$/app/Console/Commands/Inspire.php" />
+        <option value="$PROJECT_DIR$/resources/views/issues/show.blade.php" />
+        <option value="$PROJECT_DIR$/app/Http/Controllers/IssueController.php" />
       </list>
     </option>
   </component>
@@ -241,14 +267,6 @@
               <option name="myItemId" value="resources" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="views" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="issues" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
           </PATH>
           <PATH>
             <PATH_ELEMENT>
@@ -260,193 +278,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="resources" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="views" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="errors" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="tygr" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="tygr" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="resources" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="views" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="dashboard" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="tygr" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="tygr" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="resources" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="views" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="clients" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="tygr" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="tygr" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="resources" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="views" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="auth" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="tygr" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="tygr" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="resources" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="tygr" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="tygr" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="resources" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="assets" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="sass" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="tygr" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="tygr" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="resources" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="assets" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="sass" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="pages" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="tygr" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="tygr" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="database" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="tygr" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="tygr" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="database" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="seeds" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="tygr" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="tygr" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="database" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="migrations" />
+              <option name="myItemId" value="app" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -461,6 +293,32 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Console" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="tygr" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="tygr" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Console" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Commands" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -747,7 +605,7 @@
     <property name="options.splitter.details.proportions" value="0.2" />
     <property name="FullScreen" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
-    <property name="SearchEverywhereHistoryKey" value="issue&#9;FILE&#9;file:///Users/jamie/Web/tygr/resources/assets/sass/pages/_issue.scss&#10;issue/show&#9;FILE&#9;file:///Users/jamie/Web/tygr/resources/views/issues/show.blade.php&#10;issuecontrol&#9;FILE&#9;file:///Users/jamie/Web/tygr/app/Http/Controllers/IssueController.php&#10;issuecontr&#9;FILE&#9;file:///Users/jamie/Web/tygr/app/Http/Controllers/IssueController.php&#10;issueh&#9;FILE&#9;file:///Users/jamie/Web/tygr/database/seeds/IssueHistoryTableSeeder.php&#10;routes&#9;FILE&#9;file:///Users/jamie/Web/tygr/app/Http/routes.php&#10;issuecon&#9;FILE&#9;file:///Users/jamie/Web/tygr/app/Http/Controllers/IssueController.php&#10;forms&#9;FILE&#9;file:///Users/jamie/Web/tygr/resources/assets/sass/layout/_forms.scss&#10;nav&#9;FILE&#9;file:///Users/jamie/Web/tygr/resources/views/layout/nav.blade.php&#10;notification&#9;FILE&#9;file:///Users/jamie/Web/tygr/resources/assets/sass/components/_notifications.scss&#10;project/show&#9;FILE&#9;file:///Users/jamie/Web/tygr/resources/views/projects/show.blade.php&#10;clientcon&#9;FILE&#9;file:///Users/jamie/Web/tygr/app/Http/Controllers/ClientController.php&#10;clients/edit&#9;FILE&#9;file:///Users/jamie/Web/tygr/resources/views/clients/edit.blade.php&#10;notific&#9;FILE&#9;file:///Users/jamie/Web/tygr/resources/assets/sass/components/_notifications.scss&#10;issues/inde&#9;FILE&#9;file:///Users/jamie/Google Drive/Web/tygr/resources/views/issues/index.blade.php&#10;clientcont&#9;FILE&#9;file:///Users/jamie/Google Drive/Web/tygr/app/Http/Controllers/ClientController.php&#10;issuecontro&#9;FILE&#9;file:///Users/jamie/Google Drive/Web/tygr/app/Http/Controllers/IssueController.php&#10;issuetab&#9;FILE&#9;file:///Users/jamie/Google Drive/Web/tygr/database/migrations/2015_01_09_135149_create_issues_table.php&#10;issue/create&#9;FILE&#9;file:///Users/jamie/Google Drive/Web/tygr/resources/views/issues/create.blade.php&#10;buttons&#9;FILE&#9;file://D:/Web/tygr/resources/assets/sass/components/_buttons.scss&#10;clients/delete&#9;FILE&#9;file://D:/Web/tygr/resources/views/clients/delete.blade.php&#10;clients/create&#9;FILE&#9;file://D:/Web/tygr/resources/views/clients/create.blade.php&#10;createissuehist&#9;FILE&#9;file:///Users/jamie/Google Drive/Web/tygr/database/migrations/2015_01_19_131140_create_issue_history_table.php&#10;issues/show&#9;FILE&#9;file:///Users/jamie/Google Drive/Web/tygr/resources/views/issues/show.blade.php&#10;tables&#9;FILE&#9;file:///Users/jamie/Google Drive/Web/tygr/resources/assets/sass/layout/_tables.scss&#10;issues/index&#9;FILE&#9;file:///Users/jamie/Google Drive/Web/tygr/resources/views/issues/index.blade.php&#10;createissues&#9;FILE&#9;file:///Users/jamie/Google Drive/Web/tygr/database/migrations/2015_01_09_135149_create_issues_table.php&#10;typ&#9;FILE&#9;file:///Users/jamie/Google Drive/Web/tygr/resources/assets/sass/utils/_typography.scss&#10;login&#9;FILE&#9;file:///Users/jamie/Google Drive/Web/tygr/resources/views/auth/login.blade.php&#10;but&#9;FILE&#9;file:///Users/jamie/Google Drive/Web/tygr/resources/assets/sass/components/_buttons.scss&#10;projectcon&#9;FILE&#9;file:///Users/jamie/Google Drive/Web/tygr/app/Http/Controllers/ProjectController.php&#10;clientcontr&#9;FILE&#9;file:///Users/jamie/Google Drive/Web/tygr/app/Http/Controllers/ClientController.php&#10;middleware/&#9;FILE&#9;file:///Users/jamie/Google Drive/Web/tygr/app/Http/Middleware&#10;clientcontrol&#9;FILE&#9;file:///Users/jamie/Google Drive/Web/tygr/app/Http/Controllers/ClientController.php&#10;clienttable&#9;FILE&#9;file:///Users/jamie/Google Drive/Web/tygr/database/migrations/2015_01_08_160804_create_clients_table.php&#10;typogra&#9;FILE&#9;file:///Users/jamie/Google Drive/Web/tygr/resources/assets/sass/utils/_typography.scss&#10;projectcontroll&#9;FILE&#9;file:///Users/jamie/Google Drive/Web/tygr/app/Http/Controllers/ProjectController.php&#10;projects/inde&#9;FILE&#9;file:///Users/jamie/Google Drive/Web/tygr/resources/views/projects/index.blade.php&#10;clientsee&#9;FILE&#9;file:///Users/jamie/Google Drive/Web/tygr/database/seeds/ClientTableSeeder.php&#10;clients/inde&#9;FILE&#9;file:///Users/jamie/Google Drive/Web/tygr/resources/views/clients/index.blade.php&#10;clients/show&#9;FILE&#9;file:///Users/jamie/Google Drive/Web/tygr/resources/views/clients/show.blade.php&#10;client_tabl&#9;FILE&#9;file:///Users/jamie/Google Drive/Web/tygr/database/migrations/2015_01_08_160804_create_clients_table.php&#10;clienttab&#9;FILE&#9;file:///Users/jamie/Google Drive/Web/tygr/database/seeds/ClientTableSeeder.php&#10;createclient&#9;FILE&#9;file:///Users/jamie/Google Drive/Web/tygr/database/migrations/2015_01_08_160804_create_clients_table.php&#10;create_proj&#9;FILE&#9;file:///Users/jamie/Google Drive/Web/tygr/database/migrations/2015_01_08_192826_create_projects_table.php&#10;projectcontrol&#9;FILE&#9;file:///Users/jamie/Google Drive/Web/tygr/app/Http/Controllers/ProjectController.php&#10;projects/in&#9;FILE&#9;file:///Users/jamie/Google Drive/Web/tygr/resources/views/projects/index.blade.php&#10;base&#9;FILE&#9;file:///Users/jamie/Google Drive/Web/tygr/resources/views/layout/base.blade.php&#10;typog&#9;FILE&#9;file:///Users/jamie/Google Drive/Web/tygr/resources/assets/sass/utils/_typography.scss&#10;users&#9;FILE&#9;file:///Users/jamie/Google Drive/Web/tygr/database/migrations/2015_01_08_160805_create_users_table.php" />
+    <property name="SearchEverywhereHistoryKey" value="clientcon&#9;FILE&#9;file:///Users/jamie/Web/tygr/app/Http/Controllers/ClientController.php&#10;client/del&#9;FILE&#9;file:///Users/jamie/Web/tygr/resources/views/clients/delete.blade.php&#10;show&#9;FILE&#9;file:///Users/jamie/Web/tygr/resources/views/issues/show.blade.php&#10;reopen&#9;null&#9;null&#10;issuecontr&#9;FILE&#9;file:///Users/jamie/Web/tygr/app/Http/Controllers/IssueController.php&#10;issue&#9;FILE&#9;file:///Users/jamie/Web/tygr/resources/assets/sass/pages/_issue.scss&#10;issue/show&#9;FILE&#9;file:///Users/jamie/Web/tygr/resources/views/issues/show.blade.php&#10;issuecontrol&#9;FILE&#9;file:///Users/jamie/Web/tygr/app/Http/Controllers/IssueController.php&#10;issueh&#9;FILE&#9;file:///Users/jamie/Web/tygr/database/seeds/IssueHistoryTableSeeder.php&#10;routes&#9;FILE&#9;file:///Users/jamie/Web/tygr/app/Http/routes.php&#10;issuecon&#9;FILE&#9;file:///Users/jamie/Web/tygr/app/Http/Controllers/IssueController.php&#10;forms&#9;FILE&#9;file:///Users/jamie/Web/tygr/resources/assets/sass/layout/_forms.scss&#10;nav&#9;FILE&#9;file:///Users/jamie/Web/tygr/resources/views/layout/nav.blade.php&#10;notification&#9;FILE&#9;file:///Users/jamie/Web/tygr/resources/assets/sass/components/_notifications.scss&#10;project/show&#9;FILE&#9;file:///Users/jamie/Web/tygr/resources/views/projects/show.blade.php&#10;clients/edit&#9;FILE&#9;file:///Users/jamie/Web/tygr/resources/views/clients/edit.blade.php&#10;notific&#9;FILE&#9;file:///Users/jamie/Web/tygr/resources/assets/sass/components/_notifications.scss&#10;issues/inde&#9;FILE&#9;file:///Users/jamie/Google Drive/Web/tygr/resources/views/issues/index.blade.php&#10;clientcont&#9;FILE&#9;file:///Users/jamie/Google Drive/Web/tygr/app/Http/Controllers/ClientController.php&#10;issuecontro&#9;FILE&#9;file:///Users/jamie/Google Drive/Web/tygr/app/Http/Controllers/IssueController.php&#10;issuetab&#9;FILE&#9;file:///Users/jamie/Google Drive/Web/tygr/database/migrations/2015_01_09_135149_create_issues_table.php&#10;issue/create&#9;FILE&#9;file:///Users/jamie/Google Drive/Web/tygr/resources/views/issues/create.blade.php&#10;buttons&#9;FILE&#9;file://D:/Web/tygr/resources/assets/sass/components/_buttons.scss&#10;clients/delete&#9;FILE&#9;file://D:/Web/tygr/resources/views/clients/delete.blade.php&#10;clients/create&#9;FILE&#9;file://D:/Web/tygr/resources/views/clients/create.blade.php&#10;createissuehist&#9;FILE&#9;file:///Users/jamie/Google Drive/Web/tygr/database/migrations/2015_01_19_131140_create_issue_history_table.php&#10;issues/show&#9;FILE&#9;file:///Users/jamie/Google Drive/Web/tygr/resources/views/issues/show.blade.php&#10;tables&#9;FILE&#9;file:///Users/jamie/Google Drive/Web/tygr/resources/assets/sass/layout/_tables.scss&#10;issues/index&#9;FILE&#9;file:///Users/jamie/Google Drive/Web/tygr/resources/views/issues/index.blade.php&#10;createissues&#9;FILE&#9;file:///Users/jamie/Google Drive/Web/tygr/database/migrations/2015_01_09_135149_create_issues_table.php&#10;typ&#9;FILE&#9;file:///Users/jamie/Google Drive/Web/tygr/resources/assets/sass/utils/_typography.scss&#10;login&#9;FILE&#9;file:///Users/jamie/Google Drive/Web/tygr/resources/views/auth/login.blade.php&#10;but&#9;FILE&#9;file:///Users/jamie/Google Drive/Web/tygr/resources/assets/sass/components/_buttons.scss&#10;projectcon&#9;FILE&#9;file:///Users/jamie/Google Drive/Web/tygr/app/Http/Controllers/ProjectController.php&#10;clientcontr&#9;FILE&#9;file:///Users/jamie/Google Drive/Web/tygr/app/Http/Controllers/ClientController.php&#10;middleware/&#9;FILE&#9;file:///Users/jamie/Google Drive/Web/tygr/app/Http/Middleware&#10;clientcontrol&#9;FILE&#9;file:///Users/jamie/Google Drive/Web/tygr/app/Http/Controllers/ClientController.php&#10;clienttable&#9;FILE&#9;file:///Users/jamie/Google Drive/Web/tygr/database/migrations/2015_01_08_160804_create_clients_table.php&#10;typogra&#9;FILE&#9;file:///Users/jamie/Google Drive/Web/tygr/resources/assets/sass/utils/_typography.scss&#10;projectcontroll&#9;FILE&#9;file:///Users/jamie/Google Drive/Web/tygr/app/Http/Controllers/ProjectController.php&#10;projects/inde&#9;FILE&#9;file:///Users/jamie/Google Drive/Web/tygr/resources/views/projects/index.blade.php&#10;clientsee&#9;FILE&#9;file:///Users/jamie/Google Drive/Web/tygr/database/seeds/ClientTableSeeder.php&#10;clients/inde&#9;FILE&#9;file:///Users/jamie/Google Drive/Web/tygr/resources/views/clients/index.blade.php&#10;clients/show&#9;FILE&#9;file:///Users/jamie/Google Drive/Web/tygr/resources/views/clients/show.blade.php&#10;client_tabl&#9;FILE&#9;file:///Users/jamie/Google Drive/Web/tygr/database/migrations/2015_01_08_160804_create_clients_table.php&#10;clienttab&#9;FILE&#9;file:///Users/jamie/Google Drive/Web/tygr/database/seeds/ClientTableSeeder.php&#10;createclient&#9;FILE&#9;file:///Users/jamie/Google Drive/Web/tygr/database/migrations/2015_01_08_160804_create_clients_table.php&#10;create_proj&#9;FILE&#9;file:///Users/jamie/Google Drive/Web/tygr/database/migrations/2015_01_08_192826_create_projects_table.php&#10;projectcontrol&#9;FILE&#9;file:///Users/jamie/Google Drive/Web/tygr/app/Http/Controllers/ProjectController.php&#10;projects/in&#9;FILE&#9;file:///Users/jamie/Google Drive/Web/tygr/resources/views/projects/index.blade.php" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
@@ -778,15 +636,15 @@
       <BehatRunner />
       <method />
     </configuration>
-    <configuration default="true" type="PhpUnitRemoteRunConfigurationType" factoryName="PHPUnit on Server">
-      <method />
-    </configuration>
     <configuration default="true" type="js.build_tools.gulp" factoryName="Gulp.js">
       <node-options />
       <gulpfile />
       <tasks />
       <pass-parent-envs>true</pass-parent-envs>
       <envs />
+      <method />
+    </configuration>
+    <configuration default="true" type="PhpUnitRemoteRunConfigurationType" factoryName="PHPUnit on Server">
       <method />
     </configuration>
     <list size="0" />
@@ -814,21 +672,21 @@
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.30625" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.25" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Documentation" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="FLOATING" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" x="100" y="123" width="1240" height="673" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32902467" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Gulp" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
-      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Command Line Tools Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32902467" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
@@ -857,18 +715,11 @@
           <option name="timeStamp" value="3" />
         </line-breakpoint>
       </breakpoints>
-      <option name="time" value="5" />
+      <option name="time" value="6" />
     </breakpoint-manager>
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/resources/views/layout/header.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="429">
-          <caret line="2" column="28" selection-start-line="2" selection-start-column="28" selection-end-line="2" selection-end-column="28" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/database/seeds/ProjectTableSeeder.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="2.059633" vertical-offset="679" max-vertical-offset="2871">
@@ -953,13 +804,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/clients/delete.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.6055046" vertical-offset="0" max-vertical-offset="872">
-          <caret line="16" column="139" selection-start-line="16" selection-start-column="139" selection-end-line="16" selection-end-column="139" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/issues/create.blade.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.20527522" vertical-offset="316" max-vertical-offset="1419">
@@ -1006,20 +850,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="561">
           <caret line="1" column="14" selection-start-line="1" selection-start-column="14" selection-end-line="1" selection-end-column="14" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/ClientController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="4125">
-          <caret line="118" column="47" selection-start-line="118" selection-start-column="47" selection-end-line="118" selection-end-column="47" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/layout/footer.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="429">
-          <caret line="3" column="24" selection-start-line="3" selection-start-column="24" selection-end-line="3" selection-end-column="24" />
         </state>
       </provider>
     </entry>
@@ -1076,7 +906,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="561">
           <caret line="2" column="8" selection-start-line="2" selection-start-column="8" selection-end-line="3" selection-end-column="36" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1084,7 +913,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="792" max-vertical-offset="2310">
           <caret line="39" column="3" selection-start-line="39" selection-start-column="3" selection-end-line="39" selection-end-column="3" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1092,7 +920,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="132" max-vertical-offset="1188">
           <caret line="18" column="0" selection-start-line="15" selection-start-column="12" selection-end-line="18" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1100,7 +927,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="99" max-vertical-offset="1815">
           <caret line="40" column="11" selection-start-line="40" selection-start-column="11" selection-end-line="40" selection-end-column="11" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1108,7 +934,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="462" max-vertical-offset="2145">
           <caret line="19" column="8" selection-start-line="19" selection-start-column="8" selection-end-line="19" selection-end-column="8" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1116,7 +941,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="891" max-vertical-offset="2079">
           <caret line="38" column="39" selection-start-line="38" selection-start-column="39" selection-end-line="39" selection-end-column="66" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1124,7 +948,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="1174" max-vertical-offset="2079">
           <caret line="37" column="17" selection-start-line="37" selection-start-column="17" selection-end-line="37" selection-end-column="17" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1140,7 +963,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="132" max-vertical-offset="1386">
           <caret line="3" column="17" selection-start-line="3" selection-start-column="17" selection-end-line="3" selection-end-column="17" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1148,7 +970,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.5080275" vertical-offset="349" max-vertical-offset="1452">
           <caret line="25" column="11" selection-start-line="14" selection-start-column="8" selection-end-line="25" selection-end-column="11" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1156,7 +977,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.11353211" vertical-offset="330" max-vertical-offset="1683">
           <caret line="14" column="8" selection-start-line="14" selection-start-column="8" selection-end-line="14" selection-end-column="8" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1164,7 +984,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="118" max-vertical-offset="1023">
           <caret line="18" column="40" selection-start-line="18" selection-start-column="40" selection-end-line="18" selection-end-column="40" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1180,7 +999,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="19" max-vertical-offset="1320">
           <caret line="10" column="19" selection-start-line="10" selection-start-column="19" selection-end-line="10" selection-end-column="19" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1188,7 +1006,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.26490825" vertical-offset="528" max-vertical-offset="1419">
           <caret line="23" column="17" selection-start-line="23" selection-start-column="17" selection-end-line="23" selection-end-column="17" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1204,15 +1021,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.3027523" vertical-offset="429" max-vertical-offset="1947">
           <caret line="22" column="58" selection-start-line="22" selection-start-column="58" selection-end-line="22" selection-end-column="58" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/IssueController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="4375" max-vertical-offset="7359">
-          <caret line="141" column="0" selection-start-line="141" selection-start-column="0" selection-end-line="141" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1224,18 +1032,58 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/issues/show.blade.php">
+    <entry file="file://$PROJECT_DIR$/resources/assets/sass/pages/_issue.scss">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="495" max-vertical-offset="3003">
-          <caret line="25" column="168" selection-start-line="25" selection-start-column="16" selection-end-line="25" selection-end-column="168" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="396" max-vertical-offset="2541">
+          <caret line="12" column="19" selection-start-line="12" selection-start-column="19" selection-end-line="12" selection-end-column="19" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/resources/assets/sass/pages/_issue.scss">
+    <entry file="file://$PROJECT_DIR$/resources/views/layout/footer.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.45412844" vertical-offset="0" max-vertical-offset="2541">
-          <caret line="12" column="19" selection-start-line="12" selection-start-column="19" selection-end-line="12" selection-end-column="19" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="429">
+          <caret line="3" column="67" selection-start-line="3" selection-start-column="67" selection-end-line="3" selection-end-column="67" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Console/Commands/Inspire.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1221">
+          <caret line="7" column="13" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/issues/show.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="1537" max-vertical-offset="3003">
+          <caret line="52" column="98" selection-start-line="52" selection-start-column="98" selection-end-line="52" selection-end-column="98" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/clients/delete.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.6055046" vertical-offset="0" max-vertical-offset="872">
+          <caret line="16" column="139" selection-start-line="16" selection-start-column="139" selection-end-line="16" selection-end-column="139" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/ClientController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="3154" max-vertical-offset="4125">
+          <caret line="119" column="8" selection-start-line="119" selection-start-column="8" selection-end-line="119" selection-end-column="36" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/IssueController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.73509175" vertical-offset="3880" max-vertical-offset="7722">
+          <caret line="143" column="43" selection-start-line="143" selection-start-column="43" selection-end-line="143" selection-end-column="43" />
           <folding />
         </state>
       </provider>

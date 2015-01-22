@@ -128,7 +128,7 @@ class IssueController extends Controller {
 		if(Input::get('assigned_to') != $issue->assigned_to->id) {
 
 			$issue->assigned_to_id = Input::get('assigned_to');
-			$issue->push();
+			$issue->save();
 			$issue = Issue::find($id);
 
 			$update = new IssueHistory();
@@ -136,13 +136,21 @@ class IssueController extends Controller {
 			$update->author_id  = \Auth::user()->id;
 			$update->type		= 'status';
 			$update->status     = 'assigned';
-			$update->comment    = 'Issue was assigned to '.$issue->assigned_to->name;
+			if($issue->assigned_to->name == 'Client') {
+				$issue->status  = 'Awaiting Client';
+				$issue->save();
+				$update->comment    = 'Issue was assigned to '.$issue->project->client->name;
+			} else {
+				$issue->status  = 'Assigned';
+				$issue->save();
+				$update->comment    = 'Issue was assigned to '.$issue->assigned_to->name;
+			}
 			$update->save();
 		}
 
 		if(Input::get('resolved')) {
 			$issue->status	= 'Resolved';
-			$issue->push();
+			$issue->save();
 
 			$update = new IssueHistory();
 			$update->issue_id   = $issue->id;
@@ -166,7 +174,10 @@ class IssueController extends Controller {
 	 */
 	public function destroy($id)
 	{
+		Issue::destroy($id);
+
 		\Session::flash('message', 'The issue was removed successfully.');
+		return redirect('projects/');
 	}
 
 	/**

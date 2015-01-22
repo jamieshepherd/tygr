@@ -40,6 +40,11 @@ class Issue extends Model {
 		return $this->belongsTo('App\Group', 'assigned_to_id');
 	}
 
+	public function assigned()
+	{
+		return $this->assigned_to->name;
+	}
+
 	public function issue_history()
 	{
 		return $this->hasMany('App\IssueHistory')->orderBy('id', 'desc');

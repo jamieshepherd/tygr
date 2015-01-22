@@ -481,7 +481,8 @@ section {
     margin: 20px 0; }
     section .details li {
       display: inline-block;
-      width: 40%;
+      min-width: 40%;
+      max-width: 40%;
       margin-right: 10px;
       line-height: 28px; }
       section .details li strong {

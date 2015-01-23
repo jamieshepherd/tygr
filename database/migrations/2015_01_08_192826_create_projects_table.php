@@ -41,7 +41,7 @@ class CreateProjectsTable extends Migration {
 			// Authoring tool
 			$table->string('authoring_tool');
 			// Deployment location (client or sponge)
-			$table->string('lms_location');
+			$table->string('lms_deployment');
 			// LMS specification (SCORM)
 			$table->string('lms_specification');
             // Timestamps

@@ -113,25 +113,25 @@ class ProjectController extends Controller {
 	/**
 	 * Update the specified resource in storage.
 	 *
-	 * @param  int  $id
+	 * @param  string  $stub
 	 * @return Response
 	 */
-	public function update($id)
+	public function update($stub)
 	{
-		$project = Project::find($id);
+		$project = Project::where('stub', '=', $stub)->firstOrFail();
 		$project->name				         = Input::get('name');
 		$project->stub				         = Input::get('stub');
 		$project->current_version	         = Input::get('current_version');
 		$project->status			         = Input::get('status');
 		$project->authoring_tool             = Input::get('authoring_tool');
-		$project->lms_location               = Input::get('lms_location');
+		$project->lms_deployment             = Input::get('lms_deployment');
 		$project->lms_specification          = Input::get('lms_specification');
-		$project->project_manager   		 = Input::get('project_manager');
-		$project->lead_developer    		 = Input::get('lead_developer');
-		$project->lead_designer     		 = Input::get('lead_designer');
-		$project->instructional_designer     = Input::get('instructional_designer');
+		$project->project_manager_id   		 = Input::get('project_manager');
+		$project->lead_developer_id    		 = Input::get('lead_developer');
+		$project->lead_designer_id     		 = Input::get('lead_designer');
+		$project->instructional_designer_id  = Input::get('instructional_designer');
 		$project->authoring_tool             = Input::get('authoring_tool');
-		$project->lms_location               = Input::get('lms_location');
+		$project->lms_deployment             = Input::get('lms_deployment');
 		$project->lms_specification          = Input::get('lms_specification');
 		$result = $project->save();
 		if($result) {

@@ -47,6 +47,14 @@ class UserTableSeeder extends Seeder {
             'email'       => 'test@user.com',
             'password'    => Hash::make('password')
         ));
+
+        User::create(array(
+            'name'        => 'Rhea Stevens',
+            'client_id'   => 1,
+            'rank'        => 2,
+            'email'       => 'rhea.stevens@spongeuk.com',
+            'password'    => Hash::make('password')
+        ));
     }
 
 }

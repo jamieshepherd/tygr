@@ -51,6 +51,7 @@ class IssueController extends Controller {
 		$issue->type        = Input::get('type');
 		$issue->status      = 'New';
 		$issue->priority    = 'Medium';
+		$issue->assigned_to_id = 2;
 		$issue->reference   = Input::get('reference');
 		$issue->description = Input::get('description');
 		$result = $issue->save();

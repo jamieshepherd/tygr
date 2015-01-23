@@ -47,7 +47,7 @@ class Project extends Model {
 
 	public function instructional_designer()
 	{
-		return $this->belongsTo('App\User', 'instructional_designer');
+		return $this->belongsTo('App\User', 'instructional_designer_id');
 	}
 
 	public function issues()

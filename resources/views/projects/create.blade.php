@@ -32,8 +32,8 @@
             <input name="authoring_tool" type="text" placeholder="e.g. Adapt, Storyline, Lectora" value="">
 
             <label>Deployment location</label>
-            <input type="radio" name="lms_location" value="client"> Client
-            <input type="radio" name="lms_location" value="sponge"> Launch &amp; Learn
+            <input type="radio" name="lms_deployment" value="client"> Client
+            <input type="radio" name="lms_deployment" value="sponge"> Launch &amp; Learn
 
             <label>LMS Specification</label>
             <input name="lms_specification" type="text" placeholder="e.g. SCORM 1.2, SCORM 2004" value="">

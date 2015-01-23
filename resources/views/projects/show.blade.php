@@ -25,12 +25,14 @@
                 <tr><td><strong>Project manager</strong></td><td>{{{ $project->project_manager->name }}}</td></tr>
                 <tr><td><strong>Lead developer</strong></td><td>{{{ $project->lead_developer->name }}}</td></tr>
                 <tr><td><strong>Lead designer</strong></td><td>{{{ $project->lead_designer->name }}}</td></tr>
+                <tr><td><strong>Instructional designer</strong></td><td>{{{ $project->instructional_designer->name }}}</td></tr>
+
             </table>
             <hr/>
             <table>
-                <tr><td><strong>Authoring tool</strong></td><td>Adapt 1.2</td></tr>
-                <tr><td><strong>LMS Deployment</strong></td><td>Launch &amp; Learn</td></tr>
-                <tr><td><strong>Specification</strong></td><td>Scorm 2004</td></tr>
+                <tr><td><strong>Authoring tool</strong></td><td>{{{ $project->authoring_tool }}}</td></tr>
+                <tr><td><strong>LMS Deployment</strong></td><td>{{{ $project->lms_deployment }}}</td></tr>
+                <tr><td><strong>Specification</strong></td><td>{{{ $project->lms_specification }}}</td></tr>
             </table>
         </div>
         <h2>You have 0 issues assigned to you!</h2>

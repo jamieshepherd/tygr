@@ -42,7 +42,6 @@ class Issue extends Model {
 
 	public function assigned()
 	{
-		dd($this->assigned_to);
 		return $this->assigned_to->name;
 	}
 

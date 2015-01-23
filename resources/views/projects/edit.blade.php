@@ -29,14 +29,14 @@
             <hr/>
 
             <label>Authoring Tool</label>
-            <input name="authoring_tool" type="text" placeholder="e.g. Adapt, Storyline, Lectora" value="">
+            <input name="authoring_tool" type="text" placeholder="e.g. Adapt, Storyline, Lectora" value="{{{ $project->authoring_tool }}}">
 
             <label>Deployment location</label>
-            <input type="radio" name="lms_location" value="client"> Client
-            <input type="radio" name="lms_location" value="sponge"> Launch &amp; Learn
+            <input type="radio" name="lms_deployment" value="Client" @if($project->lms_deployment == 'Client') checked @endif> Client
+            <input type="radio" name="lms_deployment" value="Sponge" @if($project->lms_deployment == 'Sponge') checked @endif> Launch &amp; Learn
 
             <label>LMS Specification</label>
-            <input name="lms_specification" type="text" placeholder="e.g. SCORM 1.2, SCORM 2004" value="">
+            <input name="lms_specification" type="text" placeholder="e.g. SCORM 1.2, SCORM 2004" value="{{{ $project->lms_specification }}}">
 
             <hr/>
 
@@ -50,7 +50,7 @@
             <input name="lead_designer" type="text" placeholder="Start typing a name" value="{{{ $project->lead_designer->name }}}">
 
             <label>Instructional designer</label>
-            <input name="instructional_designer" type="text" placeholder="Start typing a name" value="">
+            <input name="instructional_designer" type="text" placeholder="Start typing a name" value="{{{ $project->instructional_designer->name }}}">
 
             <br/><button type="submit"><i class="fa fa-arrow-circle-right"></i> Update details</button>
         </form>

@@ -31,10 +31,19 @@ class CreateProjectsTable extends Migration {
             // Lead designer
             $table->integer('lead_designer_id')->unsigned()->nullable();
             $table->foreign('lead_designer_id')->references('id')->on('users');
+			// Lead designer
+			$table->integer('instructional_designer_id')->unsigned()->nullable();
+			$table->foreign('instructional_designer_id')->references('id')->on('users');
             // Current version
 			$table->string('current_version');
 			// Project status
 			$table->string('status');
+			// Authoring tool
+			$table->string('authoring_tool');
+			// Deployment location (client or sponge)
+			$table->string('lms_location');
+			// LMS specification (SCORM)
+			$table->string('lms_specification');
             // Timestamps
 			$table->timestamps();
 		});

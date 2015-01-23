@@ -37,12 +37,15 @@ Route::group(array('middleware' => 'auth'), function() {
 		Route::post('clients/edit/{id}', 'ClientController@update');
 		Route::get('clients/delete/{id}', 'ClientController@delete');
 		Route::get('clients/delete/{id}/confirm', 'ClientController@destroy');
+		Route::get('clients/show/{stub}/create', 'ProjectController@create');
+		Route::post('clients/show/{stub}/create', 'ProjectController@store');
+		Route::get('projects/{stub}/edit', 'ProjectController@edit');
+		Route::post('projects/{stub}/edit', 'ProjectController@update');
 	});
 
     //>> Make sure user has at least CLIENT priviliges
 	Route::group(array('middleware' => 'client'), function() {
 		Route::get('projects/{stub}', 'ProjectController@show');
-		Route::get('projects/{stub}/edit', 'ProjectController@edit');
 		Route::get('projects/{stub}/issues', 'IssueController@index');
 		Route::get('projects/{stub}/issues/version/{id}', 'IssueController@version');
 		Route::get('projects/{stub}/issues/create', 'IssueController@create');

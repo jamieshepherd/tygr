@@ -5,6 +5,7 @@ use App\Http\Controllers\Controller;
 use App\Client;
 use App\Project;
 use App\User;
+use Input;
 
 class ProjectController extends Controller {
 
@@ -23,11 +24,13 @@ class ProjectController extends Controller {
 	/**
 	 * Show the form for creating a new resource.
 	 *
+	 * @param  string  $stub
 	 * @return Response
 	 */
-	public function create()
+	public function create($stub)
 	{
-		//
+		$client = Client::where('stub', '=', $stub)->firstOrFail();
+		return view('projects.create')->with('client', $client);
 	}
 
 	/**
@@ -35,9 +38,32 @@ class ProjectController extends Controller {
 	 *
 	 * @return Response
 	 */
-	public function store()
+	public function store($stub)
 	{
-		//
+		$client = Client::where('stub', '=', $stub)->firstOrFail();
+
+		$project = new Project();
+		$project->client_id					 = $client->id;
+		$project->name				         = Input::get('name');
+		$project->stub				         = Input::get('stub');
+		$project->current_version	         = Input::get('current_version');
+		$project->status			         = Input::get('status');
+		$project->authoring_tool             = Input::get('authoring_tool');
+		$project->lms_location               = Input::get('lms_location');
+		$project->lms_specification          = Input::get('lms_specification');
+		$project->project_manager_id   		 = Input::get('project_manager');
+		$project->lead_developer_id    		 = Input::get('lead_developer');
+		$project->lead_designer_id     		 = Input::get('lead_designer');
+		$project->instructional_designer_id  = Input::get('instructional_designer');
+		$project->authoring_tool             = Input::get('authoring_tool');
+		$project->lms_location               = Input::get('lms_location');
+		$project->lms_specification          = Input::get('lms_specification');
+
+		$result = $project->save();
+		if($result) {
+			\Session::flash('message', $project->name.' was created successfully.');
+			return redirect('/projects/'.$project->stub);
+		}
 	}
 
 	/**
@@ -92,7 +118,26 @@ class ProjectController extends Controller {
 	 */
 	public function update($id)
 	{
-		//
+		$project = Project::find($id);
+		$project->name				         = Input::get('name');
+		$project->stub				         = Input::get('stub');
+		$project->current_version	         = Input::get('current_version');
+		$project->status			         = Input::get('status');
+		$project->authoring_tool             = Input::get('authoring_tool');
+		$project->lms_location               = Input::get('lms_location');
+		$project->lms_specification          = Input::get('lms_specification');
+		$project->project_manager   		 = Input::get('project_manager');
+		$project->lead_developer    		 = Input::get('lead_developer');
+		$project->lead_designer     		 = Input::get('lead_designer');
+		$project->instructional_designer     = Input::get('instructional_designer');
+		$project->authoring_tool             = Input::get('authoring_tool');
+		$project->lms_location               = Input::get('lms_location');
+		$project->lms_specification          = Input::get('lms_specification');
+		$result = $project->save();
+		if($result) {
+			\Session::flash('message', 'Project details updated successfully.');
+			return redirect('/projects/'.$project->stub);
+		}
 	}
 
 	/**

@@ -45,6 +45,11 @@ class Project extends Model {
         return $this->belongsTo('App\User', 'lead_designer_id');
     }
 
+	public function instructional_designer()
+	{
+		return $this->belongsTo('App\User', 'instructional_designer');
+	}
+
 	public function issues()
 	{
 		return $this->hasMany('App\Issue', 'project_id')->orderBy('status');

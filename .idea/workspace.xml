@@ -2,10 +2,15 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ab4cf7f0-b20d-488a-a8be-dd1edad98773" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/views/projects/edit.blade.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/views/projects/create.blade.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/database/migrations/2015_01_08_192826_create_projects_table.php" afterPath="$PROJECT_DIR$/database/migrations/2015_01_08_192826_create_projects_table.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Issue.php" afterPath="$PROJECT_DIR$/app/Issue.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Project.php" afterPath="$PROJECT_DIR$/app/Project.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/Controllers/ProjectController.php" afterPath="$PROJECT_DIR$/app/Http/Controllers/ProjectController.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/projects/edit.blade.php" afterPath="$PROJECT_DIR$/resources/views/projects/edit.blade.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/routes.php" afterPath="$PROJECT_DIR$/app/Http/routes.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/clients/show.blade.php" afterPath="$PROJECT_DIR$/resources/views/clients/show.blade.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/projects/show.blade.php" afterPath="$PROJECT_DIR$/resources/views/projects/show.blade.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="sponge.iws" />
@@ -31,81 +36,21 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="show.blade.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/resources/views/issues/show.blade.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="1537" max-vertical-offset="3003">
-              <caret line="52" column="98" selection-start-line="52" selection-start-column="98" selection-end-line="52" selection-end-column="98" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="IssueController.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/Http/Controllers/IssueController.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="3913" max-vertical-offset="7722">
-              <caret line="143" column="43" selection-start-line="143" selection-start-column="43" selection-end-line="143" selection-end-column="43" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="edit.blade.php" pinned="false" current-in-tab="true">
+      <file leaf-file-name="edit.blade.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/resources/views/projects/edit.blade.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="1.3623853" vertical-offset="429" max-vertical-offset="2046">
-              <caret line="49" column="132" selection-start-line="49" selection-start-column="132" selection-end-line="49" selection-end-column="132" />
+            <state vertical-scroll-proportion="0.0" vertical-offset="1089" max-vertical-offset="2145">
+              <caret line="52" column="47" selection-start-line="52" selection-start-column="47" selection-end-line="52" selection-end-column="47" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="edit.blade.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/resources/views/clients/edit.blade.php">
+      <file leaf-file-name="create.blade.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/resources/views/projects/create.blade.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="132" max-vertical-offset="1188">
-              <caret line="18" column="0" selection-start-line="15" selection-start-column="12" selection-end-line="18" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Project.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/Project.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="877" max-vertical-offset="1947">
-              <caret line="50" column="5" selection-start-line="50" selection-start-column="5" selection-end-line="50" selection-end-column="5" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="2015_01_08_192826_create_projects_table.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/database/migrations/2015_01_08_192826_create_projects_table.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="363" max-vertical-offset="1914">
-              <caret line="36" column="34" selection-start-line="36" selection-start-column="34" selection-end-line="36" selection-end-column="34" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="index.blade.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/resources/views/projects/index.blade.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="33" max-vertical-offset="1089">
-              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="routes.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/Http/routes.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="1174" max-vertical-offset="2112">
-              <caret line="44" column="40" selection-start-line="44" selection-start-column="40" selection-end-line="44" selection-end-column="40" />
+            <state vertical-scroll-proportion="0.0" vertical-offset="943" max-vertical-offset="2145">
+              <caret line="30" column="41" selection-start-line="30" selection-start-column="41" selection-end-line="30" selection-end-column="41" />
               <folding />
             </state>
           </provider>
@@ -114,18 +59,62 @@
       <file leaf-file-name="ProjectController.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/Http/Controllers/ProjectController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="1980" max-vertical-offset="3663">
-              <caret line="67" column="28" selection-start-line="67" selection-start-column="28" selection-end-line="67" selection-end-column="28" />
+            <state vertical-scroll-proportion="0.0" vertical-offset="1518" max-vertical-offset="5280">
+              <caret line="64" column="49" selection-start-line="64" selection-start-column="49" selection-end-line="64" selection-end-column="49" />
+              <folding>
+                <element signature="e#39#61#0#PHP" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="routes.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/Http/routes.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0" vertical-offset="712" max-vertical-offset="2211">
+              <caret line="42" column="69" selection-start-line="42" selection-start-column="69" selection-end-line="42" selection-end-column="69" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ClientController.php" pinned="false" current-in-tab="false">
+      <file leaf-file-name="2015_01_08_192826_create_projects_table.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/database/migrations/2015_01_08_192826_create_projects_table.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0" vertical-offset="745" max-vertical-offset="2211">
+              <caret line="44" column="40" selection-start-line="44" selection-start-column="40" selection-end-line="44" selection-end-column="40" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ClientController.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/Http/Controllers/ClientController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="3154" max-vertical-offset="4125">
-              <caret line="119" column="8" selection-start-line="119" selection-start-column="8" selection-end-line="119" selection-end-column="36" />
+            <state vertical-scroll-proportion="-2.232798" vertical-offset="2211" max-vertical-offset="4257">
+              <caret line="8" column="43" selection-start-line="8" selection-start-column="43" selection-end-line="8" selection-end-column="43" />
+              <folding>
+                <element signature="e#39#61#0#PHP" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Issue.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/Issue.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0" vertical-offset="910" max-vertical-offset="1947">
+              <caret line="44" column="29" selection-start-line="44" selection-start-column="29" selection-end-line="44" selection-end-column="29" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Project.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/Project.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0" vertical-offset="976" max-vertical-offset="2112">
+              <caret line="50" column="5" selection-start-line="50" selection-start-column="5" selection-end-line="50" selection-end-column="5" />
               <folding />
             </state>
           </provider>
@@ -139,9 +128,7 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/app/Client.php" />
         <option value="$PROJECT_DIR$/app/Http/Middleware/RestrictAdmin.php" />
-        <option value="$PROJECT_DIR$/resources/views/clients/show.blade.php" />
         <option value="$PROJECT_DIR$/resources/assets/sass/layout/_main.scss" />
         <option value="$PROJECT_DIR$/resources/assets/sass/layout/_navigation.scss" />
         <option value="$PROJECT_DIR$/public/js/dropzone.min.js" />
@@ -154,7 +141,6 @@
         <option value="$PROJECT_DIR$/resources/assets/sass/layout/_updates.scss" />
         <option value="$PROJECT_DIR$/resources/views/projects/index.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/issues/create.blade.php" />
-        <option value="$PROJECT_DIR$/app/Project.php" />
         <option value="$PROJECT_DIR$/resources/assets/sass/layout/_tables.scss" />
         <option value="$PROJECT_DIR$/app/IssueHistory.php" />
         <option value="$PROJECT_DIR$/database/migrations/2015_01_19_131140_create_issue_history_table.php" />
@@ -165,7 +151,6 @@
         <option value="$PROJECT_DIR$/resources/assets/sass/components/_notifications.scss" />
         <option value="$PROJECT_DIR$/resources/views/clients/edit.blade.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/ClientController.php" />
-        <option value="$PROJECT_DIR$/resources/views/projects/show.blade.php" />
         <option value="$PROJECT_DIR$/database/migrations/2015_01_20_135826_create_group_user_table.php" />
         <option value="$PROJECT_DIR$/database/migrations/2015_01_20_135240_create_groups_table.php" />
         <option value="$PROJECT_DIR$/database/seeds/UserTableSeeder.php" />
@@ -180,16 +165,20 @@
         <option value="$PROJECT_DIR$/resources/views/issues/index.blade.php" />
         <option value="$PROJECT_DIR$/database/migrations/2015_01_09_135149_create_issues_table.php" />
         <option value="$PROJECT_DIR$/database/seeds/DatabaseSeeder.php" />
-        <option value="$PROJECT_DIR$/app/Issue.php" />
         <option value="$PROJECT_DIR$/resources/assets/sass/pages/_issue.scss" />
         <option value="$PROJECT_DIR$/resources/views/layout/footer.blade.php" />
         <option value="$PROJECT_DIR$/app/Console/Commands/Inspire.php" />
         <option value="$PROJECT_DIR$/resources/views/issues/show.blade.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/IssueController.php" />
+        <option value="$PROJECT_DIR$/resources/views/projects/show.blade.php" />
+        <option value="$PROJECT_DIR$/resources/views/clients/show.blade.php" />
+        <option value="$PROJECT_DIR$/resources/views/projects/create.blade.php" />
+        <option value="$PROJECT_DIR$/resources/views/projects/edit.blade.php" />
+        <option value="$PROJECT_DIR$/app/Project.php" />
+        <option value="$PROJECT_DIR$/database/migrations/2015_01_08_192826_create_projects_table.php" />
         <option value="$PROJECT_DIR$/app/Http/routes.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/ProjectController.php" />
-        <option value="$PROJECT_DIR$/database/migrations/2015_01_08_192826_create_projects_table.php" />
-        <option value="$PROJECT_DIR$/resources/views/projects/edit.blade.php" />
+        <option value="$PROJECT_DIR$/app/Issue.php" />
       </list>
     </option>
   </component>
@@ -282,6 +271,28 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="projects" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="tygr" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="tygr" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="resources" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="views" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="layout" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -658,7 +669,7 @@
     <property name="options.splitter.details.proportions" value="0.2" />
     <property name="FullScreen" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
-    <property name="SearchEverywhereHistoryKey" value="client/edit&#9;FILE&#9;file:///Users/jamie/Web/tygr/resources/views/clients/edit.blade.php&#10;project_tabl&#9;FILE&#9;file:///Users/jamie/Web/tygr/database/migrations/2015_01_08_192826_create_projects_table.php&#10;projectcon&#9;null&#9;null&#10;routes&#9;FILE&#9;file:///Users/jamie/Web/tygr/app/Http/routes.php&#10;project/edit&#9;null&#9;null&#10;clientcon&#9;FILE&#9;file:///Users/jamie/Web/tygr/app/Http/Controllers/ClientController.php&#10;client/del&#9;FILE&#9;file:///Users/jamie/Web/tygr/resources/views/clients/delete.blade.php&#10;show&#9;FILE&#9;file:///Users/jamie/Web/tygr/resources/views/issues/show.blade.php&#10;reopen&#9;null&#9;null&#10;issuecontr&#9;FILE&#9;file:///Users/jamie/Web/tygr/app/Http/Controllers/IssueController.php&#10;issue&#9;FILE&#9;file:///Users/jamie/Web/tygr/resources/assets/sass/pages/_issue.scss&#10;issue/show&#9;FILE&#9;file:///Users/jamie/Web/tygr/resources/views/issues/show.blade.php&#10;issuecontrol&#9;FILE&#9;file:///Users/jamie/Web/tygr/app/Http/Controllers/IssueController.php&#10;issueh&#9;FILE&#9;file:///Users/jamie/Web/tygr/database/seeds/IssueHistoryTableSeeder.php&#10;issuecon&#9;FILE&#9;file:///Users/jamie/Web/tygr/app/Http/Controllers/IssueController.php&#10;forms&#9;FILE&#9;file:///Users/jamie/Web/tygr/resources/assets/sass/layout/_forms.scss&#10;nav&#9;FILE&#9;file:///Users/jamie/Web/tygr/resources/views/layout/nav.blade.php&#10;notification&#9;FILE&#9;file:///Users/jamie/Web/tygr/resources/assets/sass/components/_notifications.scss&#10;project/show&#9;FILE&#9;file:///Users/jamie/Web/tygr/resources/views/projects/show.blade.php&#10;clients/edit&#9;FILE&#9;file:///Users/jamie/Web/tygr/resources/views/clients/edit.blade.php&#10;notific&#9;FILE&#9;file:///Users/jamie/Web/tygr/resources/assets/sass/components/_notifications.scss&#10;issues/inde&#9;FILE&#9;file:///Users/jamie/Google Drive/Web/tygr/resources/views/issues/index.blade.php&#10;clientcont&#9;FILE&#9;file:///Users/jamie/Google Drive/Web/tygr/app/Http/Controllers/ClientController.php&#10;issuecontro&#9;FILE&#9;file:///Users/jamie/Google Drive/Web/tygr/app/Http/Controllers/IssueController.php&#10;issuetab&#9;FILE&#9;file:///Users/jamie/Google Drive/Web/tygr/database/migrations/2015_01_09_135149_create_issues_table.php&#10;issue/create&#9;FILE&#9;file:///Users/jamie/Google Drive/Web/tygr/resources/views/issues/create.blade.php&#10;buttons&#9;FILE&#9;file://D:/Web/tygr/resources/assets/sass/components/_buttons.scss&#10;clients/delete&#9;FILE&#9;file://D:/Web/tygr/resources/views/clients/delete.blade.php&#10;clients/create&#9;FILE&#9;file://D:/Web/tygr/resources/views/clients/create.blade.php&#10;createissuehist&#9;FILE&#9;file:///Users/jamie/Google Drive/Web/tygr/database/migrations/2015_01_19_131140_create_issue_history_table.php&#10;issues/show&#9;FILE&#9;file:///Users/jamie/Google Drive/Web/tygr/resources/views/issues/show.blade.php&#10;tables&#9;FILE&#9;file:///Users/jamie/Google Drive/Web/tygr/resources/assets/sass/layout/_tables.scss&#10;issues/index&#9;FILE&#9;file:///Users/jamie/Google Drive/Web/tygr/resources/views/issues/index.blade.php&#10;createissues&#9;FILE&#9;file:///Users/jamie/Google Drive/Web/tygr/database/migrations/2015_01_09_135149_create_issues_table.php&#10;typ&#9;FILE&#9;file:///Users/jamie/Google Drive/Web/tygr/resources/assets/sass/utils/_typography.scss&#10;login&#9;FILE&#9;file:///Users/jamie/Google Drive/Web/tygr/resources/views/auth/login.blade.php&#10;but&#9;FILE&#9;file:///Users/jamie/Google Drive/Web/tygr/resources/assets/sass/components/_buttons.scss&#10;clientcontr&#9;FILE&#9;file:///Users/jamie/Google Drive/Web/tygr/app/Http/Controllers/ClientController.php&#10;middleware/&#9;FILE&#9;file:///Users/jamie/Google Drive/Web/tygr/app/Http/Middleware&#10;clientcontrol&#9;FILE&#9;file:///Users/jamie/Google Drive/Web/tygr/app/Http/Controllers/ClientController.php&#10;clienttable&#9;FILE&#9;file:///Users/jamie/Google Drive/Web/tygr/database/migrations/2015_01_08_160804_create_clients_table.php&#10;typogra&#9;FILE&#9;file:///Users/jamie/Google Drive/Web/tygr/resources/assets/sass/utils/_typography.scss&#10;projectcontroll&#9;FILE&#9;file:///Users/jamie/Google Drive/Web/tygr/app/Http/Controllers/ProjectController.php&#10;projects/inde&#9;FILE&#9;file:///Users/jamie/Google Drive/Web/tygr/resources/views/projects/index.blade.php&#10;clientsee&#9;FILE&#9;file:///Users/jamie/Google Drive/Web/tygr/database/seeds/ClientTableSeeder.php&#10;clients/inde&#9;FILE&#9;file:///Users/jamie/Google Drive/Web/tygr/resources/views/clients/index.blade.php&#10;clients/show&#9;FILE&#9;file:///Users/jamie/Google Drive/Web/tygr/resources/views/clients/show.blade.php&#10;client_tabl&#9;FILE&#9;file:///Users/jamie/Google Drive/Web/tygr/database/migrations/2015_01_08_160804_create_clients_table.php&#10;clienttab&#9;FILE&#9;file:///Users/jamie/Google Drive/Web/tygr/database/seeds/ClientTableSeeder.php&#10;createclient&#9;FILE&#9;file:///Users/jamie/Google Drive/Web/tygr/database/migrations/2015_01_08_160804_create_clients_table.php" />
+    <property name="SearchEverywhereHistoryKey" value="clientcon&#9;FILE&#9;file:///Users/jamie/Web/tygr/app/Http/Controllers/ClientController.php&#10;routes&#9;FILE&#9;file:///Users/jamie/Web/tygr/app/Http/routes.php&#10;create_projects&#9;FILE&#9;file:///Users/jamie/Web/tygr/database/migrations/2015_01_08_192826_create_projects_table.php&#10;project/create&#9;FILE&#9;file:///Users/jamie/Web/tygr/resources/views/projects/create.blade.php&#10;projectcon&#9;FILE&#9;file:///Users/jamie/Web/tygr/app/Http/Controllers/ProjectController.php&#10;projects/edit&#9;FILE&#9;file:///Users/jamie/Web/tygr/resources/views/projects/edit.blade.php&#10;projectcontro&#9;FILE&#9;file:///Users/jamie/Web/tygr/app/Http/Controllers/ProjectController.php&#10;client/edit&#9;FILE&#9;file:///Users/jamie/Web/tygr/resources/views/clients/edit.blade.php&#10;project_tabl&#9;FILE&#9;file:///Users/jamie/Web/tygr/database/migrations/2015_01_08_192826_create_projects_table.php&#10;project/edit&#9;null&#9;null&#10;client/del&#9;FILE&#9;file:///Users/jamie/Web/tygr/resources/views/clients/delete.blade.php&#10;show&#9;FILE&#9;file:///Users/jamie/Web/tygr/resources/views/issues/show.blade.php&#10;reopen&#9;null&#9;null&#10;issuecontr&#9;FILE&#9;file:///Users/jamie/Web/tygr/app/Http/Controllers/IssueController.php&#10;issue&#9;FILE&#9;file:///Users/jamie/Web/tygr/resources/assets/sass/pages/_issue.scss&#10;issue/show&#9;FILE&#9;file:///Users/jamie/Web/tygr/resources/views/issues/show.blade.php&#10;issuecontrol&#9;FILE&#9;file:///Users/jamie/Web/tygr/app/Http/Controllers/IssueController.php&#10;issueh&#9;FILE&#9;file:///Users/jamie/Web/tygr/database/seeds/IssueHistoryTableSeeder.php&#10;issuecon&#9;FILE&#9;file:///Users/jamie/Web/tygr/app/Http/Controllers/IssueController.php&#10;forms&#9;FILE&#9;file:///Users/jamie/Web/tygr/resources/assets/sass/layout/_forms.scss&#10;nav&#9;FILE&#9;file:///Users/jamie/Web/tygr/resources/views/layout/nav.blade.php&#10;notification&#9;FILE&#9;file:///Users/jamie/Web/tygr/resources/assets/sass/components/_notifications.scss&#10;project/show&#9;FILE&#9;file:///Users/jamie/Web/tygr/resources/views/projects/show.blade.php&#10;clients/edit&#9;FILE&#9;file:///Users/jamie/Web/tygr/resources/views/clients/edit.blade.php&#10;notific&#9;FILE&#9;file:///Users/jamie/Web/tygr/resources/assets/sass/components/_notifications.scss&#10;issues/inde&#9;FILE&#9;file:///Users/jamie/Google Drive/Web/tygr/resources/views/issues/index.blade.php&#10;clientcont&#9;FILE&#9;file:///Users/jamie/Google Drive/Web/tygr/app/Http/Controllers/ClientController.php&#10;issuecontro&#9;FILE&#9;file:///Users/jamie/Google Drive/Web/tygr/app/Http/Controllers/IssueController.php&#10;issuetab&#9;FILE&#9;file:///Users/jamie/Google Drive/Web/tygr/database/migrations/2015_01_09_135149_create_issues_table.php&#10;issue/create&#9;FILE&#9;file:///Users/jamie/Google Drive/Web/tygr/resources/views/issues/create.blade.php&#10;buttons&#9;FILE&#9;file://D:/Web/tygr/resources/assets/sass/components/_buttons.scss&#10;clients/delete&#9;FILE&#9;file://D:/Web/tygr/resources/views/clients/delete.blade.php&#10;clients/create&#9;FILE&#9;file://D:/Web/tygr/resources/views/clients/create.blade.php&#10;createissuehist&#9;FILE&#9;file:///Users/jamie/Google Drive/Web/tygr/database/migrations/2015_01_19_131140_create_issue_history_table.php&#10;issues/show&#9;FILE&#9;file:///Users/jamie/Google Drive/Web/tygr/resources/views/issues/show.blade.php&#10;tables&#9;FILE&#9;file:///Users/jamie/Google Drive/Web/tygr/resources/assets/sass/layout/_tables.scss&#10;issues/index&#9;FILE&#9;file:///Users/jamie/Google Drive/Web/tygr/resources/views/issues/index.blade.php&#10;createissues&#9;FILE&#9;file:///Users/jamie/Google Drive/Web/tygr/database/migrations/2015_01_09_135149_create_issues_table.php&#10;typ&#9;FILE&#9;file:///Users/jamie/Google Drive/Web/tygr/resources/assets/sass/utils/_typography.scss&#10;login&#9;FILE&#9;file:///Users/jamie/Google Drive/Web/tygr/resources/views/auth/login.blade.php&#10;but&#9;FILE&#9;file:///Users/jamie/Google Drive/Web/tygr/resources/assets/sass/components/_buttons.scss&#10;clientcontr&#9;FILE&#9;file:///Users/jamie/Google Drive/Web/tygr/app/Http/Controllers/ClientController.php&#10;middleware/&#9;FILE&#9;file:///Users/jamie/Google Drive/Web/tygr/app/Http/Middleware&#10;clientcontrol&#9;FILE&#9;file:///Users/jamie/Google Drive/Web/tygr/app/Http/Controllers/ClientController.php&#10;clienttable&#9;FILE&#9;file:///Users/jamie/Google Drive/Web/tygr/database/migrations/2015_01_08_160804_create_clients_table.php&#10;typogra&#9;FILE&#9;file:///Users/jamie/Google Drive/Web/tygr/resources/assets/sass/utils/_typography.scss&#10;projectcontroll&#9;FILE&#9;file:///Users/jamie/Google Drive/Web/tygr/app/Http/Controllers/ProjectController.php&#10;projects/inde&#9;FILE&#9;file:///Users/jamie/Google Drive/Web/tygr/resources/views/projects/index.blade.php&#10;clientsee&#9;FILE&#9;file:///Users/jamie/Google Drive/Web/tygr/database/seeds/ClientTableSeeder.php&#10;clients/inde&#9;FILE&#9;file:///Users/jamie/Google Drive/Web/tygr/resources/views/clients/index.blade.php" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
@@ -773,20 +784,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/app/Http/Middleware/RestrictAdmin.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.65856624" vertical-offset="118" max-vertical-offset="1023">
-          <caret line="20" column="0" selection-start-line="20" selection-start-column="0" selection-end-line="20" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/clients/show.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="198" max-vertical-offset="1782">
-          <caret line="19" column="101" selection-start-line="19" selection-start-column="101" selection-end-line="19" selection-end-column="101" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/resources/assets/sass/layout/_main.scss">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1221">
@@ -892,13 +889,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/projects/show.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1419">
-          <caret line="8" column="26" selection-start-line="8" selection-start-column="26" selection-end-line="8" selection-end-column="26" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/database/migrations/2015_01_08_160807_create_password_resets_table.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1287">
@@ -917,13 +907,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="184" max-vertical-offset="1254">
           <caret line="29" column="32" selection-start-line="29" selection-start-column="31" selection-end-line="29" selection-end-column="32" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/layout/nav.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="561">
-          <caret line="2" column="8" selection-start-line="2" selection-start-column="8" selection-end-line="3" selection-end-column="36" />
         </state>
       </provider>
     </entry>
@@ -1028,16 +1011,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/Issue.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="910" max-vertical-offset="1914">
-          <caret line="45" column="5" selection-start-line="45" selection-start-column="5" selection-end-line="45" selection-end-column="5" />
-          <folding>
-            <marker date="1421945935000" expanded="true" signature="-1:-1" placeholder="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/resources/assets/sass/pages/_issue.scss">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="396" max-vertical-offset="2541">
@@ -1077,14 +1050,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/ClientController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="3154" max-vertical-offset="4125">
-          <caret line="119" column="8" selection-start-line="119" selection-start-column="8" selection-end-line="119" selection-end-column="36" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/Http/Controllers/IssueController.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="3913" max-vertical-offset="7722">
@@ -1093,42 +1058,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/routes.php">
+    <entry file="file://$PROJECT_DIR$/resources/views/layout/nav.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="1174" max-vertical-offset="2112">
-          <caret line="44" column="40" selection-start-line="44" selection-start-column="40" selection-end-line="44" selection-end-column="40" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/ProjectController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="1980" max-vertical-offset="3663">
-          <caret line="67" column="28" selection-start-line="67" selection-start-column="28" selection-end-line="67" selection-end-column="28" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/projects/index.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1089">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/database/migrations/2015_01_08_192826_create_projects_table.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="363" max-vertical-offset="1914">
-          <caret line="36" column="34" selection-start-line="36" selection-start-column="34" selection-end-line="36" selection-end-column="34" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Project.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="877" max-vertical-offset="1947">
-          <caret line="50" column="5" selection-start-line="50" selection-start-column="5" selection-end-line="50" selection-end-column="5" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="561">
+          <caret line="2" column="8" selection-start-line="2" selection-start-column="8" selection-end-line="3" selection-end-column="36" />
           <folding />
         </state>
       </provider>
@@ -1141,11 +1074,95 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/clients/show.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="264" max-vertical-offset="1782">
+          <caret line="17" column="46" selection-start-line="17" selection-start-column="46" selection-end-line="17" selection-end-column="46" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/projects/show.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1485">
+          <caret line="11" column="39" selection-start-line="11" selection-start-column="39" selection-end-line="11" selection-end-column="39" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/projects/index.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1089">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/projects/edit.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="1.3623853" vertical-offset="429" max-vertical-offset="2046">
-          <caret line="49" column="132" selection-start-line="49" selection-start-column="132" selection-end-line="49" selection-end-column="132" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="1089" max-vertical-offset="2145">
+          <caret line="52" column="47" selection-start-line="52" selection-start-column="47" selection-end-line="52" selection-end-column="47" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Project.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="976" max-vertical-offset="2112">
+          <caret line="50" column="5" selection-start-line="50" selection-start-column="5" selection-end-line="50" selection-end-column="5" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/projects/create.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="943" max-vertical-offset="2145">
+          <caret line="30" column="41" selection-start-line="30" selection-start-column="41" selection-end-line="30" selection-end-column="41" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/routes.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="712" max-vertical-offset="2211">
+          <caret line="42" column="69" selection-start-line="42" selection-start-column="69" selection-end-line="42" selection-end-column="69" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/database/migrations/2015_01_08_192826_create_projects_table.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="745" max-vertical-offset="2211">
+          <caret line="44" column="40" selection-start-line="44" selection-start-column="40" selection-end-line="44" selection-end-column="40" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/ProjectController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="1518" max-vertical-offset="5280">
+          <caret line="64" column="49" selection-start-line="64" selection-start-column="49" selection-end-line="64" selection-end-column="49" />
+          <folding>
+            <element signature="e#39#61#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Issue.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="910" max-vertical-offset="1947">
+          <caret line="44" column="29" selection-start-line="44" selection-start-column="29" selection-end-line="44" selection-end-column="29" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/ClientController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-2.232798" vertical-offset="2211" max-vertical-offset="4257">
+          <caret line="8" column="43" selection-start-line="8" selection-start-column="43" selection-end-line="8" selection-end-column="43" />
+          <folding>
+            <element signature="e#39#61#0#PHP" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

@@ -42,6 +42,7 @@ Route::group(array('middleware' => 'auth'), function() {
     //>> Make sure user has at least CLIENT priviliges
 	Route::group(array('middleware' => 'client'), function() {
 		Route::get('projects/{stub}', 'ProjectController@show');
+		Route::get('projects/{stub}/edit', 'ProjectController@edit');
 		Route::get('projects/{stub}/issues', 'IssueController@index');
 		Route::get('projects/{stub}/issues/version/{id}', 'IssueController@version');
 		Route::get('projects/{stub}/issues/create', 'IssueController@create');

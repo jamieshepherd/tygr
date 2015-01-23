@@ -65,12 +65,23 @@ class ProjectController extends Controller {
 	/**
 	 * Show the form for editing the specified resource.
 	 *
-	 * @param  int  $id
+	 * @param  string  $stub
 	 * @return Response
 	 */
-	public function edit($id)
+	public function edit($stub)
 	{
-		//
+		$client = \Auth::user()->client_id;
+
+		if($client == 1) {
+			$project = Project::where('stub', '=', $stub)
+				->firstOrFail();
+		} else {
+			$project = Project::where('client_id', '=', $client)
+				->where('stub', '=', $stub)
+				->firstOrFail();
+		}
+
+		return view('projects.edit')->with('project', $project);
 	}
 
 	/**

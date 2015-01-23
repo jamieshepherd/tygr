@@ -33,6 +33,8 @@ class CreateProjectsTable extends Migration {
             $table->foreign('lead_designer_id')->references('id')->on('users');
             // Current version
 			$table->string('current_version');
+			// Project status
+			$table->string('status');
             // Timestamps
 			$table->timestamps();
 		});

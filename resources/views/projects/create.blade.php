@@ -1,4 +1,7 @@
 @extends('layout.base')
+@section('headlinks')
+    <script src="/js/helpers.js"></script>
+@stop
 @section('crumbtrail')
     <a href="/"><li><i class="fa fa-home"></i> Home</li></a>
     <a href="/clients"><li>Clients</li></a>
@@ -15,10 +18,10 @@
         <input type="hidden" name="_token" value="<?php echo csrf_token(); ?>">
 
             <label>Project name</label>
-            <input name="name" type="text" placeholder="e.g. Fire Safety" value="">
+            <input id="name" name="name" type="text" placeholder="e.g. Fire Safety" value="" onkeyup="generateStub()">
 
             <label>Project stub<em>(Used for URLs)</em></label>
-            <input name="stub" type="text" placeholder="e.g. firesafety" value="">
+            <input id="stub" name="stub" type="text" placeholder="e.g. firesafety" value="">
 
             <label>Current version</label>
             <input name="current_version" type="text" placeholder="e.g. Version 1" value="">

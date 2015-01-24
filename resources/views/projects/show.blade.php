@@ -22,10 +22,10 @@
             </table>
             <hr/>
             <table>
-                <tr><td><strong>Project manager</strong></td><td>{{{ $project->project_manager->name }}}</td></tr>
-                <tr><td><strong>Lead developer</strong></td><td>{{{ $project->lead_developer->name }}}</td></tr>
-                <tr><td><strong>Lead designer</strong></td><td>{{{ $project->lead_designer->name }}}</td></tr>
-                <tr><td><strong>Instructional designer</strong></td><td>{{{ $project->instructional_designer->name }}}</td></tr>
+                <tr><td><strong>Project manager</strong></td><td>{{{ $project->project_manager }}}</td></tr>
+                <tr><td><strong>Lead developer</strong></td><td>{{{ $project->lead_developer }}}</td></tr>
+                <tr><td><strong>Lead designer</strong></td><td>{{{ $project->lead_designer }}}</td></tr>
+                <tr><td><strong>Instructional designer</strong></td><td>{{{ $project->instructional_designer }}}</td></tr>
 
             </table>
             <hr/>

@@ -1,4 +1,7 @@
 @extends('layout.base')
+@section('headlinks')
+    <script src="/js/helpers.js"></script>
+@stop
 @section('crumbtrail')
     <a href="/"><li><i class="fa fa-home"></i> Home</li></a>
     <a href="/clients"><li>Clients</li></a>
@@ -10,15 +13,15 @@
     @include('layout.nav')
     <div id="main">
         @include('layout.header')
-        <h1>Edit Project <em>{{{ $project->name }}}</em></h1>
+        <h1>Edit <em>{{{ $project->name }}}</em></h1>
         <form action="" method="POST" accept-charset="UTF-8">
         <input type="hidden" name="_token" value="<?php echo csrf_token(); ?>">
 
             <label>Project name</label>
-            <input name="name" type="text" placeholder="e.g. Fire Safety" value="{{{ $project->name }}}">
+            <input id="name" name="name" type="text" placeholder="e.g. Fire Safety" value="{{{ $project->name }}}" onkeyup="generateStub()">
 
             <label>Project stub<em>(Used for URLs)</em></label>
-            <input name="stub" type="text" placeholder="e.g. firesafety" value="{{{ $project->stub }}}">
+            <input id="stub" name="stub" type="text" placeholder="e.g. firesafety" value="{{{ $project->stub }}}">
 
             <label>Current version</label>
             <input name="current_version" type="text" placeholder="e.g. Version 1" value="{{{ $project->current_version }}}">
@@ -41,16 +44,16 @@
             <hr/>
 
             <label>Project manager</label>
-            <input name="project_manager" type="text" placeholder="Start typing a name" value="{{{ $project->project_manager->name }}}">
+            <input name="project_manager" type="text" placeholder="Start typing a name" value="{{{ $project->project_manager }}}">
 
             <label>Lead developer</label>
-            <input name="lead_developer" type="text" placeholder="Start typing a name" value="{{{ $project->lead_developer->name }}}">
+            <input name="lead_developer" type="text" placeholder="Start typing a name" value="{{{ $project->lead_developer }}}">
 
             <label>Lead designer</label>
-            <input name="lead_designer" type="text" placeholder="Start typing a name" value="{{{ $project->lead_designer->name }}}">
+            <input name="lead_designer" type="text" placeholder="Start typing a name" value="{{{ $project->lead_designer }}}">
 
             <label>Instructional designer</label>
-            <input name="instructional_designer" type="text" placeholder="Start typing a name" value="{{{ $project->instructional_designer->name }}}">
+            <input name="instructional_designer" type="text" placeholder="Start typing a name" value="{{{ $project->instructional_designer }}}">
 
             <br/><button type="submit"><i class="fa fa-arrow-circle-right"></i> Update details</button>
         </form>

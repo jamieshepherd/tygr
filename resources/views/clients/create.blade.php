@@ -1,4 +1,7 @@
 @extends('layout.base')
+@section('headlinks')
+    <script src="/js/helpers.js"></script>
+@stop
 @section('crumbtrail')
     <a href="/"><li><i class="fa fa-home"></i> Home</li></a>
     <a href="/clients"><li>Clients</li></a>
@@ -18,10 +21,10 @@
             <input type="radio" name="type" value="Pitch"> Pitch
 
             <label>Client name</label>
-            <input name="name" type="text" placeholder="e.g. Sponge UK" autofocus>
+            <input id="name" name="name" type="text" placeholder="e.g. Sponge UK" onkeyup="generateStub()" autofocus>
 
             <label>Client stub<em>(Used for URLs)</em></label>
-            <input name="stub" type="text" placeholder="e.g. spongeuk">
+            <input id="stub" name="stub" type="text" placeholder="e.g. spongeuk">
 
             <br/><button type="submit"><i class="fa fa-arrow-circle-right"></i> Create client</button>
             <a class="action secondary" href="javascript:history.back()"><i class="fa fa-times-circle"></i> Cancel</a>

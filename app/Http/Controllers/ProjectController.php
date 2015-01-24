@@ -5,6 +5,7 @@ use App\Http\Controllers\Controller;
 use App\Client;
 use App\Project;
 use App\User;
+use App\Group;
 use Input;
 
 class ProjectController extends Controller {
@@ -51,10 +52,10 @@ class ProjectController extends Controller {
 		$project->authoring_tool             = Input::get('authoring_tool');
 		$project->lms_location               = Input::get('lms_location');
 		$project->lms_specification          = Input::get('lms_specification');
-		$project->project_manager_id   		 = Input::get('project_manager');
-		$project->lead_developer_id    		 = Input::get('lead_developer');
-		$project->lead_designer_id     		 = Input::get('lead_designer');
-		$project->instructional_designer_id  = Input::get('instructional_designer');
+		$project->project_manager   		 = Input::get('project_manager');
+		$project->lead_developer    		 = Input::get('lead_developer');
+		$project->lead_designer     		 = Input::get('lead_designer');
+		$project->instructional_designer     = Input::get('instructional_designer');
 		$project->authoring_tool             = Input::get('authoring_tool');
 		$project->lms_location               = Input::get('lms_location');
 		$project->lms_specification          = Input::get('lms_specification');
@@ -107,7 +108,11 @@ class ProjectController extends Controller {
 				->firstOrFail();
 		}
 
-		return view('projects.edit')->with('project', $project);
+		$employees = Group::find(2)->users()->get();
+		//dd($employees);
+		//$employees = array();
+
+		return view('projects.edit')->with('project', $project)->with('employees', $employees);
 	}
 
 	/**
@@ -126,10 +131,10 @@ class ProjectController extends Controller {
 		$project->authoring_tool             = Input::get('authoring_tool');
 		$project->lms_deployment             = Input::get('lms_deployment');
 		$project->lms_specification          = Input::get('lms_specification');
-		$project->project_manager_id   		 = Input::get('project_manager');
-		$project->lead_developer_id    		 = Input::get('lead_developer');
-		$project->lead_designer_id     		 = Input::get('lead_designer');
-		$project->instructional_designer_id  = Input::get('instructional_designer');
+		$project->project_manager   		 = Input::get('project_manager');
+		$project->lead_developer    		 = Input::get('lead_developer');
+		$project->lead_designer     		 = Input::get('lead_designer');
+		$project->instructional_designer     = Input::get('instructional_designer');
 		$project->authoring_tool             = Input::get('authoring_tool');
 		$project->lms_deployment             = Input::get('lms_deployment');
 		$project->lms_specification          = Input::get('lms_specification');

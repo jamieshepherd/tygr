@@ -33,7 +33,7 @@
                 <td class="project">{{{ $project->name }}}</td>
                 <td class="stub">{{{ $project->stub }}}</td>
                 <td>{{{ $project->current_version }}}</td>
-                <td>{{{ $project->project_manager->name }}}</td>
+                <td>{{{ $project->project_manager }}}</td>
             </tr>
             @endforeach
             </tbody>

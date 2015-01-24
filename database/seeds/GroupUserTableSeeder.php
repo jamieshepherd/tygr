@@ -28,6 +28,10 @@ class GroupUserTableSeeder extends Seeder {
         // Test user
         $user = User::find(5);
         $user->groups()->sync([1]);
+
+        // Test user
+        $user = User::find(6);
+        $user->groups()->sync([2,6]);
     }
 
 }

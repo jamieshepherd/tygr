@@ -2,7 +2,6 @@ form {
   margin-top: 30px;
 }
 input, textarea {
-  font-family: "museo-slab", serif;
   font-size: 14px;
   font-weight: 300;
   margin-bottom: 30px;
@@ -40,6 +39,11 @@ input {
   }
   &[type='radio'], &[type='checkbox'] {
     min-width: 0;
+  }
+  &[type='submit'] {
+    &:hover {
+      background: $tertiary;
+    }
   }
 }
 select {

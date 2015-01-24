@@ -70,8 +70,6 @@ html, body {
   height: 100%; }
 
 body {
-  font-family: "museo-slab", serif;
-  font-weight: 300;
   font-size: 14px;
   background: #ffffff; }
 
@@ -240,7 +238,6 @@ form {
   margin-top: 30px; }
 
 input, textarea {
-  font-family: "museo-slab", serif;
   font-size: 14px;
   font-weight: 300;
   margin-bottom: 30px;
@@ -274,6 +271,8 @@ input {
     margin-bottom: 20px; }
   input[type='radio'], input[type='checkbox'] {
     min-width: 0; }
+  input[type='submit']:hover {
+    background: #8BCEDC; }
 
 select {
   display: inline-block;
@@ -318,7 +317,6 @@ a.action {
     float: right; }
 
 button {
-  font-family: "museo-slab", serif;
   font-size: 10px;
   text-transform: uppercase; }
   button[type='submit'] {
@@ -516,7 +514,7 @@ section {
       section .update h3 i {
         color: #999999; }
       section .update h3 em {
-        font-weight: 300;
+        font-weight: 500;
         color: #999999; }
     section .update p {
       margin: 10px 0 0 0;
@@ -527,3 +525,11 @@ section {
       color: #ffffff;
       padding: 3px 5px;
       border-radius: 5px; }
+
+body, input, textarea, button {
+  font-family: "Open Sans", Georgia, sans-serif;
+  font-weight: 500; }
+
+h1, nav {
+  font-family: "museo-slab", Arial, serif;
+  font-weight: 300; }

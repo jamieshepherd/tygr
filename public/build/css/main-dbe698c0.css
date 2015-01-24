@@ -52,7 +52,7 @@ h3 {
     color: #f24a33; }
 
 p {
-  line-height: 16px;
+  line-height: 20px;
   margin-bottom: 15px; }
 
 strong {
@@ -154,7 +154,7 @@ nav {
   display: inline-block;
   clear: both;
   font-size: 10px;
-  font-weight: 500;
+  font-weight: 600;
   margin-bottom: 30px; }
   #main header ul {
     display: inline-block;
@@ -254,7 +254,7 @@ input, textarea {
 label {
   display: block;
   margin: 20px 0 10px 0;
-  font-weight: 500; }
+  font-weight: 600; }
   label.radio {
     font-weight: 300;
     display: inline;
@@ -293,9 +293,9 @@ textarea {
   margin-right: 100px; }
 
 a.action {
-  font-size: 10px;
+  font-size: 11px;
   text-transform: uppercase;
-  font-weight: 500;
+  font-weight: 400;
   margin-top: -1px;
   padding: 6px 8px 6px 8px;
   background: #f24a33;
@@ -317,7 +317,7 @@ a.action {
     float: right; }
 
 button {
-  font-size: 10px;
+  font-size: 11px;
   text-transform: uppercase; }
   button[type='submit'] {
     min-width: 0;
@@ -360,7 +360,7 @@ a.version-dropdown {
   background: #71C8B5;
   color: #ffffff;
   font-size: 14px;
-  font-weight: 500;
+  font-weight: 600;
   width: 350px;
   position: fixed;
   bottom: 20px;
@@ -514,7 +514,7 @@ section {
       section .update h3 i {
         color: #999999; }
       section .update h3 em {
-        font-weight: 500;
+        font-weight: 600;
         color: #999999; }
     section .update p {
       margin: 10px 0 0 0;
@@ -527,9 +527,9 @@ section {
       border-radius: 5px; }
 
 body, input, textarea, button {
-  font-family: "Open Sans", Georgia, sans-serif;
-  font-weight: 500; }
+  font-family: "open-sans", Arial, sans-serif;
+  font-weight: 400; }
 
 h1, nav {
-  font-family: "museo-slab", Arial, serif;
+  font-family: "museo-slab", Georgia, serif;
   font-weight: 300; }

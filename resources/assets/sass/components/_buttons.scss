@@ -1,8 +1,8 @@
 a {
   &.action {
-    font-size: 10px;
+    font-size: 11px;
     text-transform: uppercase;
-    font-weight: 500;
+    font-weight: 400;
     margin-top: -1px;
     padding: 6px 8px 6px 8px;
     background: $highlight;
@@ -29,7 +29,7 @@ a {
   }
 }
 button {
-  font-size: 10px;
+  font-size: 11px;
   text-transform: uppercase;
   &[type='submit'] {
     min-width: 0;

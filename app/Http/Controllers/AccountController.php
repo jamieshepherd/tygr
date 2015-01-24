@@ -66,16 +66,17 @@ class AccountController extends Controller {
 	 */
 	public function update()
 	{
-		\Auth::user()->name = Input::get('name');
+		$user = \Auth::user();
+		$user->name = Input::get('name');
 		$oldpass = Input::get('oldpass');
-		$newpass = Input::get('oldpass');
+		$newpass = Input::get('newpass');
 		$confirmpass = Input::get('confirmpass');
 		if(!empty($oldpass) || !empty($newpass) || $confirmpass) {
 			// Check oldpass is true
-			if(Hash::check($oldpass,\Auth::user()->password)) {
+			if(Hash::check($oldpass,$user->password)) {
 				// Check newpass and confirmpass are the same
 				if($newpass == $confirmpass) {
-					\Auth::user()->password = Hash::make($newpass);
+					$user->password = Hash::make($newpass);
 				} else {
 					\Session::flash('notify-type', 'error');
 					\Session::flash('message', 'Passwords provided were not the same.');
@@ -87,9 +88,9 @@ class AccountController extends Controller {
 				return redirect('/account');
 			}
 		}
-		$result = \Auth::user()->save();
+		$result = $user->save();
 		if($result) {
-			\Session::flash('message', \Auth::user()->name.' was updated successfully.');
+			\Session::flash('message', $user->name.' was updated successfully.');
 			return redirect('/account');
 		}
 	}

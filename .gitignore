@@ -1,5 +1,5 @@
-/vendor
-/.idea
+vendor/*
+.idea/*
+node_modules/*
 .env
-/node_modules
 *.mwb.bak

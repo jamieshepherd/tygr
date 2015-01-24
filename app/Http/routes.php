@@ -25,6 +25,9 @@ Route::group(array('middleware' => 'auth'), function() {
 
 	Route::get('/', function() { return Redirect::to('projects'); });
 	Route::get('projects', 'ProjectController@index');
+	Route::get('account', 'AccountController@index');
+	Route::get('account/edit', 'AccountController@edit');
+	Route::post('account/edit', 'AccountController@update');
 
     //>> Make sure user has at least ADMINISTRATOR priviliges
 	Route::group(array('middleware' => 'admin'), function() {

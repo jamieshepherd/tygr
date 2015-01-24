@@ -42,6 +42,10 @@
       margin-top: 10px;
       background: $highlight;
       color: $background;
+      cursor: pointer;
+      &:hover {
+        background: $tertiary;
+      }
     }
     input[type='checkbox'] {
       margin-top: 10px;

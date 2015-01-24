@@ -21,6 +21,7 @@
                 <th>Name</th>
                 <th>Stub</th>
                 <th>Type</th>
+                <th>Projects</th>
                 <th>Reviewarea</th>
             </tr>
             <tbody class="list">
@@ -29,6 +30,7 @@
                 <td class="name">{{{ $client->name }}}</td>
                 <td class="stub">{{{ $client->stub }}}</td>
                 <td>{{{ $client->type }}}</td>
+                <td>{{{ count($client->projects) }}}</td>
                 <td><a href="http://reviewarea.co.uk/Secure/{{{ $client->stub }}}">reviewarea.co.uk/Secure/{{{ $client->stub }}}</a></td>
             </tr>
             @endforeach

@@ -9,6 +9,15 @@ body {
   width: 150px;
   margin: 30px 0 50px;
 }
+ul {
+  &.standard {
+    li {
+      list-style-type: circle;
+      line-height: 26px;
+      margin-left: 20px;
+    }
+  }
+}
 .project-info {
   margin-top: 30px;
   display: block;

@@ -77,6 +77,11 @@ body {
   width: 150px;
   margin: 30px 0 50px; }
 
+ul.standard li {
+  list-style-type: circle;
+  line-height: 26px;
+  margin-left: 20px; }
+
 .project-info {
   margin-top: 30px;
   display: block; }
@@ -344,7 +349,7 @@ a.version-dropdown {
   a.version-dropdown ul {
     border-top: 1px solid #ffffff;
     position: absolute;
-    top: 25px;
+    top: 28px;
     left: 0;
     display: none; }
     a.version-dropdown ul a {
@@ -459,7 +464,10 @@ a.version-dropdown {
       padding: 10px;
       margin-top: 10px;
       background: #f24a33;
-      color: #ffffff; }
+      color: #ffffff;
+      cursor: pointer; }
+      .login form input[type='submit']:hover {
+        background: #8BCEDC; }
     .login form input[type='checkbox'] {
       margin-top: 10px;
       width: auto;

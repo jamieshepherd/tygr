@@ -29,6 +29,17 @@ Route::group(array('middleware' => 'auth'), function() {
 	Route::get('account/edit', 'AccountController@edit');
 	Route::post('account/edit', 'AccountController@update');
 
+	//>> Make sure user has at least SUPERADMINISTRATOR privileges
+	Route::group(array('middleware' => 'superadmin'), function() {
+		Route::get('users', 'UserController@index');
+		Route::get('users/create', 'UserController@create');
+		Route::post('users/create', 'UserController@store');
+		Route::get('users/show/{id}', 'UserController@show');
+		Route::get('users/edit/{id}', 'UserController@edit');
+		Route::post('users/edit/{id}', 'UserController@update');
+		Route::get('users/delete/{id}', 'UserController@delete');
+		Route::get('users/delete/{id}/confirm', 'UserController@destroy');
+	});
     //>> Make sure user has at least ADMINISTRATOR priviliges
 	Route::group(array('middleware' => 'admin'), function() {
 		Route::get('dashboard', 'DashboardController@show');

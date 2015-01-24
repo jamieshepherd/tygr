@@ -29,6 +29,7 @@ class Kernel extends HttpKernel {
 		'guest' => 'App\Http\Middleware\RedirectIfAuthenticated',
 		'client' => 'App\Http\Middleware\RestrictClient',
 		'admin' => 'App\Http\Middleware\RestrictAdmin',
+		'superadmin' => 'App\Http\Middleware\RestrictSuperAdmin',
 	];
 
 }

@@ -1,7 +1,7 @@
 @extends('layout.base')
 @section('crumbtrail')
     <a href="/"><li><i class="fa fa-home"></i> Home</li></a>
-    <a href="/projects"><li>Clients</li></a>
+    <a href="/clients"><li>Clients</li></a>
     <a href="/projects/{{{ $project->stub }}}"><li>{{{ $project->name }}}</li></a>
     <li class="current">Edit</li>
 @stop

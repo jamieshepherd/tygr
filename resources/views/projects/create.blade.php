@@ -2,7 +2,7 @@
 @section('crumbtrail')
     <a href="/"><li><i class="fa fa-home"></i> Home</li></a>
     <a href="/clients"><li>Clients</li></a>
-    <a href="/clients/{{{ $client->stub }}}"><li>{{{ $client->name }}}</li></a>
+    <a href="/clients/show/{{{ $client->stub }}}"><li>{{{ $client->name }}}</li></a>
     <li class="current">Create project</li>
 @stop
 @section('body')

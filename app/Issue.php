@@ -40,6 +40,11 @@ class Issue extends Model {
 		return $this->belongsTo('App\Group', 'assigned_to_id');
 	}
 
+	public function assigned_to_me()
+	{
+		return $this->belongsTo('App\Group', 'assigned_to_id')
+			->where('assigned_to_id', '=', Auth::user()->groups());
+	}
 	public function assigned()
 	{
 		return $this->assigned_to->name;

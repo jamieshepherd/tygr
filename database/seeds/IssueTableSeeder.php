@@ -10,6 +10,7 @@ class IssueTableSeeder extends Seeder {
     {
 
         Issue::create(array(
+            'public'                 => true,
             'author_id'     => 1,
             'assigned_to_id'=> 2,
             'project_id'    => 1,
@@ -22,6 +23,7 @@ class IssueTableSeeder extends Seeder {
         ));
 
         Issue::create(array(
+            'public'                 => true,
             'author_id'     => 1,
             'assigned_to_id'=> 2,
             'project_id'    => 1,
@@ -34,6 +36,7 @@ class IssueTableSeeder extends Seeder {
         ));
 
         Issue::create(array(
+            'public'                 => true,
             'author_id'     => 1,
             'assigned_to_id'=> 2,
             'project_id'    => 1,
@@ -46,6 +49,7 @@ class IssueTableSeeder extends Seeder {
         ));
 
         Issue::create(array(
+            'public'                 => true,
             'author_id'     => 1,
             'assigned_to_id'=> 2,
             'project_id'    => 1,
@@ -58,6 +62,7 @@ class IssueTableSeeder extends Seeder {
         ));
 
         Issue::create(array(
+            'public'                 => true,
             'author_id'     => 1,
             'assigned_to_id'=> 2,
             'project_id'    => 1,
@@ -70,6 +75,7 @@ class IssueTableSeeder extends Seeder {
         ));
 
         Issue::create(array(
+            'public'                 => true,
             'author_id'     => 1,
             'assigned_to_id'=> 2,
             'project_id'    => 1,
@@ -82,6 +88,7 @@ class IssueTableSeeder extends Seeder {
         ));
 
         Issue::create(array(
+            'public'                 => true,
             'author_id'     => 1,
             'assigned_to_id'=> 2,
             'project_id'    => 1,
@@ -94,6 +101,7 @@ class IssueTableSeeder extends Seeder {
         ));
 
         Issue::create(array(
+            'public'                 => true,
             'author_id'     => 1,
             'assigned_to_id'=> 2,
             'project_id'    => 1,
@@ -106,6 +114,7 @@ class IssueTableSeeder extends Seeder {
         ));
 
         Issue::create(array(
+            'public'                 => true,
             'author_id'     => 1,
             'assigned_to_id'=> 2,
             'project_id'    => 1,
@@ -118,6 +127,7 @@ class IssueTableSeeder extends Seeder {
         ));
 
         Issue::create(array(
+            'public'                 => true,
             'author_id'     => 1,
             'assigned_to_id'=> 2,
             'project_id'    => 1,
@@ -130,6 +140,7 @@ class IssueTableSeeder extends Seeder {
         ));
 
         Issue::create(array(
+            'public'                 => true,
             'author_id'     => 1,
             'assigned_to_id'=> 2,
             'project_id'    => 1,
@@ -142,6 +153,7 @@ class IssueTableSeeder extends Seeder {
         ));
 
         Issue::create(array(
+            'public'                 => true,
             'author_id'     => 1,
             'assigned_to_id'=> 2,
             'project_id'    => 1,

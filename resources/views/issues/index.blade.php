@@ -40,6 +40,7 @@
             </tr>
             <tbody class="list">
             @foreach($issues as $issue)
+            @if($issue->public || Auth::user()->rank <= 2)
             <tr onclick="document.location='{{{ Request::url() }}}/show/{{{ $issue->id }}}';" style="cursor:pointer" @if($issue->status == 'Resolved') class="yes resolved" @endif
                     >
                 <td class="reference">{{{ $issue->reference }}}</td>
@@ -48,6 +49,7 @@
                 <td class="date">{{ date("d M Y",strtotime($issue->created_at)) }}</td>
                 <td class="priority @if(Auth::user()->rank < 3) {{ $issue->priority }} @endif">{{{ $issue->status }}}</td>
             </tr>
+            @endif
             @endforeach
             </tbody>
         </table>

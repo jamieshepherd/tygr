@@ -15,6 +15,8 @@ class CreateIssuesTable extends Migration {
 		Schema::create('issues', function(Blueprint $table)
 		{
 			$table->increments('id');
+			// Public / private (1/0)
+			$table->boolean('public');
             // Author
 			$table->integer('author_id')->unsigned();
 			$table->foreign('author_id')->references('id')->on('users');

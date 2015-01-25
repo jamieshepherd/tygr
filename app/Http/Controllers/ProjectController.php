@@ -45,6 +45,7 @@ class ProjectController extends Controller {
 
 		$project = new Project();
 		$project->client_id					 = $client->id;
+		$project->public                     = Input::get('public', false);
 		$project->name				         = Input::get('name');
 		$project->stub				         = Input::get('stub');
 		$project->current_version	         = Input::get('current_version');
@@ -86,6 +87,7 @@ class ProjectController extends Controller {
 				->firstOrFail();
 		}
 
+		//dd(count($project->issues));
 		return view('projects.show')->with('project', $project);
 	}
 
@@ -124,6 +126,7 @@ class ProjectController extends Controller {
 	public function update($stub)
 	{
 		$project = Project::where('stub', '=', $stub)->firstOrFail();
+		$project->public                     = Input::get('public', false);
 		$project->name				         = Input::get('name');
 		$project->stub				         = Input::get('stub');
 		$project->current_version	         = Input::get('current_version');

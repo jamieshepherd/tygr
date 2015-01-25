@@ -46,6 +46,7 @@ class IssueController extends Controller {
 	{
 		$issue = new Issue();
 		$project = Project::where('stub', '=', $stub)->firstOrFail();
+		$issue->public      = Input::get('public', false);
 		$issue->author_id   = \Auth::user()->id;
 		$issue->project_id  = $project->id;
 		$issue->type        = Input::get('type');

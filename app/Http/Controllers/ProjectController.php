@@ -91,7 +91,6 @@ class ProjectController extends Controller {
 				->firstOrFail();
 		}
 
-		//dd(count($project->issues));
 		return view('projects.show')->with('project', $project)->with('count', $count);
 	}
 

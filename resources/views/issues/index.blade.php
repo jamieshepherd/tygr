@@ -13,7 +13,7 @@
     @include('_layout.nav')
     <div id="main">
         @include('_layout.header')
-        <h1>All issues</h1>
+        <h1>All issues @if(isset($filter)) <em>({{{ $filter }}})</em> @endif</h1>
         <div id="issues">
         <input class="filter search" placeholder="Search" autofocus/>
         <a class="action" href="/projects/{{ $project->stub }}/issues/create"><i class="fa fa-plus-circle"></i> New issue</a>
@@ -35,6 +35,7 @@
             <tr class="head">
                 <th>Ref.</th>
                 <th>Type</th>
+                <th>Version</th>
                 <th>Description</th>
                 <th>Date</th>
                 <th>Status</th>
@@ -42,11 +43,12 @@
             <tbody class="list">
             @foreach($issues as $issue)
             @if($issue->public || Auth::user()->rank <= 2)
-            <tr onclick="document.location='{{{ Request::url() }}}/show/{{{ $issue->id }}}';" style="cursor:pointer" @if($issue->status == 'Resolved') class="yes resolved" @endif
+            <tr onclick="document.location='/projects/{{{ $project->stub }}}/issues/show/{{{ $issue->id }}}';" style="cursor:pointer" @if($issue->status == 'Resolved') class="yes resolved" @endif
                     >
                 <td class="reference">{{{ $issue->reference }}}</td>
                 <td class="type">{{{ $issue->type }}}</td>
-                <td class="description">{{{ substr($issue->description,0,72) }}}...</td>
+                <td class="version">{{{ $issue->version }}}</td>
+                <td class="description">{{{ substr($issue->description,0,64) }}}...</td>
                 <td class="date">{{ date("d M Y",strtotime($issue->created_at)) }}</td>
                 <td class="priority @if(Auth::user()->rank < 3) {{ $issue->priority }} @endif">{{{ $issue->status }}}</td>
             </tr>

@@ -27,20 +27,25 @@ class IssueController extends Controller {
 	 * Display a listing of the resource, filtered.
 	 *
 	 * @param  string  $stub;
-	 * @param  string  $version;
+	 * @param  string  $filter;
 	 * @return Response
 	 */
-	public function filter($stub, $version)
+	public function filter($stub, $filter)
 	{
 		$userGroups = \Auth::User()->groups->lists('id');
 		$project = Project::where('stub', '=', $stub)->firstOrFail();
 
-		if($version == 'me') {
+		if($filter == 'me') {
 			$issues = Issue::whereIn('assigned_to_id', $userGroups)->get();
+			$filter = 'Assigned to me';
 		} else {
+			unset($filter);
 			$issues = $project->issues->where('version', '=', $version);
 		}
-		return view('issues.index')->with('project', $project)->with('issues', $issues);
+		return view('issues.index')
+			->with('project', $project)
+			->with('issues', $issues)
+			->with('filter', $filter);
 	}
 
 	/**
@@ -66,13 +71,14 @@ class IssueController extends Controller {
 	{
 		$issue = new Issue();
 		$project = Project::where('stub', '=', $stub)->firstOrFail();
-		$project->public 	= Input::has('public');
+		$issue->public 	    = Input::has('public');
 		$issue->author_id   = \Auth::user()->id;
 		$issue->project_id  = $project->id;
 		$issue->type        = Input::get('type');
 		$issue->status      = 'New';
 		$issue->priority    = 'Medium';
 		$issue->assigned_to_id = 2;
+		$issue->version		   = $project->current_version;
 		$issue->reference   = Input::get('reference');
 		$issue->description = Input::get('description');
 		$result = $issue->save();
@@ -108,23 +114,45 @@ class IssueController extends Controller {
 	/**
 	 * Show the form for editing the specified resource.
 	 *
+	 * @param  string  $stub
 	 * @param  int  $id
 	 * @return Response
 	 */
-	public function edit($id)
+	public function edit($stub, $id)
 	{
-		return "Edit the issue";
+		$issue = Issue::find($id);
+		return view('issues.edit')->with('issue', $issue);
 	}
 
 	/**
 	 * Update the specified resource in storage.
 	 *
+	 * @param  string  $stub
 	 * @param  int  $id
 	 * @return Response
 	 */
-	public function update($id)
+	public function update($stub, $id)
 	{
-		\Session::flash('message', 'The issue was updated.');
+		$issue = Issue::find($id);
+		$issue->public 	= Input::has('public');
+		$issue->type        = Input::get('type');
+		$issue->priority    = 'Medium';
+		$issue->reference   = Input::get('reference');
+		$issue->description = Input::get('description');
+		$result = $issue->save();
+
+		if($result) {
+			$update = new IssueHistory();
+			$update->issue_id   = $issue->id;
+			$update->author_id  = $issue->author->id;
+			$update->type		= 'status';
+			$update->status     = 'updated';
+			$update->comment    = 'Issue was edited';
+			$update->save();
+
+			\Session::flash('message', 'The issue was updated.');
+			return redirect('projects/'.$stub.'/issues/show/'.$issue->id);
+		}
 	}
 
 	/**
@@ -213,6 +241,7 @@ class IssueController extends Controller {
 	{
 		$issue = Issue::where('id', '=', $id)->firstOrFail();
 		$issue->status = 'Resolved';
+		$issue->assigned_to_id = 1;
 		$issue->save();
 
 		\Session::flash('message', 'This issue was marked as resolved.');

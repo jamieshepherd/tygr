@@ -11,15 +11,15 @@
         @include('_layout.header')
         <h1>{{{ $user->name }}}</h1>
         <a class="action" href="/users/edit/{{{ $user->id }}}"><i class="fa fa-edit"></i> Edit user</a>
-        <a class="action" href="/users/delete/{{ $user->id }}"><i class="fa fa-exclamation-circle"></i> Delete client</a>
+        <a class="action" href="/users/delete/{{ $user->id }}"><i class="fa fa-exclamation-circle"></i> Delete user</a>
         <h2>Full name</h2>
         <p>{{{ $user->name }}}</p>
         <h2>Email address</h2>
         <p>{{{ $user->email }}}</p>
         <h2>Groups</h2>
             <ul class="standard">
-            @foreach($user->groups()->get() as $group)
-                <li>{{{ $user->name }}}</li>
+            @foreach($user->groups as $group)
+                <li>{{{ $group->name }}}</li>
             @endforeach
             </ul>
     </div>

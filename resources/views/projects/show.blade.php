@@ -39,7 +39,7 @@
         @if($count == 0)
             <p>You're up to date, and you have no issues assigned to you.</p>
         @else
-            <p>You can <a href="{{ Request::url() }}/issues">click here</a> to take a look at these issues.</p>
+            <p>You can <a href="{{ Request::url() }}/issues/filter/me">click here</a> to take a look at these issues.</p>
         @endif
     </div>
 </body>

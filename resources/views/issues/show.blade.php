@@ -67,14 +67,13 @@
                         <p>{{{ $update->comment }}}</p>
                     @elseif($update->type == 'status')
                         @if($update->status == 'created')
-                        <h3><i class="fa fa-exclamation-circle"></i> {{{ $update->comment }}} <em>by {{{ $update->author->name }}}</em></h3>
+                            <h3><i class="fa fa-exclamation-circle">
+                        @elseif($update->status == 'updated' || $update->status == 'assigned')
+                            <h3><i class="fa fa-info-circle">
+                        @elseif($update->status == 'resolved')
+                            <h3><i class="fa fa-check-circle">
                         @endif
-                        @if($update->status == 'assigned')
-                            <h3><i class="fa fa-info-circle"></i> {{{ $update->comment }}} <em>by {{{ $update->author->name }}}</em></h3>
-                        @endif
-                        @if($update->status == 'resolved')
-                            <h3><i class="fa fa-check-circle"></i> {{{ $update->comment }}} <em>by {{{ $update->author->name }}}</em></h3>
-                        @endif
+                        </i> {{{ $update->comment }}} <em>by {{{ $update->author->name }}}</em></h3>
                     @endif
                 </div>
             @endforeach

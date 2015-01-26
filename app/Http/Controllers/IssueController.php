@@ -24,6 +24,26 @@ class IssueController extends Controller {
 	}
 
 	/**
+	 * Display a listing of the resource, filtered.
+	 *
+	 * @param  string  $stub;
+	 * @param  string  $version;
+	 * @return Response
+	 */
+	public function filter($stub, $version)
+	{
+		$userGroups = \Auth::User()->groups->lists('id');
+		$project = Project::where('stub', '=', $stub)->firstOrFail();
+
+		if($version == 'me') {
+			$issues = Issue::whereIn('assigned_to_id', $userGroups)->get();
+		} else {
+			$issues = $project->issues->where('version', '=', $version);
+		}
+		return view('issues.index')->with('project', $project)->with('issues', $issues);
+	}
+
+	/**
 	 * Show the form for creating a new resource.
 	 *
 	 * @param  string  $stub;
@@ -46,7 +66,7 @@ class IssueController extends Controller {
 	{
 		$issue = new Issue();
 		$project = Project::where('stub', '=', $stub)->firstOrFail();
-		$issue->public      = Input::get('public', false);
+		$project->public 	= Input::has('public');
 		$issue->author_id   = \Auth::user()->id;
 		$issue->project_id  = $project->id;
 		$issue->type        = Input::get('type');

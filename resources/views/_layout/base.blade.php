@@ -11,4 +11,4 @@
     @yield('headlinks')
 </head>
 @yield('body')
-@include('layout.footer')
+@include('_layout.footer')

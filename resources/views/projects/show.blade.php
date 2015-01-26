@@ -35,8 +35,12 @@
                 <tr><td><strong>Specification</strong></td><td>{{{ $project->lms_specification }}}</td></tr>
             </table>
         </div>
-        <h2>You have 0 issues assigned to you!</h2>
-        <p>You're up to date, and you have no issues assigned to you.</p>
+        <h2>You have {{ $count }} issues assigned to you!</h2>
+        @if($count == 0)
+            <p>You're up to date, and you have no issues assigned to you.</p>
+        @else
+            <p>You can <a href="{{ Request::url() }}/issues">click here</a> to take a look at these issues.</p>
+        @endif
     </div>
 </body>
 @stop

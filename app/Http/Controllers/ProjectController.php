@@ -6,6 +6,7 @@ use App\Client;
 use App\Project;
 use App\User;
 use App\Group;
+use App\Issue;
 use Input;
 
 class ProjectController extends Controller {
@@ -45,7 +46,7 @@ class ProjectController extends Controller {
 
 		$project = new Project();
 		$project->client_id					 = $client->id;
-		$project->public                     = Input::get('public', false);
+		$project->public 					 = Input::has('public');
 		$project->name				         = Input::get('name');
 		$project->stub				         = Input::get('stub');
 		$project->current_version	         = Input::get('current_version');
@@ -76,7 +77,10 @@ class ProjectController extends Controller {
 	 */
 	public function show($stub)
 	{
-        $client = \Auth::user()->client_id;
+		$user = \Auth::user();
+        $client = $user->client_id;
+		$userGroups = $user->groups->lists('id');
+		$count = count(Issue::whereIn('assigned_to_id', $userGroups)->get());
 
 		if($client == 1) {
 			$project = Project::where('stub', '=', $stub)
@@ -88,7 +92,7 @@ class ProjectController extends Controller {
 		}
 
 		//dd(count($project->issues));
-		return view('projects.show')->with('project', $project);
+		return view('projects.show')->with('project', $project)->with('count', $count);
 	}
 
 	/**
@@ -126,7 +130,7 @@ class ProjectController extends Controller {
 	public function update($stub)
 	{
 		$project = Project::where('stub', '=', $stub)->firstOrFail();
-		$project->public                     = Input::get('public', false);
+		$project->public 					 = Input::has('public');
 		$project->name				         = Input::get('name');
 		$project->stub				         = Input::get('stub');
 		$project->current_version	         = Input::get('current_version');

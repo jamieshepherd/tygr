@@ -1,12 +1,12 @@
-@extends('layout.base')
+@extends('_layout.base')
 @section('crumbtrail')
 <a href="/"><li><i class="fa fa-home"></i> Account</li></a>
 @stop
 @section('body')
     <body>
-    @include('layout.nav')
+    @include('_layout.nav')
     <div id="main">
-        @include('layout.header')
+        @include('_layout.header')
         <h1>Account</h1>
         <a class="action" href="/account/edit"><i class="fa fa-edit"></i> Edit details</a>
         <h2>Full name</h2>

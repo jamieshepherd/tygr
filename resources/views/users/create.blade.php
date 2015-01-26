@@ -1,4 +1,4 @@
-@extends('layout.base')
+@extends('_layout.base')
 @section('headlinks')
     <script src="/js/helpers.js"></script>
 @stop
@@ -9,9 +9,9 @@
 @stop
 @section('body')
     <body>
-    @include('layout.nav')
+    @include('_layout.nav')
     <div id="main">
-        @include('layout.header')
+        @include('_layout.header')
         <h1>Create user</h1>
         <form action="" method="POST" accept-charset="UTF-8">
         <input type="hidden" name="_token" value="<?php echo csrf_token(); ?>">

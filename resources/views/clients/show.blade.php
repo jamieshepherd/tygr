@@ -1,4 +1,4 @@
-@extends('layout.base')
+@extends('_layout.base')
 @section('headlinks')
 <!--script src="http://listjs.com/no-cdn/list.js"></script-->
 @stop
@@ -9,9 +9,9 @@
 @stop
 @section('body')
     <body>
-    @include('layout.nav')
+    @include('_layout.nav')
     <div id="main">
-        @include('layout.header')
+        @include('_layout.header')
         <h1>{{{ $client->name }}}</h1>
         <div id="projects">
         <input class="filter search" placeholder="Search" autofocus/>

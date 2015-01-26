@@ -1,4 +1,4 @@
-@extends('layout.base')
+@extends('_layout.base')
 @section('crumbtrail')
 <a href="/"><li><i class="fa fa-home"></i> Home</li></a>
 <a href="/users"><li> Users</li></a>
@@ -6,9 +6,9 @@
 @stop
 @section('body')
     <body>
-    @include('layout.nav')
+    @include('_layout.nav')
     <div id="main">
-        @include('layout.header')
+        @include('_layout.header')
         <h1>{{{ $user->name }}}</h1>
         <a class="action" href="/users/edit/{{{ $user->id }}}"><i class="fa fa-edit"></i> Edit user</a>
         <a class="action" href="/users/delete/{{ $user->id }}"><i class="fa fa-exclamation-circle"></i> Delete client</a>

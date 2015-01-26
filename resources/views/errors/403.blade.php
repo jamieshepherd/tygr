@@ -1,4 +1,4 @@
-@extends('layout.base')
+@extends('_layout.base')
 @section('headlinks')
 <!--script src="/js/your-custom-javascript.js"></script-->
 @stop
@@ -7,9 +7,9 @@
 @stop
 @section('body')
     <body>
-    @include('layout.nav')
+    @include('_layout.nav')
     <div id="main">
-        @include('layout.header')
+        @include('_layout.header')
         <h1>403</h1>
         <p>Forbidden.</p>
     </div>

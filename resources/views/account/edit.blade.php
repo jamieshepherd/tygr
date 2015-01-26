@@ -1,13 +1,13 @@
-@extends('layout.base')
+@extends('_layout.base')
 @section('crumbtrail')
     <a href="/account"><li><i class="fa fa-home"></i> Account</li></a>
     <li class="current">Edit</li>
 @stop
 @section('body')
     <body>
-    @include('layout.nav')
+    @include('_layout.nav')
     <div id="main">
-        @include('layout.header')
+        @include('_layout.header')
         <h1>Edit account</h1>
         <form action="" method="POST" accept-charset="UTF-8">
         <input type="hidden" name="_token" value="<?php echo csrf_token(); ?>">

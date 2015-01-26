@@ -1,13 +1,13 @@
-@extends('layout.base')
+@extends('_layout.base')
 @section('crumbtrail')
 <a href="/"><li><i class="fa fa-home"></i> Home</li></a>
 <li class="current">Projects</li>
 @stop
 @section('body')
     <body>
-    @include('layout.nav')
+    @include('_layout.nav')
     <div id="main">
-        @include('layout.header')
+        @include('_layout.header')
         <h1>Projects</h1>
             @if(count($client->projects)==0)
                 <p>Sorry, there are no projects listed for this client yet.</p>

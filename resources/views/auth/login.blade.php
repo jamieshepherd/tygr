@@ -1,4 +1,4 @@
-@extends('layout.base')
+@extends('_layout.base')
 @section('body')
 <body class="photo">
     <div class="login">

@@ -1,4 +1,4 @@
-@extends('layout.base')
+@extends('_layout.base')
 @section('headlinks')
 @stop
 @section('crumbtrail')
@@ -10,9 +10,9 @@
 @stop
 @section('body')
     <body>
-    @include('layout.nav')
+    @include('_layout.nav')
     <div id="main">
-        @include('layout.header')
+        @include('_layout.header')
         <h1>Log an issue</h1>
         <form action="{{{ Request::url() }}}" method="POST" accept-charset="UTF-8">
         <input type="hidden" name="_token" value="<?php echo csrf_token(); ?>">

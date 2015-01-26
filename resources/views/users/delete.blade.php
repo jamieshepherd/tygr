@@ -1,4 +1,4 @@
-@extends('layout.base')
+@extends('_layout.base')
 @section('crumbtrail')
     <a href="/"><li><i class="fa fa-home"></i> Home</li></a>
     <a href="/users"><li>User</li></a>
@@ -7,9 +7,9 @@
 @stop
 @section('body')
     <body>
-    @include('layout.nav')
+    @include('_layout.nav')
     <div id="main">
-        @include('layout.header')
+        @include('_layout.header')
         <h1>Are you absolutely sure?</h1>
         <p>This will permanently delete the user <strong>{{{ $user->name }}}</strong>, and all history associated with it.</p>
         <p>Are you absolutely sure you want to delete <strong>{{{ $user->name }}}</strong>?</p><br/>

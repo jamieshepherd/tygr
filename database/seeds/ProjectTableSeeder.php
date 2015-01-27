@@ -10,9 +10,9 @@ class ProjectTableSeeder extends Seeder {
     {
 
         Project::create(array(
-            'name'                   => 'On the Job',
+            'name'                   => 'Fire Safety',
             'public'                 => true,
-            'stub'                   => 'onthejob',
+            'stub'                   => 'firesafety',
             'client_id'              => 2,
             'project_manager'        => 'Andrea Kinsman',
             'lead_developer'         => 'Jamie Shepherd',
@@ -26,9 +26,9 @@ class ProjectTableSeeder extends Seeder {
         ));
 
         Project::create(array(
-            'name'                   => 'Sales and Service',
+            'name'                   => 'Getting Started',
             'public'                 => true,
-            'stub'                   => 'salesandservice',
+            'stub'                   => 'gettingstarted',
             'client_id'              => 2,
             'project_manager'        => 'Andrea Kinsman',
             'lead_developer'         => 'Jamie Shepherd',
@@ -42,9 +42,9 @@ class ProjectTableSeeder extends Seeder {
         ));
 
         Project::create(array(
-            'name'                   => 'Introduction to Sports Direct',
+            'name'                   => 'Introduction to Blue Industries',
             'public'                 => true,
-            'stub'                   => 'introtosportsdirect',
+            'stub'                   => 'introtoblueindustries',
             'client_id'              => 2,
             'project_manager'        => 'Andrea Kinsman',
             'lead_developer'         => 'Jamie Shepherd',

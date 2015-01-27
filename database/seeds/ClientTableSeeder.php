@@ -15,26 +15,26 @@ class ClientTableSeeder extends Seeder {
         ));
 
         Client::create(array(
-            'name'    => 'Sports Direct',
-            'stub'    => 'sportsdirect',
+            'name'    => 'Blue Industries',
+            'stub'    => 'blueindustries',
             'type'    => 'Client'
         ));
 
         Client::create(array(
-            'name'    => 'Farmfoods',
-            'stub'    => 'farmfoods',
+            'name'    => 'Grey Software',
+            'stub'    => 'greysoftware',
             'type'    => 'Client'
         ));
 
         Client::create(array(
-            'name'    => 'Toyota',
-            'stub'    => 'toyota',
+            'name'    => 'Purple Pharmaceuticals',
+            'stub'    => 'purplepharma',
             'type'    => 'Client'
         ));
 
         Client::create(array(
-            'name'    => 'Microsoft',
-            'stub'    => 'microsoft',
+            'name'    => 'Orange Services',
+            'stub'    => 'orangeservices',
             'type'    => 'Pitch'
         ));
     }

@@ -36,7 +36,7 @@
             <h2>Description</h2>
             <p>{{{ $issue->description }}}</p>
         </section>
-        @if($issue->status != 'Resolved')
+        @if($issue->status != 'Resolved' && $issue->status != 'Closed')
         <section>
             <h2>Update issue</h2>
             <form action="" method="POST" accept-charset="UTF-8">

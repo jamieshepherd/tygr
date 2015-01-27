@@ -50,8 +50,14 @@ class Issue extends Model {
 		return $this->assigned_to->name;
 	}
 
+	public function status()
+	{
+		return $this->hasOne('App\IssueStatus', 'status');
+	}
+
 	public function issue_history()
 	{
 		return $this->hasMany('App\IssueHistory')->orderBy('id', 'desc');
 	}
+
 }

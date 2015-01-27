@@ -17,7 +17,7 @@ class IssueTableSeeder extends Seeder {
             'version'    => 'v1',
             'reference'  => 'b-01',
             'type'       => 'Bug fix',
-            'status'     => 'New',
+            'status'     => 1,
             'description'=> file_get_contents('http://loripsum.net/api/1/short/plaintext'),
             'priority'   => 'High'
         ));
@@ -30,7 +30,7 @@ class IssueTableSeeder extends Seeder {
             'version'    => 'v1',
             'reference'  => 'b-06',
             'type'       => 'Bug fix',
-            'status'     => 'New',
+            'status'     => 1,
             'description'=> file_get_contents('http://loripsum.net/api/1/short/plaintext'),
             'priority'   => 'High'
         ));
@@ -43,7 +43,7 @@ class IssueTableSeeder extends Seeder {
             'version'    => 'v1',
             'reference'  => 'b-02',
             'type'       => 'Bug fix',
-            'status'     => 'New',
+            'status'     => 1,
             'description'=> file_get_contents('http://loripsum.net/api/1/short/plaintext'),
             'priority'   => 'High'
         ));
@@ -56,7 +56,7 @@ class IssueTableSeeder extends Seeder {
             'version'    => 'v1',
             'reference'  => 'b-03',
             'type'       => 'Bug fix',
-            'status'     => 'New',
+            'status'     => 1,
             'description'=> file_get_contents('http://loripsum.net/api/1/short/plaintext'),
             'priority'   => 'Medium'
         ));
@@ -69,7 +69,7 @@ class IssueTableSeeder extends Seeder {
             'version'    => 'v1',
             'reference'  => 'b-03',
             'type'       => 'Bug fix',
-            'status'     => 'New',
+            'status'     => 1,
             'description'=> file_get_contents('http://loripsum.net/api/1/short/plaintext'),
             'priority'   => 'Medium'
         ));
@@ -82,7 +82,7 @@ class IssueTableSeeder extends Seeder {
             'version'    => 'v1',
             'reference'  => 'b-03',
             'type'       => 'Bug fix',
-            'status'     => 'Assigned',
+            'status'     => 2,
             'description'=> file_get_contents('http://loripsum.net/api/1/short/plaintext'),
             'priority'   => 'Low'
         ));
@@ -95,7 +95,7 @@ class IssueTableSeeder extends Seeder {
             'version'    => 'v1',
             'reference'  => 'b-03',
             'type'       => 'Bug fix',
-            'status'     => 'Assigned',
+            'status'     => 2,
             'description'=> file_get_contents('http://loripsum.net/api/1/short/plaintext'),
             'priority'   => 'Low'
         ));
@@ -108,7 +108,7 @@ class IssueTableSeeder extends Seeder {
             'version'    => 'v1',
             'reference'  => 'b-03',
             'type'       => 'Bug fix',
-            'status'     => 'Assigned',
+            'status'     => 2,
             'description'=> file_get_contents('http://loripsum.net/api/1/short/plaintext'),
             'priority'   => 'Low'
         ));
@@ -121,7 +121,7 @@ class IssueTableSeeder extends Seeder {
             'version'    => 'v1',
             'reference'  => 'b-03',
             'type'       => 'Bug fix',
-            'status'     => 'Assigned',
+            'status'     => 2,
             'description'=> file_get_contents('http://loripsum.net/api/1/short/plaintext'),
             'priority'   => 'Low'
         ));
@@ -134,7 +134,7 @@ class IssueTableSeeder extends Seeder {
             'version'    => 'v1',
             'reference'  => 'b-03',
             'type'       => 'Bug fix',
-            'status'     => 'Resolved',
+            'status'     => 4,
             'description'=> file_get_contents('http://loripsum.net/api/1/short/plaintext'),
             'priority'   => 'Low'
         ));
@@ -147,7 +147,7 @@ class IssueTableSeeder extends Seeder {
             'version'    => 'v1',
             'reference'  => 'b-03',
             'type'       => 'Bug fix',
-            'status'     => 'Resolved',
+            'status'     => 4,
             'description'=> file_get_contents('http://loripsum.net/api/1/short/plaintext'),
             'priority'   => 'Low'
         ));
@@ -160,7 +160,7 @@ class IssueTableSeeder extends Seeder {
             'version'    => 'v1',
             'reference'  => 'b-03',
             'type'       => 'Bug fix',
-            'status'     => 'Resolved',
+            'status'     => 4,
             'description'=> file_get_contents('http://loripsum.net/api/1/short/plaintext'),
             'priority'   => 'Low'
         ));

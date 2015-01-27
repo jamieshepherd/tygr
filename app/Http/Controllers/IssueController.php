@@ -37,7 +37,10 @@ class IssueController extends Controller {
 		$project = Project::where('stub', '=', $stub)->firstOrFail();
 
 		if($filter == 'me') {
-			$issues = Issue::whereIn('assigned_to_id', $userGroups)->get();
+			$issues = Issue::whereIn('assigned_to_id', $userGroups)
+				->where('project_id','=',$project->id)
+				->orderBy('status_id')
+				->get();
 			$filter = 'Assigned to me';
 		} else {
 			unset($filter);

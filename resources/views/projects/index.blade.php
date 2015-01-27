@@ -17,9 +17,9 @@
                 <div class="project-preview">
                     <h3>{{ $project->name }}</h3>
                     <ul>
-                        <li><strong>Project manager: </strong>Andrea Kinsman</li>
-                        <li><strong>Project status: </strong>In development</li>
-                        <li><strong>Current version: </strong>2.0</li>
+                        <li><strong>Project manager: </strong>{{ $project->project_manager }}</li>
+                        <li><strong>Project status: </strong>{{ $project->status }}</li>
+                        <li><strong>Current version: </strong>{{ $project->current_version }}</li>
                         <li><strong>View project: </strong><a href="/projects/{{{ $project->stub }}}">Click here</a></li>
                     </ul>
                 </div>

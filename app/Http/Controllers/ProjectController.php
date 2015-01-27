@@ -80,7 +80,7 @@ class ProjectController extends Controller {
 		$user = \Auth::user();
         $client = $user->client_id;
 		$userGroups = $user->groups->lists('id');
-		$count = count(Issue::whereIn('assigned_to_id', $userGroups)->get());
+		$count = count(Issue::whereIn('assigned_to_id', $userGroups)->where('status_id','!=','5')->get());
 
 		if($client == 1) {
 			$project = Project::where('stub', '=', $stub)

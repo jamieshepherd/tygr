@@ -37,7 +37,7 @@
                 <th>Type</th>
                 <th>Version</th>
                 <th>Description</th>
-                <th>Date</th>
+                <th>Created</th>
                 <th>Status</th>
             </tr>
             <tbody class="list">

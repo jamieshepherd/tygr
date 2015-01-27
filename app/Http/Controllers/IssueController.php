@@ -200,19 +200,22 @@ class IssueController extends Controller {
 
 		if(Input::get('resolved')) {
 			$issue->status	= 'Resolved';
-			$issue->save();
+			$result = $issue->save();
 
-			$update = new IssueHistory();
-			$update->issue_id   = $issue->id;
-			$update->author_id  = \Auth::user()->id;
-			$update->type		= 'status';
-			$update->status     = 'resolved';
-			$update->comment    = 'Issue was changed to resolved';
-			$update->save();
+			if($result) {
+				$update = new IssueHistory();
+				$update->issue_id = $issue->id;
+				$update->author_id = \Auth::user()->id;
+				$update->type = 'status';
+				$update->status = 'resolved';
+				$update->comment = 'Issue was changed to resolved';
+				$update->save();
+
+				\Session::flash('message', 'The issue was updated.');
+				return redirect('projects/'.$stub.'/issues/show/'.$issue->id);
+			}
 		}
 
-		\Session::flash('message', 'The issue was updated.');
-		return redirect('projects/'.$stub.'/issues/show/'.$issue->id);
 
 	}
 
@@ -242,10 +245,20 @@ class IssueController extends Controller {
 		$issue = Issue::where('id', '=', $id)->firstOrFail();
 		$issue->status = 'Resolved';
 		$issue->assigned_to_id = 1;
-		$issue->save();
+		$result = $issue->save();
 
-		\Session::flash('message', 'This issue was marked as resolved.');
-		return redirect('projects/'.$stub.'/issues');
+		if($result) {
+			$update = new IssueHistory();
+			$update->issue_id = $issue->id;
+			$update->author_id = \Auth::user()->id;
+			$update->type = 'status';
+			$update->status = 'resolved';
+			$update->comment = 'Issue was changed to resolved';
+			$update->save();
+
+			\Session::flash('message', 'The issue was updated.');
+			return redirect('projects/'.$stub.'/issues/show/'.$issue->id);
+		}
 	}
 
 	/**
@@ -259,10 +272,20 @@ class IssueController extends Controller {
 	{
 		$issue = Issue::where('id', '=', $id)->firstOrFail();
 		$issue->status = 'Closed';
-		$issue->save();
+		$result = $issue->save();
 
-		\Session::flash('message', 'This issue is now closed. Thanks!');
-		return redirect('projects/'.$stub.'/issues');
+		if($result) {
+			$update = new IssueHistory();
+			$update->issue_id = $issue->id;
+			$update->author_id = \Auth::user()->id;
+			$update->type = 'status';
+			$update->status = 'closed';
+			$update->comment = 'Issue was closed';
+			$update->save();
+
+			\Session::flash('message', 'The issue was closed.');
+			return redirect('projects/'.$stub.'/issues/show/'.$issue->id);
+		}
 	}
 
 	/**
@@ -276,10 +299,20 @@ class IssueController extends Controller {
 	{
 		$issue = Issue::where('id', '=', $id)->firstOrFail();
 		$issue->status = 'Assigned';
-		$issue->save();
+		$result = $issue->save();
 
-		\Session::flash('message', 'This issue was reopened.');
-		return redirect('projects/'.$stub.'/issues');
+		if($result) {
+			$update = new IssueHistory();
+			$update->issue_id = $issue->id;
+			$update->author_id = \Auth::user()->id;
+			$update->type = 'status';
+			$update->status = 'reopened';
+			$update->comment = 'Issue was reopened';
+			$update->save();
+
+			\Session::flash('message', 'The issue was updated.');
+			return redirect('projects/'.$stub.'/issues/show/'.$issue->id);
+		}
 	}
 
 }

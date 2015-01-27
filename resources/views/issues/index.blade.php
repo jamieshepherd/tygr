@@ -43,8 +43,7 @@
             <tbody class="list">
             @foreach($issues as $issue)
             @if($issue->public || Auth::user()->rank <= 2)
-            <tr onclick="document.location='/projects/{{{ $project->stub }}}/issues/show/{{{ $issue->id }}}';" style="cursor:pointer" @if($issue->status == 'Resolved') class="yes resolved" @endif
-                    >
+            <tr onclick="document.location='/projects/{{{ $project->stub }}}/issues/show/{{{ $issue->id }}}';" style="cursor:pointer" @if($issue->status == 'Closed') class="closed" @endif>
                 <td class="reference">{{{ $issue->reference }}}</td>
                 <td class="type">{{{ $issue->type }}}</td>
                 <td class="version">{{{ $issue->version }}}</td>

@@ -209,13 +209,13 @@ table.full {
       background: #ffffff; }
     table.full tr:hover {
       background: #dddddd; }
-    table.full tr.resolved {
+    table.full tr.closed {
       background: none;
       opacity: 0.3; }
-      table.full tr.resolved:hover {
+      table.full tr.closed:hover {
         background: #dddddd;
         opacity: 1; }
-      table.full tr.resolved td.priority {
+      table.full tr.closed td.priority {
         border: none; }
 
 .info-box {

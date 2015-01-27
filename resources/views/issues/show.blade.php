@@ -13,10 +13,10 @@
         @include('_layout.header')
         <h1>Issue details</h1>
         <a class="action" href="/projects/{{{ $issue->project->stub }}}/issues/edit/{{ $issue->id }}"><i class="fa fa-plus-circle"></i> Edit issue</a>
-        @if($issue->status == 'Resolved')
+        @if($issue->status->name == 'Resolved')
             <a class="action" href="{{ Request::url() }}/reopen"><i class="fa fa-exclamation-circle"></i> Reopen issue</a>
             <a class="action" href="{{ Request::url() }}/close"><i class="fa fa-check-circle"></i> Close issue</a>
-        @elseif($issue->status === 'Closed')
+        @elseif($issue->status->name === 'Closed')
             <a class="action" href="{{ Request::url() }}/reopen"><i class="fa fa-exclamation-circle"></i> Reopen issue</a>
         @else
             <a class="action" href="{{ Request::url() }}/resolve"><i class="fa fa-check-circle"></i> Resolve issue</a>
@@ -28,7 +28,7 @@
                 <li><strong>Assigned to:</strong> @if($issue->assigned() == 'Client') {{{ $issue->project->client->name }}} @else {{{ $issue->assigned() }}} @endif</li>
                 <li><strong>Reference:</strong> {{{ $issue->reference }}}</li>
                 <li><strong>Issue type:</strong> {{{ $issue->type }}}</li>
-                <li><strong>Status:</strong> {{{ $issue->status }}}</li>
+                <li><strong>Status:</strong> {{{ $issue->status->name }}}</li>
                 <li><strong>Priority:</strong> {{{ $issue->priority }}}</li>
             </ul>
         </section>
@@ -36,7 +36,7 @@
             <h2>Description</h2>
             <p>{{{ $issue->description }}}</p>
         </section>
-        @if($issue->status != 'Resolved' && $issue->status != 'Closed')
+        @if($issue->status->name != 'Resolved' && $issue->status->name != 'Closed')
         <section>
             <h2>Update issue</h2>
             <form action="" method="POST" accept-charset="UTF-8">

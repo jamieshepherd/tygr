@@ -27,7 +27,7 @@ class IssueStatus extends Model {
 
 	public function issue()
 	{
-		return $this->belongsToMany('App\Issue');
+		return $this->hasMany('App\Issue', 'status_id');
 	}
 
 }

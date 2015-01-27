@@ -43,13 +43,13 @@
             <tbody class="list">
             @foreach($issues as $issue)
             @if($issue->public || Auth::user()->rank <= 2)
-            <tr onclick="document.location='/projects/{{{ $project->stub }}}/issues/show/{{{ $issue->id }}}';" style="cursor:pointer" @if($issue->status == 'Closed') class="closed" @endif>
+            <tr onclick="document.location='/projects/{{{ $project->stub }}}/issues/show/{{{ $issue->id }}}';" style="cursor:pointer" @if($issue->status->name == 'Closed') class="closed" @endif>
                 <td class="reference">{{{ $issue->reference }}}</td>
                 <td class="type">{{{ $issue->type }}}</td>
                 <td class="version">{{{ $issue->version }}}</td>
                 <td class="description">{{{ substr($issue->description,0,64) }}}...</td>
                 <td class="date">{{ date("d M Y",strtotime($issue->created_at)) }}</td>
-                <td class="priority @if(Auth::user()->rank < 3) {{ $issue->priority }} @endif">{{{ $issue->status }}}</td>
+                <td class="priority @if(Auth::user()->rank < 3) {{ $issue->priority }} @endif">{{{ $issue->status->name }}}</td>
             </tr>
             @endif
             @endforeach

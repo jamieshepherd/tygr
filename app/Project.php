@@ -32,7 +32,7 @@ class Project extends Model {
 
 	public function issues()
 	{
-		return $this->hasMany('App\Issue', 'project_id')->orderBy('status');
+		return $this->hasMany('App\Issue', 'project_id')->orderBy('status_id');
 	}
 
 }

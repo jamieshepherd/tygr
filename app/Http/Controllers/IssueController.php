@@ -20,6 +20,7 @@ class IssueController extends Controller {
 	{
 		$project = Project::where('stub', '=', $stub)->firstOrFail();
 		$issues = $project->issues;
+
 		return view('issues.index')->with('project', $project)->with('issues', $issues);
 	}
 
@@ -75,7 +76,7 @@ class IssueController extends Controller {
 		$issue->author_id   = \Auth::user()->id;
 		$issue->project_id  = $project->id;
 		$issue->type        = Input::get('type');
-		$issue->status      = 'New';
+		$issue->status_id      = 1;
 		$issue->priority    = 'Medium';
 		$issue->assigned_to_id = 2;
 		$issue->version		   = $project->current_version;
@@ -187,11 +188,11 @@ class IssueController extends Controller {
 			$update->type		= 'status';
 			$update->status     = 'assigned';
 			if($issue->assigned_to->name == 'Client') {
-				$issue->status  = 'Awaiting Client';
+				$issue->status_id  = 3;
 				$issue->save();
 				$update->comment    = 'Issue was assigned to '.$issue->project->client->name;
 			} else {
-				$issue->status  = 'Assigned';
+				$issue->status_id  = 2;
 				$issue->save();
 				$update->comment    = 'Issue was assigned to '.$issue->assigned_to->name;
 			}
@@ -199,7 +200,7 @@ class IssueController extends Controller {
 		}
 
 		if(Input::get('resolved')) {
-			$issue->status	= 'Resolved';
+			$issue->status_id	= 4;
 			$result = $issue->save();
 
 			if($result) {
@@ -211,11 +212,11 @@ class IssueController extends Controller {
 				$update->comment = 'Issue was changed to resolved';
 				$update->save();
 
-				\Session::flash('message', 'The issue was updated.');
-				return redirect('projects/'.$stub.'/issues/show/'.$issue->id);
 			}
 		}
 
+		\Session::flash('message', 'The issue was updated.');
+		return redirect('projects/'.$stub.'/issues/show/'.$issue->id);
 
 	}
 
@@ -243,7 +244,7 @@ class IssueController extends Controller {
 	public function resolve($stub, $id)
 	{
 		$issue = Issue::where('id', '=', $id)->firstOrFail();
-		$issue->status = 'Resolved';
+		$issue->status_id = 4;
 		$issue->assigned_to_id = 1;
 		$result = $issue->save();
 
@@ -271,7 +272,7 @@ class IssueController extends Controller {
 	public function close($stub, $id)
 	{
 		$issue = Issue::where('id', '=', $id)->firstOrFail();
-		$issue->status = 'Closed';
+		$issue->status_id = 5;
 		$result = $issue->save();
 
 		if($result) {
@@ -298,7 +299,7 @@ class IssueController extends Controller {
 	public function reopen($stub, $id)
 	{
 		$issue = Issue::where('id', '=', $id)->firstOrFail();
-		$issue->status = 'Assigned';
+		$issue->status_id = 2;
 		$result = $issue->save();
 
 		if($result) {

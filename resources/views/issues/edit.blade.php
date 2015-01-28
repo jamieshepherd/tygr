@@ -4,8 +4,8 @@
 @section('crumbtrail')
     <a href="/"><li><i class="fa fa-home"></i> Home</li></a>
     <a href="/projects"><li>Projects</li></a>
-    <a href="/projects/{{{ $issue->project->stub }}}"><li>{{{ $issue->project->name }}}</li></a>
-    <a href="/projects/{{{ $issue->project->stub }}}/issues"><li>Issues</li></a>
+    <a href="/projects/{{ $issue->project->client->stub }}/{{{ $issue->project->stub }}}"><li>{{{ $issue->project->name }}}</li></a>
+    <a href="/projects/{{ $issue->project->client->stub }}/{{{ $issue->project->stub }}}/issues"><li>Issues</li></a>
     <li class="current">Create</li>
 @stop
 @section('body')

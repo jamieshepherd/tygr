@@ -29,7 +29,7 @@
             </tr>
             <tbody class="list">
             @foreach($client->projects as $project)
-            <tr onclick="document.location='/projects/{{{ $project->stub }}}';" style="cursor:pointer">
+            <tr onclick="document.location='/projects/{{ $project->client->stub }}/{{{ $project->stub }}}';" style="cursor:pointer">
                 <td class="client">{{{ $client->name }}}</td>
                 <td class="project">{{{ $project->name }}}</td>
                 <td class="stub">{{{ $project->stub }}}</td>

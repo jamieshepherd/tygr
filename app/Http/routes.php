@@ -53,23 +53,23 @@ Route::group(array('middleware' => 'auth'), function() {
 		Route::get('clients/delete/{id}/confirm', 'ClientController@destroy');
 		Route::get('clients/show/{stub}/create', 'ProjectController@create');
 		Route::post('clients/show/{stub}/create', 'ProjectController@store');
-		Route::get('projects/{stub}/edit', 'ProjectController@edit');
-		Route::post('projects/{stub}/edit', 'ProjectController@update');
+		Route::get('projects/{client}{stub}/edit', 'ProjectController@edit');
+		Route::post('projects/{client}{stub}/edit', 'ProjectController@update');
 	});
 
     //>> Make sure user has at least CLIENT priviliges
 	Route::group(array('middleware' => 'client'), function() {
-		Route::get('projects/{stub}', 'ProjectController@show');
-		Route::get('projects/{stub}/issues', 'IssueController@index');
-		Route::get('projects/{stub}/issues/filter/{filter}', 'IssueController@filter');
-		Route::get('projects/{stub}/issues/create', 'IssueController@create');
-		Route::post('projects/{stub}/issues/create', 'IssueController@store');
-		Route::get('projects/{stub}/issues/edit/{id}', 'IssueController@edit');
-		Route::post('projects/{stub}/issues/edit/{id}', 'IssueController@update');
-		Route::get('projects/{stub}/issues/show/{id}', 'IssueController@show');
-		Route::post('projects/{stub}/issues/show/{id}', 'IssueController@updateIssueHistory');
-		Route::get('projects/{stub}/issues/show/{id}/resolve', 'IssueController@resolve');
-		Route::get('projects/{stub}/issues/show/{id}/reopen', 'IssueController@reopen');
-		Route::get('projects/{stub}/issues/show/{id}/close', 'IssueController@close');
+		Route::get('projects/{client}/{stub}', 'ProjectController@show');
+		Route::get('projects/{client}/{stub}/issues', 'IssueController@index');
+		Route::get('projects/{client}/{stub}/issues/filter/{filter}', 'IssueController@filter');
+		Route::get('projects/{client}/{stub}/issues/create', 'IssueController@create');
+		Route::post('projects/{client}/{stub}/issues/create', 'IssueController@store');
+		Route::get('projects/{client}/{stub}/issues/edit/{id}', 'IssueController@edit');
+		Route::post('projects/{client}/{stub}/issues/edit/{id}', 'IssueController@update');
+		Route::get('projects/{client}/{stub}/issues/show/{id}', 'IssueController@show');
+		Route::post('projects/{client}/{stub}/issues/show/{id}', 'IssueController@updateIssueHistory');
+		Route::get('projects/{client}/{stub}/issues/show/{id}/resolve', 'IssueController@resolve');
+		Route::get('projects/{client}/{stub}/issues/show/{id}/reopen', 'IssueController@reopen');
+		Route::get('projects/{client}/{stub}/issues/show/{id}/close', 'IssueController@close');
 	});
 });

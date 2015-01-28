@@ -7,7 +7,9 @@ use App\Project;
 use App\User;
 use App\Group;
 use App\Issue;
+use Auth;
 use Input;
+use Session;
 
 class ProjectController extends Controller {
 
@@ -18,7 +20,7 @@ class ProjectController extends Controller {
 	 */
 	public function index()
 	{
-        $client_id = \Auth::user()->client_id;
+        $client_id = Auth::user()->client_id;
 		$client = Client::where('id', '=', $client_id)->firstOrFail();
         return view('projects.index')->with('client', $client);
 	}
@@ -64,7 +66,7 @@ class ProjectController extends Controller {
 
 		$result = $project->save();
 		if($result) {
-			\Session::flash('message', $project->name.' was created successfully.');
+			Session::flash('message', $project->name.' was created successfully.');
 			return redirect('/projects/'.$project->stub);
 		}
 	}
@@ -72,24 +74,21 @@ class ProjectController extends Controller {
 	/**
 	 * Display the specified resource.
 	 *
+	 * @param  int  $client
 	 * @param  string  $stub
 	 * @return Response
 	 */
-	public function show($stub)
+	public function show($client, $stub)
 	{
-		$user = \Auth::user();
-        $client = $user->client_id;
-		$userGroups = $user->groups->lists('id');
-		$count = count(Issue::whereIn('assigned_to_id', $userGroups)->where('status_id','!=','5')->get());
+		$client = Client::where('stub', '=', $client)->first();
+		if(!$client) abort(404);
 
-		if($client == 1) {
-			$project = Project::where('stub', '=', $stub)
-				->firstOrFail();
-		} else {
-			$project = Project::where('client_id', '=', $client)
-				->where('stub', '=', $stub)
-				->firstOrFail();
-		}
+		$project = Project::where('client_id', '=', $client->id)
+			->where('stub', '=', $stub)->first();
+		if(!$project) abort(404);
+
+		$userGroups = Auth::user()->groups->lists('id');
+		$count = count(Issue::whereIn('assigned_to_id', $userGroups)->where('status_id','!=','5')->get());
 
 		return view('projects.show')->with('project', $project)->with('count', $count);
 	}
@@ -102,7 +101,7 @@ class ProjectController extends Controller {
 	 */
 	public function edit($stub)
 	{
-		$client = \Auth::user()->client_id;
+		$client = Auth::user()->client_id;
 
 		if($client == 1) {
 			$project = Project::where('stub', '=', $stub)
@@ -114,8 +113,6 @@ class ProjectController extends Controller {
 		}
 
 		$employees = Group::find(2)->users()->get();
-		//dd($employees);
-		//$employees = array();
 
 		return view('projects.edit')->with('project', $project)->with('employees', $employees);
 	}
@@ -146,8 +143,8 @@ class ProjectController extends Controller {
 		$project->lms_specification          = Input::get('lms_specification');
 		$result = $project->save();
 		if($result) {
-			\Session::flash('message', 'Project details updated successfully.');
-			return redirect('/projects/'.$project->stub);
+			Session::flash('message', 'Project details updated successfully.');
+			return redirect('/projects/'.$project->id.'/'.$project->stub);
 		}
 	}
 

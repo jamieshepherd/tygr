@@ -20,7 +20,7 @@
                         <li><strong>Project manager: </strong>{{ $project->project_manager }}</li>
                         <li><strong>Project status: </strong>{{ $project->status }}</li>
                         <li><strong>Current version: </strong>{{ $project->current_version }}</li>
-                        <li><strong>View project: </strong><a href="/projects/{{{ $project->stub }}}">Click here</a></li>
+                        <li><strong>View project: </strong><a href="/projects/{{ $project->id }}/{{{ $project->stub }}}">Click here</a></li>
                     </ul>
                 </div>
                 @endif

@@ -2,8 +2,8 @@
 @section('crumbtrail')
     <a href="/"><li><i class="fa fa-home"></i> Home</li></a>
     <a href="/projects"><li>Projects</li></a>
-    <a href="/projects/{{{ $project->stub }}}"><li>{{{ $project->name }}}</li></a>
-    <a href="/projects/{{{ $project->stub }}}/issues"><li>Issues</li></a>
+    <a href="/projects/{{ $project->client->stub }}/{{{ $project->stub }}}"><li>{{{ $project->name }}}</li></a>
+    <a href="/projects/{{ $project->client->stub }}/{{{ $project->stub }}}/issues"><li>Issues</li></a>
     <li class="current">Details</li>
 @stop
 @section('body')
@@ -12,7 +12,7 @@
     <div id="main">
         @include('_layout.header')
         <h1>Issue details</h1>
-        <a class="action" href="/projects/{{{ $issue->project->stub }}}/issues/edit/{{ $issue->id }}"><i class="fa fa-plus-circle"></i> Edit issue</a>
+        <a class="action" href="/projects/{{ $project->client->stub }}/{{{ $issue->project->stub }}}/issues/edit/{{ $issue->id }}"><i class="fa fa-plus-circle"></i> Edit issue</a>
         @if($issue->status->name == 'Resolved')
             <a class="action" href="{{ Request::url() }}/reopen"><i class="fa fa-exclamation-circle"></i> Reopen issue</a>
             <a class="action" href="{{ Request::url() }}/close"><i class="fa fa-check-circle"></i> Close issue</a>

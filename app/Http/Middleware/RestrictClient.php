@@ -1,7 +1,7 @@
 <?php namespace App\Http\Middleware;
 
 use Closure;
-use App\Project as Project;
+use Auth;
 class RestrictClient {
 
 	/**
@@ -13,12 +13,10 @@ class RestrictClient {
 	 */
 	public function handle($request, Closure $next)
 	{
-		$client = \Auth::user()->client_id;
-		$stub = $request->segment(2);
-		$project = Project::where('stub', '=', $stub)->firstOrFail();
+		$client = $request->segment(2);
 
-		if($client != 1 && $project->client_id != $client) {
-			return response('Unauthorized.', 401);
+		if(Auth::user()->client_id != 1 && $client != Auth::user()->client->stub) {
+			abort(401);
 		}
 
 		return $next($request);

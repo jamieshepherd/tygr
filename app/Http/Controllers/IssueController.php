@@ -13,25 +13,34 @@ class IssueController extends Controller {
 	/**
 	 * Display a listing of the resource.
 	 *
+	 * @param  string  $client;
 	 * @param  string  $stub;
 	 * @return Response
 	 */
-	public function index($stub)
+	public function index($client, $stub)
 	{
-		$project = Project::where('stub', '=', $stub)->firstOrFail();
-		$issues = $project->issues;
+		$client = Client::where('stub', '=', $client)->first();
 
-		return view('issues.index')->with('project', $project)->with('issues', $issues);
+		if(!$client) abort(404);
+
+		$project = Project::where('client_id', '=', $client->id)
+			->where('stub', '=', $stub)
+			->first();
+
+		if(!$project) abort(404);
+
+		return view('issues.index')->with('project', $project);
 	}
 
 	/**
 	 * Display a listing of the resource, filtered.
 	 *
+	 * @param  string  $client;
 	 * @param  string  $stub;
 	 * @param  string  $filter;
 	 * @return Response
 	 */
-	public function filter($stub, $filter)
+	public function filter($client, $stub, $filter)
 	{
 		$userGroups = \Auth::User()->groups->lists('id');
 		$project = Project::where('stub', '=', $stub)->firstOrFail();
@@ -55,10 +64,11 @@ class IssueController extends Controller {
 	/**
 	 * Show the form for creating a new resource.
 	 *
+	 * @param  string  $client;
 	 * @param  string  $stub;
 	 * @return Response
 	 */
-	public function create($stub)
+	public function create($client, $stub)
 	{
 		$project = Project::where('stub', '=', $stub)->firstOrFail();
 
@@ -68,10 +78,11 @@ class IssueController extends Controller {
 	/**
 	 * Store a newly created resource in storage.
 	 *
+	 * @param  string  $client;
 	 * @param  string  $stub;
 	 * @return Response
 	 */
-	public function store($stub)
+	public function store($client, $stub)
 	{
 		$issue = new Issue();
 		$project = Project::where('stub', '=', $stub)->firstOrFail();
@@ -97,18 +108,19 @@ class IssueController extends Controller {
 			$update->save();
 
 			\Session::flash('message', 'Your issue was created successfully');
-			return redirect('projects/'.$stub.'/issues/show/'.$issue->id);
+			return redirect('projects/'.$client.'/'.$stub.'/issues/show/'.$issue->id);
 		}
 	}
 
 	/**
 	 * Display the specified resource.
 	 *
+	 * @param  string  $client
 	 * @param  string  $stub
 	 * @param  int  $id
 	 * @return Response
 	 */
-	public function show($stub, $id)
+	public function show($client, $stub, $id)
 	{
 		$project = Project::where('stub', '=', $stub)->firstOrFail();
 		$issue = Issue::where('project_id', '=', $project->id)->where('id', '=', $id)->firstOrFail();
@@ -118,11 +130,12 @@ class IssueController extends Controller {
 	/**
 	 * Show the form for editing the specified resource.
 	 *
+	 * @param  string  $client
 	 * @param  string  $stub
 	 * @param  int  $id
 	 * @return Response
 	 */
-	public function edit($stub, $id)
+	public function edit($client, $stub, $id)
 	{
 		$issue = Issue::find($id);
 		return view('issues.edit')->with('issue', $issue);
@@ -131,11 +144,12 @@ class IssueController extends Controller {
 	/**
 	 * Update the specified resource in storage.
 	 *
+	 * @param  string  $client
 	 * @param  string  $stub
 	 * @param  int  $id
 	 * @return Response
 	 */
-	public function update($stub, $id)
+	public function update($client, $stub, $id)
 	{
 		$issue = Issue::find($id);
 		$issue->public 	= Input::has('public');
@@ -155,18 +169,19 @@ class IssueController extends Controller {
 			$update->save();
 
 			\Session::flash('message', 'The issue was updated.');
-			return redirect('projects/'.$stub.'/issues/show/'.$issue->id);
+			return redirect('projects/'.$client.'/'.$stub.'/issues/show/'.$issue->id);
 		}
 	}
 
 	/**
 	 * Update the specified resource in storage.
 	 *
+	 * @param  string  $client
 	 * @param  string  $stub
 	 * @param  int  $id
 	 * @return Response
 	 */
-	public function updateIssueHistory($stub, $id)
+	public function updateIssueHistory($client, $stub, $id)
 	{
 		$issue = Issue::find($id);
 
@@ -224,17 +239,19 @@ class IssueController extends Controller {
 		}
 
 		\Session::flash('message', 'The issue was updated.');
-		return redirect('projects/'.$stub.'/issues/show/'.$issue->id);
+		return redirect('projects/'.$client.'/'.$stub.'/issues/show/'.$issue->id);
 
 	}
 
 	/**
 	 * Remove the specified resource from storage.
 	 *
+	 * @param  string  $client
+	 * @param  string  $stub
 	 * @param  int  $id
 	 * @return Response
 	 */
-	public function destroy($id)
+	public function destroy($client, $stub, $id)
 	{
 		Issue::destroy($id);
 
@@ -245,11 +262,12 @@ class IssueController extends Controller {
 	/**
 	 * Set an issue's status to resolved.
 	 *
+	 * @param  string  $client
 	 * @param  string  $stub
 	 * @param  int  $id
 	 * @return Response
 	 */
-	public function resolve($stub, $id)
+	public function resolve($client, $stub, $id)
 	{
 		$issue = Issue::where('id', '=', $id)->firstOrFail();
 		$issue->status_id = 4;
@@ -266,18 +284,19 @@ class IssueController extends Controller {
 			$update->save();
 
 			\Session::flash('message', 'The issue was updated.');
-			return redirect('projects/'.$stub.'/issues/show/'.$issue->id);
+			return redirect('projects/'.$client.'/'.$stub.'/issues/show/'.$issue->id);
 		}
 	}
 
 	/**
 	 * Set an issue's status to resolved.
 	 *
+	 * @param  string  $client
 	 * @param  string  $stub
 	 * @param  int  $id
 	 * @return Response
 	 */
-	public function close($stub, $id)
+	public function close($client, $stub, $id)
 	{
 		$issue = Issue::where('id', '=', $id)->firstOrFail();
 		$issue->status_id = 5;
@@ -293,18 +312,19 @@ class IssueController extends Controller {
 			$update->save();
 
 			\Session::flash('message', 'The issue was closed.');
-			return redirect('projects/'.$stub.'/issues/show/'.$issue->id);
+			return redirect('projects/'.$client.'/'.$stub.'/issues/show/'.$issue->id);
 		}
 	}
 
 	/**
 	 * Set an issue's status to resolved.
 	 *
+	 * @param  string  $client
 	 * @param  string  $stub
 	 * @param  int  $id
 	 * @return Response
 	 */
-	public function reopen($stub, $id)
+	public function reopen($client, $stub, $id)
 	{
 		$issue = Issue::where('id', '=', $id)->firstOrFail();
 		$issue->status_id = 2;

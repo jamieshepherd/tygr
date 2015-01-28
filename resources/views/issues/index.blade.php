@@ -5,7 +5,7 @@
 @section('crumbtrail')
 <a href="/"><li><i class="fa fa-home"></i> Home</li></a>
 <a href="/projects"><li>Projects</li></a>
-<a href="/projects/{{{ $project->stub }}}"><li>{{{ $project->name }}}</li></a>
+<a href="/projects/{{ $project->client->stub }}/{{{ $project->stub }}}"><li>{{{ $project->name }}}</li></a>
 <li class="current">Issues</li>
 @stop
 @section('body')
@@ -13,19 +13,19 @@
     @include('_layout.nav')
     <div id="main">
         @include('_layout.header')
-        <h1>All issues @if(isset($filter)) <em>({{{ $filter }}})</em> @endif</h1>
+        <h1>All issues @if(isset($filter)) <em>({{{ $filter }}})</em> @else <em>({{ $project->current_version }})</em> @endif</h1>
         <div id="issues">
         <input class="filter search" placeholder="Search" autofocus/>
-        <a class="action" href="/projects/{{ $project->stub }}/issues/create"><i class="fa fa-plus-circle"></i> New issue</a>
-        <a class="action" href="/projects/{{{ $project->stub }}}/issues/filter/me"><i class="fa fa-check-square-o"></i> Assigned to me</a>
+        <a class="action" href="/projects/{{ $project->client->stub }}/{{ $project->stub }}/issues/create"><i class="fa fa-plus-circle"></i> New issue</a>
+        <a class="action" href="/projects/{{ $project->client->stub }}/{{{ $project->stub }}}/issues/filter/me"><i class="fa fa-check-square-o"></i> Assigned to me</a>
         <a class="action version-dropdown">
             <i class="fa fa-chevron-circle-down"></i> Filter issues
             <ul>
-                <li onclick="document.location='/projects/{{{ $project->stub }}}/issues';"><i class="fa fa-angle-right"></i> All issues</li>
-                <li onclick="document.location='/projects/{{{ $project->stub }}}/issues/filter/me';"><i class="fa fa-angle-right"></i> Assigned to me</li>
-                <li onclick="document.location='/projects/{{{ $project->stub }}}/issues/filter/version1';"><i class="fa fa-angle-right"></i> Version 1</li>
-                <li onclick="document.location='/projects/{{{ $project->stub }}}/issues/filter/version2';"><i class="fa fa-angle-right"></i> Version 2</li>
-                <li onclick="document.location='/projects/{{{ $project->stub }}}/issues/filter/version3';"><i class="fa fa-angle-right"></i> Version 3</li>
+                <li onclick="document.location='/projects/{{ $project->client->stub }}/{{{ $project->stub }}}/issues';"><i class="fa fa-angle-right"></i> All issues</li>
+                <li onclick="document.location='/projects/{{ $project->client->stub }}/{{{ $project->stub }}}/issues/filter/me';"><i class="fa fa-angle-right"></i> Assigned to me</li>
+                <li onclick="document.location='/projects/{{ $project->client->stub }}/{{{ $project->stub }}}/issues/filter/version1';"><i class="fa fa-angle-right"></i> Version 1</li>
+                <li onclick="document.location='/projects/{{ $project->client->stub }}/{{{ $project->stub }}}/issues/filter/version2';"><i class="fa fa-angle-right"></i> Version 2</li>
+                <li onclick="document.location='/projects/{{ $project->client->stub }}/{{{ $project->stub }}}/issues/filter/version3';"><i class="fa fa-angle-right"></i> Version 3</li>
             </ul>
         </a>
         <!--a class="action" href=""><i class="fa fa-bug"></i> All issues</a-->
@@ -41,9 +41,9 @@
                 <th>Status</th>
             </tr>
             <tbody class="list">
-            @foreach($issues as $issue)
+            @foreach($project->issues as $issue)
             @if($issue->public || Auth::user()->rank <= 2)
-            <tr onclick="document.location='/projects/{{{ $project->stub }}}/issues/show/{{{ $issue->id }}}';" style="cursor:pointer" @if($issue->status->name == 'Closed') class="closed" @endif>
+            <tr onclick="document.location='/projects/{{ $project->client->stub }}/{{{ $project->stub }}}/issues/show/{{{ $issue->id }}}';" style="cursor:pointer" @if($issue->status->name == 'Closed') class="closed" @endif>
                 <td class="reference">{{{ $issue->reference }}}</td>
                 <td class="type">{{{ $issue->type }}}</td>
                 <td class="version">{{{ $issue->version }}}</td>

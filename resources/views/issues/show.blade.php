@@ -29,7 +29,9 @@
                 <li><strong>Reference:</strong> {{{ $issue->reference }}}</li>
                 <li><strong>Issue type:</strong> {{{ $issue->type }}}</li>
                 <li><strong>Status:</strong> {{{ $issue->status->name }}}</li>
-                <li><strong>Priority:</strong> {{{ $issue->priority }}}</li>
+                @if(Auth::user()->rank != 3)
+                    <li><strong>Priority:</strong> {{{ $issue->priority }}}</li>
+                @endif
             </ul>
         </section>
         <section>
@@ -54,6 +56,11 @@
                     <input type="radio" name="assigned_to" value="4" @if($issue->assigned_to_id == 4) checked @endif> Sponge UK (Development)<br/>
                     <input type="radio" name="assigned_to" value="5" @if($issue->assigned_to_id == 5) checked @endif> Sponge UK (Visual Design)<br/>
                     <input type="radio" name="assigned_to" value="6" @if($issue->assigned_to_id == 6) checked @endif> Sponge UK (Instructional Design)
+
+                    <label>Issue priority</label>
+                    <input type="radio" name="priority" value="High" @if($issue->priority == 'High') checked @endif> High
+                    <input type="radio" name="priority" value="Medium" @if($issue->priority == 'Medium') checked @endif> Medium
+                    <input type="radio" name="priority" value="Low" @if($issue->priority == 'Low') checked @endif> Low
                 @endif
                 <label>Mark as resolved</label>
                 <input name="resolved" type="checkbox"> Resolved<br/>

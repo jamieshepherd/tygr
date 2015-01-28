@@ -170,6 +170,11 @@ class IssueController extends Controller {
 	{
 		$issue = Issue::find($id);
 
+		if(Input::get('priority')) {
+			$issue->priority = Input::get('priority');
+			$issue->save();
+		}
+
 		if(Input::get('comment')) {
 			$update = new IssueHistory();
 			$update->issue_id   = $issue->id;

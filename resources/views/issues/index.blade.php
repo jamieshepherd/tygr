@@ -42,7 +42,7 @@
             </tr>
             <tbody class="list">
             @foreach($project->issues as $issue)
-            @if($issue->public || Auth::user()->rank <= 2)
+            @if(!$issue->hidden || Auth::user()->rank <= 2)
             <tr onclick="document.location='/projects/{{ $project->client->stub }}/{{{ $project->stub }}}/issues/show/{{{ $issue->id }}}';" style="cursor:pointer" @if($issue->status->name == 'Closed') class="closed" @endif>
                 <td class="reference">{{{ $issue->reference }}}</td>
                 <td class="type">{{{ $issue->type }}}</td>
@@ -57,7 +57,7 @@
         </table>
         </div>
         <script>
-            var options = { valueNames: ['reference', 'type', 'description', 'date'] };
+            var options = { valueNames: ['reference', 'type', 'description', 'date', 'priority'] };
             var userList = new List('issues', options);
         </script>
     </div>

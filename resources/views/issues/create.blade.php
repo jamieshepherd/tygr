@@ -17,7 +17,9 @@
         <form action="{{{ Request::url() }}}" method="POST" accept-charset="UTF-8">
         <input type="hidden" name="_token" value="<?php echo csrf_token(); ?>">
 
-            <input name="public" type="checkbox" checked> Visible to client?
+            @if(Auth::user()->rank != 3)
+            <input name="hidden" type="checkbox"> Hidden from client?
+            @endif
 
             <label>What type of issue is this?</label>
             <input name="type" type="text" placeholder="e.g. Bug, text amend, design" autofocus>

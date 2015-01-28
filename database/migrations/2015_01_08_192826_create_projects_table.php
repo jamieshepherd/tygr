@@ -15,8 +15,8 @@ class CreateProjectsTable extends Migration {
 		Schema::create('projects', function(Blueprint $table)
 		{
 			$table->increments('id');
-			// Public / private (1/0)
-			$table->boolean('public');
+			// Hidden from client
+			$table->boolean('hidden');
             // Project name
 			$table->string('name');
             // URI stub

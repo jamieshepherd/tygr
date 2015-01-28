@@ -17,7 +17,9 @@
         <form action="" method="POST" accept-charset="UTF-8">
         <input type="hidden" name="_token" value="<?php echo csrf_token(); ?>">
 
-            <input name="public" type="checkbox" @if($project->public) checked @endif> Visible to client?
+            @if(Auth::user()->rank == 3)
+            <input name="hidden" type="checkbox" @if($project->public) checked @endif> Hidden from client?
+            @endif
 
             <label>Project name</label>
             <input id="name" name="name" type="text" placeholder="e.g. Fire Safety" value="{{{ $project->name }}}" onkeyup="generateStub()">

@@ -13,14 +13,14 @@
                 <p>Sorry, there are no projects listed for this client yet.</p>
             @endif
             @foreach ($client->projects as $project)
-                @if($project->public || $client->id == 1)
+                @if(!$project->hidden || $client->id == 1)
                 <div class="project-preview">
                     <h3>{{ $project->name }}</h3>
                     <ul>
                         <li><strong>Project manager: </strong>{{ $project->project_manager }}</li>
                         <li><strong>Project status: </strong>{{ $project->status }}</li>
                         <li><strong>Current version: </strong>{{ $project->current_version }}</li>
-                        <li><strong>View project: </strong><a href="/projects/{{ $project->id }}/{{{ $project->stub }}}">Click here</a></li>
+                        <li><strong>View project: </strong><a href="/projects/{{ $project->client->stub }}/{{{ $project->stub }}}">Click here</a></li>
                     </ul>
                 </div>
                 @endif

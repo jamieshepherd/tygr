@@ -86,7 +86,7 @@ class IssueController extends Controller {
 	{
 		$issue = new Issue();
 		$project = Project::where('stub', '=', $stub)->firstOrFail();
-		$issue->public 	    = Input::has('public');
+		$issue->hidden 	    = Input::has('hidden');
 		$issue->author_id   = \Auth::user()->id;
 		$issue->project_id  = $project->id;
 		$issue->type        = Input::get('type');
@@ -152,7 +152,7 @@ class IssueController extends Controller {
 	public function update($client, $stub, $id)
 	{
 		$issue = Issue::find($id);
-		$issue->public 	= Input::has('public');
+		$issue->hidden 	= Input::has('public');
 		$issue->type        = Input::get('type');
 		$issue->priority    = 'Medium';
 		$issue->reference   = Input::get('reference');
@@ -340,7 +340,7 @@ class IssueController extends Controller {
 			$update->save();
 
 			\Session::flash('message', 'The issue was updated.');
-			return redirect('projects/'.$stub.'/issues/show/'.$issue->id);
+			return redirect('projects/'.$client.'/'.$stub.'/issues/show/'.$issue->id);
 		}
 	}
 

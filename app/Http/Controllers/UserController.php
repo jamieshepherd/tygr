@@ -5,6 +5,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\User;
 use Input;
+use Mail;
 
 class UserController extends Controller {
 
@@ -46,6 +47,9 @@ class UserController extends Controller {
 		$result = $user->save();
 
 		if($result) {
+			Mail::send('emails.welcome', array('name' => Input::get('name'), 'email' => Input::get('email'), 'password' => Input::get('password')), function($message) {
+				$message->to(Input::get('email'), Input::get('name'))->subject('Welcome!');
+			});
 			\Session::flash('message', $user->name.' was created successfully.');
 			return redirect('/users');
 		}

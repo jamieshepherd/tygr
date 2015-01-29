@@ -31,7 +31,7 @@
             <label>Password (<a onclick="generatePassword()" style="cursor:pointer">Generate</a>)</label>
             <input id="password" name="password" type="text" placeholder="e.g. qwerty1">
 
-            <br/><button type="submit"><i class="fa fa-arrow-circle-right"></i> Create user</button>
+            <br/><button type="submit"><i class="fa fa-arrow-circle-right"></i> Save changes</button>
         </form>
 
     </div>

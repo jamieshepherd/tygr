@@ -20,16 +20,19 @@ class IssueController extends Controller {
 	public function index($client, $stub)
 	{
 		$client = Client::where('stub', '=', $client)->first();
-
 		if(!$client) abort(404);
 
-		$project = Project::where('client_id', '=', $client->id)
-			->where('stub', '=', $stub)
-			->first();
-
+		$project = Project::where('client_id', '=', $client->id)->where('stub', '=', $stub)->first();
 		if(!$project) abort(404);
 
-		return view('issues.index')->with('project', $project);
+		$issues = Issue::where('project_id','=',$project->id)
+			->where('version', '=', $project->current_version)
+			->orderBy('status_id')
+			->get();
+
+		$versions = Issue::where('project_id', '=', $project->id)->distinct()->select('version')->get();
+
+		return view('issues.index')->with('project', $project)->with('issues', $issues)->with('versions', $versions);
 	}
 
 	/**
@@ -43,7 +46,12 @@ class IssueController extends Controller {
 	public function filter($client, $stub, $filter)
 	{
 		$userGroups = \Auth::User()->groups->lists('id');
-		$project = Project::where('stub', '=', $stub)->firstOrFail();
+
+		$client = Client::where('stub', '=', $client)->first();
+		if(!$client) abort(404);
+
+		$project = Project::where('client_id', '=', $client->id)->where('stub', '=', $stub)->first();
+		if(!$project) abort(404);
 
 		if($filter == 'me') {
 			$issues = Issue::whereIn('assigned_to_id', $userGroups)
@@ -51,14 +59,24 @@ class IssueController extends Controller {
 				->orderBy('status_id')
 				->get();
 			$filter = 'Assigned to me';
-		} else {
-			unset($filter);
-			$issues = $project->issues->where('version', '=', $version);
+		} elseif($filter == 'all') {
+			$issues = $project->issues;
+			$filter = 'All issues';
 		}
+		else {
+			$issues = Issue::where('project_id','=',$project->id)
+				->where('version', '=', $filter)
+				->orderBy('status_id')
+				->get();
+		}
+
+		$versions = Issue::where('project_id', '=', $project->id)->distinct()->select('version')->get();
+
 		return view('issues.index')
 			->with('project', $project)
 			->with('issues', $issues)
-			->with('filter', $filter);
+			->with('filter', $filter)
+			->with('versions', $versions);
 	}
 
 	/**

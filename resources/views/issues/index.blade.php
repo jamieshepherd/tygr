@@ -13,7 +13,7 @@
     @include('_layout.nav')
     <div id="main">
         @include('_layout.header')
-        <h1>All issues @if(isset($filter)) <em>({{{ $filter }}})</em> @else <em>({{ $project->current_version }})</em> @endif</h1>
+        <h1>Issues @if(isset($filter)) <em>({{{ $filter }}})</em> @endif</h1>
         <div id="issues">
         <input class="filter search" placeholder="Search" autofocus/>
         <a class="action" href="/projects/{{ $project->client->stub }}/{{ $project->stub }}/issues/create"><i class="fa fa-plus-circle"></i> New issue</a>
@@ -21,11 +21,11 @@
         <a class="action version-dropdown">
             <i class="fa fa-chevron-circle-down"></i> Filter issues
             <ul>
-                <li onclick="document.location='/projects/{{ $project->client->stub }}/{{{ $project->stub }}}/issues';"><i class="fa fa-angle-right"></i> All issues</li>
+                <li onclick="document.location='/projects/{{ $project->client->stub }}/{{{ $project->stub }}}/issues/filter/all';"><i class="fa fa-angle-right"></i> All issues</li>
                 <li onclick="document.location='/projects/{{ $project->client->stub }}/{{{ $project->stub }}}/issues/filter/me';"><i class="fa fa-angle-right"></i> Assigned to me</li>
-                <li onclick="document.location='/projects/{{ $project->client->stub }}/{{{ $project->stub }}}/issues/filter/version1';"><i class="fa fa-angle-right"></i> Version 1</li>
-                <li onclick="document.location='/projects/{{ $project->client->stub }}/{{{ $project->stub }}}/issues/filter/version2';"><i class="fa fa-angle-right"></i> Version 2</li>
-                <li onclick="document.location='/projects/{{ $project->client->stub }}/{{{ $project->stub }}}/issues/filter/version3';"><i class="fa fa-angle-right"></i> Version 3</li>
+                @foreach($versions as $version)
+                    <li onclick="document.location='/projects/{{ $project->client->stub }}/{{{ $project->stub }}}/issues/filter/{{ $version->version }}';"><i class="fa fa-angle-right"></i> {{ $version->version }}</li>
+                @endforeach
             </ul>
         </a>
         <!--a class="action" href=""><i class="fa fa-bug"></i> All issues</a-->
@@ -41,7 +41,7 @@
                 <th>Status</th>
             </tr>
             <tbody class="list">
-            @foreach($project->issues as $issue)
+            @foreach($issues as $issue)
             @if(!$issue->hidden || Auth::user()->rank <= 2)
             <tr onclick="document.location='/projects/{{ $project->client->stub }}/{{{ $project->stub }}}/issues/show/{{{ $issue->id }}}';" style="cursor:pointer" @if($issue->status->name == 'Closed') class="closed" @endif>
                 <td class="reference">{{{ $issue->reference }}}</td>

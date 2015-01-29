@@ -96,21 +96,18 @@ class ProjectController extends Controller {
 	/**
 	 * Show the form for editing the specified resource.
 	 *
+	 * @param  string  $client
 	 * @param  string  $stub
 	 * @return Response
 	 */
-	public function edit($stub)
+	public function edit($client, $stub)
 	{
-		$client = Auth::user()->client_id;
+		$client = Client::where('stub', '=', $client)->first();
+		if(!$client) abort(404);
 
-		if($client == 1) {
-			$project = Project::where('stub', '=', $stub)
-				->firstOrFail();
-		} else {
-			$project = Project::where('client_id', '=', $client)
-				->where('stub', '=', $stub)
-				->firstOrFail();
-		}
+		$project = Project::where('client_id', '=', $client->id)
+			->where('stub', '=', $stub)->first();
+		if(!$project) abort(404);
 
 		$employees = Group::find(2)->users()->get();
 
@@ -120,13 +117,20 @@ class ProjectController extends Controller {
 	/**
 	 * Update the specified resource in storage.
 	 *
+	 * @param  string  $client
 	 * @param  string  $stub
 	 * @return Response
 	 */
-	public function update($stub)
+	public function update($client, $stub)
 	{
-		$project = Project::where('stub', '=', $stub)->firstOrFail();
-		$project->public 					 = Input::has('public');
+		$client = Client::where('stub', '=', $client)->first();
+		if(!$client) abort(404);
+
+		$project = Project::where('client_id', '=', $client->id)
+			->where('stub', '=', $stub)->first();
+		if(!$project) abort(404);
+
+		$project->hidden 					 = Input::has('hidden');
 		$project->name				         = Input::get('name');
 		$project->stub				         = Input::get('stub');
 		$project->current_version	         = Input::get('current_version');
@@ -144,7 +148,7 @@ class ProjectController extends Controller {
 		$result = $project->save();
 		if($result) {
 			Session::flash('message', 'Project details updated successfully.');
-			return redirect('/projects/'.$project->id.'/'.$project->stub);
+			return redirect('/projects/'.$project->client->stub.'/'.$project->stub);
 		}
 	}
 

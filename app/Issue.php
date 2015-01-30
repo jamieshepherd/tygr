@@ -60,4 +60,9 @@ class Issue extends Model {
 		return $this->hasMany('App\IssueHistory')->orderBy('id', 'desc');
 	}
 
+	public function attachments()
+	{
+		return $this->hasMany('App\Attachment');
+	}
+
 }

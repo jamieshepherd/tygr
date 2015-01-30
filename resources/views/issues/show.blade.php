@@ -38,6 +38,14 @@
             <h2>Description</h2>
             <p>{{{ $issue->description }}}</p>
         </section>
+        <section>
+            <h2>Attachments</h2>
+            <ul>
+                @foreach($issue->attachments as $attachment)
+                    {{ $attachment->filename }}
+                @endforeach
+            </ul>
+        </section>
         @if($issue->status->name != 'Resolved' && $issue->status->name != 'Closed')
         <section>
             <h2>Update issue</h2>

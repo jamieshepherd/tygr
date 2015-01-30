@@ -1,6 +1,7 @@
 <?php namespace App\Commands;
 
 use App\Commands\Command;
+use App\Attachment;
 use Illuminate\Contracts\Bus\SelfHandling;
 use Illuminate\Contracts\Queue\ShouldBeQueued;
 use Input;
@@ -29,11 +30,16 @@ class AddAttachmentCommand extends Command implements SelfHandling {
 	 */
 	public function handle()
 	{
+		// make a random file prefix
+		do { $unique = base_convert(rand(1,100000000),10,36);
+		} while(file_exists('uploads/'.$this->issue.'/'.$unique.'-'.$this->file->getClientOriginalName()));
 		// move the file to uploads
-		$this->file->move('uploads/');
-		// give it a reasonable name
-		// * we can use $this->file->getClientOriginalExtension()
+		$this->file->move('uploads/'.$this->issue.'/', $unique.'-'.$this->file->getClientOriginalName());
 		// add an Attachment entry to the database, assign it our issue id
+		$attachment = new Attachment();
+		$attachment->issue_id = $this->issue;
+		$attachment->filename = $unique.'-'.$this->file->getClientOriginalName();
+		$attachment->save();
 	}
 
 }

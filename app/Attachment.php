@@ -16,7 +16,7 @@ class Attachment extends Model {
 	 *
 	 * @var array
 	 */
-	protected $fillable = [];
+	protected $fillable = ['issue_id', 'filename', 'extension'];
 
 	/**
 	 * The attributes excluded from the model's JSON form.

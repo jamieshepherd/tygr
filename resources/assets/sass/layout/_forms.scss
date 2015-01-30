@@ -1,5 +1,6 @@
 form {
   margin-top: 30px;
+  max-width: 700px;
 }
 input, textarea {
   font-size: 14px;
@@ -45,6 +46,10 @@ input {
       background: $tertiary;
     }
   }
+  &[type='file'] {
+    padding: 10px;
+    width: 100%;
+  }
 }
 select {
   font-size: 16px;
@@ -54,7 +59,6 @@ select {
 }
 textarea {
   width: 100%;
-  max-width: 700px;
   min-height: 100px;
   line-height: 22px;
 }

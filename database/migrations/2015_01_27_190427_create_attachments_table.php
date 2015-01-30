@@ -20,6 +20,8 @@ class CreateAttachmentsTable extends Migration {
 			$table->foreign('issue_id')->references('id')->on('issues');
 			// Filename
 			$table->string('filename');
+			// Extension
+			$table->string('extension');
 			// Timestamps
 			$table->timestamps();
 		});

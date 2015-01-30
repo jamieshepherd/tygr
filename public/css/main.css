@@ -243,7 +243,8 @@ table.full {
     padding: 5px 10px; }
 
 form {
-  margin-top: 30px; }
+  margin-top: 30px;
+  max-width: 700px; }
 
 input, textarea {
   font-size: 14px;
@@ -281,6 +282,9 @@ input {
     min-width: 0; }
   input[type='submit']:hover {
     background: #8BCEDC; }
+  input[type='file'] {
+    padding: 10px;
+    width: 100%; }
 
 select {
   font-size: 16px;
@@ -290,7 +294,6 @@ select {
 
 textarea {
   width: 100%;
-  max-width: 700px;
   min-height: 100px;
   line-height: 22px; }
 

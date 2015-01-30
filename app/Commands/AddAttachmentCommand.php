@@ -30,15 +30,17 @@ class AddAttachmentCommand extends Command implements SelfHandling {
 	 */
 	public function handle()
 	{
+		$filename = urlencode($this->file->getClientOriginalName());
 		// make a random file prefix
 		do { $unique = base_convert(rand(1,100000000),10,36);
-		} while(file_exists('uploads/'.$this->issue.'/'.$unique.'-'.$this->file->getClientOriginalName()));
+		} while(file_exists('uploads/'.$this->issue.'/'.$unique.'-'.$filename));
 		// move the file to uploads
-		$this->file->move('uploads/'.$this->issue.'/', $unique.'-'.$this->file->getClientOriginalName());
+		$this->file->move('uploads/'.$this->issue.'/', $unique.'-'.$filename);
 		// add an Attachment entry to the database, assign it our issue id
 		$attachment = new Attachment();
 		$attachment->issue_id = $this->issue;
-		$attachment->filename = $unique.'-'.$this->file->getClientOriginalName();
+		$attachment->filename = $unique.'-'.$filename;
+		$attachment->extension = $this->file->getClientOriginalExtension();
 		$attachment->save();
 	}
 

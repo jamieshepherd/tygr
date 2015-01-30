@@ -31,7 +31,7 @@
             <textarea name="description" class="large" placeholder="Please be as specific as you can, including details on how to reproduce the issue, browser (IE/Chrome) and operating system."></textarea>
 
             <label>Attachment (screenshot, document)</label>
-            <input type="file" name="attachment" />
+            <input type="file" name="attachment"/>
 
             <br/><button type="submit"><i class="fa fa-arrow-circle-right"></i> Log issue</button>
         </form>

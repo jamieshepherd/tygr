@@ -43,7 +43,9 @@
             <h2>Attachments</h2>
             <ul class="attachments">
                 @foreach($issue->attachments as $attachment)
-                    <li><i class="fa fa-file"></i> <a href="/uploads/{{ $issue->id }}/{{ $attachment->filename }}">{{ $attachment->filename }}</a></li>
+                    <li>
+                        @include('_components.filetype')
+                        <a href="/uploads/{{ $issue->id }}/{{ $attachment->filename }}">{{ $attachment->filename }}</a></li>
                 @endforeach
             </ul>
         </section>

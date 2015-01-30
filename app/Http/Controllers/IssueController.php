@@ -207,6 +207,10 @@ class IssueController extends Controller {
 	{
 		$issue = Issue::find($id);
 
+		if(Input::file('attachment')) {
+			$file = Input::file('attachment');
+			$this->dispatch(new AddAttachmentCommand($file, $id));
+		}
 		if(Input::get('priority')) {
 			$issue->priority = Input::get('priority');
 			$issue->save();

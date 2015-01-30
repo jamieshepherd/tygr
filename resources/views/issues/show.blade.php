@@ -38,20 +38,25 @@
             <h2>Description</h2>
             <p>{{{ $issue->description }}}</p>
         </section>
+        @if(count($issue->attachments) > 0)
         <section>
             <h2>Attachments</h2>
-            <ul>
+            <ul class="attachments">
                 @foreach($issue->attachments as $attachment)
-                    {{ $attachment->filename }}
+                    <li><i class="fa fa-file"></i> <a href="/uploads/{{ $issue->id }}/{{ $attachment->filename }}">{{ $attachment->filename }}</a></li>
                 @endforeach
             </ul>
         </section>
+        @endif
         @if($issue->status->name != 'Resolved' && $issue->status->name != 'Closed')
         <section>
             <h2>Update issue</h2>
-            <form action="" method="POST" accept-charset="UTF-8">
+            <form action="" method="POST" accept-charset="UTF-8" enctype="multipart/form-data">
             <input type="hidden" name="_token" value="<?php echo csrf_token(); ?>">
                 <textarea name="comment" placeholder="Enter a comment here" autofocus></textarea>
+
+                <label>Add attachment</label>
+                <input type="file" name="attachment" />
 
                 <label>Assign issue</label>
                 @if(Auth::user()->rank == 3)

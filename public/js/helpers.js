@@ -7,3 +7,6 @@ function generatePassword() {
     var password = (Math.random() + 1).toString(36).substring(7);
     document.getElementById('password').value = password;
 }
+function addAttachment() {
+    // Add attachment
+}

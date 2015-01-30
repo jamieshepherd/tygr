@@ -1,5 +1,6 @@
 <?php namespace App\Http\Controllers;
 
+use App\Commands\AddAttachmentCommand;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 use App\Client;
@@ -114,7 +115,10 @@ class IssueController extends Controller {
 		$issue->version		   = $project->current_version;
 		$issue->reference   = Input::get('reference');
 		$issue->description = Input::get('description');
+
 		$result = $issue->save();
+		$file = Input::file('attachment');
+		$this->dispatch(new AddAttachmentCommand($file, $issue->id));
 
 		if($result) {
 			$update = new IssueHistory();

@@ -14,7 +14,7 @@
     <div id="main">
         @include('_layout.header')
         <h1>Log an issue</h1>
-        <form action="{{{ Request::url() }}}" method="POST" accept-charset="UTF-8">
+        <form action="{{{ Request::url() }}}" method="POST" accept-charset="UTF-8" enctype="multipart/form-data">
         <input type="hidden" name="_token" value="<?php echo csrf_token(); ?>">
 
             @if(Auth::user()->rank != 3)
@@ -30,8 +30,8 @@
             <label>Describe the issue</label>
             <textarea name="description" class="large" placeholder="Please be as specific as you can, including details on how to reproduce the issue, browser (IE/Chrome) and operating system."></textarea>
 
-            <label>Attachments (screenshots, documents)</label>
-            <input type="file" name="file" />
+            <label>Attachment (screenshot, document)</label>
+            <input type="file" name="attachment" />
 
             <br/><button type="submit"><i class="fa fa-arrow-circle-right"></i> Log issue</button>
         </form>

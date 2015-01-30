@@ -546,6 +546,61 @@ section {
       padding: 3px 5px;
       border-radius: 5px; }
 
+.dashboard {
+  display: block;
+  width: 100%; }
+  .dashboard .row .col {
+    border: none;
+    padding-left: 20px;
+    float: left;
+    box-sizing: border-box;
+    padding-bottom: 20px; }
+    .dashboard .row .col .content {
+      border: 1px solid #ddd;
+      border-radius: 5px;
+      padding: 10px; }
+      .dashboard .row .col .content.stats {
+        text-align: center; }
+    .dashboard .row .col:first-of-type {
+      padding-left: 0; }
+    .dashboard .row .col.col-1-1 {
+      width: 100%; }
+    .dashboard .row .col.col-2-3, .dashboard .row .col.col-8-12 {
+      width: 66.66%; }
+    .dashboard .row .col.col-1-2, .dashboard .row .col.col-6-12 {
+      width: 50%; }
+    .dashboard .row .col.col-1-3, .dashboard .row .col.col-4-12 {
+      width: 33.33%; }
+    .dashboard .row .col.col-1-4, .dashboard .row .col.col-3-12 {
+      width: 25%; }
+    .dashboard .row .col.col-1-5 {
+      width: 20%; }
+    .dashboard .row .col.col-1-6, .dashboard .row .col.col-2-12 {
+      width: 16.667%; }
+    .dashboard .row .col.col-1-7 {
+      width: 14.28%; }
+    .dashboard .row .col.col-1-8 {
+      width: 12.5%; }
+    .dashboard .row .col.col-1-9 {
+      width: 11.1%; }
+    .dashboard .row .col.col-1-10 {
+      width: 10%; }
+    .dashboard .row .col.col-1-11 {
+      width: 9.09%; }
+    .dashboard .row .col.col-1-12 {
+      width: 8.33%; }
+  .dashboard h2 {
+    font-family: "museo-slab", serif;
+    margin-top: 0;
+    font-size: 68px;
+    color: #f24a33;
+    font-weight: 300; }
+  .dashboard h3 {
+    margin-top: 10px;
+    font-size: 16px;
+    color: #999999;
+    font-weight: 500; }
+
 body, input, textarea, button {
   font-family: "open-sans", Arial, sans-serif;
   font-weight: 400; }

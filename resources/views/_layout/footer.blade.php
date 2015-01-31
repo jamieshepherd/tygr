@@ -3,6 +3,11 @@
 <div class="notify-box {{ Session::get('notify-type', 'success') }}">
     <i class="fa fa-info-circle"></i> {{ Session::get('message') }}
 </div>
-</html>
 
 @endif
+@if($errors->any())
+    <div class="notify-box error }}">
+        <i class="fa fa-exclamation-triangle"></i> There were errors submitting this form.
+    </div>
+@endif
+</html>

@@ -3,6 +3,7 @@
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 use App\Client;
+use App\Http\Requests\CreateProjectRequest;
 use App\Project;
 use App\User;
 use App\Group;
@@ -40,26 +41,27 @@ class ProjectController extends Controller {
 	/**
 	 * Store a newly created resource in storage.
 	 *
+	 * @param CreateProjectRequest $request
 	 * @return Response
 	 */
-	public function store($stub)
+	public function store(CreateProjectRequest $request, $stub)
 	{
 		$client = Client::where('stub', '=', $stub)->firstOrFail();
 
 		$project = new Project();
 		$project->client_id					 = $client->id;
 		$project->hidden 					 = Input::has('hidden');
-		$project->name				         = Input::get('name');
-		$project->stub				         = Input::get('stub');
-		$project->current_version	         = Input::get('current_version');
-		$project->status			         = Input::get('status');
-		$project->authoring_tool             = Input::get('authoring_tool');
-		$project->lms_deployment             = Input::get('lms_deployment');
-		$project->lms_specification          = Input::get('lms_specification');
-		$project->project_manager   		 = Input::get('project_manager');
-		$project->lead_developer    		 = Input::get('lead_developer');
-		$project->lead_designer     		 = Input::get('lead_designer');
-		$project->instructional_designer     = Input::get('instructional_designer');
+		$project->name				         = $request->name;
+		$project->stub				         = $request->stub;
+		$project->current_version	         = $request->current_version;
+		$project->status			         = $request->status;
+		$project->authoring_tool             = $request->authoring_tool;
+		$project->lms_deployment             = $request->lms_deployment;
+		$project->lms_specification          = $request->lms_specification;
+		$project->project_manager   		 = $request->project_manager;
+		$project->lead_developer    		 = $request->lead_developer;
+		$project->lead_designer     		 = $request->lead_designer;
+		$project->instructional_designer     = $request->instructional_designer;
 
 		$result = $project->save();
 		if($result) {

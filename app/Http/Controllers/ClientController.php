@@ -3,6 +3,7 @@
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 use App\Client;
+use App\Http\Requests\CreateClientRequest;
 use App\Project;
 use Input;
 
@@ -33,14 +34,15 @@ class ClientController extends Controller {
 	/**
 	 * Store a newly created resource in storage.
 	 *
+	 * @param CreateClientRequest $request
 	 * @return Response
 	 */
-	public function store()
+	public function store(CreateClientRequest $request)
 	{
 		$client = new Client();
-		$client->name	= Input::get('name');
-		$client->stub	= Input::get('stub');
-		$client->type	= Input::get('type');
+		$client->name	= $request->name;
+		$client->stub	= $request->stub;
+		$client->type	= $request->type;
 		$result = $client->save();
 		if($result) {
 			\Session::flash('message', $client->name.' was created successfully.');

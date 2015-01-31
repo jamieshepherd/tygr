@@ -4,6 +4,7 @@ use App\Commands\AddAttachmentCommand;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 use App\Client;
+use App\Http\Requests\CreateIssueRequest;
 use App\Project;
 use App\Issue;
 use App\IssueHistory;
@@ -97,24 +98,26 @@ class IssueController extends Controller {
 	/**
 	 * Store a newly created resource in storage.
 	 *
-	 * @param  string  $client;
-	 * @param  string  $stub;
+	 * @param CreateIssueRequest $request
+	 * @param  string $client ;
+	 * @param  string $stub ;
 	 * @return Response
 	 */
-	public function store($client, $stub)
+	public function store($client, $stub, CreateIssueRequest $request)
 	{
 		$issue = new Issue();
 		$project = Project::where('stub', '=', $stub)->firstOrFail();
+
 		$issue->hidden 	    = Input::has('hidden');
 		$issue->author_id   = \Auth::user()->id;
 		$issue->project_id  = $project->id;
-		$issue->type        = Input::get('type');
+		$issue->type        = $request->type;
 		$issue->status_id      = 1;
 		$issue->priority    = 'Medium';
 		$issue->assigned_to_id = 2;
 		$issue->version		   = $project->current_version;
-		$issue->reference   = Input::get('reference');
-		$issue->description = Input::get('description');
+		$issue->reference   = $request->reference;
+		$issue->description = $request->description;
 
 		$result = $issue->save();
 		if(Input::file('attachment')) {

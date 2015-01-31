@@ -1,6 +1,7 @@
 <?php namespace App\Http\Controllers;
 
 use App\Http\Requests;
+use App\Http\Requests\CreateUserRequest;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\User;
@@ -34,16 +35,18 @@ class UserController extends Controller {
 	/**
 	 * Store a newly created resource in storage.
 	 *
+	 * @param CreateUserRequest $request
 	 * @return Response
 	 */
-	public function store()
+	public function store(CreateUserRequest $request)
 	{
+
 		$user = new User();
-		$user->name      = Input::get('name');
-		$user->email     = Input::get('email');
-		$user->client_id = Input::get('client');
-		$user->rank      = Input::get('rank');
-		$user->password  = Input::get('password');
+		$user->name      = $request->name;
+		$user->email     = $request->email;
+		$user->client_id = $request->client;
+		$user->rank      = $request->rank;
+		$user->password  = $request->password;
 		$result = $user->save();
 
 		if($result) {

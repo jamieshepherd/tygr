@@ -22,16 +22,20 @@
             @endif
 
             <label>What type of issue is this?</label>
-            <input name="type" type="text" placeholder="e.g. Bug, text amend, design" autofocus>
+            <input name="type" type="text" placeholder="e.g. Bug, text amend, design" autofocus @if($errors->has('type')) class="error">
+            <span class="error">{{ $errors->first('type') }}</span> @else > @endif
 
             <label>Where did this happen?</label>
-            <input name="reference" type="text" placeholder="e.g. Page 7 or b-09">
+            <input name="reference" type="text" placeholder="e.g. Page 7 or b-09" @if($errors->has('reference')) class="error">
+            <span class="error">{{ $errors->first('reference') }}</span> @else > @endif
 
             <label>Describe the issue</label>
-            <textarea name="description" class="large" placeholder="Please be as specific as you can, including details on how to reproduce the issue, browser (IE/Chrome) and operating system."></textarea>
+            <textarea name="description" class="large" placeholder="Please be as specific as you can, including details on how to reproduce the issue, browser (IE/Chrome) and operating system." @if($errors->has('description')) class="error" @endif></textarea>
+            @if($errors->has('description')) <span class="error">{{ $errors->first('description') }}</span> @endif
 
             <label>Attachment (screenshot, document)</label>
-            <input type="file" name="attachment"/>
+            <input type="file" name="attachment" @if($errors->has('attachment')) class="error">
+            <span class="error">{{ $errors->first('attachment') }}</span> @else > @endif
 
             <br/><button type="submit"><i class="fa fa-arrow-circle-right"></i> Log issue</button>
         </form>

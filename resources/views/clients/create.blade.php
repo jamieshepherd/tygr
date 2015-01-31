@@ -19,12 +19,16 @@
             <label>Client type</label>
             <input type="radio" name="type" value="Client" checked> Client
             <input type="radio" name="type" value="Pitch"> Pitch
+            @if($errors->has('type'))
+            <span class="error">{{ $errors->first('type') }}</span> @endif
 
             <label>Client name</label>
-            <input id="name" name="name" type="text" placeholder="e.g. Sponge UK" onkeyup="generateStub()" autofocus>
+            <input id="name" name="name" type="text" placeholder="e.g. Sponge UK" onkeyup="generateStub()" autofocus @if($errors->has('name')) class="error">
+            <span class="error">{{ $errors->first('name') }}</span> @else > @endif
 
             <label>Client stub<em>(Used for URLs)</em></label>
-            <input id="stub" name="stub" type="text" placeholder="e.g. spongeuk">
+            <input id="stub" name="stub" type="text" placeholder="e.g. spongeuk" @if($errors->has('stub')) class="error">
+            <span class="error">{{ $errors->first('stub') }}</span> @else > @endif
 
             <br/><button type="submit"><i class="fa fa-arrow-circle-right"></i> Create client</button>
             <a class="action secondary" href="javascript:history.back()"><i class="fa fa-times-circle"></i> Cancel</a>

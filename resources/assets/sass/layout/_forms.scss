@@ -12,6 +12,9 @@ input, textarea {
   min-width: 300px;
   outline: none;
   border-radius:3px;
+  &.error {
+    border-color: $highlight;
+  }
   &:focus {
     border-color: $tertiary;
     outline: none;
@@ -72,4 +75,10 @@ textarea {
     float: left;
     margin-right: 100px;
   }
+}
+span.error {
+  display: block;
+  color: $highlight;
+  padding-bottom: 10px;
+  font-size: 90%;
 }

@@ -256,6 +256,8 @@ input, textarea {
   min-width: 300px;
   outline: none;
   border-radius: 3px; }
+  input.error, textarea.error {
+    border-color: #f24a33; }
   input:focus, textarea:focus {
     border-color: #8BCEDC;
     outline: none; }
@@ -304,6 +306,12 @@ textarea {
 .group.small {
   float: left;
   margin-right: 100px; }
+
+span.error {
+  display: block;
+  color: #f24a33;
+  padding-bottom: 10px;
+  font-size: 90%; }
 
 a.action {
   font-size: 11px;

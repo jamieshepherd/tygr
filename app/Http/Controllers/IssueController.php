@@ -117,8 +117,10 @@ class IssueController extends Controller {
 		$issue->description = Input::get('description');
 
 		$result = $issue->save();
-		$file = Input::file('attachment');
-		$this->dispatch(new AddAttachmentCommand($file, $issue->id));
+		if(Input::file('attachment')) {
+			$file = Input::file('attachment');
+			$this->dispatch(new AddAttachmentCommand($file, $issue->id));
+		}
 
 		if($result) {
 			$update = new IssueHistory();

@@ -35,4 +35,9 @@ class Project extends Model {
 		return $this->hasMany('App\Issue', 'project_id')->orderBy('status_id');
 	}
 
+	public function issueCount()
+	{
+		return $this->hasMany('App\Issue', 'project_id')->count();
+	}
+
 }

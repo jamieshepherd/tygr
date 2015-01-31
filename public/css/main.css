@@ -558,13 +558,15 @@ section {
     .dashboard .row .col .content {
       border: 1px solid #ddd;
       border-radius: 5px;
-      padding: 10px; }
+      padding: 20px; }
       .dashboard .row .col .content.stats {
         text-align: center; }
     .dashboard .row .col:first-of-type {
       padding-left: 0; }
     .dashboard .row .col.col-1-1 {
       width: 100%; }
+    .dashboard .row .col.col-3-4 {
+      width: 75%; }
     .dashboard .row .col.col-2-3, .dashboard .row .col.col-8-12 {
       width: 66.66%; }
     .dashboard .row .col.col-1-2, .dashboard .row .col.col-6-12 {
@@ -589,6 +591,11 @@ section {
       width: 9.09%; }
     .dashboard .row .col.col-1-12 {
       width: 8.33%; }
+    .dashboard .row .col canvas {
+      display: block;
+      width: 100% !important;
+      height: auto !important;
+      margin-right: 10px; }
   .dashboard h2 {
     font-family: "museo-slab", serif;
     margin-top: 0;

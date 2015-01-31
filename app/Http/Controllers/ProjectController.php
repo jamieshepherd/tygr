@@ -48,26 +48,23 @@ class ProjectController extends Controller {
 
 		$project = new Project();
 		$project->client_id					 = $client->id;
-		$project->public 					 = Input::has('public');
+		$project->hidden 					 = Input::has('hidden');
 		$project->name				         = Input::get('name');
 		$project->stub				         = Input::get('stub');
 		$project->current_version	         = Input::get('current_version');
 		$project->status			         = Input::get('status');
 		$project->authoring_tool             = Input::get('authoring_tool');
-		$project->lms_location               = Input::get('lms_location');
+		$project->lms_deployment             = Input::get('lms_deployment');
 		$project->lms_specification          = Input::get('lms_specification');
 		$project->project_manager   		 = Input::get('project_manager');
 		$project->lead_developer    		 = Input::get('lead_developer');
 		$project->lead_designer     		 = Input::get('lead_designer');
 		$project->instructional_designer     = Input::get('instructional_designer');
-		$project->authoring_tool             = Input::get('authoring_tool');
-		$project->lms_location               = Input::get('lms_location');
-		$project->lms_specification          = Input::get('lms_specification');
 
 		$result = $project->save();
 		if($result) {
 			Session::flash('message', $project->name.' was created successfully.');
-			return redirect('/projects/'.$project->stub);
+			return redirect('/clients/show/'.$stub);
 		}
 	}
 
@@ -142,9 +139,6 @@ class ProjectController extends Controller {
 		$project->lead_developer    		 = Input::get('lead_developer');
 		$project->lead_designer     		 = Input::get('lead_designer');
 		$project->instructional_designer     = Input::get('instructional_designer');
-		$project->authoring_tool             = Input::get('authoring_tool');
-		$project->lms_deployment             = Input::get('lms_deployment');
-		$project->lms_specification          = Input::get('lms_specification');
 		$result = $project->save();
 		if($result) {
 			Session::flash('message', 'Project details updated successfully.');

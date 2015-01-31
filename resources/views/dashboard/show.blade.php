@@ -40,24 +40,24 @@
                 </div>
             </div>
             <div class="row">
-                <div class="col col-2-3">
+                <div class="col col-1-2">
                     <div class="content">
-                        <h3>Something</h3>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Enim, est eveniet illo maiores nisi sed veniam vitae voluptas. Aliquid asperiores consectetur deserunt est minima minus neque officia pariatur quas sit.</p>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Enim, est eveniet illo maiores nisi sed veniam vitae voluptas. Aliquid asperiores consectetur deserunt est minima minus neque officia pariatur quas sit.</p>
+                        <h2>Welcome</h2>
+                        <p>This is just a small snapshot of some of the information that happened in the last 7 days. Eventually this should be a full dashboard of everything you might want to know at a glance.</p>
+                        <p>We're looking to add some more interesting statistics, graphs, and notifications as the service improves. If you have any ideas <a href="mailto:email@jamie.sh">let me know!</a></p>
                     </div>
                 </div>
-                <div class="col col-1-3">
-                    <div class="content">
-                        <canvas id="issues_by_project"></canvas>
-                        <h3>Issues created this week</h3>
+                <div class="col col-1-2">
+                    <div class="content stats">
+                        <canvas id="issues_by_project"></canvas><br>
+                        <h3>Issues created this week by project</h3>
                         <script>
 
                             var issues_by_project_data = [
                                 @foreach($data['issues_created'] as $project)
                                 {
                                     value: {{ $project->issueCount }},
-                                    color: "#f24a33",
+                                    color: "{{ $project->color }}",
                                     highlight: "#71C8B5",
                                     label: "{{ $project->client->name }} ({{ $project->name }})"
                                 },
@@ -67,7 +67,7 @@
                             var options = { segmentShowStroke : true }
 
                             var issues_by_project = document.getElementById("issues_by_project").getContext("2d");
-                            new Chart(issues_by_project).Pie(issues_by_project_data, options);
+                            new Chart(issues_by_project).Doughnut(issues_by_project_data, options);
 
                         </script>
                     </div>

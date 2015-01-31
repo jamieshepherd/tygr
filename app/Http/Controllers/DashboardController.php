@@ -29,6 +29,14 @@ class DashboardController extends Controller {
 			->take(5)
 			->get();
 
+		// Give each alternating project a different colour
+		$i = 1;
+		foreach($projects as $project) {
+			if($i % 2 == 1) { $project->color = '#8BCEDC'; }
+			else { $project->color = '#f24a33';	}
+			$i++;
+		}
+
 		$data = array(
 			'project_count'        => count(Project::all()),
 			'client_count'         => count(Client::all()),

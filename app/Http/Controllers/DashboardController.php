@@ -56,13 +56,13 @@ class DashboardController extends Controller {
 					$project->color = '#f24a33';
 					break;
 				case 3:
-					$project->color = '#accd4a';
-					break;
-				case 4:
 					$project->color = '#be63c5';
 					break;
+				case 4:
+					$project->color = '#accd4a';
+					break;
 				default:
-					$project->color = '#d7f10d';
+					$project->color = '#ff6600';
 			}
 		}
 	}

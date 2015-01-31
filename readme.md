@@ -1,5 +1,5 @@
 ## Tygr - Issue management system
-####Alpha, Build 99
+####Alpha, Build 100
 
 *This project is in alpha, please expect many issues, bugs, and broken features.*
 

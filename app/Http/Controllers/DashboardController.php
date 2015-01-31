@@ -29,13 +29,7 @@ class DashboardController extends Controller {
 			->take(5)
 			->get();
 
-		// Give each alternating project a different colour
-		$i = 1;
-		foreach($projects as $project) {
-			if($i % 2 == 1) { $project->color = '#8BCEDC'; }
-			else { $project->color = '#f24a33';	}
-			$i++;
-		}
+		$this->colourful($projects);
 
 		$data = array(
 			'project_count'        => count(Project::all()),
@@ -46,6 +40,31 @@ class DashboardController extends Controller {
 				->where('created_at', '>=', $end_week)->get())
 		);
 		return view('dashboard.show')->with('data',$data)->with('start_week',$start_week);
+	}
+
+	public function colourful($projects)
+	{
+		// Give each alternating project a different colour
+		$i = 0;
+		foreach($projects as $project) {
+			$i++;
+			switch($i) {
+				case 1:
+					$project->color = '#8BCEDC';
+					break;
+				case 2:
+					$project->color = '#f24a33';
+					break;
+				case 3:
+					$project->color = '#accd4a';
+					break;
+				case 4:
+					$project->color = '#be63c5';
+					break;
+				default:
+					$project->color = '#d7f10d';
+			}
+		}
 	}
 
 }

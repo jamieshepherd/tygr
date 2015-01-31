@@ -85,7 +85,10 @@ class ProjectController extends Controller {
 		if(!$project) abort(404);
 
 		$userGroups = Auth::user()->groups->lists('id');
-		$count = count(Issue::whereIn('assigned_to_id', $userGroups)->where('status_id','!=','5')->get());
+		$count = count(Issue::whereIn('assigned_to_id', $userGroups)
+			->where('project_id', '=', $project->id)
+			->where('status_id','!=','5')
+			->get());
 
 		return view('projects.show')->with('project', $project)->with('count', $count);
 	}

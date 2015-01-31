@@ -1,6 +1,5 @@
 <?php
 
-use \App\User as User;
 /*
 |--------------------------------------------------------------------------
 | Application Routes
@@ -23,7 +22,12 @@ Route::get('auth/logout', 'AuthController@getLogout');
 //> Make sure user is signed in
 Route::group(array('middleware' => 'auth'), function() {
 
-	Route::get('/', function() { return Redirect::to('projects'); });
+	Route::get('/', function() {
+		if(\Auth::user()->rank == 3)
+			return Redirect::to('projects');
+		else
+			return Redirect::to('dashboard');
+	});
 	Route::get('projects', 'ProjectController@index');
 	Route::get('account', 'AccountController@index');
 	Route::get('account/edit', 'AccountController@edit');

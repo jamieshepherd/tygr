@@ -3,8 +3,10 @@
 use App\Http\Requests;
 use App\Http\Requests\CreateUserRequest;
 use App\Http\Controllers\Controller;
+use App\Http\Requests\UpdateUserRequest;
 use Illuminate\Http\Request;
 use App\User;
+use Illuminate\Support\Facades\Hash;
 use Input;
 use Mail;
 
@@ -46,7 +48,7 @@ class UserController extends Controller {
 		$user->email     = $request->email;
 		$user->client_id = $request->client;
 		$user->rank      = $request->rank;
-		$user->password  = $request->password;
+		$user->password  = Hash::make($request->password);
 		$result = $user->save();
 
 		if($result) {
@@ -87,17 +89,19 @@ class UserController extends Controller {
 	/**
 	 * Update the specified resource in storage.
 	 *
-	 * @param  int  $id
+	 * @param  int $id
+	 * @param UpdateUserRequest $request
 	 * @return Response
 	 */
-	public function update($id)
+	public function update($id, UpdateUserRequest $request)
 	{
 		$user = User::find($id);
-		$user->name      = Input::get('name');
-		$user->email     = Input::get('email');
-		$user->client_id = Input::get('client');
-		$user->rank      = Input::get('rank');
-		$password        = Input::get('password');
+
+		$user->name      = $request->name;
+		$user->email     = $request->email;
+		$user->client_id = $request->client;
+		$user->rank      = $request->rank;
+		$password        = $request->password;
 
 		if(!empty($password)) {
 			$user->password = Hash::make($password);

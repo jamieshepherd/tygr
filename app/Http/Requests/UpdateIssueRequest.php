@@ -11,7 +11,7 @@ class UpdateIssueRequest extends Request {
 	 */
 	public function authorize()
 	{
-		return false;
+		return true;
 	}
 
 	/**
@@ -22,7 +22,10 @@ class UpdateIssueRequest extends Request {
 	public function rules()
 	{
 		return [
-			//
+			'type'        => 'required',
+			'reference'   => 'required',
+			'description' => 'required|min:5',
+			'attachment'  => 'max:20480',
 		];
 	}
 

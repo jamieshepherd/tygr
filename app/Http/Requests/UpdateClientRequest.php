@@ -11,7 +11,7 @@ class UpdateClientRequest extends Request {
 	 */
 	public function authorize()
 	{
-		return false;
+		return true;
 	}
 
 	/**
@@ -22,7 +22,9 @@ class UpdateClientRequest extends Request {
 	public function rules()
 	{
 		return [
-			//
+			'type' => 'required',
+			'name' => 'required|min:3',
+			'stub' => 'required|min:3|alpha_dash'
 		];
 	}
 

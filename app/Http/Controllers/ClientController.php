@@ -4,6 +4,7 @@ use App\Http\Requests;
 use App\Http\Controllers\Controller;
 use App\Client;
 use App\Http\Requests\CreateClientRequest;
+use App\Http\Requests\UpdateClientRequest;
 use App\Project;
 use Input;
 
@@ -79,16 +80,18 @@ class ClientController extends Controller {
 	/**
 	 * Update the specified resource in storage.
 	 *
-	 * @param  int  $id
+	 * @param  int $id
+	 * @param UpdateClientRequest $request
 	 * @return Response
 	 */
-	public function update($id)
+	public function update($id, UpdateClientRequest $request)
 	{
 		$client = Client::where('id', '=', $id)->firstOrFail();
-		$client->name	= Input::get('name');
-		$client->stub	= Input::get('stub');
-		$client->type	= Input::get('type');
+		$client->name	= $request->name;
+		$client->stub	= $request->stub;
+		$client->type	= $request->type;
 		$result = $client->save();
+
 		if($result) {
 			\Session::flash('message', $client->name.' was updated successfully.');
 			return redirect('/clients/show/'.$client->stub);

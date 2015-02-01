@@ -5,6 +5,7 @@ use App\Http\Requests;
 use App\Http\Controllers\Controller;
 use App\Client;
 use App\Http\Requests\CreateIssueRequest;
+use App\Http\Requests\UpdateIssueRequest;
 use App\Project;
 use App\Issue;
 use App\IssueHistory;
@@ -171,20 +172,21 @@ class IssueController extends Controller {
 	/**
 	 * Update the specified resource in storage.
 	 *
-	 * @param  string  $client
-	 * @param  string  $stub
-	 * @param  int  $id
+	 * @param  string $client
+	 * @param  string $stub
+	 * @param  int $id
+	 * @param UpdateIssueRequest $request
 	 * @return Response
 	 */
-	public function update($client, $stub, $id)
+	public function update($client, $stub, $id, UpdateIssueRequest $request)
 	{
-		$issue = Issue::find($id);
-		$issue->hidden 	= Input::has('public');
-		$issue->type        = Input::get('type');
+		$issue              = Issue::find($id);
+		$issue->hidden 	    = Input::has('hidden');
+		$issue->type        = $request->type;
 		$issue->priority    = 'Medium';
-		$issue->reference   = Input::get('reference');
-		$issue->description = Input::get('description');
-		$result = $issue->save();
+		$issue->reference   = $request->reference;
+		$issue->description = $request->description;
+		$result             = $issue->save();
 
 		if($result) {
 			$update = new IssueHistory();

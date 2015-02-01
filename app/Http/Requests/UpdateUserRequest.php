@@ -11,7 +11,7 @@ class UpdateUserRequest extends Request {
 	 */
 	public function authorize()
 	{
-		return false;
+		return true;
 	}
 
 	/**
@@ -22,7 +22,11 @@ class UpdateUserRequest extends Request {
 	public function rules()
 	{
 		return [
-			//
+			'name'		=>	'required|min:3',
+			'email'		=>	'required|email',
+			'client'	=>	'required|numeric',
+			'rank'		=>	'required|numeric',
+			'password'	=>	'min:6',
 		];
 	}
 

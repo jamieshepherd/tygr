@@ -22,16 +22,20 @@
             @endif
 
             <label>What type of issue is this?</label>
-            <input name="type" type="text" placeholder="e.g. Bug, text amend, design" autofocus value="{{{ $issue->type }}}">
+            <input name="type" type="text" placeholder="e.g. Bug, text amend, design" autofocus value="{{{ $issue->type }}}" @if($errors->has('type')) class="error">
+            <span class="error">{{ $errors->first('type') }}</span> @else > @endif
 
             <label>Where did this happen?</label>
-            <input name="reference" type="text" placeholder="e.g. Page 7 or b-09" value="{{{ $issue->reference }}}">
+            <input name="reference" type="text" placeholder="e.g. Page 7 or b-09" value="{{{ $issue->reference }}}" @if($errors->has('reference')) class="error">
+            <span class="error">{{ $errors->first('reference') }}</span> @else > @endif
 
             <label>Describe the issue</label>
-            <textarea name="description" class="large" placeholder="Please be as specific as you can, including details on how to reproduce the issue, browser (IE/Chrome) and operating system.">{{{ $issue->description }}}</textarea>
+            <textarea name="description" class="large" placeholder="Please be as specific as you can, including details on how to reproduce the issue, browser (IE/Chrome) and operating system." @if($errors->has('description')) class="error" @endif>{{ $issue->description }}}</textarea>
+            <span class="error">{{ $errors->first('description') }}</span> @endif
 
             <label>Attachments (screenshots, documents)</label>
-            <input type="file" name="file" />
+            <input name="attachment" type="file" @if($errors->has('attachment')) class="error">
+            <span class="error">{{ $errors->first('attachment') }}</span> @else > @endif
 
             <br/><button type="submit"><i class="fa fa-arrow-circle-right"></i> Log issue</button>
         </form>

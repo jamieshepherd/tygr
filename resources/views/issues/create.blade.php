@@ -34,7 +34,7 @@
             @if($errors->has('description')) <span class="error">{{ $errors->first('description') }}</span> @endif
 
             <label>Attachment (screenshot, document)</label>
-            <input type="file" name="attachment" @if($errors->has('attachment')) class="error">
+            <input name="attachment" type="file" @if($errors->has('attachment')) class="error">
             <span class="error">{{ $errors->first('attachment') }}</span> @else > @endif
 
             <br/><button type="submit"><i class="fa fa-arrow-circle-right"></i> Log issue</button>

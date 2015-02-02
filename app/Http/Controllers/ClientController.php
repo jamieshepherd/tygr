@@ -86,9 +86,16 @@ class ClientController extends Controller {
 	 */
 	public function update($id, UpdateClientRequest $request)
 	{
-		$client = Client::where('id', '=', $id)->firstOrFail();
-		$client->name	= $request->name;
-		$client->stub	= $request->stub;
+		$client = Client::where('id', '=', $id)->first();
+		if(!$client) {
+			abort(404);
+		}
+		if($client->name != $request->name) {
+			$client->name	= $request->name;
+		}
+		if($client->stub != $request->stub) {
+			$client->stub	= $request->stub;
+		}
 		$client->type	= $request->type;
 		$result = $client->save();
 

@@ -23,8 +23,8 @@ class UpdateClientRequest extends Request {
 	{
 		return [
 			'type' => 'required',
-			'name' => 'required|unique:clients|min:3',
-			'stub' => 'required|unique:clients|min:3|alpha_dash'
+			'name' => 'required|min:3|unique:clients,name,'.$this->segment(3),
+			'stub' => 'required|min:3|alpha_dash|unique:clients,stub,'.$this->segment(3)
 		];
 	}
 

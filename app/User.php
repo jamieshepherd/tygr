@@ -55,6 +55,11 @@ class User extends Model implements AuthenticatableContract, CanResetPasswordCon
 
 	public function belongsToGroup($group)
 	{
-		return in_array($group, array_fetch($this->groups->toArray(), 'name'));
+		return in_array($group, array_fetch($this->groups->toArray(), 'id'));
+	}
+
+	public function assignToGroup($id)
+	{
+		$this->groups()->attach($id);
 	}
 }

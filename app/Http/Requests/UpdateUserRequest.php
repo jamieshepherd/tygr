@@ -23,7 +23,7 @@ class UpdateUserRequest extends Request {
 	{
 		return [
 			'name'		=>	'required|min:3',
-			'email'		=>	'unique:users|required|email',
+			'email'		=>	'required|email',
 			'client'	=>	'required|numeric',
 			'rank'		=>	'required|numeric',
 			'password'	=>	'min:6',

@@ -51,6 +51,18 @@ class UserController extends Controller {
 		$user->password  = Hash::make($request->password);
 		$result = $user->save();
 
+		if(Input::has('spongeuk_project_management'))
+			$user->assignToGroup(3,$user->id);
+
+		if(Input::has('spongeuk_development'))
+			$user->assignToGroup(4,$user->id);
+
+		if(Input::has('spongeuk_visual_design'))
+			$user->assignToGroup(5,$user->id);
+
+		if(Input::has('spongeuk_instructional_design'))
+			$user->assignToGroup(6,$user->id);
+
 		if($result) {
 			Mail::send('emails.welcome', array('name' => Input::get('name'), 'email' => Input::get('email'), 'password' => Input::get('password')), function($message) {
 				$message->to(Input::get('email'), Input::get('name'))->subject('Welcome!');
@@ -108,6 +120,18 @@ class UserController extends Controller {
 		}
 
 		$result = $user->save();
+
+		if(Input::has('spongeuk_project_management'))
+			$user->assignToGroup(3,$user->id);
+
+		if(Input::has('spongeuk_development'))
+			$user->assignToGroup(4,$user->id);
+
+		if(Input::has('spongeuk_visual_design'))
+			$user->assignToGroup(5,$user->id);
+
+		if(Input::has('spongeuk_instructional_design'))
+			$user->assignToGroup(6,$user->id);
 
 		if($result) {
 			\Session::flash('message', $user->name.' was updated successfully.');

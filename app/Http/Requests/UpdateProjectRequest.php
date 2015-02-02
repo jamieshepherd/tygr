@@ -1,5 +1,6 @@
 <?php namespace App\Http\Requests;
 
+use App\Client;
 use App\Http\Requests\Request;
 
 class UpdateProjectRequest extends Request {
@@ -21,9 +22,11 @@ class UpdateProjectRequest extends Request {
 	 */
 	public function rules()
 	{
+		$client = Client::where('stub', '=', $this->segment(2))->first();
+
 		return [
 			'name'				     => 'required|min:3',
-			'stub' 					 => 'required|alpha_dash|min:3',
+			//'stub' 					 => 'required|alpha_dash|min:3|unique:projects,stub,NULL,id,client_id,'.$client->id,
 			'current_version' 		 => 'required',
 			'status' 				 => 'required|min:3',
 			'authoring_tool' 		 => '',

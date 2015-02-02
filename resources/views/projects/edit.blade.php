@@ -25,9 +25,9 @@
             <input id="name" name="name" type="text" placeholder="e.g. Fire Safety" value="{{{ $project->name }}}" onkeyup="generateStub()" @if($errors->has('name')) class="error">
             <span class="error">{{ $errors->first('name') }}</span> @else > @endif
 
-            <label>Project stub<em>(Used for URLs)</em></label>
+            <!--label>Project stub<em>(Used for URLs)</em></label>
             <input id="stub" name="stub" type="text" placeholder="e.g. firesafety" value="{{{ $project->stub }}}" @if($errors->has('stub')) class="error">
-            <span class="error">{{ $errors->first('stub') }}</span> @else > @endif
+            <span class="error">{{ $errors->first('stub') }}</span> @else > @endif!-->
 
             <label>Current version</label>
             <input name="current_version" type="text" placeholder="e.g. Version 1" value="{{{ $project->current_version }}}" @if($errors->has('current_version')) class="error">

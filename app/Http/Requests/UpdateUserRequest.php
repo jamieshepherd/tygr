@@ -23,7 +23,7 @@ class UpdateUserRequest extends Request {
 	{
 		return [
 			'name'		=>	'required|min:3',
-			'email'		=>	'required|email|unique:users',
+			'email'		=>	'required|email|unique:users,email,'.$this->segment(3),
 			'client'	=>	'required|numeric',
 			'rank'		=>	'required|numeric',
 			'password'	=>	'min:6',

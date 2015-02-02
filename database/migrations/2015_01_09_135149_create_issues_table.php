@@ -19,13 +19,13 @@ class CreateIssuesTable extends Migration {
 			$table->boolean('hidden');
             // Author
 			$table->integer('author_id')->unsigned();
-			$table->foreign('author_id')->references('id')->on('users');
+			$table->foreign('author_id')->references('id')->on('users')->onDelete('cascade');
             // Assigned to
 			$table->integer('assigned_to_id')->unsigned()->nullable();
-			$table->foreign('assigned_to_id')->references('id')->on('groups');
+			$table->foreign('assigned_to_id')->references('id')->on('groups')->onDelete('cascade');
             // Project
 			$table->integer('project_id')->unsigned();
-			$table->foreign('project_id')->references('id')->on('projects');
+			$table->foreign('project_id')->references('id')->on('projects')->onDelete('cascade');
             // Project version
 			$table->string('version');
             // Page reference

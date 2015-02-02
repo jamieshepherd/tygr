@@ -23,7 +23,7 @@ class CreateProjectsTable extends Migration {
 			$table->string('stub');
             // Client
 			$table->integer('client_id')->unsigned();
-			$table->foreign('client_id')->references('id')->on('clients');
+			$table->foreign('client_id')->references('id')->on('clients')->onDelete('cascade');
             // Project manager
             // $table->integer('project_manager_id')->unsigned()->nullable();
             // $table->foreign('project_manager_id')->references('id')->on('users');

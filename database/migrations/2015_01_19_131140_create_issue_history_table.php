@@ -17,10 +17,10 @@ class CreateIssueHistoryTable extends Migration {
 			$table->increments('id');
 			// Issue ID
 			$table->integer('issue_id')->unsigned();
-			$table->foreign('issue_id')->references('id')->on('issues');
+			$table->foreign('issue_id')->references('id')->on('issues')->onDelete('cascade');
 			// Author
 			$table->integer('author_id')->unsigned();
-			$table->foreign('author_id')->references('id')->on('users');
+			$table->foreign('author_id')->references('id')->on('users')->onDelete('cascade');
 			// History type
 			$table->string('type');
 			// History status

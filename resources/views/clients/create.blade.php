@@ -1,7 +1,4 @@
 @extends('_layout.base')
-@section('headlinks')
-    <script src="/js/helpers.js"></script>
-@stop
 @section('crumbtrail')
     <a href="/"><li><i class="fa fa-home"></i> Home</li></a>
     <a href="/clients"><li>Clients</li></a>

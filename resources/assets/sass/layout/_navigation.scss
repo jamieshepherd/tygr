@@ -30,4 +30,18 @@ nav {
       color: $background;
     }
   }
+
+  @media (max-width: 1250px) {
+    width: 220px;
+  }
+  @media (max-width: 1000px) {
+    width: 80px;
+    padding-top: 10px;
+    span {
+      display: none;
+    }
+    .sponge-logo {
+      display: none;
+    }
+  }
 }

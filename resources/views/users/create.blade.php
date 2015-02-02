@@ -36,6 +36,14 @@
             <input id="password" name="password" type="text" placeholder="e.g. qwerty1" @if($errors->has('password')) class="error">
             <span class="error">{{ $errors->first('password') }}</span> @else > @endif
 
+            <div id="assign_groups">
+                <label>Assign groups</label>
+                <input name="spongeuk_project_management" type="checkbox"> Sponge UK (Project Management)<br/>
+                <input name="spongeuk_development" type="checkbox"> Sponge UK (Development) <br/>
+                <input name="spongeuk_visual_design" type="checkbox"> Sponge UK (Visual Design) <br/>
+                <input name="spongeuk_instructional_design" type="checkbox"> Sponge UK (Instructional Design) <br/>
+            </div>
+
             <br/><button type="submit"><i class="fa fa-arrow-circle-right"></i> Create user</button>
         </form>
 

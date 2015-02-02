@@ -30,8 +30,8 @@
             <span class="error">{{ $errors->first('reference') }}</span> @else > @endif
 
             <label>Describe the issue</label>
-            <textarea name="description" class="large" placeholder="Please be as specific as you can, including details on how to reproduce the issue, browser (IE/Chrome) and operating system." @if($errors->has('description')) class="error" @endif>{{ $issue->description }}}</textarea>
-            <span class="error">{{ $errors->first('description') }}</span> @endif
+            <textarea name="description" class="large" placeholder="Please be as specific as you can, including details on how to reproduce the issue, browser (IE/Chrome) and operating system." @if($errors->has('description')) class="error" @endif>{{ $issue->description }}</textarea>
+            @if($errors->has('description')) <span class="error">{{ $errors->first('description') }}</span> @endif
 
             <label>Attachments (screenshots, documents)</label>
             <input name="attachment" type="file" @if($errors->has('attachment')) class="error">

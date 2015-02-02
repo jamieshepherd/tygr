@@ -414,12 +414,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/laravel/framework.git",
-                "reference": "b741e1136a54427c9e54f31330ec67654b64d867"
+                "reference": "013c79697719faaaf939a2953956f05d88f3974d"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laravel/framework/zipball/b741e1136a54427c9e54f31330ec67654b64d867",
-                "reference": "b741e1136a54427c9e54f31330ec67654b64d867",
+                "url": "https://api.github.com/repos/laravel/framework/zipball/013c79697719faaaf939a2953956f05d88f3974d",
+                "reference": "013c79697719faaaf939a2953956f05d88f3974d",
                 "shasum": ""
             },
             "require": {
@@ -531,7 +531,7 @@
                 "framework",
                 "laravel"
             ],
-            "time": "2015-01-29 23:06:33"
+            "time": "2015-01-30 19:09:31"
         },
         {
             "name": "league/flysystem",
@@ -539,12 +539,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/thephpleague/flysystem.git",
-                "reference": "06e66fd27841a1ec2fc170543fde9d07e010a6d6"
+                "reference": "7c96b75441002fb6799a4e355f2190b9d905782d"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/thephpleague/flysystem/zipball/06e66fd27841a1ec2fc170543fde9d07e010a6d6",
-                "reference": "06e66fd27841a1ec2fc170543fde9d07e010a6d6",
+                "url": "https://api.github.com/repos/thephpleague/flysystem/zipball/7c96b75441002fb6799a4e355f2190b9d905782d",
+                "reference": "7c96b75441002fb6799a4e355f2190b9d905782d",
                 "shasum": ""
             },
             "require": {
@@ -614,7 +614,7 @@
                 "sftp",
                 "storage"
             ],
-            "time": "2015-01-27 22:14:47"
+            "time": "2015-02-01 15:53:05"
         },
         {
             "name": "monolog/monolog",
@@ -784,12 +784,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/nikic/PHP-Parser.git",
-                "reference": "6930feac43b257c853cfed879ca6b7492a03309b"
+                "reference": "1366e833a16c4267883187da6da7b317f0582dd7"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/nikic/PHP-Parser/zipball/6930feac43b257c853cfed879ca6b7492a03309b",
-                "reference": "6930feac43b257c853cfed879ca6b7492a03309b",
+                "url": "https://api.github.com/repos/nikic/PHP-Parser/zipball/1366e833a16c4267883187da6da7b317f0582dd7",
+                "reference": "1366e833a16c4267883187da6da7b317f0582dd7",
                 "shasum": ""
             },
             "require": {
@@ -821,7 +821,7 @@
                 "parser",
                 "php"
             ],
-            "time": "2015-01-18 18:57:09"
+            "time": "2015-01-31 21:59:38"
         },
         {
             "name": "psr/log",
@@ -1682,16 +1682,16 @@
         },
         {
             "name": "vlucas/phpdotenv",
-            "version": "v1.1.0",
+            "version": "dev-master",
             "source": {
                 "type": "git",
                 "url": "https://github.com/vlucas/phpdotenv.git",
-                "reference": "732d2adb7d916c9593b9d58c3b0d9ebefead07aa"
+                "reference": "c5232d963bca31ab886fb40ab706d89f42769fcc"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/vlucas/phpdotenv/zipball/732d2adb7d916c9593b9d58c3b0d9ebefead07aa",
-                "reference": "732d2adb7d916c9593b9d58c3b0d9ebefead07aa",
+                "url": "https://api.github.com/repos/vlucas/phpdotenv/zipball/c5232d963bca31ab886fb40ab706d89f42769fcc",
+                "reference": "c5232d963bca31ab886fb40ab706d89f42769fcc",
                 "shasum": ""
             },
             "require": {
@@ -1703,7 +1703,7 @@
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "1.0-dev"
+                    "dev-master": "1.1-dev"
                 }
             },
             "autoload": {
@@ -1729,7 +1729,7 @@
                 "env",
                 "environment"
             ],
-            "time": "2014-12-05 15:19:21"
+            "time": "2015-01-30 14:58:26"
         }
     ],
     "packages-dev": [
@@ -2385,21 +2385,21 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/sebastianbergmann/comparator.git",
-                "reference": "6a1e846331bb3cc1a305168125d047fb86260e3d"
+                "reference": "1dd8869519a225f7f2b9eb663e225298fade819e"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sebastianbergmann/comparator/zipball/6a1e846331bb3cc1a305168125d047fb86260e3d",
-                "reference": "6a1e846331bb3cc1a305168125d047fb86260e3d",
+                "url": "https://api.github.com/repos/sebastianbergmann/comparator/zipball/1dd8869519a225f7f2b9eb663e225298fade819e",
+                "reference": "1dd8869519a225f7f2b9eb663e225298fade819e",
                 "shasum": ""
             },
             "require": {
                 "php": ">=5.3.3",
-                "sebastian/diff": "~1.1",
-                "sebastian/exporter": "~1.0"
+                "sebastian/diff": "~1.2",
+                "sebastian/exporter": "~1.2"
             },
             "require-dev": {
-                "phpunit/phpunit": "~4.1"
+                "phpunit/phpunit": "~4.4"
             },
             "type": "library",
             "extra": {
@@ -2441,7 +2441,7 @@
                 "compare",
                 "equality"
             ],
-            "time": "2015-01-05 16:29:00"
+            "time": "2015-01-29 16:28:08"
         },
         {
             "name": "sebastian/diff",

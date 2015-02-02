@@ -19,7 +19,7 @@
             <label>Client type</label>
             <input type="radio" name="type" value="Client" @if($client->type == 'Client') checked @endif> Client
             <input type="radio" name="type" value="Pitch" @if($client->type == 'Pitch') checked @endif> Pitch
-            <span class="error">{{ $errors->first('type') }}</span> @endif
+            @if($errors->has('type'))<span class="error">{{ $errors->first('type') }}</span> @endif
 
             <label>Client name</label>
             <input id="name" name="name" type="text" placeholder="e.g. Sponge UK" onkeyup="generateStub()" autofocus value="{{{ $client->name }}}" @if($errors->has('name')) class="error">

@@ -59,7 +59,10 @@ class ClientController extends Controller {
 	 */
 	public function show($stub)
 	{
-		$client = Client::where('stub', '=', $stub)->firstOrFail();
+		$client = Client::where('stub', '=', $stub)->first();
+		if(!$client) {
+			abort(404);
+		}
 
 		return view('clients.show')->with('client', $client);
 	}

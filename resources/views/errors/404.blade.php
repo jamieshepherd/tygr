@@ -3,7 +3,8 @@
 <!--script src="/js/your-custom-javascript.js"></script-->
 @stop
 @section('crumbtrail')
-<a href="/"><li><i class="fa fa-home"></i> Dashboard</li></a>
+<a href="/"><li><i class="fa fa-home"></i> Home</li></a>
+<li>404: Page not found</li>
 @stop
 @section('body')
     <body>

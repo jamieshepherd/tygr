@@ -4,15 +4,15 @@
 @stop
 @section('crumbtrail')
     <a href="/"><li><i class="fa fa-home"></i> Home</li></a>
-    <li>401: Unauthorised</li>
+    <li>500: Internal server error</li>
 @stop
 @section('body')
     <body>
     @include('_layout.nav')
     <div id="main">
         @include('_layout.header')
-        <h1>401</h1>
-        <p>Unauthorised.</p>
+        <h1>500</h1>
+        <p>Internal server error.</p>
     </div>
 </body>
 @stop

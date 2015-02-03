@@ -16,7 +16,7 @@ class RestrictSuperAdmin {
 		$rank = \Auth::user()->rank;
 
 		if($rank != 1) {
-			return response('Unauthorized.', 401);
+			abort(401);
 		}
 
 		return $next($request);

@@ -3,7 +3,8 @@
 <!--script src="/js/your-custom-javascript.js"></script-->
 @stop
 @section('crumbtrail')
-<a href="/"><li><i class="fa fa-home"></i> Dashboard</li></a>
+    <a href="/"><li><i class="fa fa-home"></i> Home</li></a>
+    <li>503: Service unavailable</li>
 @stop
 @section('body')
     <body>
@@ -11,7 +12,7 @@
     <div id="main">
         @include('_layout.header')
         <h1>503</h1>
-        <p>Your content goes here!</p>
+        <p>Service unavailable.</p>
     </div>
 </body>
 @stop

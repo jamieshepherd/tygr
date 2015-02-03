@@ -22,6 +22,8 @@
                 <li>{{{ $group->name }}}</li>
             @endforeach
             </ul>
+        <h2>Rank</h2>
+        <p>{{{ $user->rank }}}</p>
     </div>
 </body>
 @stop

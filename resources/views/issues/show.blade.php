@@ -32,6 +32,8 @@
                 @if(Auth::user()->rank != 3)
                     <li><strong>Priority:</strong> {{{ $issue->priority }}}</li>
                 @endif
+                <li><strong>Version:</strong> {{ $issue->version }}</li>
+                <li><strong>Last updated:</strong> {{ date("d M Y",strtotime($issue->updated_at)) }}</li>
             </ul>
         </section>
         <section>

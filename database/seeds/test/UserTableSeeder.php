@@ -17,27 +17,44 @@ class UserTableSeeder extends Seeder {
         ));
 
         User::create(array(
-            'name'        => 'Alan Bourne',
-            'client_id'   => 1,
-            'rank'        => 1,
-            'email'       => 'alan.bourne@spongeuk.com',
-            'password'    => Hash::make('password')
-        ));
-
-        User::create(array(
-            'name'        => 'Alex Stewart',
-            'client_id'   => 1,
-            'rank'        => 1,
-            'email'       => 'alex.stewart@spongeuk.com',
-            'password'    => Hash::make('password')
-        ));
-
-        User::create(array(
             'name'        => 'Andrea Kinsman',
             'client_id'   => 1,
             'rank'        => 1,
             'email'       => 'andrea.kinsman@spongeuk.com',
             'password'    => Hash::make('password')
         ));
+
+        User::create(array(
+            'name'        => 'Alex Stewart',
+            'client_id'   => 1,
+            'rank'        => 2,
+            'email'       => 'alex.stewart@spongeuk.com',
+            'password'    => Hash::make('password')
+        ));
+
+        User::create(array(
+            'name'        => 'Tom Stembridge',
+            'client_id'   => 1,
+            'rank'        => 2,
+            'email'       => 'thomas.stembridge@spongeuk.com',
+            'password'    => Hash::make('password')
+        ));
+
+        User::create(array(
+            'name'        => 'Test User',
+            'client_id'   => 2,
+            'rank'        => 3,
+            'email'       => 'test@user.com',
+            'password'    => Hash::make('password')
+        ));
+
+        User::create(array(
+            'name'        => 'Rhea Stevens',
+            'client_id'   => 1,
+            'rank'        => 2,
+            'email'       => 'rhea.stevens@spongeuk.com',
+            'password'    => Hash::make('password')
+        ));
     }
+
 }

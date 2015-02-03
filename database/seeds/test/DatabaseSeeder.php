@@ -14,10 +14,13 @@ class DatabaseSeeder extends Seeder {
 	{
 		Model::unguard();
 
-		$this->call('GroupTableSeeder');
-		$this->call('IssueStatusTableSeeder');
 		$this->call('ClientTableSeeder');
 		$this->call('UserTableSeeder');
+		$this->call('GroupTableSeeder');
+		$this->call('ProjectTableSeeder');
+		$this->call('IssueStatusTableSeeder');
+		$this->call('IssueTableSeeder');
+		$this->call('IssueHistoryTableSeeder');
 		$this->call('GroupUserTableSeeder');
 	}
 

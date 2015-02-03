@@ -32,26 +32,6 @@ class GroupTableSeeder extends Seeder {
         Group::create(array(
             'name'        => 'Sponge UK (Instructional Design)'
         ));
-
-        Group::create(array(
-            'name'        => 'Sponge UK (Launch & Learn)'
-        ));
-
-        Group::create(array(
-            'name'        => 'Sponge UK (Marketing)'
-        ));
-
-        Group::create(array(
-            'name'        => 'Sponge UK (Human Resources)'
-        ));
-
-        Group::create(array(
-            'name'        => 'Sponge UK (Accounting)'
-        ));
-
-        Group::create(array(
-            'name'        => 'Sponge UK (Administration)'
-        ));
     }
 
 }

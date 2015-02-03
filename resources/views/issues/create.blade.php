@@ -22,15 +22,15 @@
             @endif
 
             <label>What type of issue is this?</label>
-            <input name="type" type="text" placeholder="e.g. Bug, text amend, design" autofocus @if($errors->has('type')) class="error">
+            <input value="{{ old('type') }}" name="type" type="text" placeholder="e.g. Bug, text amend, design" autofocus @if($errors->has('type')) class="error" >
             <span class="error">{{ $errors->first('type') }}</span> @else > @endif
 
             <label>Where did this happen?</label>
-            <input name="reference" type="text" placeholder="e.g. Page 7 or b-09" @if($errors->has('reference')) class="error">
+            <input value="{{ old('reference') }}" name="reference" type="text" placeholder="e.g. Page 7 or b-09" @if($errors->has('reference')) class="error">
             <span class="error">{{ $errors->first('reference') }}</span> @else > @endif
 
             <label>Describe the issue</label>
-            <textarea name="description" class="large" placeholder="Please be as specific as you can, including details on how to reproduce the issue, browser (IE/Chrome) and operating system." @if($errors->has('description')) class="error" @endif></textarea>
+            <textarea name="description" class="large" placeholder="Please be as specific as you can, including details on how to reproduce the issue, browser (IE/Chrome) and operating system." @if($errors->has('description')) class="error" @endif>{{ old('description') }}</textarea>
             @if($errors->has('description')) <span class="error">{{ $errors->first('description') }}</span> @endif
 
             <label>Attachment (screenshot, document)</label>

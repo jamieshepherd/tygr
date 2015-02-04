@@ -4,7 +4,7 @@
         <div class="update {{ $update->type }}">
             <div class="timestamp">{{ $update->created_at }}</div>
             @if($update->type == 'comment')
-                <h3><i class="fa fa-user"></i> {{{ $update->author->name }}} <span class="tag">Sponge UK</span></h3>
+                <h3><i class="fa fa-user"></i> {{{ $update->author->name }}} <span class="tag">{{  $update->author->client->name }}</span></h3>
                 <p>{{{ $update->comment }}}</p>
             @elseif($update->type == 'status')
                 @if($update->status == 'created' || $update->status == 'reopened')

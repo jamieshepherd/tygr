@@ -26,8 +26,11 @@
             <span class="error">{{ $errors->first('client') }}</span> @else > @endif
 
             <label>Rank</label>
-            <input name="rank" type="text" placeholder="e.g. 1" value="{{{ $user->rank }}}" @if($errors->has('rank')) class="error">
-            <span class="error">{{ $errors->first('rank') }}</span> @else > @endif
+            <input type="radio" name="rank" value="1" @if($user->rank==1) checked @endif> Admin
+            <input type="radio" name="rank" value="2" @if($user->rank==2) checked @endif> Employee
+            <input type="radio" name="rank" value="3" @if($user->rank==3) checked @endif> Client
+            @if($errors->has('rank'))
+                <span class="error">{{ $errors->first('rank') }}</span> @endif
 
             <label>Password (<a onclick="generatePassword()" style="cursor:pointer">Generate</a>)</label>
             <input id="password" name="password" type="text" placeholder="e.g. qwerty1" @if($errors->has('password')) class="error">

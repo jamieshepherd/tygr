@@ -161,6 +161,16 @@ nav {
     text-decoration: none; }
     nav a:hover {
       color: #ffffff; }
+  nav .resizer {
+    height: 100%;
+    width: 10px;
+    background: #ffffff;
+    opacity: 0;
+    position: absolute;
+    top: 0;
+    right: -5px;
+    float: right;
+    cursor: col-resize; }
   @media (max-width: 1250px) {
     nav {
       width: 220px; } }

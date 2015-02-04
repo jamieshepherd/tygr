@@ -245,6 +245,17 @@ table.full {
         opacity: 1; }
       table.full tr.closed td.priority {
         border: none; }
+  @media (max-width: 650px) {
+    table.full {
+      margin-top: 30px; }
+      table.full tr.head {
+        display: none; }
+      table.full td {
+        display: block;
+        width: 100%;
+        padding: 12px; }
+        table.full td.name {
+          font-weight: bold; } }
 
 .info-box {
   border: 1px dashed #2F2927;
@@ -308,6 +319,17 @@ input {
     font-size: 12px;
     margin-top: -10px;
     margin-bottom: 20px; }
+    @media (max-width: 1000px) {
+      input.filter {
+        min-width: 200px; } }
+    @media (max-width: 800px) {
+      input.filter {
+        width: 100%;
+        display: block;
+        /* Safari/Chrome, other WebKit */
+        /* Firefox, other Gecko */
+        box-sizing: border-box;
+        /* Opera/IE 8+ */ } }
   input[type='radio'], input[type='checkbox'] {
     min-width: 0; }
   input[type='submit']:hover {
@@ -349,7 +371,8 @@ a.action {
   padding: 6px 8px 6px 8px;
   background: #f24a33;
   border: 1px solid #f24a33;
-  color: #ffffff; }
+  color: #ffffff;
+  display: inline-block; }
   a.action:hover {
     background: #8BCEDC;
     border-color: #8BCEDC;

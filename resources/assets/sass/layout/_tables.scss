@@ -52,6 +52,21 @@ table.full {
       }
     }
   }
+
+  @media (max-width: 650px) {
+    margin-top: 30px;
+    tr.head {
+      display: none;
+    }
+    td {
+      display: block;
+      width: 100%;
+      padding: 12px;
+      &.name {
+        font-weight: bold;
+      }
+    }
+  }
 }
 .info-box {
   border: 1px dashed $foreground;

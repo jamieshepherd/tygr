@@ -8,6 +8,7 @@ a {
     background: $highlight;
     border: 1px solid $highlight;
     color: $background;
+    display: inline-block;
     &:hover {
       background: $tertiary;
       border-color: $tertiary;

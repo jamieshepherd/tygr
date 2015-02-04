@@ -121,17 +121,33 @@ class UserController extends Controller {
 
 		$result = $user->save();
 
-		if(Input::has('spongeuk_project_management'))
-			$user->assignToGroup(3,$user->id);
+		if(Input::has('spongeuk_project_management')) {
+			if(!$user->belongsToGroup(3))
+				$user->attachToGroup(3,$user->id);
+		} else {
+			$user->detachFromGroup(3,$user->id);
+		}
 
-		if(Input::has('spongeuk_development'))
-			$user->assignToGroup(4,$user->id);
+		if(Input::has('spongeuk_development')) {
+			if(!$user->belongsToGroup(4))
+				$user->attachToGroup(4,$user->id);
+		} else {
+			$user->detachFromGroup(4,$user->id);
+		}
 
-		if(Input::has('spongeuk_visual_design'))
-			$user->assignToGroup(5,$user->id);
+		if(Input::has('spongeuk_visual_design')) {
+			if(!$user->belongsToGroup(5))
+				$user->attachToGroup(5,$user->id);
+		} else {
+			$user->detachFromGroup(5,$user->id);
+		}
 
-		if(Input::has('spongeuk_instructional_design'))
-			$user->assignToGroup(6,$user->id);
+		if(Input::has('spongeuk_instructional_design')) {
+			if(!$user->belongsToGroup(6))
+				$user->attachToGroup(6,$user->id);
+		} else {
+			$user->detachFromGroup(6,$user->id);
+		}
 
 		if($result) {
 			\Session::flash('message', $user->name.' was updated successfully.');

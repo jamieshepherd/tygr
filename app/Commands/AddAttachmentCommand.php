@@ -30,7 +30,7 @@ class AddAttachmentCommand extends Command implements SelfHandling {
 	 */
 	public function handle()
 	{
-		$filename = urlencode($this->file->getClientOriginalName());
+		$filename = preg_replace('/[^\w-.]/', '', $this->file->getClientOriginalName());
 		// make a random file prefix
 		do { $unique = base_convert(rand(1,100000000),10,36);
 		} while(file_exists('uploads/'.$this->issue.'/'.$unique.'-'.$filename));

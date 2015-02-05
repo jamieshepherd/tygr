@@ -41,6 +41,20 @@
         height: auto !important;
         margin-right: 10px;
       }
+      @media (max-width: 850px) {
+        &.col-1-4, &.col-3-12 {
+          width: 50%;
+          &:nth-of-type(3n) {
+            padding-left: 0;
+          }
+        }
+      }
+      @media (max-width: 650px) {
+        &.col {
+          width: 100%;
+          padding: 0 0 20px 0;
+        }
+      }
     }
   }
   h2 {

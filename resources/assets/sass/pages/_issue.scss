@@ -13,6 +13,11 @@ section {
       max-width: 40%;
       margin-right: 10px;
       line-height: 30px;
+      @media (max-width: 650px) {
+        display: block;
+        min-width: 0;
+        max-width: none;
+      }
       strong {
         background: $accent;
         padding: 3px 5px;
@@ -34,6 +39,7 @@ section {
       padding: 10px;
       margin: 10px 0 15px;
       border-radius: 3px;
+      position: relative;
       &.status {
         background: #f6f6f6;
       }
@@ -44,11 +50,14 @@ section {
       .timestamp {
         margin-top: 1px;
         z-index: 2;
-        float: right;
+        position: absolute;
+        top: 10px;
+        right: 10px;
         font-size: 12px;
         display: none;
         color: #ccc;
         border-radius: 3px;
+        clear: both;
       }
       &:hover .timestamp {
         display: inline-block;

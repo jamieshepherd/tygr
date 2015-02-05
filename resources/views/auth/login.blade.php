@@ -1,9 +1,9 @@
 @extends('_layout.base')
 @section('body')
-<body class="photo">
+<body class="photo" style="background: url(/images/login/background{{ rand(1,1) }}.png);">
     <div class="login">
-        <img class="sponge-logo" src="/images/sponge-logo.svg">
-        <form action="/auth/login" method="POST" autocomplete="off">
+        <img class="sponge-logo" src="/images/sponge-logo-red.svg">
+        <form action="/auth/login" method="POST">
             <input type="hidden" name="_token" value="{{ csrf_token() }}">
             <label for="email">Email address</label>
             <input name="email" type="text" placeholder="Email address" @if($errors->has('email')) class="error">

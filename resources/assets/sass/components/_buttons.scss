@@ -9,6 +9,8 @@ a {
     border: 1px solid $highlight;
     color: $background;
     display: inline-block;
+    clear: left;
+    margin-bottom: 4px;
     &:hover {
       background: $tertiary;
       border-color: $tertiary;
@@ -51,12 +53,11 @@ a {
     background: $highlight;
     color: $background;
     position: relative;
-    min-width: 150px;
     cursor: pointer;
     ul {
       border-top: 1px solid #ffffff;
       position: absolute;
-      top: 28px;
+      top: 25px;
       left: 0;
       display: none;
       a {

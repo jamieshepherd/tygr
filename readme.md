@@ -1,7 +1,7 @@
 ## Tygr - Issue management system
-####Alpha, Build 123
+####Beta, Build 128
 
-*This project is in alpha, please expect many issues, bugs, and broken features.*
+*This project is now in beta, version 1.0.0 release is scheduled for 23rd February 2015.*
 
 This repository hosts the source code for the tygr issue management system, a project and issue management system developed primarily for companies in the elearning industry. The project is open source under the MIT license.
 

@@ -58,12 +58,19 @@ table.full {
     tr.head {
       display: none;
     }
+    tr {
+      padding: 10px 0;
+    }
     td {
       display: block;
       width: 100%;
-      padding: 12px;
-      &.name {
+      padding: 5px 12px;
+      line-height: 24px;
+      &.name, &.reference, &.client {
         font-weight: bold;
+      }
+      &.version, &.date, &.priority, &.project_count, &.stub, &.issues, &.project_manager {
+        display: none;
       }
     }
   }
@@ -95,6 +102,20 @@ table.full {
     td {
       line-height: 20px;
       padding:  5px 10px;
+    }
+  }
+  @media (max-width: 650px) {
+    float: none;
+    margin: 20px 0 0 0;
+    padding: 10px 0;
+    border: none;
+    display: block;
+    table {
+      td {
+        line-height: 26px;
+        display: block;
+        padding: 0;
+      }
     }
   }
 }

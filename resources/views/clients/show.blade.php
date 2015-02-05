@@ -37,7 +37,7 @@
                 <td class="stub">{{{ $project->stub }}}</td>
                 <td class="issues">{{{ count($project->issues) }}}</td>
                 <td>{{{ $project->current_version }}}</td>
-                <td>{{{ $project->project_manager }}}</td>
+                <td class="project_manager">{{{ $project->project_manager }}}</td>
             </tr>
             @endforeach
             </tbody>

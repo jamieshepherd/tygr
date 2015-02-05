@@ -27,14 +27,14 @@
             <tr onclick="document.location='/users/show/{{{ $user->id }}}';" style="cursor:pointer">
                 <td class="name">{{{ $user->name }}}</td>
                 <td class="email">{{{ $user->email }}}</td>
-                <td class="client">{{{ $user->client->name }}}</td>
+                <td class="user_client">{{{ $user->client->name }}}</td>
             </tr>
             @endforeach
             </tbody>
         </table>
         </div>
         <script>
-            var options = { valueNames: ['name','email','client'] };
+            var options = { valueNames: ['name','email','user_client'] };
             var userList = new List('users', options);
         </script>
     </div>

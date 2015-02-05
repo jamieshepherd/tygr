@@ -250,12 +250,17 @@ table.full {
       margin-top: 30px; }
       table.full tr.head {
         display: none; }
+      table.full tr {
+        padding: 10px 0; }
       table.full td {
         display: block;
         width: 100%;
-        padding: 12px; }
-        table.full td.name {
-          font-weight: bold; } }
+        padding: 5px 12px;
+        line-height: 24px; }
+        table.full td.name, table.full td.reference, table.full td.client {
+          font-weight: bold; }
+        table.full td.version, table.full td.date, table.full td.priority, table.full td.project_count, table.full td.stub, table.full td.issues, table.full td.project_manager {
+          display: none; } }
 
 .info-box {
   border: 1px dashed #2F2927;
@@ -280,6 +285,17 @@ table.full {
   .info-box table td {
     line-height: 20px;
     padding: 5px 10px; }
+  @media (max-width: 650px) {
+    .info-box {
+      float: none;
+      margin: 20px 0 0 0;
+      padding: 10px 0;
+      border: none;
+      display: block; }
+      .info-box table td {
+        line-height: 26px;
+        display: block;
+        padding: 0; } }
 
 form {
   margin-top: 30px;

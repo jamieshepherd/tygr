@@ -12,19 +12,35 @@
             @if(count($client->projects)==0)
                 <p>Sorry, there are no projects listed for this client yet.</p>
             @endif
+            <div class="projects-index">
             @foreach ($client->projects as $project)
                 @if(!$project->hidden || $client->id == 1)
-                <div class="project-preview">
+                <div class="col">
+                <a href="/projects/{{ $project->client->stub }}/{{ $project->stub }}" class="project-preview">
                     <h3>{{ $project->name }}</h3>
+                    <hr/>
                     <ul>
-                        <li><strong>Project manager: </strong>{{ $project->project_manager }}</li>
-                        <li><strong>Project status: </strong>{{ $project->status }}</li>
-                        <li><strong>Current version: </strong>{{ $project->current_version }}</li>
-                        <li><strong>View project: </strong><a href="/projects/{{ $project->client->stub }}/{{{ $project->stub }}}">Click here</a></li>
+                        <li><strong>Status:</strong> {{ $project->status }}</li>
+                        <li><strong>Issues:</strong> {{ count($project->issues) }}</li>
                     </ul>
+                    <div class="project-progress">
+                        @if($project->status == 'Complete')
+                            <div class="percent percent-100"></div>
+                        @elseif($project->status == 'Amends')
+                            <div class="percent percent-75"></div>
+                        @elseif($project->status == 'In development')
+                            <div class="percent percent-50"></div>
+                        @elseif($project->status == 'Storyboard')
+                            <div class="percent percent-25"></div>
+                        @elseif($project->status == 'Kickoff')
+                            <div class="percent percent-5"></div>
+                        @endif
+                    </div>
+                </a>
                 </div>
                 @endif
             @endforeach
+            </div>
     </div>
 </body>
 @stop

@@ -492,7 +492,7 @@ a.version-dropdown {
     opacity: 0; } }
 
 .photo {
-  height: auto;
+  height: 100%;
   padding: 0; }
   .photo .gradient {
     background: url("/images/gradient.png") center top repeat-x;
@@ -509,6 +509,8 @@ a.version-dropdown {
     width: 260px;
     height: auto;
     box-shadow: 0px 0px 100px #000; }
+    .photo .login hr {
+      margin: 25px 0; }
     .photo .login form {
       text-align: left;
       margin: 0; }

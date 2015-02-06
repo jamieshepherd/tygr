@@ -1,64 +1,71 @@
 .photo {
   height: auto;
-}
-.login {
-  background: #ffffff;
-  color: #222222;
-  text-align: center;
-  position: static;
-  margin: 50px auto;
-  padding: 20px;
-  width: 260px;
-  height: auto;
-  box-shadow: 1px 1px 2px #666;
-  form {
-    text-align: left;
-    margin: 0;
-    label {
-      display: block;
+  padding: 0;
+  .gradient {
+    background: url("/images/gradient.png") center top repeat-x;
+    display: inline-block;
+    width: 100%;
+    min-height: 610px;
+  }
+  .login {
+    background: #ffffff;
+    color: #222222;
+    text-align: center;
+    position: static;
+    margin: 50px auto;
+    padding: 20px;
+    width: 260px;
+    height: auto;
+    box-shadow: 0px 0px 100px #000;
+    form {
       text-align: left;
-      margin: 10px 0;
-      .checkbox {
-        background: #f60;
+      margin: 0;
+      label {
+        display: block;
+        text-align: left;
+        margin: 10px 0;
+        .checkbox {
+          background: #f60;
+        }
       }
-    }
-    input {
-      display: block;
-      padding: 10px;
-      margin-bottom: 10px;
-      border: 1px solid #ccc;
-      min-width: 0;
-      width: 100%;
+      input {
+        display: block;
+        padding: 10px;
+        margin-bottom: 10px;
+        border: 1px solid #ccc;
+        min-width: 0;
+        width: 100%;
 
-      -webkit-box-sizing: border-box; /* Safari/Chrome, other WebKit */
-      -moz-box-sizing: border-box;    /* Firefox, other Gecko */
-      box-sizing: border-box;         /* Opera/IE 8+ */
-    }
-    input[type='submit'] {
-      padding: 10px;
-      margin-top: 10px;
-      background: $highlight;
-      color: $background;
-      cursor: pointer;
-      border: none;
-      &:hover {
-        background: $tertiary;
+        -webkit-box-sizing: border-box; /* Safari/Chrome, other WebKit */
+        -moz-box-sizing: border-box;    /* Firefox, other Gecko */
+        box-sizing: border-box;         /* Opera/IE 8+ */
       }
-    }
-    input[type='checkbox'] {
-      margin-top: 10px;
-      width: auto;
-      display: inline-block;
-    }
-    span {
-      font-size: 12px;
-      &.remember {
-        display: inline;
-        margin-left: 2px;
+      input[type='submit'] {
+        padding: 10px;
+        margin-top: 10px;
+        background: $highlight;
+        color: $background;
+        cursor: pointer;
+        border: none;
+        &:hover {
+          background: $tertiary;
+        }
       }
-      &.extra {
-        color: #cccccc;
-        margin-left: 10px;
+      input[type='checkbox'] {
+        margin-top: 10px;
+        width: auto;
+        display: inline-block;
+      }
+      span {
+        font-size: 12px;
+        &.remember {
+          display: inline;
+          margin-left: 2px;
+        }
+        &.extra {
+          color: #cccccc;
+          margin-left: 10px;
+        }
       }
     }
   }

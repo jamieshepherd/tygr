@@ -514,59 +514,64 @@ a.version-dropdown {
     opacity: 0; } }
 
 .photo {
-  height: auto; }
-
-.login {
-  background: #ffffff;
-  color: #222222;
-  text-align: center;
-  position: static;
-  margin: 50px auto;
-  padding: 20px;
-  width: 260px;
   height: auto;
-  box-shadow: 1px 1px 2px #666; }
-  .login form {
-    text-align: left;
-    margin: 0; }
-    .login form label {
-      display: block;
+  padding: 0; }
+  .photo .gradient {
+    background: url("/images/gradient.png") center top repeat-x;
+    display: inline-block;
+    width: 100%;
+    min-height: 610px; }
+  .photo .login {
+    background: #ffffff;
+    color: #222222;
+    text-align: center;
+    position: static;
+    margin: 50px auto;
+    padding: 20px;
+    width: 260px;
+    height: auto;
+    box-shadow: 0px 0px 100px #000; }
+    .photo .login form {
       text-align: left;
-      margin: 10px 0; }
-      .login form label .checkbox {
-        background: #f60; }
-    .login form input {
-      display: block;
-      padding: 10px;
-      margin-bottom: 10px;
-      border: 1px solid #ccc;
-      min-width: 0;
-      width: 100%;
-      /* Safari/Chrome, other WebKit */
-      /* Firefox, other Gecko */
-      box-sizing: border-box;
-      /* Opera/IE 8+ */ }
-    .login form input[type='submit'] {
-      padding: 10px;
-      margin-top: 10px;
-      background: #f24a33;
-      color: #ffffff;
-      cursor: pointer;
-      border: none; }
-      .login form input[type='submit']:hover {
-        background: #8BCEDC; }
-    .login form input[type='checkbox'] {
-      margin-top: 10px;
-      width: auto;
-      display: inline-block; }
-    .login form span {
-      font-size: 12px; }
-      .login form span.remember {
-        display: inline;
-        margin-left: 2px; }
-      .login form span.extra {
-        color: #cccccc;
-        margin-left: 10px; }
+      margin: 0; }
+      .photo .login form label {
+        display: block;
+        text-align: left;
+        margin: 10px 0; }
+        .photo .login form label .checkbox {
+          background: #f60; }
+      .photo .login form input {
+        display: block;
+        padding: 10px;
+        margin-bottom: 10px;
+        border: 1px solid #ccc;
+        min-width: 0;
+        width: 100%;
+        /* Safari/Chrome, other WebKit */
+        /* Firefox, other Gecko */
+        box-sizing: border-box;
+        /* Opera/IE 8+ */ }
+      .photo .login form input[type='submit'] {
+        padding: 10px;
+        margin-top: 10px;
+        background: #f24a33;
+        color: #ffffff;
+        cursor: pointer;
+        border: none; }
+        .photo .login form input[type='submit']:hover {
+          background: #8BCEDC; }
+      .photo .login form input[type='checkbox'] {
+        margin-top: 10px;
+        width: auto;
+        display: inline-block; }
+      .photo .login form span {
+        font-size: 12px; }
+        .photo .login form span.remember {
+          display: inline;
+          margin-left: 2px; }
+        .photo .login form span.extra {
+          color: #cccccc;
+          margin-left: 10px; }
 
 section {
   max-width: 722px;
@@ -708,6 +713,33 @@ section {
     font-size: 16px;
     color: #999999;
     font-weight: 500; }
+
+.error-status {
+  text-align: center; }
+  .error-status .oh-no {
+    font-size: 200px;
+    color: #ccc;
+    margin-bottom: 40px; }
+  .error-status h1 {
+    font-size: 72px;
+    font-weight: 500;
+    margin-bottom: 10px; }
+  .error-status h2 {
+    font-size: 22px;
+    font-weight: 500;
+    margin: 0 0 50px 0;
+    color: #333; }
+  .error-status p {
+    color: #888;
+    max-width: 600px;
+    display: inline-block;
+    margin: 0 auto; }
+    .error-status p a {
+      color: #888;
+      border-color: #888; }
+      .error-status p a:hover {
+        color: #333;
+        border-color: #333; }
 
 body, input, textarea, button {
   font-family: "open-sans", Arial, sans-serif;

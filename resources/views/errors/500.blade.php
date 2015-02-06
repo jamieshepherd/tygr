@@ -4,15 +4,16 @@
 @stop
 @section('crumbtrail')
     <a href="/"><li><i class="fa fa-home"></i> Home</li></a>
-    <li>500: Internal server error</li>
 @stop
 @section('body')
     <body>
     @include('_layout.nav')
-    <div id="main">
+    <div id="main" class="error-status">
         @include('_layout.header')
-        <h1>500</h1>
-        <p>Internal server error.</p>
+        <div class="oh-no"><i class="fa fa-thumbs-o-down"></i></div>
+        <h1>503</h1>
+        <h2>Service unavailable.</h2>
+        <p>Sorry, the server is currently unavailable! We'll try to keep you updated as the issue gets resolved.</p>
     </div>
 </body>
 @stop

@@ -4,15 +4,16 @@
 @stop
 @section('crumbtrail')
     <a href="/"><li><i class="fa fa-home"></i> Home</li></a>
-    <li>401: Unauthorised</li>
 @stop
 @section('body')
     <body>
     @include('_layout.nav')
-    <div id="main">
+    <div id="main" class="error-status">
         @include('_layout.header')
+        <div class="oh-no"><i class="fa fa-thumbs-o-down"></i></div>
         <h1>401</h1>
-        <p>Unauthorised.</p>
+        <h2>Unauthorised.</h2>
+        <p>Oops, it looks like you've tried to go somewhere you aren't supposed to! Nevermind, use the navigation to the left and we'll get you back on the right path.</p>
     </div>
 </body>
 @stop

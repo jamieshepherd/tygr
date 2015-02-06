@@ -1,6 +1,6 @@
 @extends('_layout.base')
 @section('body')
-<body class="photo" style="background: url(/images/login/background{{ rand(1,1) }}.svg);">
+<body class="photo" style="background: url(/images/login/background{{ rand(1,5) }}.png);">
 <div class="gradient">
     <div class="login">
         <img class="sponge-logo" src="/images/sponge-logo-red.svg">

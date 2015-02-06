@@ -41,3 +41,7 @@ function resizeNav() {
     }
 
 }
+
+function closeNotification() {
+    document.getElementById("close-notification").parentNode.style.display = "none"
+}

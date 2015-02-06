@@ -19,6 +19,14 @@
     background: $highlight;
     color: $background;
   }
+  #close-notification {
+    display: inline-block;
+    position: absolute;
+    top: 5px;
+    right: 7px;
+    color: #ffffff;
+    cursor: pointer;
+  }
 }
 
 @keyframes fadeOut {

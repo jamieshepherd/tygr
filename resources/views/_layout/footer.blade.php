@@ -7,6 +7,7 @@
 @endif
 @if($errors->any())
     <div class="notify-box error }}">
+        <i class="fa fa-times" id="close-notification" onClick="closeNotification()"></i>
         <i class="fa fa-exclamation-triangle"></i> There were errors submitting this form.
     </div>
 @endif

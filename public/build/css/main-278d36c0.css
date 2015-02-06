@@ -450,6 +450,13 @@ a.version-dropdown {
   .notify-box.error {
     background: #f24a33;
     color: #ffffff; }
+  .notify-box #close-notification {
+    display: inline-block;
+    position: absolute;
+    top: 5px;
+    right: 7px;
+    color: #ffffff;
+    cursor: pointer; }
 
 @-webkit-keyframes fadeOut {
   0% {

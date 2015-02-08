@@ -27,7 +27,7 @@
             <span class="error">{{ $errors->first('stub') }}</span> @else > @endif
 
             <label>Current version</label>
-            <input value="{{ old('current_version') }}" name="current_version" type="text" placeholder="e.g. Version 1" @if($errors->has('current_version')) class="error">
+            <input value="{{ old('current_version') }}" name="current_version" type="text" placeholder="e.g. 1.0" @if($errors->has('current_version')) class="error">
             <span class="error">{{ $errors->first('current_version') }}</span> @else > @endif
 
             <label>Project status</label>

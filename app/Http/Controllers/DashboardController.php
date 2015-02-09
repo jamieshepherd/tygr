@@ -29,7 +29,7 @@ class DashboardController extends Controller {
 			->take(5)
 			->get();
 
-		$this->colourful($projects);
+		$this->makeColourful($projects);
 
 		$data = array(
 			'project_count'        => count(Project::all()),
@@ -42,7 +42,7 @@ class DashboardController extends Controller {
 		return view('dashboard.show')->with('data',$data)->with('start_week',$start_week);
 	}
 
-	public function colourful($projects)
+	public function makeColourful($projects)
 	{
 		// Give each alternating project a different colour
 		$i = 0;

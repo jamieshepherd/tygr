@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Http\Requests\UpdateUserRequest;
 use Illuminate\Http\Request;
 use App\User;
+use App\Client;
 use Illuminate\Support\Facades\Hash;
 use Input;
 use Mail;
@@ -31,7 +32,8 @@ class UserController extends Controller {
 	 */
 	public function create()
 	{
-		return view('users.create');
+		$clients = Client::all();
+		return view('users.create')->with('clients',$clients);
 	}
 
 	/**
@@ -46,27 +48,34 @@ class UserController extends Controller {
 		$user = new User();
 		$user->name      = $request->name;
 		$user->email     = $request->email;
-		$user->client_id = $request->client;
+		$user->client_id = Input::get('client_id');
 		$user->rank      = $request->rank;
 		$user->password  = Hash::make($request->password);
 		$result = $user->save();
 
+		if($user->client_id != 1)
+			$user->attachToGroup(1,$user->id);
+
 		if(Input::has('spongeuk_project_management'))
-			$user->assignToGroup(3,$user->id);
+			$user->attachToGroup(3,$user->id);
 
 		if(Input::has('spongeuk_development'))
-			$user->assignToGroup(4,$user->id);
+			$user->attachToGroup(4,$user->id);
 
 		if(Input::has('spongeuk_visual_design'))
-			$user->assignToGroup(5,$user->id);
+			$user->attachToGroup(5,$user->id);
 
 		if(Input::has('spongeuk_instructional_design'))
-			$user->assignToGroup(6,$user->id);
+			$user->attachToGroup(6,$user->id);
 
 		if($result) {
-			Mail::send('emails.welcome', array('name' => Input::get('name'), 'email' => Input::get('email'), 'password' => Input::get('password')), function($message) {
-				$message->to(Input::get('email'), Input::get('name'))->subject('Welcome!');
-			});
+			Mail::send('emails.welcome', array(
+				'name' => $user->name,
+				'email' => $user->email,
+				'password' => $user->password), function($message) use($user) {
+					$message->to($user->email, $user->name)->subject('Welcome!');
+				}
+			);
 			\Session::flash('message', $user->name.' was created successfully.');
 			return redirect('/users');
 		}
@@ -94,8 +103,9 @@ class UserController extends Controller {
 	public function edit($id)
 	{
 		$user = User::find($id);
+		$clients = Client::all();
 
-		return view('users.edit')->with('user', $user);
+		return view('users.edit')->with('user', $user)->with('clients', $clients);
 	}
 
 	/**

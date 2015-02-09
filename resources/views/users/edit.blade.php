@@ -22,8 +22,11 @@
             <span class="error">{{ $errors->first('email') }}</span> @else > @endif
 
             <label>Client</label>
-            <input name="client" type="text" placeholder="e.g. 1" value="{{{ $user->client_id }}}" @if($errors->has('client')) class="error">
-            <span class="error">{{ $errors->first('client') }}</span> @else > @endif
+            <select name="client_id">
+                @foreach($clients as $client)
+                    <option value="{{ $client->id }}" @if($client->id == $user->client_id) selected @endif >{{ $client->name }}</option>
+                @endforeach
+            </select>
 
             <label>Rank</label>
             <input type="radio" name="rank" value="1" @if($user->rank==1) checked @endif> Admin

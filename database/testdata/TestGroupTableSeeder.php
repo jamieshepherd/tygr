@@ -4,7 +4,7 @@ use Illuminate\Database\Seeder;
 use Illuminate\Database\Eloquent\Model;
 use App\Group;
 
-class GroupTableSeeder extends Seeder {
+class TestGroupTableSeeder extends Seeder {
 
     public function run()
     {

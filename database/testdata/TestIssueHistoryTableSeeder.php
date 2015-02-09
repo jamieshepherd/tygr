@@ -4,7 +4,7 @@ use Illuminate\Database\Seeder;
 use Illuminate\Database\Eloquent\Model;
 use App\IssueHistory;
 
-class IssueHistoryTableSeeder extends Seeder {
+class TestIssueHistoryTableSeeder extends Seeder {
 
     public function run()
     {

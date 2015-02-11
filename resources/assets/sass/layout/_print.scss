@@ -1,0 +1,17 @@
+.printable {
+  padding: 1em;
+  font-size: 1em;
+  h1 {
+    font-size: 2em;
+  }
+  h3 {
+    font-size: 1em;
+  }
+  ul {
+    li {
+      list-style-type: circle;
+      margin-left: 20px;
+      line-height: 20px;
+    }
+  }
+}

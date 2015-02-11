@@ -28,6 +28,7 @@
                 @endforeach
             </ul>
         </a>
+        <a class="action" href="{{ Request::url() }}/print"><i class="fa fa-print"></i> Print</a>
         <!--a class="action" href=""><i class="fa fa-bug"></i> All issues</a-->
 
 

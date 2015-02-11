@@ -65,6 +65,8 @@ Route::group(array('middleware' => 'auth'), function() {
 	Route::group(array('middleware' => 'client'), function() {
 		Route::get('projects/{client}/{stub}', 'ProjectController@show');
 		Route::get('projects/{client}/{stub}/issues', 'IssueController@index');
+		Route::get('projects/{client}/{stub}/issues/print', 'IssueController@printout');
+		Route::get('projects/{client}/{stub}/issues/filter/{filter}/print', 'IssueController@printout');
 		Route::get('projects/{client}/{stub}/issues/filter/{filter}', 'IssueController@filter');
 		Route::get('projects/{client}/{stub}/issues/create', 'IssueController@create');
 		Route::post('projects/{client}/{stub}/issues/create', 'IssueController@store');

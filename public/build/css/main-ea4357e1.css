@@ -363,6 +363,18 @@ span.error {
   padding-bottom: 10px;
   font-size: 90%; }
 
+.printable {
+  padding: 1em;
+  font-size: 1em; }
+  .printable h1 {
+    font-size: 2em; }
+  .printable h3 {
+    font-size: 1em; }
+  .printable ul li {
+    list-style-type: circle;
+    margin-left: 20px;
+    line-height: 20px; }
+
 a.action {
   font-size: 11px;
   text-transform: uppercase;

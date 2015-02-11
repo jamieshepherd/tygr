@@ -17,7 +17,6 @@
         <div id="issues">
         <input class="filter search" placeholder="Search" autofocus/>
         <a class="action" href="/projects/{{ $project->client->stub }}/{{ $project->stub }}/issues/create"><i class="fa fa-plus-circle"></i> New issue</a>
-        <a class="action" href="/projects/{{ $project->client->stub }}/{{{ $project->stub }}}/issues/filter/me"><i class="fa fa-check-square-o"></i> Assigned to me</a>
         <a class="action version-dropdown">
             <i class="fa fa-chevron-circle-down"></i> Filter issues
             <ul>

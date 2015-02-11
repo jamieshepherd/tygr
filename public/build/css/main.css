@@ -228,34 +228,68 @@ nav {
     #main header ul.account {
       float: right; }
 
+.table-head {
+  background: #f6f6f6;
+  display: block;
+  margin-top: 20px;
+  border: 1px solid #ddd; }
+
 table.full {
   width: 100%;
-  margin-top: 20px; }
+  border: 1px solid #ddd;
+  border-radius: 5px; }
   table.full th, table.full td {
-    padding: 10px;
+    padding: 15px;
     text-align: left; }
   table.full th {
     font-weight: 700;
-    min-width: 50px; }
-  table.full td.priority {
-    border-right: 5px solid #e6e6e6; }
-    table.full td.priority.High {
-      border-color: #f24a33; }
-    table.full td.priority.Medium {
-      border-color: #FEBD19; }
-    table.full td.priority.Low {
-      border-color: #8BCEDC; }
+    min-width: 0; }
+    table.full th.select {
+      min-width: 0;
+      width: 50px;
+      padding: 0;
+      text-align: center; }
+    table.full th.priority {
+      min-width: 5px;
+      width: 5px; }
+  table.full td {
+    vertical-align: middle; }
+    table.full td.details {
+      min-width: 400px; }
+      table.full td.details .type {
+        font-weight: bold;
+        display: block;
+        margin-bottom: 10px; }
+      table.full td.details .description {
+        margin-bottom: 10px;
+        display: block; }
+      table.full td.details .details {
+        font-size: 12px;
+        display: block;
+        color: #666; }
+    table.full td.select {
+      width: 50px;
+      padding: 0;
+      text-align: center; }
+    table.full td.priority {
+      background: #e6e6e6;
+      max-width: 5px;
+      min-width: 5px;
+      width: 5px; }
+      table.full td.priority.High {
+        background: #f24a33; }
+      table.full td.priority.Medium {
+        background: #FEBD19; }
+      table.full td.priority.Low {
+        background: #8BCEDC; }
   table.full tr {
-    background: #eeeeee;
-    border-radius: 5px; }
+    background: #ffffff;
+    border-bottom: 1px solid #ddd; }
     table.full tr.head {
-      background: none; }
-      table.full tr.head:hover {
-        background: none; }
-    table.full tr:nth-of-type(2n) {
-      background: #ffffff; }
+      background: #f6f6f6;
+      border-radius: 5px; }
     table.full tr:hover {
-      background: #dddddd; }
+      background: #f6f6f6; }
     table.full tr.closed {
       background: none;
       opacity: 0.3; }

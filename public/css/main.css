@@ -365,11 +365,11 @@ span.error {
 
 .printable {
   padding: 1em;
-  font-size: 1em; }
+  font-size: 0.8em; }
   .printable h1 {
-    font-size: 2em; }
+    font-size: 1.2em; }
   .printable h3 {
-    font-size: 1em; }
+    font-size: 0.8em; }
   .printable ul li {
     list-style-type: circle;
     margin-left: 20px;

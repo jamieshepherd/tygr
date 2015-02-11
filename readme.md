@@ -1,5 +1,5 @@
 ## Tygr - Issue management system
-####Beta, Build 144
+####Beta, Build 145
 
 *This project is now in beta, version 1.0.0 release is scheduled for 23rd February 2015.*
 

@@ -6,13 +6,11 @@
         <ul>
             <li>Client: {{ $project->client->name }}</li>
             <li>Project: {{ $project->name }}</li>
-            <li>Project manager: {{ $project->project_manager }}</li>
         </ul>
         <hr/>
             @foreach($issues as $issue)
             @if(!$issue->hidden || Auth::user()->rank <= 2)
-            <h3>Type: {{ $issue->type }}</h3>
-            <h3>Reference: {{ $issue->reference }}</h3>
+            <h3>Type: {{ $issue->type }}, Reference: {{ $issue->reference }}</h3>
             <p>{{ $issue->description }}</p>
             <hr/>
             @endif

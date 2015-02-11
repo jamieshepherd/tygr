@@ -28,22 +28,39 @@ table.full {
   }
   td {
     vertical-align: middle;
-    &.details {
-      min-width: 400px;
-      .type {
+    span {
+      i {
+        margin-left: 10px;
+        &:first-of-type {
+          margin: 0;
+        }
+      }
+      &.type {
         font-weight: bold;
         display: block;
         margin-bottom: 10px;
       }
-      .description {
+      &.description, &.group {
         margin-bottom: 10px;
         display: block;
       }
-      .details {
+      &.group {
+        color: #666;
+      }
+      &.status {
+        color: #666;
+      }
+      &.details, &.user {
         font-size: 12px;
         display: block;
         color: #666;
       }
+    }
+    &.reference {
+
+    }
+    &.details {
+      min-width: 400px;
     }
     &.select {
       width: 50px;

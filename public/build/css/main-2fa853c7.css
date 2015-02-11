@@ -254,19 +254,27 @@ table.full {
       width: 5px; }
   table.full td {
     vertical-align: middle; }
+    table.full td span i {
+      margin-left: 10px; }
+      table.full td span i:first-of-type {
+        margin: 0; }
+    table.full td span.type {
+      font-weight: bold;
+      display: block;
+      margin-bottom: 10px; }
+    table.full td span.description, table.full td span.group {
+      margin-bottom: 10px;
+      display: block; }
+    table.full td span.group {
+      color: #666; }
+    table.full td span.status {
+      color: #666; }
+    table.full td span.details, table.full td span.user {
+      font-size: 12px;
+      display: block;
+      color: #666; }
     table.full td.details {
       min-width: 400px; }
-      table.full td.details .type {
-        font-weight: bold;
-        display: block;
-        margin-bottom: 10px; }
-      table.full td.details .description {
-        margin-bottom: 10px;
-        display: block; }
-      table.full td.details .details {
-        font-size: 12px;
-        display: block;
-        color: #666; }
     table.full td.select {
       width: 50px;
       padding: 0;
@@ -398,16 +406,20 @@ span.error {
   font-size: 90%; }
 
 .printable {
-  padding: 1em;
-  font-size: 0.8em; }
-  .printable h1 {
-    font-size: 1.2em; }
+  padding: 12pt;
+  font-size: 11pt; }
+  .printable h2 {
+    color: #f24a33;
+    font-size: 14pt;
+    margin: 0 0 10pt 0; }
   .printable h3 {
-    font-size: 0.8em; }
+    font-size: 11pt; }
   .printable ul li {
     list-style-type: circle;
     margin-left: 20px;
     line-height: 20px; }
+  .printable hr {
+    margin: 10px 0; }
 
 a.action {
   font-size: 11px;

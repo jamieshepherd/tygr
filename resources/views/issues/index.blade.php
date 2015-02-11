@@ -48,10 +48,14 @@
                             <td class="details">
                                 <span class="type">{{{ $issue->type }}}</span>
                                 <span class="description">{{{ substr($issue->description,0,80) }}}...</span>
-                                <span class="details"><i class="fa fa-calendar"></i> {{ date("d M Y",strtotime($issue->created_at)) }} <i class="fa fa-diamond"></i> {{ $issue->version }}</span>
+                                <span class="details"><i class="fa fa-calendar"></i> {{ date("d M Y",strtotime($issue->created_at)) }} <i class="fa fa-diamond"></i> {{ $issue->version }} <i class="fa fa-user"></i> Ben Aslett</span>
                             </td>
-                            <td class="assigned">Sponge UK</td>
-                            <td class="status">{{{ $issue->status->name }}}</td>
+                            <td class="assigned">
+                                Sponge UK
+                            </td>
+                            <td class="status">
+                                {{{ $issue->status->name }}}
+                            </td>
                         </tr>
                     @endif
                 @endforeach

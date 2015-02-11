@@ -183,7 +183,9 @@ class IssueController extends Controller {
 			$update->save();
 
 			\Session::flash('message', 'Your issue was created successfully');
-			return redirect('projects/'.$client.'/'.$stub.'/issues/show/'.$issue->id);
+			$successURL = 'projects/'.$client.'/'.$stub.'/issues/show/'.$issue->id;
+            \Session::flash('tip', $successURL);
+            return redirect('projects/'.$client.'/'.$stub.'/issues/create');
 		}
 	}
 

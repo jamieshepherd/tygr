@@ -13,7 +13,7 @@
         <form action="" method="POST" accept-charset="UTF-8">
         <input type="hidden" name="_token" value="<?php echo csrf_token(); ?>">
 
-            <label>Client name</label>
+            <label>Full name</label>
             <input name="name" type="text" placeholder="e.g. John Smith" value="{{{ $user->name }}}" autofocus @if($errors->has('name')) class="error">
             <span class="error">{{ $errors->first('name') }}</span> @else > @endif
 

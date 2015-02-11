@@ -100,6 +100,7 @@ class IssueController extends Controller {
 
 		if(isset($filter)) {
 			if($filter == 'me') {
+                $userGroups = \Auth::User()->groups->lists('id');
 				$issues = Issue::whereIn('assigned_to_id', $userGroups)
 					->where('project_id','=',$project->id)
 					->orderBy('status_id')

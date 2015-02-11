@@ -15,7 +15,7 @@
         @include('_layout.header')
         @if(Session::has('tip'))
             <div class="tip">
-                <i class="fa fa-info-circle"></i> The issue was logged. You can <a href="{{ Session::get('message') }}">view it here</a> or log another.
+                <i class="fa fa-info-circle"></i> The issue was logged. You can <a href="{{ Session::get('tip') }}">view it here</a> or log another.
             </div>
         @endif
         <h1>Log an issue</h1>
@@ -24,6 +24,10 @@
 
             @if(Auth::user()->rank != 3)
             <input name="hidden" type="checkbox"> Hidden from client?
+
+            <label>Assign issue</label>
+            <input type="radio" name="assigned" value="2" checked> Sponge
+            <input type="radio" name="assigned" value="1"> Client
             @endif
 
             <label>What type of issue is this?</label>

@@ -160,9 +160,14 @@ class IssueController extends Controller {
 		$issue->author_id   = \Auth::user()->id;
 		$issue->project_id  = $project->id;
 		$issue->type        = $request->type;
-		$issue->status_id      = 1;
 		$issue->priority    = 'Medium';
-		$issue->assigned_to_id = 2;
+		if(Input::get('assigned') == '1') {
+			$issue->status_id      = 3;
+			$issue->assigned_to_id = 1;
+		} else {
+			$issue->status_id      = 1;
+			$issue->assigned_to_id = 2;
+		}
 		$issue->version		   = $project->current_version;
 		$issue->reference   = $request->reference;
 		$issue->description = $request->description;

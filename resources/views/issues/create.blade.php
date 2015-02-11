@@ -13,12 +13,12 @@
     @include('_layout.nav')
     <div id="main">
         @include('_layout.header')
-        <h1>Log an issue</h1>
         @if(Session::has('tip'))
-        <div class="tip">
-            The issue was logged. You can <a href="{{ Session::get('message') }}">view it here</a> or log another.
-        </div>
+            <div class="tip">
+                <i class="fa fa-info-circle"></i> The issue was logged. You can <a href="{{ Session::get('message') }}">view it here</a> or log another.
+            </div>
         @endif
+        <h1>Log an issue</h1>
         <form action="{{{ Request::url() }}}" method="POST" accept-charset="UTF-8" enctype="multipart/form-data">
         <input type="hidden" name="_token" value="<?php echo csrf_token(); ?>">
 

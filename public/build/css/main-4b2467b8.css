@@ -510,6 +510,14 @@ a.version-dropdown {
   100% {
     opacity: 0; } }
 
+.tip {
+  border: 1px solid #ccc;
+  border-left-width: 3px;
+  background: #f9f7ee;
+  margin-bottom: 20px;
+  padding: 15px;
+  display: inline-block; }
+
 .photo {
   height: 100%;
   padding: 0; }

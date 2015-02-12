@@ -1,6 +1,7 @@
 @extends('_layout.base')
 @section('headlinks')
-<script src="/js/list.min.js"></script>
+    <script src="/js/list.min.js"></script>
+    <script src="/js/sortable.min.js"></script>
 @stop
 @section('crumbtrail')
 <a href="/"><li><i class="fa fa-home"></i> Home</li></a>
@@ -16,12 +17,14 @@
         <input class="filter search" placeholder="Search" autofocus/>
         <a class="action" href="/users/create"><i class="fa fa-plus-circle"></i> New user</a>
 
-        <table class="full">
-            <tr class="head">
-                <th>Name</th>
-                <th>Email</th>
-                <th>Client</th>
-            </tr>
+        <table class="full" data-sortable>
+            <thead>
+                <tr class="head">
+                    <th>Name <i class="fa fa-sort"></i></th>
+                    <th>Email <i class="fa fa-sort"></i></th>
+                    <th>Client <i class="fa fa-sort"></i></th>
+                </tr>
+            </thead>
             <tbody class="list">
             @foreach($users as $user)
             <tr onclick="document.location='/users/show/{{{ $user->id }}}';" style="cursor:pointer">

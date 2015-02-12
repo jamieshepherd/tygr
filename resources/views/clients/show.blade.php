@@ -1,6 +1,6 @@
 @extends('_layout.base')
 @section('headlinks')
-<!--script src="http://listjs.com/no-cdn/list.js"></script-->
+    <script src="/js/sortable.min.js"></script>
 @stop
 @section('crumbtrail')
 <a href="/"><li><i class="fa fa-home"></i> Home</li></a>
@@ -20,15 +20,17 @@
         @if(Auth::user()->rank == 1)
         <a class="action" href="/clients/delete/{{ $client->id }}"><i class="fa fa-exclamation-circle"></i> Delete client</a>
         @endif
-        <table class="full">
-            <tr class="head">
-                <th>Client</th>
-                <th>Project</th>
-                <th>Stub</th>
-                <th>Issues</th>
-                <th>Version</th>
-                <th>Project Manager</th>
-            </tr>
+        <table class="full" data-sortable>
+            <thead>
+                <tr class="head">
+                    <th>Client <i class="fa fa-sort"></i></th>
+                    <th>Project <i class="fa fa-sort"></i></th>
+                    <th>Stub <i class="fa fa-sort"></i></th>
+                    <th>Issues <i class="fa fa-sort"></i></th>
+                    <th>Version <i class="fa fa-sort"></i></th>
+                    <th>Project Manager <i class="fa fa-sort"></i></th>
+                </tr>
+            </thead>
             <tbody class="list">
             @foreach($client->projects as $project)
             <tr onclick="document.location='/projects/{{ $project->client->stub }}/{{{ $project->stub }}}';" style="cursor:pointer">

@@ -1,6 +1,7 @@
 @extends('_layout.base')
 @section('headlinks')
-<script src="/js/list.min.js"></script>
+    <script src="/js/list.min.js"></script>
+    <script src="/js/sortable.min.js"></script>
 @stop
 @section('crumbtrail')
 <a href="/"><li><i class="fa fa-home"></i> Home</li></a>
@@ -16,14 +17,16 @@
         <input class="filter search" placeholder="Search" autofocus/>
         <a class="action" href="/clients/create"><i class="fa fa-plus-circle"></i> New client</a>
 
-        <table class="full">
-            <tr class="head">
-                <th>Name</th>
-                <th>Stub</th>
-                <th>Type</th>
-                <th>Projects</th>
-                <th>Reviewarea</th>
-            </tr>
+        <table class="full" data-sortable>
+            <thead>
+                <tr class="head">
+                    <th>Name <i class="fa fa-sort"></i></th>
+                    <th>Stub <i class="fa fa-sort"></i></th>
+                    <th>Type <i class="fa fa-sort"></i></th>
+                    <th>Projects <i class="fa fa-sort"></i></th>
+                    <th>Reviewarea <i class="fa fa-sort"></i></th>
+                </tr>
+            </thead>
             <tbody class="list">
             @foreach($clients as $client)
             <tr onclick="document.location='/clients/show/{{{ $client->stub }}}';" style="cursor:pointer">

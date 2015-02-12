@@ -16,6 +16,10 @@ table.full {
     font-weight: 700;
     min-width: 0;
     cursor: pointer;
+    -webkit-user-select: none; /* webkit (safari, chrome) browsers */
+    -moz-user-select: none; /* mozilla browsers */
+    -khtml-user-select: none; /* webkit (konqueror) browsers */
+    -ms-user-select: none; /* IE10+ */
     &.select {
       min-width: 0;
       width: 50px;

@@ -244,7 +244,15 @@ table.full {
   table.full th {
     font-weight: 700;
     min-width: 0;
-    cursor: pointer; }
+    cursor: pointer;
+    -webkit-user-select: none;
+    /* webkit (safari, chrome) browsers */
+    -moz-user-select: none;
+    /* mozilla browsers */
+    -khtml-user-select: none;
+    /* webkit (konqueror) browsers */
+    -ms-user-select: none;
+    /* IE10+ */ }
     table.full th.select {
       min-width: 0;
       width: 50px;

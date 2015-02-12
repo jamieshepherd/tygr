@@ -69,13 +69,14 @@ class UserController extends Controller {
 			$user->attachToGroup(6,$user->id);
 
 		if($result) {
+			/* handle this with an event
 			Mail::send('emails.welcome', array(
 				'name' => $user->name,
 				'email' => $user->email,
 				'password' => $user->password), function($message) use($user) {
 					$message->to($user->email, $user->name)->subject('Welcome!');
 				}
-			);
+			); */
 			\Session::flash('message', $user->name.' was created successfully.');
 			return redirect('/users');
 		}

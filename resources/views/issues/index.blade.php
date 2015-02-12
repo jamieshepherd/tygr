@@ -54,7 +54,7 @@
                                 <span class="details"><i class="fa fa-calendar"></i> {{ date("d M Y",strtotime($issue->created_at)) }} <i class="fa fa-diamond"></i> {{ $issue->version }} @if(Auth::user()->rank < 3) <i class="fa fa-user"></i> Ben Aslett  @if($issue->hidden) <i class="fa fa-eye-slash"></i> Hidden from client @endif @endif</span>
                             </td>
                             <td class="assigned">
-                                Sponge UK
+                                @if($issue->assigned() == 'Client') {{{ $issue->project->client->name }}} @else {{{ $issue->assigned() }}} @endif
                             </td>
                             <td class="status">
                                 {{{ $issue->status->name }}}

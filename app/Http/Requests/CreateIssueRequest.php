@@ -22,7 +22,7 @@ class CreateIssueRequest extends Request {
 	public function rules()
 	{
 		return [
-			'type'        => 'required',
+			'summary'     => 'required',
 			'reference'   => 'required',
 			'description' => 'required|min:5',
 			'attachment'  => 'max:20480',

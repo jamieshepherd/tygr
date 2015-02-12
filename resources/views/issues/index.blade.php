@@ -49,7 +49,7 @@
                             <td class="select"><input type="checkbox"></td>
                             <td class="reference">{{{ $issue->reference }}}</td>
                             <td class="details">
-                                <span class="type"><a href="/projects/{{ $project->client->stub }}/{{{ $project->stub }}}/issues/show/{{{ $issue->id }}}">{{ $issue->type }}</a></span>
+                                <span class="summary"><a href="/projects/{{ $project->client->stub }}/{{{ $project->stub }}}/issues/show/{{{ $issue->id }}}">{{ $issue->summary }}</a></span>
                                 <span class="description">{{{ substr($issue->description,0,80) }}}...</span>
                                 <span class="details"><i class="fa fa-calendar"></i> {{ date("d M Y",strtotime($issue->created_at)) }} <i class="fa fa-diamond"></i> {{ $issue->version }} @if(Auth::user()->rank < 3) <i class="fa fa-user"></i> Ben Aslett  @if($issue->hidden) <i class="fa fa-eye-slash"></i> Hidden from client @endif @endif</span>
                             </td>

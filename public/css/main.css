@@ -265,7 +265,7 @@ table.full {
         margin: 0; }
     table.full td span a {
       border: none; }
-    table.full td span.type {
+    table.full td span.summary {
       font-weight: bold;
       display: block;
       margin-bottom: 10px; }

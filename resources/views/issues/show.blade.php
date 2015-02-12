@@ -27,7 +27,6 @@
                 <li><strong>Created by:</strong> {{{ $issue->author->name }}}</li>
                 <li><strong>Assigned to:</strong> @if($issue->assigned() == 'Client') {{{ $issue->project->client->name }}} @else {{{ $issue->assigned() }}} @endif</li>
                 <li><strong>Reference:</strong> {{{ $issue->reference }}}</li>
-                <li><strong>Issue type:</strong> {{{ $issue->type }}}</li>
                 <li><strong>Status:</strong> {{{ $issue->status->name }}}</li>
                 @if(Auth::user()->rank != 3)
                     <li><strong>Priority:</strong> {{{ $issue->priority }}}</li>
@@ -37,7 +36,7 @@
             </ul>
         </section>
         <section>
-            <h2>Description</h2>
+            <h2>{{ $issue->summary }}</h2>
             <p>{{{ $issue->description }}}</p>
         </section>
         @if(count($issue->attachments) > 0)

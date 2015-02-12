@@ -159,7 +159,7 @@ class IssueController extends Controller {
 		$issue->hidden 	    = Input::has('hidden');
 		$issue->author_id   = \Auth::user()->id;
 		$issue->project_id  = $project->id;
-		$issue->type        = $request->type;
+		$issue->summary     = $request->summary;
 		$issue->priority    = 'Medium';
 		if(Input::get('assigned') == '1') {
 			$issue->status_id      = 3;
@@ -236,7 +236,7 @@ class IssueController extends Controller {
 	{
 		$issue              = Issue::find($id);
 		$issue->hidden 	    = Input::has('hidden');
-		$issue->type        = $request->type;
+		$issue->summary     = $request->summary;
 		$issue->priority    = 'Medium';
 		$issue->reference   = $request->reference;
 		$issue->description = $request->description;

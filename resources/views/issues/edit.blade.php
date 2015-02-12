@@ -21,9 +21,9 @@
             <input name="hidden" type="checkbox" @if($issue->hidden) checked @endif> Hidden from client?
             @endif
 
-            <label>What type of issue is this?</label>
-            <input name="type" type="text" placeholder="e.g. Bug, text amend, design" autofocus value="{{{ $issue->type }}}" @if($errors->has('type')) class="error">
-            <span class="error">{{ $errors->first('type') }}</span> @else > @endif
+            <label>Provide a brief summary of the issue</label>
+            <input name="summary" type="text" placeholder="e.g. Bug, text amend, design" autofocus value="{{{ $issue->summary }}}" @if($errors->has('summary')) class="error">
+            <span class="error">{{ $errors->first('summary') }}</span> @else > @endif
 
             <label>Where did this happen?</label>
             <input name="reference" type="text" placeholder="e.g. Page 7 or b-09" value="{{{ $issue->reference }}}" @if($errors->has('reference')) class="error">

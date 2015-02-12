@@ -15,7 +15,7 @@
         @include('_layout.header')
         @if(Session::has('tip'))
             <div class="tip">
-                <i class="fa fa-info-circle"></i> The issue was logged. You can <a href="{{ Session::get('tip') }}">view it here</a> or log another.
+                <i class="fa fa-info-circle"></i> The issue was logged. You can <a href="/{{ Session::get('tip') }}">view it here</a> or log another.
             </div>
         @endif
         <h1>Log an issue</h1>
@@ -30,9 +30,9 @@
             <input type="radio" name="assigned" value="1"> Client
             @endif
 
-            <label>What type of issue is this?</label>
-            <input value="{{ old('type') }}" name="type" type="text" placeholder="e.g. Bug, text amend, design" autofocus @if($errors->has('type')) class="error" >
-            <span class="error">{{ $errors->first('type') }}</span> @else > @endif
+            <label>Provide a brief summary of the issue</label>
+            <input value="{{ old('summary') }}" name="summary" type="text" placeholder="e.g. Bug, text amend, design" autofocus @if($errors->has('summary')) class="error" >
+            <span class="error">{{ $errors->first('summary') }}</span> @else > @endif
 
             <label>Where did this happen?</label>
             <input value="{{ old('reference') }}" name="reference" type="text" placeholder="e.g. Page 7 or b-09" @if($errors->has('reference')) class="error">

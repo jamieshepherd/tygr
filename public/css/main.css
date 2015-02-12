@@ -258,6 +258,8 @@ table.full {
       margin-left: 10px; }
       table.full td span i:first-of-type {
         margin: 0; }
+    table.full td span a {
+      border: none; }
     table.full td span.type {
       font-weight: bold;
       display: block;

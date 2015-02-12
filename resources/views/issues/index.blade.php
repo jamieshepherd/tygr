@@ -33,7 +33,7 @@
 
             <table class="full">
                 <tr class="head">
-                    <th class="select"><input type="checkbox"></th>
+                    <th class="select"><input type="checkbox" onchange="selectAll(this)"></th>
                     <th>Reference</th>
                     <th>Details</th>
                     <th>Assigned</th>
@@ -46,7 +46,7 @@
                             <td class="select"><input type="checkbox"></td>
                             <td class="reference">{{{ $issue->reference }}}</td>
                             <td class="details">
-                                <span class="type">{{{ $issue->type }}}</span>
+                                <span class="type"><a href="/projects/{{ $project->client->stub }}/{{{ $project->stub }}}/issues/show/{{{ $issue->id }}}">{{ $issue->type }}</a></span>
                                 <span class="description">{{{ substr($issue->description,0,80) }}}...</span>
                                 <span class="details"><i class="fa fa-calendar"></i> {{ date("d M Y",strtotime($issue->created_at)) }} <i class="fa fa-diamond"></i> {{ $issue->version }} <i class="fa fa-user"></i> Ben Aslett</span>
                             </td>

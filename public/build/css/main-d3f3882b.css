@@ -480,7 +480,8 @@ a.version-dropdown {
     position: absolute;
     top: 25px;
     left: 0;
-    display: none; }
+    display: none;
+    z-index: 1; }
     a.version-dropdown ul a {
       display: inline; }
   a.version-dropdown:hover ul {

@@ -15,6 +15,7 @@
             <a href="/projects"><li><i class="fa fa-rocket"></i><span class="resizable">Projects</span></li></a>
             @endif
             <a href="/account"><li><i class="fa fa-lock"></i><span class="resizable">Account</span></li></a>
+            <a href="/help"><li><i class="fa fa-question-circle"></i><span class="resizable">Help</span></li></a>
             <a href="/auth/logout"><li><i class="fa fa-sign-out"></i><span class="resizable">Sign out</span></li></a>
         @endif
     </ul>

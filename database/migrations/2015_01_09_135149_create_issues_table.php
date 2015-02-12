@@ -31,7 +31,7 @@ class CreateIssuesTable extends Migration {
             // Page reference
 			$table->string('reference');
             // Issue type
-			$table->string('type');
+			$table->string('summary');
             // Description
 			$table->text('description');
             // Status

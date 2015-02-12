@@ -32,6 +32,7 @@ Route::group(array('middleware' => 'auth'), function() {
 	Route::get('account', 'AccountController@index');
 	Route::get('account/edit', 'AccountController@edit');
 	Route::post('account/edit', 'AccountController@update');
+	Route::get('/help', 'HelpController@index');
 
 	//>> Make sure user has at least SUPERADMINISTRATOR privileges
 	Route::group(array('middleware' => 'superadmin'), function() {

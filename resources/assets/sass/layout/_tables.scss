@@ -15,15 +15,21 @@ table.full {
   th {
     font-weight: 700;
     min-width: 0;
+    cursor: pointer;
     &.select {
       min-width: 0;
       width: 50px;
       padding: 0;
       text-align: center;
+      cursor: default;
     }
     &.priority {
       min-width: 5px;
       width: 5px;
+    }
+    .fa-sort {
+      margin-left: 3px;
+      color: #ccc;
     }
   }
   td {

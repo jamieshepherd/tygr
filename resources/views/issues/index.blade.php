@@ -1,6 +1,7 @@
 @extends('_layout.base')
 @section('headlinks')
     <script src="/js/list.min.js"></script>
+    <script src="/js/sortable.min.js"></script>
 @stop
 @section('crumbtrail')
     <a href="/"><li><i class="fa fa-home"></i> Home</li></a>
@@ -31,14 +32,16 @@
             <!--a class="action" href=""><i class="fa fa-bug"></i> All issues</a-->
 
 
-            <table class="full">
-                <tr class="head">
-                    <th class="select"><input type="checkbox" onchange="selectAll(this)"></th>
-                    <th>Reference</th>
-                    <th>Details</th>
-                    <th>Assigned</th>
-                    <th>Status</th>
-                </tr>
+            <table class="full" data-sortable>
+                <thead>
+                    <tr class="head">
+                        <th class="select" data-sortable="false" data-sorted="false"><input type="checkbox" onchange="selectAll(this)"></th>
+                        <th>Reference <i class="fa fa-sort"></i></th>
+                        <th>Details <i class="fa fa-sort"></i></th>
+                        <th>Assigned <i class="fa fa-sort"></i></th>
+                        <th>Status <i class="fa fa-sort"></i></th>
+                    </tr>
+                </thead>
                 <tbody class="list">
                 @foreach($issues as $issue)
                     @if(!$issue->hidden || Auth::user()->rank <= 2)

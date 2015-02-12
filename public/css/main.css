@@ -243,15 +243,20 @@ table.full {
     text-align: left; }
   table.full th {
     font-weight: 700;
-    min-width: 0; }
+    min-width: 0;
+    cursor: pointer; }
     table.full th.select {
       min-width: 0;
       width: 50px;
       padding: 0;
-      text-align: center; }
+      text-align: center;
+      cursor: default; }
     table.full th.priority {
       min-width: 5px;
       width: 5px; }
+    table.full th .fa-sort {
+      margin-left: 3px;
+      color: #ccc; }
   table.full td {
     vertical-align: middle; }
     table.full td span i {

@@ -46,7 +46,7 @@
                 @foreach($issues as $issue)
                     @if(!$issue->hidden || Auth::user()->rank <= 2)
                         <tr>
-                            <td class="select"><input type="checkbox"></td>
+                            <td class="select"><input class="issue-checkbox" type="checkbox" onchange="checkSelected()"></td>
                             <td class="reference">{{{ $issue->reference }}}</td>
                             <td class="details">
                                 <span class="summary"><a href="/projects/{{ $project->client->stub }}/{{{ $project->stub }}}/issues/show/{{{ $issue->id }}}">{{ $issue->summary }}</a></span>
@@ -65,6 +65,7 @@
                 </tbody>
             </table>
         </div>
+        @include('_components.tableactions')
         <script>
             var options = { valueNames: ['reference', 'type', 'description', 'date', 'priority'] };
             var userList = new List('issues', options);

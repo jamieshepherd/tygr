@@ -47,19 +47,34 @@ function closeNotification() {
 }
 
 function selectAll(ele) {
-    var checkboxes = document.getElementsByTagName('input');
+    var checkboxes = document.getElementsByClassName('issue-checkbox');
     if (ele.checked) {
         for (var i = 0; i < checkboxes.length; i++) {
-            if (checkboxes[i].type == 'checkbox') {
-                checkboxes[i].checked = true;
-            }
+            checkboxes[i].checked = true;
         }
     } else {
         for (var i = 0; i < checkboxes.length; i++) {
-            console.log(i)
-            if (checkboxes[i].type == 'checkbox') {
-                checkboxes[i].checked = false;
-            }
+            checkboxes[i].checked = false;
         }
     }
+    checkSelected();
+}
+
+function checkSelected() {
+    var checkboxes = document.getElementsByClassName('issue-checkbox');
+    var checkCount = 0;
+    for (var i = 0; i < checkboxes.length; i++) {
+        if(checkboxes[i].checked) {
+            checkCount++;
+        }
+    }
+    if(checkCount > 0) {
+        document.getElementById('table-actions').style.display = 'block';
+    } else {
+        document.getElementById('table-actions').style.display = 'none';
+    }
+
+    // Finally print the amount selected
+    var print = document.getElementById('selectedAmount');
+    print.innerHTML = checkCount.toString();
 }

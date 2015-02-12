@@ -1,11 +1,13 @@
 .printable {
-  padding: 1em;
-  font-size: 0.8em;
-  h1 {
-    font-size: 1.2em;
+  padding: 12pt;
+  font-size: 11pt;
+  h2 {
+    color: $highlight;
+    font-size: 14pt;
+    margin: 0 0 10pt 0;
   }
   h3 {
-    font-size: 0.8em;
+    font-size: 11pt;
   }
   ul {
     li {
@@ -13,5 +15,8 @@
       margin-left: 20px;
       line-height: 20px;
     }
+  }
+  hr {
+    margin: 10px 0;
   }
 }

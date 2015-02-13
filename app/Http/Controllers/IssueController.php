@@ -319,7 +319,7 @@ class IssueController extends Controller {
 	}
 
 	/**
-	 * Show confirmation for deletion of a resource.
+	 * Remove the specified resource from storage.
 	 *
 	 * @param  string  $client
 	 * @param  string  $stub
@@ -328,27 +328,18 @@ class IssueController extends Controller {
 	 */
 	public function delete($client, $stub, $idlist)
 	{
-		return view ('issues.delete')->with('idlist', $idlist);
-	}
+		if(isset($_GET['confirm']) && $_GET['confirm'] == true) {
+			// Check if we have multiple IDs to destroy
+			$idArray = explode(',', $idlist);
+			foreach($idArray as $id) {
+				Issue::destroy($id);
+			}
 
-	/**
-	 * Remove the specified resource from storage.
-	 *
-	 * @param  string  $client
-	 * @param  string  $stub
-	 * @param  string  $idlist
-	 * @return Response
-	 */
-	public function destroy($client, $stub, $idlist)
-	{
-		// Check if we have multiple IDs to destroy
-		$idArray = explode(',', $idlist);
-		foreach($idArray as $id) {
-			Issue::destroy($id);
+			\Session::flash('message', 'The issue was removed successfully.');
+			return redirect('projects/'.$client.'/'.$stub.'/issues');
 		}
 
-		\Session::flash('message', 'The issue was removed successfully.');
-		return redirect('projects/'.$client.'/'.$stub.'/issues');
+		return view ('issues.delete')->with('idlist', $idlist);
 	}
 
 	/**

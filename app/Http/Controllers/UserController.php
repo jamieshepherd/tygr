@@ -167,30 +167,24 @@ class UserController extends Controller {
 	}
 
 	/**
-	 * Show confirmation for deletion of a resource.
+	 * Remove the specified resource from storage.
 	 *
 	 * @param  int  $id
 	 * @return Response
 	 */
 	public function delete($id)
 	{
-		$user = User::where('id', '=', $id)->firstOrFail();
+		$user = User::where('id', '=', $id)->first();
+		if(!$user) abort(404);
+
+		if(isset($_GET['confirm']) && $_GET['confirm'] == true) {
+			User::destroy($id);
+
+			\Session::flash('message', 'This user was removed successfully.');
+			return redirect('/users');
+		}
 
 		return view ('users.delete')->with('user', $user);
-	}
-
-	/**
-	 * Remove the specified resource from storage.
-	 *
-	 * @param  int  $id
-	 * @return Response
-	 */
-	public function destroy($id)
-	{
-		User::destroy($id);
-
-		\Session::flash('message', 'This user was removed successfully.');
-		return redirect('/users');
 	}
 
 }

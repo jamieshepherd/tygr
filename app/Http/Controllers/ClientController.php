@@ -109,7 +109,7 @@ class ClientController extends Controller {
 	}
 
 	/**
-	 * Show confirmation for deletion of a resource.
+	 * Remove the specified resource from storage.
 	 *
 	 * @param  int  $id
 	 * @return Response
@@ -118,21 +118,15 @@ class ClientController extends Controller {
 	{
 		$client = Client::where('id', '=', $id)->firstOrFail();
 
+		// If confirmation exists, go ahead and destroy
+		if(isset($_GET['confirm']) && $_GET['confirm'] == true) {
+			Client::destroy($id);
+
+			\Session::flash('message', 'This client was removed successfully.');
+			return redirect('/clients');
+		}
+
 		return view ('clients.delete')->with('client', $client);
-	}
-
-	/**
-	 * Remove the specified resource from storage.
-	 *
-	 * @param  int  $id
-	 * @return Response
-	 */
-	public function destroy($id)
-	{
-		Client::destroy($id);
-
-		\Session::flash('message', 'This client was removed successfully.');
-		return redirect('/clients');
 	}
 
 }

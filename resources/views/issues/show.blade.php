@@ -31,7 +31,9 @@
                 <li><strong>Status:</strong> {{{ $issue->status->name }}}</li>
                 @if(Auth::user()->rank != 3)
                     <li><strong>Priority:</strong> {{{ $issue->priority }}}</li>
-                    <li><strong>Claimed by:</strong> {{{ $issue->claimed_by->name }}}</li>
+                    @if($issue->claimed_by != null)
+                        <li><strong>Claimed by:</strong> {{{ $issue->claimed_by->name }}}</li>
+                    @endif
                 @endif
                 <li><strong>Version:</strong> {{ $issue->version }}</li>
                 <li><strong>Last updated:</strong> {{ date("d M Y",strtotime($issue->updated_at)) }}</li>

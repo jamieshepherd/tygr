@@ -21,10 +21,10 @@
             <a class="action version-dropdown">
                 <i class="fa fa-chevron-circle-down"></i> Filter issues
                 <ul>
-                    <li onclick="document.location='/projects/{{ $project->client->stub }}/{{{ $project->stub }}}/issues/filter/all';"><i class="fa fa-angle-right"></i> All issues</li>
-                    <li onclick="document.location='/projects/{{ $project->client->stub }}/{{{ $project->stub }}}/issues/filter/me';"><i class="fa fa-angle-right"></i> Assigned to me</li>
+                    <li onclick="document.location='/projects/{{ $project->client->stub }}/{{{ $project->stub }}}/issues?filter=all';"><i class="fa fa-angle-right"></i> All issues</li>
+                    <li onclick="document.location='/projects/{{ $project->client->stub }}/{{{ $project->stub }}}/issues?filter=me';"><i class="fa fa-angle-right"></i> Assigned to me</li>
                     @foreach($versions as $version)
-                        <li onclick="document.location='/projects/{{ $project->client->stub }}/{{{ $project->stub }}}/issues/filter/{{ $version->version }}';"><i class="fa fa-angle-right"></i> {{ $version->version }}</li>
+                        <li onclick="document.location='/projects/{{ $project->client->stub }}/{{{ $project->stub }}}/issues?filter={{ $version->version }}';"><i class="fa fa-angle-right"></i> {{ $version->version }}</li>
                     @endforeach
                 </ul>
             </a>

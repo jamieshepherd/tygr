@@ -86,13 +86,14 @@ function checkSelected() {
 
     // Finally print the amount selected
     var print = document.getElementById('selectedAmount');
+    var indexURL = document.URL.split('?')[0];
 
-    document.getElementById('claim').href = document.URL + "/claim/" + selectedString;
+    document.getElementById('claim').href = indexURL + "/claim/" + selectedString;
     if(document.getElementById('resolve')) {
-        document.getElementById('resolve').href = document.URL + "/resolve/" + selectedString;
+        document.getElementById('resolve').href = indexURL + "/resolve/" + selectedString;
     }
     if(document.getElementById('delete')) {
-        document.getElementById('delete').href = document.URL + "/delete/" + selectedString;
+        document.getElementById('delete').href = indexURL + "/delete/" + selectedString;
     }
     print.innerHTML = checkCount.toString();
 }

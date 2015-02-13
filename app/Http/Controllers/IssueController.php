@@ -23,64 +23,51 @@ class IssueController extends Controller {
 	 */
 	public function index($client, $stub)
 	{
+		// Retrieve the client
 		$client = Client::where('stub', '=', $client)->first();
 		if(!$client) abort(404);
 
+		// Retrieve the project
 		$project = Project::where('client_id', '=', $client->id)->where('stub', '=', $stub)->first();
 		if(!$project) abort(404);
 
-		$issues = Issue::where('project_id','=',$project->id)
-			->where('version', '=', $project->current_version)
-			->orderBy('status_id')
-			->get();
-
+		// Get all of the versions for this project
 		$versions = Issue::where('project_id', '=', $project->id)->distinct()->select('version')->get();
+
+		// Check if the results should be filtered
+		if(!isset($_GET['filter'])) {
+			$issues = Issue::where('project_id','=',$project->id)
+				->where('version', '=', $project->current_version)
+				->orderBy('status_id')
+				->get();
+		} else {
+			$filter = $_GET['filter'];
+
+			if($filter == 'me') {
+				$userGroups = \Auth::User()->groups->lists('id');
+				$issues = Issue::whereIn('assigned_to_id', $userGroups)
+					->where('project_id','=',$project->id)
+					->orderBy('status_id')
+					->get();
+				$filter = 'Assigned to me';
+			} elseif($filter == 'all') {
+				$issues = $project->issues;
+				$filter = 'All issues';
+			}
+			else {
+				$issues = Issue::where('project_id','=',$project->id)
+					->where('version', '=', $filter)
+					->orderBy('status_id')
+					->get();
+			}
+			return view('issues.index')
+				->with('project', $project)
+				->with('issues', $issues)
+				->with('filter', $filter)
+				->with('versions', $versions);
+		}
 
 		return view('issues.index')->with('project', $project)->with('issues', $issues)->with('versions', $versions);
-	}
-
-	/**
-	 * Display a listing of the resource, filtered.
-	 *
-	 * @param  string  $client;
-	 * @param  string  $stub;
-	 * @param  string  $filter;
-	 * @return Response
-	 */
-	public function filter($client, $stub, $filter)
-	{
-		$userGroups = \Auth::User()->groups->lists('id');
-
-		$client = Client::where('stub', '=', $client)->first();
-		if(!$client) abort(404);
-
-		$project = Project::where('client_id', '=', $client->id)->where('stub', '=', $stub)->first();
-		if(!$project) abort(404);
-
-		if($filter == 'me') {
-			$issues = Issue::whereIn('assigned_to_id', $userGroups)
-				->where('project_id','=',$project->id)
-				->orderBy('status_id')
-				->get();
-			$filter = 'Assigned to me';
-		} elseif($filter == 'all') {
-			$issues = $project->issues;
-			$filter = 'All issues';
-		}
-		else {
-			$issues = Issue::where('project_id','=',$project->id)
-				->where('version', '=', $filter)
-				->orderBy('status_id')
-				->get();
-		}
-
-		$versions = Issue::where('project_id', '=', $project->id)->distinct()->select('version')->get();
-
-		return view('issues.index')
-			->with('project', $project)
-			->with('issues', $issues)
-			->with('filter', $filter)
-			->with('versions', $versions);
 	}
 
 	/**

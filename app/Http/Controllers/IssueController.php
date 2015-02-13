@@ -9,6 +9,7 @@ use App\Http\Requests\UpdateIssueRequest;
 use App\Project;
 use App\Issue;
 use App\IssueHistory;
+use Auth;
 use Input;
 
 class IssueController extends Controller {
@@ -331,19 +332,36 @@ class IssueController extends Controller {
 	}
 
 	/**
+	 * Show confirmation for deletion of a resource.
+	 *
+	 * @param  string  $client
+	 * @param  string  $stub
+	 * @param  string  $idlist
+	 * @return Response
+	 */
+	public function delete($client, $stub, $idlist)
+	{
+		return view ('issues.delete')->with('idlist', $idlist);
+	}
+
+	/**
 	 * Remove the specified resource from storage.
 	 *
 	 * @param  string  $client
 	 * @param  string  $stub
-	 * @param  int  $id
+	 * @param  string  $idlist
 	 * @return Response
 	 */
-	public function destroy($client, $stub, $id)
+	public function destroy($client, $stub, $idlist)
 	{
-		Issue::destroy($id);
+		// Check if we have multiple IDs to destroy
+		$idArray = explode(',', $idlist);
+		foreach($idArray as $id) {
+			Issue::destroy($id);
+		}
 
 		\Session::flash('message', 'The issue was removed successfully.');
-		return redirect('projects/');
+		return redirect('projects/'.$client.'/'.$stub.'/issues');
 	}
 
 	/**
@@ -429,6 +447,26 @@ class IssueController extends Controller {
 			\Session::flash('message', 'The issue was updated.');
 			return redirect('projects/'.$client.'/'.$stub.'/issues/show/'.$issue->id);
 		}
+	}
+
+	/**
+	 * Claim an issue or multiple issues
+	 *
+	 * @param  string  $client
+	 * @param  string  $stub
+	 * @param  string  $idlist
+	 * @return Response
+	 */
+	public function claim($client, $stub, $idlist)
+	{
+		// Check if we have multiple IDs to claim
+		$idArray = explode(',', $idlist);
+		foreach($idArray as $id) {
+			$issue 				  = Issue::find($id);
+			$issue->claimed_by_id = Auth::user()->id;
+			$issue->save();
+		}
+		return redirect()->back();
 	}
 
 }

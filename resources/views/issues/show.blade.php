@@ -13,6 +13,7 @@
         @include('_layout.header')
         <h1>Issue details</h1>
         <a class="action" href="/projects/{{ $project->client->stub }}/{{{ $issue->project->stub }}}/issues/edit/{{ $issue->id }}"><i class="fa fa-plus-circle"></i> Edit issue</a>
+        <a class="action" href="/projects/{{ $project->client->stub }}/{{{ $issue->project->stub }}}/issues/claim/{{ $issue->id }}"><i class="fa fa-plus-circle"></i> Claim issue</a>
         @if($issue->status->name == 'Resolved')
             <a class="action" href="{{ Request::url() }}/reopen"><i class="fa fa-exclamation-circle"></i> Reopen issue</a>
             <a class="action" href="{{ Request::url() }}/close"><i class="fa fa-check-circle"></i> Close issue</a>
@@ -30,6 +31,7 @@
                 <li><strong>Status:</strong> {{{ $issue->status->name }}}</li>
                 @if(Auth::user()->rank != 3)
                     <li><strong>Priority:</strong> {{{ $issue->priority }}}</li>
+                    <li><strong>Claimed by:</strong> {{{ $issue->claimed_by->name }}}</li>
                 @endif
                 <li><strong>Version:</strong> {{ $issue->version }}</li>
                 <li><strong>Last updated:</strong> {{ date("d M Y",strtotime($issue->updated_at)) }}</li>

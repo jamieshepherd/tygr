@@ -40,6 +40,11 @@ class Issue extends Model {
 		return $this->belongsTo('App\Group', 'assigned_to_id');
 	}
 
+	public function claimed_by()
+	{
+		return $this->belongsTo('App\User', 'claimed_by_id');
+	}
+
 	public function assigned_to_me()
 	{
 		return $this->belongsTo('App\Group', 'assigned_to_id')

@@ -63,18 +63,36 @@ function selectAll(ele) {
 function checkSelected() {
     var checkboxes = document.getElementsByClassName('issue-checkbox');
     var checkCount = 0;
+    var selectedString = "";
+
+    // Iterate through all of the selected issues
     for (var i = 0; i < checkboxes.length; i++) {
         if(checkboxes[i].checked) {
             checkCount++;
+            selectedString += checkboxes[i].value + ',';
         }
     }
+    // Chop off trailing comma
+    selectedString = selectedString.substring(0, selectedString.length - 1);
+
+    // Show block if we have things selected
     if(checkCount > 0) {
         document.getElementById('table-actions').style.display = 'block';
+        document.getElementById('main').style.paddingBottom = '100px';
     } else {
         document.getElementById('table-actions').style.display = 'none';
+        document.getElementById('main').style.paddingBottom = '20px';
     }
 
     // Finally print the amount selected
     var print = document.getElementById('selectedAmount');
+
+    document.getElementById('claim').href = document.URL + "/claim/" + selectedString;
+    if(document.getElementById('resolve')) {
+        document.getElementById('resolve').href = document.URL + "/resolve/" + selectedString;
+    }
+    if(document.getElementById('delete')) {
+        document.getElementById('delete').href = document.URL + "/delete/" + selectedString;
+    }
     print.innerHTML = checkCount.toString();
 }

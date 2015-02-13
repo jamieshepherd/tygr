@@ -44,6 +44,8 @@ Route::group(array('middleware' => 'auth'), function() {
 		Route::post('users/edit/{id}', 'UserController@update');
 		Route::get('users/delete/{id}', 'UserController@delete');
 		Route::get('users/delete/{id}/confirm', 'UserController@destroy');
+		Route::get('projects/{client}/{stub}/issues/delete/{idlist}', 'IssueController@delete');
+		Route::get('projects/{client}/{stub}/issues/delete/{idlist}/confirm', 'IssueController@destroy');
 	});
     //>> Make sure user has at least ADMINISTRATOR priviliges
 	Route::group(array('middleware' => 'admin'), function() {
@@ -78,5 +80,8 @@ Route::group(array('middleware' => 'auth'), function() {
 		Route::get('projects/{client}/{stub}/issues/show/{id}/resolve', 'IssueController@resolve');
 		Route::get('projects/{client}/{stub}/issues/show/{id}/reopen', 'IssueController@reopen');
 		Route::get('projects/{client}/{stub}/issues/show/{id}/close', 'IssueController@close');
+
+		Route::get('projects/{client}/{stub}/issues/claim/{idlist}', 'IssueController@claim');
+		Route::get('projects/{client}/{stub}/issues/resolve/{idlist}', 'IssueController@resolve');
 	});
 });

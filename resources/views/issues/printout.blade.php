@@ -10,7 +10,7 @@
         <hr/>
             @foreach($issues as $issue)
             @if(!$issue->hidden || Auth::user()->rank <= 2)
-            <h3>{{ $issue->type }} ({{ $issue->reference }})</h3>
+            <h3>{{ $issue->reference }} ({{ $issue->summary }})</h3>
             <p>{{ $issue->description }}</p>
             <hr/>
             @endif

@@ -13,7 +13,9 @@
         @include('_layout.header')
         <h1>Issue details</h1>
         <a class="action" href="/projects/{{ $project->client->stub }}/{{{ $issue->project->stub }}}/issues/edit/{{ $issue->id }}"><i class="fa fa-plus-circle"></i> Edit issue</a>
-        <a class="action" href="/projects/{{ $project->client->stub }}/{{{ $issue->project->stub }}}/issues/claim/{{ $issue->id }}"><i class="fa fa-plus-circle"></i> Claim issue</a>
+        @if(Auth::user()->rank <= 2)
+        <a class="action" href="/projects/{{ $project->client->stub }}/{{{ $issue->project->stub }}}/issues/claim/{{ $issue->id }}"><i class="fa fa-flag"></i> Claim issue</a>
+        @endif
         @if($issue->status->name == 'Resolved')
             <a class="action" href="{{ Request::url() }}/reopen"><i class="fa fa-exclamation-circle"></i> Reopen issue</a>
             <a class="action" href="{{ Request::url() }}/close"><i class="fa fa-check-circle"></i> Close issue</a>

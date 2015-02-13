@@ -51,7 +51,7 @@
                             <td class="details">
                                 <span class="summary"><a href="/projects/{{ $project->client->stub }}/{{{ $project->stub }}}/issues/show/{{{ $issue->id }}}">{{ $issue->summary }}</a></span>
                                 <span class="description">{{{ substr($issue->description,0,80) }}}...</span>
-                                <span class="details"><i class="fa fa-calendar"></i> {{ date("d M Y",strtotime($issue->created_at)) }} <i class="fa fa-diamond"></i> {{ $issue->version }} @if(Auth::user()->rank < 3) @if($issue->claimed_by) <i class="fa fa-user"></i> {{ $issue->claimed_by->name }} @endif  @if($issue->hidden) <i class="fa fa-eye-slash"></i> Hidden from client @endif @endif</span>
+                                <span class="details"><i class="fa fa-calendar"></i> {{ date("d M Y",strtotime($issue->created_at)) }} <i class="fa fa-diamond"></i> {{ $issue->version }} @if(Auth::user()->rank < 3) @if($issue->claimed_by) <i class="fa fa-flag"></i> {{ $issue->claimed_by->name }} @endif  @if($issue->hidden) <i class="fa fa-eye-slash"></i> Hidden from client @endif @endif</span>
                             </td>
                             <td class="assigned">
                                 @if($issue->assigned() == 'Client') {{{ $issue->project->client->name }}} @else {{{ $issue->assigned() }}} @endif

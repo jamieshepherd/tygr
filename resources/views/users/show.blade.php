@@ -23,7 +23,7 @@
             @endforeach
             </ul>
         <h2>Rank</h2>
-        <p>{{{ $user->rank }}}</p>
+        <p>@if($user->rank == 1) Admin @elseif($user->rank == 2) Employee @else Client @endif</p>
     </div>
 </body>
 @stop

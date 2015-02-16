@@ -34,7 +34,7 @@
                 <td class="stub">{{{ $client->stub }}}</td>
                 <td>{{{ $client->type }}}</td>
                 <td class="project_count">{{{ count($client->projects) }}}</td>
-                <td><a href="http://reviewarea.co.uk/Secure/{{{ $client->stub }}}">reviewarea.co.uk/Secure/{{{ $client->stub }}}</a></td>
+                <td><a href="http://reviewarea.co.uk/Secure/{{{ $client->stub }}}" target="_blank">reviewarea.co.uk/Secure/{{{ $client->stub }}}</a></td>
             </tr>
             @endforeach
             </tbody>

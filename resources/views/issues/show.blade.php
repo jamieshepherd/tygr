@@ -52,7 +52,7 @@
                 @foreach($issue->attachments as $attachment)
                     <li>
                         @include('_components.filetype')
-                        <a href="/uploads/{{ $issue->id }}/{{ $attachment->filename }}">{{ $attachment->filename }}</a></li>
+                        <a href="/projects/{{ $issue->project->client->stub }}/{{ $issue->project->stub }}/uploads/{{ $attachment->filename }}">{{ $attachment->filename }}</a></li>
                 @endforeach
             </ul>
         </section>

@@ -22,14 +22,16 @@
                 <tr class="head">
                     <th>Name <i class="fa fa-sort"></i></th>
                     <th>Email <i class="fa fa-sort"></i></th>
+                    <th>Rank <i class="fa fa-sort"></i></th>
                     <th>Client <i class="fa fa-sort"></i></th>
                 </tr>
             </thead>
             <tbody class="list">
             @foreach($users as $user)
             <tr onclick="document.location='/users/show/{{{ $user->id }}}';" style="cursor:pointer">
-                <td class="name">{{{ $user->name }}}</td>
-                <td class="email">{{{ $user->email }}}</td>
+                <td class="name">{{ $user->name }}</td>
+                <td class="email">{{ $user->email }}</td>
+                <td class="rank">@if($user->rank == 1) Admin @elseif($user->rank == 2) Employee @else Client @endif</td>
                 <td class="user_client">{{{ $user->client->name }}}</td>
             </tr>
             @endforeach

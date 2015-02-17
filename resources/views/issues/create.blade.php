@@ -34,8 +34,8 @@
             <input type="radio" name="assigned" value="1"> Client
             @endif
 
-            <label>Provide a brief summary of the issue</label>
-            <input value="{{ old('summary') }}" name="summary" type="text" placeholder="e.g. Bug, text amend, design" autofocus @if($errors->has('summary')) class="error" >
+            <label>A brief summary of the issue</label>
+            <input value="{{ old('summary') }}" name="summary" type="text" placeholder="e.g. Bug, text amend, graphic change" autofocus @if($errors->has('summary')) class="error" >
             <span class="error">{{ $errors->first('summary') }}</span> @else > @endif
 
             <label>Where did this happen?</label>
@@ -43,7 +43,7 @@
             <span class="error">{{ $errors->first('reference') }}</span> @else > @endif
 
             <label>Describe the issue</label>
-            <textarea name="description" class="large" placeholder="Please be as specific as you can, including details on how to reproduce the issue, browser (IE/Chrome) and operating system." @if($errors->has('description')) class="error" @endif>{{ old('description') }}</textarea>
+            <textarea name="description" class="large" placeholder="Please be as specific as you can to the change required, including details such as how to reproduce the issue (which internet browser you reviewed it on), text you would like to replace, design changes you require etc." @if($errors->has('description')) class="error" @endif>{{ old('description') }}</textarea>
             @if($errors->has('description')) <span class="error">{{ $errors->first('description') }}</span> @endif
 
             <label>Attachment (screenshot, document)</label>

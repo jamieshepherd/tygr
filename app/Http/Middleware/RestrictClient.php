@@ -16,7 +16,7 @@ class RestrictClient {
 		$client = $request->segment(2);
 
 		if(Auth::user()->client_id != 1 && $client != Auth::user()->client->stub) {
-			abort(401);
+			abort(403);
 		}
 
 		return $next($request);

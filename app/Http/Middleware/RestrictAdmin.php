@@ -16,7 +16,7 @@ class RestrictAdmin {
 		$rank = \Auth::user()->rank;
 
 		if($rank > 2) {
-			abort(401);
+			abort(403);
 		}
 
 		return $next($request);

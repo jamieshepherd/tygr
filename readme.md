@@ -1,5 +1,7 @@
 ## Tygr - Issue management system
-####Beta, Build 185
+####Beta, Build 187
+
+[![Build Status](https://travis-ci.org/jamieshepherd/tygr.svg?)](https://travis-ci.org/jamieshepherd/tygr)
 
 *This project is now in beta, version 1.0.0 release is scheduled for 23rd February 2015.*
 

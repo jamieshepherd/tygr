@@ -24,7 +24,7 @@ class CreateProjectRequest extends Request {
         return [
             'name'				     => 'required|min:3',
             'stub' 					 => 'required|alpha_dash|min:3',
-            'current_version' 		 => 'required',
+            'current_version' 		 => 'required|numeric',
             'status' 				 => 'required|min:3',
             'authoring_tool' 		 => '',
             'lms_deployment' 		 => '',

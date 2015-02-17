@@ -357,6 +357,9 @@ input, textarea {
   input:focus, textarea:focus {
     border-color: #8BCEDC;
     outline: none; }
+  input.short, textarea.short {
+    min-width: 0;
+    width: 50px; }
 
 label {
   display: block;

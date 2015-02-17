@@ -5,6 +5,7 @@ use App\Http\Controllers\Controller;
 use App\Client;
 use App\Http\Requests\CreateProjectRequest;
 use App\Http\Requests\UpdateProjectRequest;
+use App\Http\Requests\NewVersionRequest;
 use App\Project;
 use App\User;
 use App\Group;
@@ -169,5 +170,52 @@ class ProjectController extends Controller {
 	{
 		//
 	}
+
+    /**
+     * Show the form for moving a project to a new version.
+     *
+     * @param  string  $client
+     * @param  string  $stub
+     * @return Response
+     */
+    public function version($client, $stub)
+    {
+        $client = Client::where('stub', '=', $client)->first();
+        if(!$client) abort(404);
+
+        $project = Project::where('client_id', '=', $client->id)
+            ->where('stub', '=', $stub)->first();
+        if(!$project) abort(404);
+
+        return view('projects.version')->with('project', $project);
+    }
+
+    /**
+     * Perform moving the project to a new version.
+     *
+     * @param  string  $client
+     * @param  string  $stub
+     * @param  NewVersionRequest  $request
+     * @return Response
+     */
+    public function newVersion($client, $stub, NewVersionRequest $request)
+    {
+        $client = Client::where('stub', '=', $client)->first();
+        if(!$client) abort(404);
+
+        $project = Project::where('client_id', '=', $client->id)
+            ->where('stub', '=', $stub)->first();
+        if(!$project) abort(404);
+
+        $project->current_version	         = $request->new_version;
+        $result = $project->save();
+
+        if($result) {
+            Session::flash('message', 'Project moved to version '.$request->current_version.'.');
+            return redirect('/projects/'.$project->client->stub.'/'.$project->stub);
+        }
+
+        return view('projects.version')->with('project', $project);
+    }
 
 }

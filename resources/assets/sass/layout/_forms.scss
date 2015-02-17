@@ -19,6 +19,10 @@ input, textarea {
     border-color: $tertiary;
     outline: none;
   }
+  &.short {
+    min-width: 0;
+    width: 50px;
+  }
 }
 label {
   display: block;

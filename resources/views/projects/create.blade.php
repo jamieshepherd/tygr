@@ -27,7 +27,7 @@
             <span class="error">{{ $errors->first('stub') }}</span> @else > @endif
 
             <label>Current version</label>
-            <input value="{{ old('current_version') }}" name="current_version" type="text" placeholder="e.g. 1.0" @if($errors->has('current_version')) class="error">
+            <input value="{{ old('current_version', '1.0') }}" name="current_version" type="text" placeholder="e.g. 1.0" @if($errors->has('current_version')) class="error">
             <span class="error">{{ $errors->first('current_version') }}</span> @else > @endif
 
             <label>Project status</label>
@@ -41,7 +41,7 @@
             <span class="error">{{ $errors->first('authoring_tool') }}</span> @else > @endif
 
             <label>Deployment location</label>
-            <input type="radio" name="lms_deployment" value="client"> Client
+            <input type="radio" name="lms_deployment" value="client" selected> Client
             <input type="radio" name="lms_deployment" value="sponge"> Launch &amp; Learn
             @if($errors->has('lms_deployment'))
             <span class="error">{{ $errors->first('lms_deployment') }}</span> @endif

@@ -17,6 +17,10 @@
             <div class="tip">
                 <i class="fa fa-info-circle"></i> The issue was logged. You can <a href="/{{ Session::get('tip') }}">view it here</a> or log another.
             </div>
+        @else
+            <div class="tip">
+                <i class="fa fa-info-circle"></i> You are logging this issue to version <strong>{{ $project->current_version }}</strong> of {{ $project->name }}.
+            </div>
         @endif
         <h1>Log an issue</h1>
         <form action="{{{ Request::url() }}}" method="POST" accept-charset="UTF-8" enctype="multipart/form-data">

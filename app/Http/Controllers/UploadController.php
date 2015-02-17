@@ -12,6 +12,8 @@ use WindowsAzure\Blob\Models\Blob;
 
 class UploadController extends Controller {
 
+    public $connectionString;
+    public $blobRestProxy;
 	/**
 	 * Retrieve and display the specified resource from blob storage.
 	 *
@@ -23,13 +25,13 @@ class UploadController extends Controller {
 	public function show($client, $stub, $filename)
 	{
 
-        $connectionString = "DefaultEndpointsProtocol=https;AccountName=".env('AZURE_ACCOUNT_NAME').";AccountKey=".env('AZURE_STORAGE_KEY');
+        $this->connectionString = "DefaultEndpointsProtocol=https;AccountName=".env('AZURE_ACCOUNT_NAME').";AccountKey=".env('AZURE_STORAGE_KEY');
         // Create blob REST proxy.
-        $blobRestProxy = ServicesBuilder::getInstance()->createBlobService($connectionString);
+        $this->blobRestProxy = ServicesBuilder::getInstance()->createBlobService($this->connectionString);
 
         try {
             // Get blob.
-            $blob = $blobRestProxy->getBlob("attachments", $filename);
+            $blob = $this->blobRestProxy->getBlob("attachments", $filename);
             // Get content type
             $contentType = $blob->getProperties()->getContentType();
 
@@ -37,7 +39,7 @@ class UploadController extends Controller {
             header('Content-Type: '.$contentType);
 
             // Return blob as file
-            echo stream_get_contents($blob->getContentStream());
+            echo fpassthru($blob->getContentStream());
         }
         catch(ServiceException $e){
             // Handle exception based on error codes and messages.
@@ -45,7 +47,7 @@ class UploadController extends Controller {
             // http://msdn.microsoft.com/en-us/library/windowsazure/dd179439.aspx
             $code = $e->getCode();
             $error_message = $e->getMessage();
-            Log::error($code.": ".$error_message);
+            \Log::error($code.": ".$error_message);
         }
 
 	}

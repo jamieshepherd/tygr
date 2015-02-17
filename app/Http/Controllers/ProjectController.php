@@ -22,9 +22,13 @@ class ProjectController extends Controller {
 	 */
 	public function index()
 	{
-        $client_id = Auth::user()->client_id;
-		$client = Client::where('id', '=', $client_id)->firstOrFail();
-        return view('projects.index')->with('client', $client);
+        if(\Auth::user()->rank < 3) {
+            return redirect('/clients');
+        } else {
+            $client_id = Auth::user()->client_id;
+            $client = Client::where('id', '=', $client_id)->firstOrFail();
+            return view('projects.index')->with('client', $client);
+        }
 	}
 
 	/**

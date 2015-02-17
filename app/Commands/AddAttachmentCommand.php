@@ -14,6 +14,7 @@ class AddAttachmentCommand extends Command implements SelfHandling {
 
 	public $file;
 	public $issue;
+    public $connectionString;
     public $blobRestProxy;
 
 	/**
@@ -27,9 +28,9 @@ class AddAttachmentCommand extends Command implements SelfHandling {
 		$this->file = $file;
 		$this->issue = $issue;
 
-        $connectionString = "DefaultEndpointsProtocol=https;AccountName=".env('AZURE_ACCOUNT_NAME').";AccountKey=".env('AZURE_STORAGE_KEY');
+        $this->connectionString = "DefaultEndpointsProtocol=https;AccountName=".env('AZURE_ACCOUNT_NAME').";AccountKey=".env('AZURE_STORAGE_KEY');
         // Create blob REST proxy.
-        $this->blobRestProxy = ServicesBuilder::getInstance()->createBlobService($connectionString);
+        $this->blobRestProxy = ServicesBuilder::getInstance()->createBlobService($this->connectionString);
     }
 
     /**
@@ -75,7 +76,7 @@ class AddAttachmentCommand extends Command implements SelfHandling {
             // http://msdn.microsoft.com/en-us/library/windowsazure/dd179439.aspx
             $code = $e->getCode();
             $error_message = $e->getMessage();
-            Log::error($code.": ".$error_message);
+            \Log::error($code.": ".$error_message);
         }
     }
 

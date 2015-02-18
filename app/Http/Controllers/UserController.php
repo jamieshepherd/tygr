@@ -122,7 +122,7 @@ class UserController extends Controller {
 
 		$user->name      = $request->name;
 		$user->email     = $request->email;
-		$user->client_id = $request->client;
+		$user->client_id = Input::get('client_id');
 		$user->rank      = $request->rank;
 		$password        = $request->password;
 

@@ -3,6 +3,7 @@
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use App\Http\Requests\UpdateAccountRequest;
 use Input;
 use Hash;
 
@@ -59,17 +60,19 @@ class AccountController extends Controller {
 		return view('account.edit');
 	}
 
-	/**
-	 * Update the specified resource in storage.
-	 *
-	 * @return Response
-	 */
-	public function update()
+    /**
+     * Update the specified resource in storage.
+     *
+     * @param UpdateAccountRequest $request
+     * @return Response
+     */
+	public function update(UpdateAccountRequest $request)
 	{
 		$user = \Auth::user();
-		$user->name = Input::get('name');
-		$oldpass = Input::get('oldpass');
-		$newpass = Input::get('newpass');
+		$user->name  = $request->name;
+        $user->email = $request->email;
+		$oldpass     = Input::get('oldpass');
+		$newpass     = Input::get('newpass');
 		$confirmpass = Input::get('confirmpass');
 		if(!empty($oldpass) || !empty($newpass) || $confirmpass) {
 			// Check oldpass is true

@@ -603,6 +603,9 @@ a.version-dropdown {
   #table-actions a {
     margin-bottom: 0; }
 
+.fa.pointer {
+  cursor: default; }
+
 .photo {
   height: 100%;
   padding: 0; }

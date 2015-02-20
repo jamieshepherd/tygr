@@ -64,6 +64,10 @@
             <input type="hidden" name="_token" value="<?php echo csrf_token(); ?>">
                 <textarea name="comment" placeholder="Enter a comment here" autofocus></textarea>
 
+                @if(Auth::user()->rank != 3)
+                    <input name="hidden" type="checkbox"> Hidden from client?
+                @endif
+
                 <label>Add attachment</label>
                 <input type="file" name="attachment" />
 

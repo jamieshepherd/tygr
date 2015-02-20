@@ -15,6 +15,8 @@ class CreateIssueHistoryTable extends Migration {
 		Schema::create('issue_history', function(Blueprint $table)
 		{
 			$table->increments('id');
+            // Hidden from client
+            $table->boolean('hidden');
 			// Issue ID
 			$table->integer('issue_id')->unsigned();
 			$table->foreign('issue_id')->references('id')->on('issues')->onDelete('cascade');

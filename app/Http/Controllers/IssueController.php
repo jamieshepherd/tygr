@@ -268,6 +268,9 @@ class IssueController extends Controller {
 		if(Input::get('comment')) {
 			$update = new IssueHistory();
 			$update->issue_id   = $issue->id;
+            if(Input::has('hidden')) {
+                $update->hidden = true;
+            }
 			$update->author_id  = \Auth::user()->id;
 			$update->type		= 'comment';
 			$update->comment    = Input::get('comment');

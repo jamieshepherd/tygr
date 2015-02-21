@@ -450,4 +450,28 @@ class IssueController extends Controller {
 		return redirect()->back();
 	}
 
+
+    /**
+     * Claim an issue or multiple issues
+     *
+     * @param  string  $client
+     * @param  string  $stub
+     * @param  string  $idlist
+     * @return Response
+     */
+    public function assign($client, $stub, $idlist)
+    {
+        if(exists($_GET['group'])) {
+            // Check if we have multiple IDs to claim
+            $idArray = explode(',', $idlist);
+            foreach($idArray as $id) {
+                $issue 				  = Issue::find($id);
+                $issue->claimed_by_id = Auth::user()->id;
+                $issue->save();
+            }
+            return redirect()->back();
+        }
+        abort(403);
+    }
+
 }

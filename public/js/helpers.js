@@ -88,7 +88,13 @@ function checkSelected() {
     var print = document.getElementById('selectedAmount');
     var indexURL = document.URL.split('?')[0];
 
-    document.getElementById('claim').href = indexURL + "/claim/" + selectedString;
+    /*
+    if(document.getElementbyId('assign')) {
+        document.getElementById('assign').childNodes();
+    }*/
+    if(document.getElementById('claim')) {
+        document.getElementById('claim').href = indexURL + "/claim/" + selectedString;
+    }
     if(document.getElementById('resolve')) {
         document.getElementById('resolve').href = indexURL + "/resolve/" + selectedString;
     }

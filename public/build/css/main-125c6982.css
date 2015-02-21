@@ -439,7 +439,7 @@ span.error {
   .printable hr {
     margin: 10px 0; }
 
-a.action {
+a.action, span.action {
   font-size: 11px;
   text-transform: uppercase;
   font-weight: 400;
@@ -451,19 +451,19 @@ a.action {
   display: inline-block;
   clear: left;
   margin-bottom: 4px; }
-  a.action:hover {
+  a.action:hover, span.action:hover {
     background: #8BCEDC;
     border-color: #8BCEDC;
     color: #ffffff; }
-  a.action.secondary {
+  a.action.secondary, span.action.secondary {
     background: #ddd;
     border: 1px solid #ddd;
     color: #2F2927; }
-    a.action.secondary:hover {
+    a.action.secondary:hover, span.action.secondary:hover {
       background: #8BCEDC;
       border-color: #8BCEDC;
       color: #ffffff; }
-  a.action.right {
+  a.action.right, span.action.right {
     float: right; }
 
 button {
@@ -481,30 +481,28 @@ button {
     button[type='submit']:hover {
       background: #8BCEDC; }
 
-a.version-dropdown {
+a.button-dropdown, span.button-dropdown {
   background: #f24a33;
   color: #ffffff;
   position: relative;
   cursor: pointer; }
-  a.version-dropdown ul {
+  a.button-dropdown ul, span.button-dropdown ul {
     border-top: 1px solid #ffffff;
     position: absolute;
     top: 25px;
     left: 0;
     display: none;
     z-index: 1; }
-    a.version-dropdown ul a {
-      display: inline; }
-  a.version-dropdown:hover ul {
-    display: block;
-    margin-left: -1px; }
-    a.version-dropdown:hover ul li {
+    a.button-dropdown ul li, span.button-dropdown ul li {
       min-width: 100px;
       padding: 8px;
       background: #f24a33;
       color: #ffffff; }
-      a.version-dropdown:hover ul li:hover {
+      a.button-dropdown ul li:hover, span.button-dropdown ul li:hover {
         background: #8BCEDC; }
+  a.button-dropdown:hover ul, span.button-dropdown:hover ul {
+    display: block;
+    margin-left: -1px; }
 
 .notify-box {
   background: #71C8B5;
@@ -600,8 +598,21 @@ a.version-dropdown {
     #table-actions span#selectedAmount {
       margin: 0;
       font-weight: bold; }
-  #table-actions a {
+  #table-actions a, #table-actions span {
     margin-bottom: 0; }
+    #table-actions a.button-dropdown, #table-actions span.button-dropdown {
+      font-size: 11px; }
+      #table-actions a.button-dropdown ul, #table-actions span.button-dropdown ul {
+        top: auto;
+        bottom: 100%;
+        border-bottom: 1px solid #ffffff;
+        border-top: none; }
+        #table-actions a.button-dropdown ul li a, #table-actions span.button-dropdown ul li a {
+          display: inline-block;
+          color: #ffffff;
+          text-decoration: none;
+          border: none;
+          width: 100%; }
 
 .fa.pointer {
   cursor: default; }

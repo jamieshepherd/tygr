@@ -17,7 +17,25 @@
       font-weight: bold;
     }
   }
-  a {
+  a,span {
     margin-bottom: 0;
+    &.button-dropdown {
+      font-size: 11px;
+      ul {
+        top: auto;
+        bottom: 100%;
+        border-bottom: 1px solid #ffffff;
+        border-top: none;
+        li {
+          a {
+            display: inline-block;
+            color: #ffffff;
+            text-decoration: none;
+            border: none;
+            width: 100%;
+          }
+        }
+      }
+    }
   }
 }

@@ -18,7 +18,7 @@
         <div id="issues">
             <input class="filter search" placeholder="Search" autofocus/>
             <a class="action" href="/projects/{{ $project->client->stub }}/{{ $project->stub }}/issues/create"><i class="fa fa-plus-circle"></i> New issue</a>
-            <a class="action version-dropdown">
+            <a class="action button-dropdown">
                 <i class="fa fa-chevron-circle-down"></i> Filter issues
                 <ul>
                     <li onclick="document.location='/projects/{{ $project->client->stub }}/{{{ $project->stub }}}/issues?filter=all';"><i class="fa fa-angle-right"></i> All issues</li>

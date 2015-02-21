@@ -1,4 +1,4 @@
-a {
+a,span {
   &.action {
     font-size: 11px;
     text-transform: uppercase;
@@ -48,8 +48,8 @@ button {
     }
   }
 }
-a {
-  &.version-dropdown {
+a,span {
+  &.button-dropdown {
     background: $highlight;
     color: $background;
     position: relative;
@@ -61,13 +61,6 @@ a {
       left: 0;
       display: none;
       z-index: 1;
-      a {
-        display: inline;
-      }
-    }
-    &:hover ul {
-      display: block;
-      margin-left: -1px;
       li {
         min-width: 100px;
         padding: 8px;
@@ -76,6 +69,13 @@ a {
         &:hover {
           background: $tertiary;
         }
+      }
+    }
+    &:hover ul {
+      display: block;
+      margin-left: -1px;
+      li {
+
       }
     }
   }

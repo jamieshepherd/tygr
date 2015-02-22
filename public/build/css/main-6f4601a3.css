@@ -494,12 +494,19 @@ a.button-dropdown, span.button-dropdown {
     display: none;
     z-index: 1; }
     a.button-dropdown ul li, span.button-dropdown ul li {
-      min-width: 100px;
-      padding: 8px;
+      padding: 0;
       background: #f24a33;
       color: #ffffff; }
       a.button-dropdown ul li:hover, span.button-dropdown ul li:hover {
         background: #8BCEDC; }
+      a.button-dropdown ul li a, span.button-dropdown ul li a {
+        display: inline-block;
+        color: #ffffff;
+        text-decoration: none;
+        border: none;
+        padding: 8px;
+        width: 100%;
+        min-width: 100px; }
   a.button-dropdown:hover ul, span.button-dropdown:hover ul {
     display: block;
     margin-left: -1px; }
@@ -607,12 +614,6 @@ a.button-dropdown, span.button-dropdown {
         bottom: 100%;
         border-bottom: 1px solid #ffffff;
         border-top: none; }
-        #table-actions a.button-dropdown ul li a, #table-actions span.button-dropdown ul li a {
-          display: inline-block;
-          color: #ffffff;
-          text-decoration: none;
-          border: none;
-          width: 100%; }
 
 .fa.pointer {
   cursor: default; }

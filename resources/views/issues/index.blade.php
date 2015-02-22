@@ -18,16 +18,28 @@
         <div id="issues">
             <input class="filter search" placeholder="Search" autofocus/>
             <a class="action" href="/projects/{{ $project->client->stub }}/{{ $project->stub }}/issues/create"><i class="fa fa-plus-circle"></i> New issue</a>
-            <a class="action button-dropdown">
+            <span class="action button-dropdown">
                 <i class="fa fa-chevron-circle-down"></i> Filter issues
                 <ul>
-                    <li onclick="document.location='/projects/{{ $project->client->stub }}/{{{ $project->stub }}}/issues?filter=all';"><i class="fa fa-angle-right"></i> All issues</li>
-                    <li onclick="document.location='/projects/{{ $project->client->stub }}/{{{ $project->stub }}}/issues?filter=me';"><i class="fa fa-angle-right"></i> Assigned to me</li>
+                    <li>
+                        <a href="/projects/{{ $project->client->stub }}/{{{ $project->stub }}}/issues?filter=all">
+                            <i class="fa fa-angle-right"></i> All issues
+                        </a>
+                    </li>
+                    <li>
+                        <a href="/projects/{{ $project->client->stub }}/{{{ $project->stub }}}/issues?filter=me">
+                            <i class="fa fa-angle-right"></i> Assigned to me
+                        </a>
+                    </li>
                     @foreach($versions as $version)
-                        <li onclick="document.location='/projects/{{ $project->client->stub }}/{{{ $project->stub }}}/issues?filter={{ $version->version }}';"><i class="fa fa-angle-right"></i> {{ $version->version }}</li>
+                    <li>
+                        <a href="/projects/{{ $project->client->stub }}/{{{ $project->stub }}}/issues?filter={{ $version->version }}">
+                            <i class="fa fa-angle-right"></i> {{ $version->version }}
+                        </a>
+                    </li>
                     @endforeach
                 </ul>
-            </a>
+            </span>
             <a class="action" href="{{ Request::url() }}/print"><i class="fa fa-print"></i> Print</a>
             <!--a class="action" href=""><i class="fa fa-bug"></i> All issues</a-->
 

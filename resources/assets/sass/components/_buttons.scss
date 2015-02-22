@@ -62,12 +62,20 @@ a,span {
       display: none;
       z-index: 1;
       li {
-        min-width: 100px;
-        padding: 8px;
+        padding: 0;
         background: $highlight;
         color: $background;
         &:hover {
           background: $tertiary;
+        }
+        a {
+          display: inline-block;
+          color: #ffffff;
+          text-decoration: none;
+          border: none;
+          padding: 8px;
+          width: 100%;
+          min-width: 100px;
         }
       }
     }

@@ -18,7 +18,6 @@ class DatabaseSeeder extends Seeder {
 		$this->call('IssueStatusTableSeeder');
 		$this->call('ClientTableSeeder');
 		$this->call('UserTableSeeder');
-		$this->call('GroupUserTableSeeder');
 	}
 
 }

@@ -25,7 +25,7 @@ class CreateIssuesTable extends Migration {
 			$table->foreign('assigned_to_id')->references('id')->on('groups')->onDelete('cascade');
 			// Claimed by user
 			$table->integer('claimed_by_id')->unsigned()->nullable();
-			$table->foreign('claimed_by_id')->references('id')->on('users')->onDelete('cascade');
+			$table->foreign('claimed_by_id')->references('id')->on('users')->onDelete('set null');
             // Project
 			$table->integer('project_id')->unsigned();
 			$table->foreign('project_id')->references('id')->on('projects')->onDelete('cascade');

@@ -71,9 +71,9 @@ class AccountController extends Controller {
 		$user = \Auth::user();
 		$user->name  = $request->name;
         $user->email = $request->email;
-		$oldpass     = Input::get('oldpass');
-		$newpass     = Input::get('newpass');
-		$confirmpass = Input::get('confirmpass');
+		$oldpass     = $request->oldpass;
+		$newpass     = $request->newpass;
+		$confirmpass = $request->confirmpass;
 		if(!empty($oldpass) || !empty($newpass) || $confirmpass) {
 			// Check oldpass is true
 			if(Hash::check($oldpass,$user->password)) {

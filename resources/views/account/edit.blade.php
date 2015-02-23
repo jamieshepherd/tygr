@@ -14,9 +14,15 @@
 
             <label>Client name</label>
             <input name="name" type="text" placeholder="e.g. John Smith" autofocus value="{{{ Auth::user()->name }}}">
+             @if($errors->has('name'))
+                <span class="error">{{ $errors->first('name') }}</span>
+            @endif
 
             <label>Email address</label>
             <input name="email" type="text" placeholder="e.g. john.smith&#64;gmail.com" value="{{{ Auth::user()->email }}}">
+            @if($errors->has('email'))
+                <span class="error">{{ $errors->first('email') }}</span>
+            @endif
 
             <br/><br/><hr/>
 

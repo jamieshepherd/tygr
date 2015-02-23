@@ -18,6 +18,9 @@ class CreateAttachmentsTable extends Migration {
 			// Issue ID
 			$table->integer('issue_id')->unsigned();
 			$table->foreign('issue_id')->references('id')->on('issues');
+            // Author
+            $table->integer('author_id')->unsigned()->nullable();
+            $table->foreign('author_id')->references('id')->on('users');
 			// Filename
 			$table->string('filename');
 			// Extension

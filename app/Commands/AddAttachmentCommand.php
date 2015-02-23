@@ -14,19 +14,22 @@ class AddAttachmentCommand extends Command implements SelfHandling {
 
 	public $file;
 	public $issue;
+    public $author_id;
     public $connectionString;
     public $blobRestProxy;
 
-	/**
-	 * Create a new command instance.
-	 *
-	 * @param  object  $file
-	 * @param  int  $issue
-	 */
-	public function __construct($file, $issue)
+    /**
+     * Create a new command instance.
+     *
+     * @param  object $file
+     * @param  int $issue
+     * @param  int $author_id
+     */
+	public function __construct($file, $issue, $author_id)
 	{
-		$this->file = $file;
-		$this->issue = $issue;
+		$this->file      = $file;
+		$this->issue     = $issue;
+        $this->author_id = $author_id;
 
         $this->connectionString = "DefaultEndpointsProtocol=https;AccountName=".env('AZURE_ACCOUNT_NAME').";AccountKey=".env('AZURE_STORAGE_KEY');
         // Create blob REST proxy.
@@ -66,6 +69,7 @@ class AddAttachmentCommand extends Command implements SelfHandling {
             // Add an attachment entry to the database, assign it our issue id
             $attachment = new Attachment();
             $attachment->issue_id = $this->issue;
+            $attachment->author_id = $this->author_id;
             $attachment->filename = $filename;
             $attachment->extension = $this->file->getClientOriginalExtension();
             $attachment->save();

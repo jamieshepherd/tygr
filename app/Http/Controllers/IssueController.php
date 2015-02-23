@@ -163,7 +163,7 @@ class IssueController extends Controller {
 		$result = $issue->save();
 		if(Input::file('attachment')) {
 			$file = Input::file('attachment');
-			$this->dispatch(new AddAttachmentCommand($file, $issue->id));
+			$this->dispatch(new AddAttachmentCommand($file, $issue->id, \Auth::user()->id));
 		}
 
 		if($result) {
@@ -258,7 +258,7 @@ class IssueController extends Controller {
 
 		if(Input::file('attachment')) {
 			$file = Input::file('attachment');
-			$this->dispatch(new AddAttachmentCommand($file, $id));
+			$this->dispatch(new AddAttachmentCommand($file, $id, \Auth::user()->id));
 		}
 		if(Input::get('priority')) {
 			$issue->priority = Input::get('priority');

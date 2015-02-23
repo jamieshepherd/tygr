@@ -9,8 +9,11 @@ use App\Http\Requests\UpdateIssueRequest;
 use App\Project;
 use App\Issue;
 use App\IssueHistory;
+use App\IssueStatus;
+use App\Group;
 use Auth;
 use Input;
+use DB;
 
 class IssueController extends Controller {
 
@@ -38,7 +41,12 @@ class IssueController extends Controller {
 		if(!isset($_GET['filter'])) {
 			$issues = Issue::where('project_id','=',$project->id)
 				->where('version', '=', $project->current_version)
-				->orderBy('status_id')
+				->orderBy(DB::raw("CASE WHEN status = 'New' THEN '1'
+                                            WHEN status = 'Assigned' THEN '2'
+                                            WHEN status = 'Awaiting Client' THEN '3'
+                                            WHEN status = 'Resolved' THEN '4'
+                                            WHEN status = 'Closed' THEN '5'
+                                        END"), 'ASC')
 				->get();
 		} else {
 			$filter = $_GET['filter'];
@@ -47,7 +55,7 @@ class IssueController extends Controller {
 				$userGroups = \Auth::User()->groups->lists('id');
 				$issues = Issue::whereIn('assigned_to_id', $userGroups)
 					->where('project_id','=',$project->id)
-					->orderBy('status_id')
+					->orderBy('status')
 					->get();
 				$filter = 'Assigned to me';
 			} elseif($filter == 'all') {
@@ -57,7 +65,12 @@ class IssueController extends Controller {
 			else {
 				$issues = Issue::where('project_id','=',$project->id)
 					->where('version', '=', $filter)
-					->orderBy('status_id')
+					->orderBy(DB::raw("CASE WHEN status = 'New' THEN '1'
+                                            WHEN status = 'Assigned' THEN '2'
+                                            WHEN status = 'Awaiting Client' THEN '3'
+                                            WHEN status = 'Resolved' THEN '4'
+                                            WHEN status = 'Closed' THEN '5'
+                                        END"), 'ASC')
 					->get();
 			}
 			return view('issues.index')
@@ -91,7 +104,12 @@ class IssueController extends Controller {
                 $userGroups = \Auth::User()->groups->lists('id');
 				$issues = Issue::whereIn('assigned_to_id', $userGroups)
 					->where('project_id','=',$project->id)
-					->orderBy('status_id')
+					->orderBy(DB::raw("CASE WHEN status = 'New' THEN '1'
+                                            WHEN status = 'Assigned' THEN '2'
+                                            WHEN status = 'Awaiting Client' THEN '3'
+                                            WHEN status = 'Resolved' THEN '4'
+                                            WHEN status = 'Closed' THEN '5'
+                                        END"), 'ASC')
 					->get();
 				$filter = 'Assigned to me';
 			} elseif($filter == 'all') {
@@ -101,13 +119,23 @@ class IssueController extends Controller {
 			else {
 				$issues = Issue::where('project_id','=',$project->id)
 					->where('version', '=', $filter)
-					->orderBy('status_id')
+					->orderBy(DB::raw("CASE WHEN status = 'New' THEN '1'
+                                            WHEN status = 'Assigned' THEN '2'
+                                            WHEN status = 'Awaiting Client' THEN '3'
+                                            WHEN status = 'Resolved' THEN '4'
+                                            WHEN status = 'Closed' THEN '5'
+                                        END"), 'ASC')
 					->get();
 			}
 		} else {
 			$issues = Issue::where('project_id','=',$project->id)
 				->where('version', '=', $project->current_version)
-				->orderBy('status_id')
+				->orderBy(DB::raw("CASE WHEN status = 'New' THEN '1'
+                                            WHEN status = 'Assigned' THEN '2'
+                                            WHEN status = 'Awaiting Client' THEN '3'
+                                            WHEN status = 'Resolved' THEN '4'
+                                            WHEN status = 'Closed' THEN '5'
+                                        END"), 'ASC')
 				->get();
 		}
 
@@ -150,11 +178,13 @@ class IssueController extends Controller {
 		$issue->summary     = $request->summary;
 		$issue->priority    = 'Medium';
 		if(Input::get('assigned') == '1') {
-			$issue->status_id      = 3;
-			$issue->assigned_to_id = 1;
+            $groupid = Group::where('name', '=', 'Client')->first()->id;
+			$issue->status         = 'Awaiting Client';
+			$issue->assigned_to_id = $groupid;
 		} else {
-			$issue->status_id      = 1;
-			$issue->assigned_to_id = 2;
+            $groupid = Group::where('name', '=', 'Sponge UK')->first()->id;
+			$issue->status      = 'New';
+			$issue->assigned_to_id = $groupid;
 		}
 		$issue->version		   = $project->current_version;
 		$issue->reference   = $request->reference;
@@ -168,6 +198,7 @@ class IssueController extends Controller {
 
 		if($result) {
 			$update = new IssueHistory();
+            $update->hidden     = false;
 			$update->issue_id   = $issue->id;
 			$update->author_id  = $issue->author->id;
 			$update->type		= 'status';
@@ -194,7 +225,11 @@ class IssueController extends Controller {
 	{
 		$project = Project::where('stub', '=', $stub)->firstOrFail();
 		$issue = Issue::where('project_id', '=', $project->id)->where('id', '=', $id)->firstOrFail();
-		return view('issues.show')->with('project', $project)->with('issue', $issue);
+        $groups = Group::all();
+		return view('issues.show')
+            ->with('project', $project)
+            ->with('issue', $issue)
+            ->with('groups', $groups);
 	}
 
 	/**
@@ -232,6 +267,7 @@ class IssueController extends Controller {
 
 		if($result) {
 			$update = new IssueHistory();
+            $update->hidden     = false;
 			$update->issue_id   = $issue->id;
 			$update->author_id  = $issue->author->id;
 			$update->type		= 'status';
@@ -268,9 +304,7 @@ class IssueController extends Controller {
 		if(Input::get('comment')) {
 			$update = new IssueHistory();
 			$update->issue_id   = $issue->id;
-            if(Input::has('hidden')) {
-                $update->hidden = true;
-            }
+            $update->hidden      = Input::has('hidden');
 			$update->author_id  = \Auth::user()->id;
 			$update->type		= 'comment';
 			$update->comment    = Input::get('comment');
@@ -284,16 +318,17 @@ class IssueController extends Controller {
 			$issue = Issue::find($id);
 
 			$update = new IssueHistory();
+            $update->hidden     = false;
 			$update->issue_id   = $issue->id;
 			$update->author_id  = \Auth::user()->id;
 			$update->type		= 'status';
 			$update->status     = 'assigned';
 			if($issue->assigned_to->name == 'Client') {
-				$issue->status_id  = 3;
+				$issue->status  = 'Awaiting Client';
 				$issue->save();
 				$update->comment    = 'Issue was assigned to '.$issue->project->client->name;
 			} else {
-				$issue->status_id  = 2;
+                $issue->status = 'Assigned';
 				$issue->save();
 				$update->comment    = 'Issue was assigned to '.$issue->assigned_to->name;
 			}
@@ -301,11 +336,14 @@ class IssueController extends Controller {
 		}
 
 		if(Input::get('resolved')) {
-			$issue->status_id	= 4;
-			$result = $issue->save();
+            $assigned_to_id        = Group::where('name', '=', 'Client')->first()->id;
+			$issue->status	       = 'Resolved';
+            $issue->assigned_to_id = $assigned_to_id;
+			$result                = $issue->save();
 
 			if($result) {
 				$update = new IssueHistory();
+                $update->hidden     = false;
 				$update->issue_id = $issue->id;
 				$update->author_id = \Auth::user()->id;
 				$update->type = 'status';
@@ -355,18 +393,20 @@ class IssueController extends Controller {
 	 */
 	public function resolve($client, $stub, $id)
 	{
-		$issue = Issue::where('id', '=', $id)->firstOrFail();
-		$issue->status_id = 4;
-		$issue->assigned_to_id = 1;
-		$result = $issue->save();
+		$issue                 = Issue::where('id', '=', $id)->firstOrFail();
+        $assigned_to_id        = Group::where('name', '=', 'Client')->first()->id;
+		$issue->status      = 'Resolved';
+		$issue->assigned_to_id = $assigned_to_id;
+		$result                = $issue->save();
 
 		if($result) {
-			$update = new IssueHistory();
-			$update->issue_id = $issue->id;
+			$update            = new IssueHistory();
+            $update->hidden    = false;
+			$update->issue_id  = $issue->id;
 			$update->author_id = \Auth::user()->id;
-			$update->type = 'status';
-			$update->status = 'resolved';
-			$update->comment = 'Issue was changed to resolved';
+			$update->type      = 'status';
+			$update->status    = 'resolved';
+			$update->comment   = 'Issue was changed to resolved';
 			$update->save();
 
 			\Session::flash('message', 'The issue was updated.');
@@ -385,11 +425,12 @@ class IssueController extends Controller {
 	public function close($client, $stub, $id)
 	{
 		$issue = Issue::where('id', '=', $id)->firstOrFail();
-		$issue->status_id = 5;
+		$issue->status = 'Closed';
 		$result = $issue->save();
 
 		if($result) {
 			$update = new IssueHistory();
+            $update->hidden     = false;
 			$update->issue_id = $issue->id;
 			$update->author_id = \Auth::user()->id;
 			$update->type = 'status';
@@ -413,11 +454,12 @@ class IssueController extends Controller {
 	public function reopen($client, $stub, $id)
 	{
 		$issue = Issue::where('id', '=', $id)->firstOrFail();
-		$issue->status_id = 2;
+		$issue->status = 'Assigned';
 		$result = $issue->save();
 
 		if($result) {
 			$update = new IssueHistory();
+            $update->hidden     = false;
 			$update->issue_id = $issue->id;
 			$update->author_id = \Auth::user()->id;
 			$update->type = 'status';

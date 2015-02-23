@@ -16,7 +16,7 @@ class CreateIssueHistoryTable extends Migration {
 		{
 			$table->increments('id');
             // Hidden from client
-            $table->boolean('hidden');
+            $table->boolean('hidden')->default(false);
 			// Issue ID
 			$table->integer('issue_id')->unsigned();
 			$table->foreign('issue_id')->references('id')->on('issues')->onDelete('cascade');

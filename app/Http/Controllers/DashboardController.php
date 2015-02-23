@@ -34,7 +34,7 @@ class DashboardController extends Controller {
 		$data = array(
 			'project_count'        => count(Project::all()),
 			'client_count'         => count(Client::all()),
-			'issue_count'          => count(Issue::where('status_id', '!=', 5)->get()),
+			'issue_count'          => count(Issue::where('status', '!=', 'Closed')->get()),
 			'issues_created'       => $projects,
 			'issues_resolved'      => count(IssueHistory::where('status', '=', 'resolved')
 				->where('created_at', '>=', $end_week)->get())

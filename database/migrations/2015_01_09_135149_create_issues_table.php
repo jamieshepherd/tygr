@@ -38,8 +38,7 @@ class CreateIssuesTable extends Migration {
             // Description
 			$table->text('description');
             // Status
-			$table->integer('status_id')->unsigned();
-			$table->foreign('status_id')->references('id')->on('issue_status');
+			$table->string('status');
             // Priority
 			$table->string('priority');
             // Timestamps

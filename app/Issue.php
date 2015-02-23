@@ -16,7 +16,7 @@ class Issue extends Model {
 	 *
 	 * @var array
 	 */
-	protected $fillable = ['author_id', 'assigned_to_id', 'project_id', 'version', 'reference', 'type', 'description', 'status_id', 'priority'];
+	protected $fillable = ['author_id', 'assigned_to_id', 'project_id', 'version', 'reference', 'type', 'description', 'status', 'priority'];
 
 	/**
 	 * The attributes excluded from the model's JSON form.
@@ -57,7 +57,7 @@ class Issue extends Model {
 
 	public function status()
 	{
-		return $this->belongsTo('App\IssueStatus', 'status_id');
+		return $this->belongsTo('App\IssueStatus', 'status');
 	}
 
 	public function issue_history()

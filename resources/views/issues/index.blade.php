@@ -69,7 +69,7 @@
                                 @if($issue->assigned() == 'Client') {{{ $issue->project->client->name }}} @else {{{ $issue->assigned() }}} @endif
                             </td>
                             <td class="status">
-                                {{{ $issue->status->name }}}
+                                {{{ $issue->status }}}
                             </td>
                         </tr>
                     @endif

@@ -4,7 +4,13 @@ function generateStub() {
     document.getElementById('stub').value = current;
 }
 function generatePassword() {
-    var password = (Math.random() + 1).toString(36).substring(7);
+    var chars = "0123456789ABCDEFGHIJKLMNOPQRSTUVWXTZabcdefghiklmnopqrstuvwxyz";
+    var string_length = 8;
+    var password = '';
+    for (var i=0; i<string_length; i++) {
+        var rnum = Math.floor(Math.random() * chars.length);
+        password += chars.substring(rnum,rnum+1);
+    }
     document.getElementById('password').value = password;
 }
 function addAttachment() {

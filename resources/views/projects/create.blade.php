@@ -39,7 +39,7 @@
             <span class="error">{{ $errors->first('authoring_tool') }}</span> @else > @endif
 
             <label>Deployment location</label>
-            <input type="radio" name="lms_deployment" value="client" selected> Client
+            <input type="radio" name="lms_deployment" value="client" checked> Client
             <input type="radio" name="lms_deployment" value="sponge"> Launch &amp; Learn
             @if($errors->has('lms_deployment'))
             <span class="error">{{ $errors->first('lms_deployment') }}</span> @endif

@@ -1,18 +1,18 @@
 <?php namespace App\Http\Controllers;
 
-use App\Commands\AddAttachmentCommand;
-use App\Http\Requests;
-use App\Http\Controllers\Controller;
-use App\Client;
 use App\Http\Requests\CreateIssueRequest;
 use App\Http\Requests\UpdateIssueRequest;
-use App\Project;
-use App\Issue;
+use App\Commands\AddAttachmentCommand;
+use App\Http\Controllers\Controller;
+use App\Http\Requests;
 use App\IssueHistory;
 use App\IssueStatus;
+use App\Project;
+use App\Client;
+use App\Issue;
 use App\Group;
-use Auth;
 use Input;
+use Auth;
 use DB;
 
 class IssueController extends Controller {
@@ -55,11 +55,23 @@ class IssueController extends Controller {
 				$userGroups = \Auth::User()->groups->lists('id');
 				$issues = Issue::whereIn('assigned_to_id', $userGroups)
 					->where('project_id','=',$project->id)
-					->orderBy('status')
+					->orderBy(DB::raw("CASE WHEN status = 'New' THEN '1'
+                                            WHEN status = 'Assigned' THEN '2'
+                                            WHEN status = 'Awaiting Client' THEN '3'
+                                            WHEN status = 'Resolved' THEN '4'
+                                            WHEN status = 'Closed' THEN '5'
+                                        END"), 'ASC')
 					->get();
 				$filter = 'Assigned to me';
 			} elseif($filter == 'all') {
-				$issues = $project->issues;
+				$issues = Issue::where('project_id', '=', $project->id)
+                    ->orderBy(DB::raw("CASE WHEN status = 'New' THEN '1'
+                                            WHEN status = 'Assigned' THEN '2'
+                                            WHEN status = 'Awaiting Client' THEN '3'
+                                            WHEN status = 'Resolved' THEN '4'
+                                            WHEN status = 'Closed' THEN '5'
+                                        END"), 'ASC')
+                    ->get();
 				$filter = 'All issues';
 			}
 			else {

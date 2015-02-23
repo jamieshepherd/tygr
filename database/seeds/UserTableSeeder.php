@@ -11,12 +11,14 @@ class UserTableSeeder extends Seeder {
     {
         $client = Client::where('name', '=', 'Sponge UK')->first()->id;
 
-        User::create(array(
+        $user = User::create(array(
             'name'        => 'Jamie Shepherd',
             'client_id'   => $client,
             'rank'        => 1,
             'email'       => 'jamie.shepherd@spongeuk.com',
             'password'    => Hash::make('password')
         ));
+
+        $user->attachToGroup('Sponge UK');
     }
 }

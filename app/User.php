@@ -55,16 +55,19 @@ class User extends Model implements AuthenticatableContract, CanResetPasswordCon
 
 	public function belongsToGroup($group)
 	{
+        $group = Group::where('name', '=', $group)->first()->id;
 		return in_array($group, array_fetch($this->groups->toArray(), 'id'));
 	}
 
-	public function attachToGroup($id)
+	public function attachToGroup($group)
 	{
-		$this->groups()->attach($id);
+        $group = Group::where('name', '=', $group)->first();
+		$this->groups()->attach($group->id);
 	}
 
-	public function detachFromGroup($id)
+	public function detachFromGroup($group)
 	{
-		$this->groups()->detach($id);
+        $group = Group::where('name', '=', $group)->first();
+		$this->groups()->detach($group->id);
 	}
 }

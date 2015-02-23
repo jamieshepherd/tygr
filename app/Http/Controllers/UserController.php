@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Http\Requests\UpdateUserRequest;
 use Illuminate\Http\Request;
 use App\User;
+use App\Group;
 use App\Client;
 use Illuminate\Support\Facades\Hash;
 use Input;
@@ -44,7 +45,6 @@ class UserController extends Controller {
 	 */
 	public function store(CreateUserRequest $request)
 	{
-
 		$user = new User();
 		$user->name      = $request->name;
 		$user->email     = $request->email;
@@ -53,20 +53,23 @@ class UserController extends Controller {
 		$user->password  = Hash::make($request->password);
 		$result = $user->save();
 
-		if($user->client_id != 1)
-			$user->attachToGroup(1,$user->id);
+		if($user->client_id == 1) {
+			$user->attachToGroup('Sponge UK', $user->id);
+        } else {
+            $user->attachToGroup('Client', $user->id);
+        }
 
 		if(Input::has('spongeuk_project_management'))
-			$user->attachToGroup(3,$user->id);
+			$user->attachToGroup('Sponge UK (Project Management)', $user->id);
 
 		if(Input::has('spongeuk_development'))
-			$user->attachToGroup(4,$user->id);
+			$user->attachToGroup('Sponge UK (Development)', $user->id);
 
 		if(Input::has('spongeuk_visual_design'))
-			$user->attachToGroup(5,$user->id);
+			$user->attachToGroup('Sponge UK (Visual Design)', $user->id);
 
 		if(Input::has('spongeuk_instructional_design'))
-			$user->attachToGroup(6,$user->id);
+			$user->attachToGroup('Sponge UK (Instructional Design)', $user->id);
 
 		if($result) {
 			/* handle this with an event
@@ -132,32 +135,37 @@ class UserController extends Controller {
 
 		$result = $user->save();
 
+
 		if(Input::has('spongeuk_project_management')) {
-			if(!$user->belongsToGroup(3))
-				$user->attachToGroup(3,$user->id);
+			if(!$user->belongsToGroup('Sponge UK (Project Management)')) {
+				$user->attachToGroup('Sponge UK (Project Management)',$user->id);
+            }
 		} else {
-			$user->detachFromGroup(3,$user->id);
+			$user->detachFromGroup('Sponge UK (Project Management)',$user->id);
 		}
 
 		if(Input::has('spongeuk_development')) {
-			if(!$user->belongsToGroup(4))
-				$user->attachToGroup(4,$user->id);
+			if(!$user->belongsToGroup('Sponge UK (Development)')) {
+ 				$user->attachToGroup('Sponge UK (Development)',$user->id);
+            }
 		} else {
-			$user->detachFromGroup(4,$user->id);
+			$user->detachFromGroup('Sponge UK (Development)',$user->id);
 		}
 
 		if(Input::has('spongeuk_visual_design')) {
-			if(!$user->belongsToGroup(5))
-				$user->attachToGroup(5,$user->id);
+			if(!$user->belongsToGroup('Sponge UK (Visual Design)')) {
+				$user->attachToGroup('Sponge UK (Visual Design)',$user->id);
+            }
 		} else {
-			$user->detachFromGroup(5,$user->id);
+			$user->detachFromGroup('Sponge UK (Visual Design)',$user->id);
 		}
 
 		if(Input::has('spongeuk_instructional_design')) {
-			if(!$user->belongsToGroup(6))
-				$user->attachToGroup(6,$user->id);
+			if(!$user->belongsToGroup('Sponge UK (Instructional Design)')) {
+				$user->attachToGroup('Sponge UK (Instructional Design)',$user->id);
+            }
 		} else {
-			$user->detachFromGroup(6,$user->id);
+			$user->detachFromGroup('Sponge UK (Instructional Design)',$user->id);
 		}
 
 		if($result) {

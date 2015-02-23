@@ -41,10 +41,10 @@
 
             <div id="assign_groups">
                 <label>Assign groups</label>
-                <input name="spongeuk_project_management" type="checkbox" @if($user->belongsToGroup(3)) checked @endif> Sponge UK (Project Management)<br/>
-                <input name="spongeuk_development" type="checkbox" @if($user->belongsToGroup(4)) checked @endif> Sponge UK (Development) <br/>
-                <input name="spongeuk_visual_design" type="checkbox" @if($user->belongsToGroup(5)) checked @endif> Sponge UK (Visual Design) <br/>
-                <input name="spongeuk_instructional_design" type="checkbox" @if($user->belongsToGroup(6)) checked @endif> Sponge UK (Instructional Design) <br/>
+                <input name="spongeuk_project_management" type="checkbox" @if($user->belongsToGroup('Sponge UK (Project Management)')) checked @endif> Sponge UK (Project Management)<br/>
+                <input name="spongeuk_development" type="checkbox" @if($user->belongsToGroup('Sponge UK (Development)')) checked @endif> Sponge UK (Development) <br/>
+                <input name="spongeuk_visual_design" type="checkbox" @if($user->belongsToGroup('Sponge UK (Visual Design)')) checked @endif> Sponge UK (Visual Design) <br/>
+                <input name="spongeuk_instructional_design" type="checkbox" @if($user->belongsToGroup('Sponge UK (Instructional Design)')) checked @endif> Sponge UK (Instructional Design) <br/>
             </div>
 
             <br/><button type="submit"><i class="fa fa-arrow-circle-right"></i> Save changes</button>

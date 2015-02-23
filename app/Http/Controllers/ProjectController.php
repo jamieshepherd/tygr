@@ -118,9 +118,7 @@ class ProjectController extends Controller {
 			->where('stub', '=', $stub)->first();
 		if(!$project) abort(404);
 
-		$employees = Group::find(2)->users()->get();
-
-		return view('projects.edit')->with('project', $project)->with('employees', $employees);
+		return view('projects.edit')->with('project', $project);
 	}
 
 	/**

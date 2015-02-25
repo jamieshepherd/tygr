@@ -707,6 +707,13 @@ section {
         padding: 3px 5px; }
   section .attachments li {
     line-height: 36px; }
+    section .attachments li .attachment-delete {
+      border: none;
+      margin-left: 10px;
+      opacity: 0.3; }
+      section .attachments li .attachment-delete:hover {
+        opacity: 1;
+        color: #f24a33; }
   section .attachments i {
     margin-right: 5px; }
   section .update {

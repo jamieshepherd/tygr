@@ -80,6 +80,7 @@ Route::group(array('middleware' => 'auth'), function() {
 		Route::get('projects/{client}/{stub}/issues/show/{id}/reopen', 'IssueController@reopen');
 		Route::get('projects/{client}/{stub}/issues/show/{id}/close', 'IssueController@close');
         Route::get('projects/{client}/{stub}/uploads/{filename}', 'UploadController@show');
+		Route::get('projects/{client}/{stub}/uploads/{id}/delete', 'UploadController@delete');
 
 		Route::get('projects/{client}/{stub}/issues/claim/{idlist}', 'IssueController@claim');
 		Route::get('projects/{client}/{stub}/issues/resolve/{idlist}', 'IssueController@resolve');

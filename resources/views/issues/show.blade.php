@@ -50,9 +50,9 @@
             <h2>Attachments</h2>
             <ul class="attachments">
                 @foreach($issue->attachments as $attachment)
-                    <li>
+                    <li class="attachment-item">
                         @include('_components.filetype')
-                        <a href="/projects/{{ $issue->project->client->stub }}/{{ $issue->project->stub }}/uploads/{{ $attachment->filename }}" target="_blank">{{ $attachment->filename }}</a></li>
+                        <a href="/projects/{{ $issue->project->client->stub }}/{{ $issue->project->stub }}/uploads/{{ $attachment->filename }}" target="_blank">{{ $attachment->filename }}</a> <a class="attachment-delete" href="/projects/{{ $issue->project->client->stub }}/{{ $issue->project->stub }}/uploads/{{ $attachment->id }}/delete"><i class="fa fa-times"></a></i></li>
                 @endforeach
             </ul>
         </section>

@@ -1,5 +1,5 @@
 <div id="table-actions">
-    <span><i class="fa fa-check-square-o"></i> <span id="selectedAmount"></span> issues selected</span>
+    <span class="label"><i class="fa fa-check-square-o"></i> <span id="selectedAmount"></span> issues selected</span>
     <!--a href="" class="action" id="resolve">Resolve</a-->
     <span class="action button-dropdown" id="assign">
         Assign selected <i class="fa fa-caret-up"></i>

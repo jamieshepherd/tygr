@@ -604,6 +604,8 @@ a.button-dropdown, span.button-dropdown {
     #table-actions span#selectedAmount {
       margin: 0;
       font-weight: bold; }
+    #table-actions span.label {
+      margin-right: 10px; }
   #table-actions a, #table-actions span {
     margin-bottom: 0; }
     #table-actions a.button-dropdown, #table-actions span.button-dropdown {

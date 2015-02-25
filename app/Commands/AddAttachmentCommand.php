@@ -2,17 +2,24 @@
 
 use App\Commands\Command;
 use App\Attachment;
+use Input;
+
+use Illuminate\Queue\SerializesModels;
+use Illuminate\Queue\InteractsWithQueue;
 use Illuminate\Contracts\Bus\SelfHandling;
 use Illuminate\Contracts\Queue\ShouldBeQueued;
-use Input;
 
 use WindowsAzure\Common\ServicesBuilder;
 use WindowsAzure\Common\ServiceException;
 use WindowsAzure\Blob\Models\CreateBlobOptions;
 
-class AddAttachmentCommand extends Command implements SelfHandling {
+class AddAttachmentCommand extends Command implements SelfHandling, ShouldBeQueued {
 
-	public $file;
+	use InteractsWithQueue, SerializesModels;
+
+	public $filename;
+	public $filetype;
+	public $extension;
 	public $issue;
     public $author_id;
     public $connectionString;
@@ -21,13 +28,15 @@ class AddAttachmentCommand extends Command implements SelfHandling {
     /**
      * Create a new command instance.
      *
-     * @param  object $file
+     * @param  array $file
      * @param  int $issue
      * @param  int $author_id
      */
 	public function __construct($file, $issue, $author_id)
 	{
-		$this->file      = $file;
+		$this->filename  = $file['filename'];
+		$this->filetype	 = $file['filetype'];
+		$this->extension = $file['extension'];
 		$this->issue     = $issue;
         $this->author_id = $author_id;
 
@@ -44,7 +53,7 @@ class AddAttachmentCommand extends Command implements SelfHandling {
     public function handle()
     {
 
-        $filename = preg_replace('/[^\w-.]/', '', $this->file->getClientOriginalName());
+        $filename = preg_replace('/[^\w-.]/', '', $this->filename);
 
         // make a random file prefix
         $unique = false;
@@ -55,15 +64,12 @@ class AddAttachmentCommand extends Command implements SelfHandling {
         }
 
         $filename = $prefix.'-'.$filename;
-        $content = fopen($this->file, 'r');
-
-        $finfo = finfo_open(FILEINFO_MIME_TYPE);
-        $ctype = finfo_file($finfo, $this->file);
+        $content = fopen('uploads/tmp/'.$this->filename, 'r');
 
         try {
             // Set some file options (content type)
             $options = new CreateBlobOptions();
-            $options->setBlobContentType($ctype);
+            $options->setBlobContentType($this->filetype);
             // Create and upload blob to Azure
             $this->blobRestProxy->createBlockBlob("attachments", $filename, $content, $options);
             // Add an attachment entry to the database, assign it our issue id
@@ -71,8 +77,11 @@ class AddAttachmentCommand extends Command implements SelfHandling {
             $attachment->issue_id = $this->issue;
             $attachment->author_id = $this->author_id;
             $attachment->filename = $filename;
-            $attachment->extension = $this->file->getClientOriginalExtension();
+            $attachment->extension = $this->extension;
             $attachment->save();
+			// Delete the temporary uploaded file
+			fclose($content);
+			unlink('uploads/tmp/'.$this->filename);
         }
         catch(ServiceException $e){
             // Handle exception based on error codes and messages.

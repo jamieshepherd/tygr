@@ -2,16 +2,19 @@
 
 use App\Commands\Command;
 use App\Attachment;
+use Input;
+
+use Illuminate\Queue\SerializesModels;
+use Illuminate\Queue\InteractsWithQueue;
 use Illuminate\Contracts\Bus\SelfHandling;
 use Illuminate\Contracts\Queue\ShouldBeQueued;
-use Input;
 
 use WindowsAzure\Common\ServicesBuilder;
 use WindowsAzure\Common\ServiceException;
 
-class DestroyAttachmentCommand extends Command implements SelfHandling {
+class DestroyAttachmentCommand extends Command implements SelfHandling, ShouldBeQueued {
 
-	public $attachment;
+    public $attachment;
     public $connectionString;
     public $blobRestProxy;
 
@@ -36,7 +39,6 @@ class DestroyAttachmentCommand extends Command implements SelfHandling {
     */
     public function handle()
     {
-
         try {
             // Delete the blob from Azure
 			$this->blobRestProxy->deleteBlob("attachments", $this->attachment->filename);

@@ -3,6 +3,7 @@
 use App\Http\Requests\CreateIssueRequest;
 use App\Http\Requests\UpdateIssueRequest;
 use App\Commands\AddAttachmentCommand;
+use App\Commands\DestroyAttachmentCommand;
 use App\Http\Controllers\Controller;
 use App\Http\Requests;
 use App\IssueHistory;
@@ -204,7 +205,13 @@ class IssueController extends Controller {
 
 		$result = $issue->save();
 		if(Input::file('attachment')) {
-			$file = Input::file('attachment');
+			$attachment = Input::file('attachment');
+			$file = array(
+			    "filename"  => $attachment->getClientOriginalName(),
+				"extension" => $attachment->getClientOriginalExtension(),
+				"filetype"  => $attachment->getMimeType()
+			);
+			$attachment->move("uploads/tmp", $file['filename']);
 			$this->dispatch(new AddAttachmentCommand($file, $issue->id, \Auth::user()->id));
 		}
 
@@ -305,9 +312,16 @@ class IssueController extends Controller {
 		$issue = Issue::find($id);
 
 		if(Input::file('attachment')) {
-			$file = Input::file('attachment');
-			$this->dispatch(new AddAttachmentCommand($file, $id, \Auth::user()->id));
+			$attachment = Input::file('attachment');
+			$file = array(
+			    "filename"  => $attachment->getClientOriginalName(),
+				"extension" => $attachment->getClientOriginalExtension(),
+				"filetype"  => $attachment->getMimeType()
+			);
+			$attachment->move("uploads/tmp", $file['filename']);
+			$this->dispatch(new AddAttachmentCommand($file, $issue->id, \Auth::user()->id));
 		}
+
 		if(Input::get('priority')) {
 			$issue->priority = Input::get('priority');
 			$issue->save();
@@ -385,10 +399,15 @@ class IssueController extends Controller {
 			// Check if we have multiple IDs to destroy
 			$idArray = explode(',', $idlist);
 			foreach($idArray as $id) {
+				$issue = Issue::find($id);
+				$attachments = $issue->attachments()->get();
+				foreach($attachments as $attachment) {
+					$this->dispatch(new DestroyAttachmentCommand($attachment));
+				}
 				Issue::destroy($id);
 			}
 
-			\Session::flash('message', 'The issue was removed successfully.');
+			\Session::flash('message', 'The issue(s) were removed successfully.');
 			return redirect('projects/'.$client.'/'.$stub.'/issues');
 		}
 

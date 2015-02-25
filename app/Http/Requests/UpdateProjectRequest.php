@@ -26,7 +26,7 @@ class UpdateProjectRequest extends Request {
 
 		return [
 			'name'				     => 'required|min:3',
-			//'stub' 					 => 'required|alpha_dash|min:3|unique:projects,stub,NULL,id,client_id,'.$client->id,
+            'stub' 					 => 'required|unique:projects|alpha_dash|min:3',
 			'current_version' 		 => 'required',
 			'status' 				 => 'required|min:3',
 			'authoring_tool' 		 => '',

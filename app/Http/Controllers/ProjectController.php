@@ -140,7 +140,7 @@ class ProjectController extends Controller {
 
 		$project->hidden 					 = Input::has('hidden');
 		$project->name				         = $request->name;
-		//$project->stub				         = $request->stub;
+		$project->stub				         = $request->stub;
 		$project->current_version	         = $request->current_version;
 		$project->status			         = $request->status;
 		$project->authoring_tool             = $request->authoring_tool;

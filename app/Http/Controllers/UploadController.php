@@ -47,9 +47,9 @@ class UploadController extends Controller {
 
             // Set header options
             header('Content-Type: '.$contentType);
-
+            
             // Return blob as file
-            echo fpassthru($blob->getContentStream());
+            return fpassthru($blob->getContentStream());
         }
         catch(ServiceException $e){
             // Handle exception based on error codes and messages.

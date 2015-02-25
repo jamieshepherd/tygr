@@ -98,6 +98,12 @@ function checkSelected() {
     if(document.getElementbyId('assign')) {
         document.getElementById('assign').childNodes();
     }*/
+    if(document.getElementById('assign_sponge')) {
+        document.getElementById('assign_sponge').href = indexURL + "/assign/" + selectedString + "?group=sponge";
+    }
+    if(document.getElementById('assign_client')) {
+        document.getElementById('assign_client').href = indexURL + "/assign/" + selectedString + "?group=client";
+    }
     if(document.getElementById('claim')) {
         document.getElementById('claim').href = indexURL + "/claim/" + selectedString;
     }

@@ -17,7 +17,7 @@
             <input name="hidden" type="checkbox"> Hidden from client?
 
             <label>Project name</label>
-            <input value="{{ old('name') }}" id="name" name="name" type="text" placeholder="e.g. Fire Safety" value="" onkeyup="generateStub()" @if($errors->has('name')) class="error">
+            <input value="{{ old('name') }}" id="name" name="name" type="text" placeholder="e.g. Fire Safety" value="" onkeyup="generateStub()" autofocus @if($errors->has('name')) class="error">
             <span class="error">{{ $errors->first('name') }}</span> @else > @endif
 
             <label>Project stub<em>(Used for URLs)</em></label>

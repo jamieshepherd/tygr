@@ -515,13 +515,22 @@ class IssueController extends Controller {
      */
     public function assign($client, $stub, $idlist)
     {
-        if(exists($_GET['group'])) {
-            // Check if we have multiple IDs to claim
+        if(isset($_GET['group'])) {
+			if($_GET['group'] == 'sponge') {
+				$groupid = Group::where('name', '=', 'Sponge UK')->first()->id;
+			} elseif($_GET['group'] == 'client') {
+				$groupid = Group::where('name', '=', 'Client')->first()->id;
+			} else {
+				abort(403);
+			}
+
+			// Check if we have multiple IDs to assign
             $idArray = explode(',', $idlist);
             foreach($idArray as $id) {
-                $issue 				  = Issue::find($id);
-                $issue->claimed_by_id = Auth::user()->id;
-                $issue->save();
+				$issue                 = Issue::find($id);
+	 			$issue->assigned_to_id = $groupid;
+	            $issue->claimed_by_id  = Auth::user()->id;
+	            $issue->save();
             }
             return redirect()->back();
         }

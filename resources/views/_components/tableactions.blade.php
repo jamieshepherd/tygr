@@ -5,12 +5,12 @@
         Assign selected <i class="fa fa-caret-up"></i>
         <ul>
             <li>
-                <a href="http://bbc.co.uk">
+                <a href="#" id="assign_sponge">
                     <i class="fa fa-angle-right"></i> Sponge UK
                 </a>
             </li>
             <li>
-                <a href="http://digg.com">
+                <a href="#" id="assign_client">
                     <i class="fa fa-angle-right"></i> Client
                 </a>
             </li>
@@ -18,7 +18,7 @@
     </span>
     @if(Auth::user()->rank <= 2)
     <a href="#" class="action" id="claim">Claim issue</a>
-    <a href="#" class="action button-dropdown" id="version">
+    <!--a href="#" class="action button-dropdown" id="version">
         Move version <i class="fa fa-caret-up"></i>
         <ul>
         @foreach($versions as $version)
@@ -27,7 +27,7 @@
             </li>
         @endforeach
         </ul>
-    </a>
+    </a-->
     @endif
     @if(Auth::user()->rank == 1)
     <a href="" class="action" id="delete">Delete issue</a>

@@ -1,5 +1,5 @@
 ## Tygr - Issue management system
-####Beta, Build 206
+####Beta, Build 211
 
 [![Build Status](https://travis-ci.org/jamieshepherd/tygr.svg?)](https://travis-ci.org/jamieshepherd/tygr)
 

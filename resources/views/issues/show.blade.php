@@ -15,6 +15,18 @@
         <a class="action" href="/projects/{{ $project->client->stub }}/{{{ $issue->project->stub }}}/issues/edit/{{ $issue->id }}"><i class="fa fa-plus-circle"></i> Edit issue</a>
         @if(Auth::user()->rank <= 2)
         <a class="action" href="/projects/{{ $project->client->stub }}/{{{ $issue->project->stub }}}/issues/claim/{{ $issue->id }}"><i class="fa fa-flag"></i> Claim issue</a>
+        <span class="action button-dropdown">
+            <i class="fa fa-diamond"></i> Move version <i class="fa fa-caret-down"></i>
+            <ul>
+                @foreach($versions as $version)
+                <li>
+                    <a href="/projects/{{ $project->client->stub }}/{{{ $issue->project->stub }}}/issues/reversion/{{ $issue->id }}?version={{ $version->version }}">
+                        <i class="fa fa-angle-right"></i> {{ $version->version }}
+                    </a>
+                </li>
+                @endforeach
+            </ul>
+        </span>
         @endif
         @if($issue->status == 'Resolved')
             <a class="action" href="{{ Request::url() }}/reopen"><i class="fa fa-exclamation-circle"></i> Reopen issue</a>

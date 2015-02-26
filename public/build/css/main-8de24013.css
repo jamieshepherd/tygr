@@ -524,7 +524,7 @@ a.button-dropdown, span.button-dropdown {
   padding: 25px 0;
   text-align: center;
   border-radius: 5px;
-  cursor: default;
+  cursor: pointer;
   display: inline-block;
   opacity: 0;
   -webkit-animation: fadeOut 5s linear forwards;
@@ -532,13 +532,12 @@ a.button-dropdown, span.button-dropdown {
   .notify-box.error {
     background: #f24a33;
     color: #ffffff; }
-  .notify-box #close-notification {
+  .notify-box #close-icon {
     display: inline-block;
     position: absolute;
     top: 5px;
     right: 7px;
-    color: #ffffff;
-    cursor: pointer; }
+    color: #ffffff; }
 
 @-webkit-keyframes fadeOut {
   0% {

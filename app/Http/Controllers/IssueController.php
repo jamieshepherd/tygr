@@ -242,12 +242,17 @@ class IssueController extends Controller {
 	 */
 	public function show($client, $stub, $id)
 	{
-		$project = Project::where('stub', '=', $stub)->firstOrFail();
+		$project = Project::where('stub', '=', $stub)->first();
+		if(!$project) abort(404);
 		$issue = Issue::where('project_id', '=', $project->id)->where('id', '=', $id)->firstOrFail();
+		// Get all of the versions for this project
+		$versions = Issue::where('project_id', '=', $project->id)->distinct()->select('version')->get();
+
         $groups = Group::all();
 		return view('issues.show')
             ->with('project', $project)
             ->with('issue', $issue)
+			->with('versions', $versions)
             ->with('groups', $groups);
 	}
 
@@ -520,6 +525,7 @@ class IssueController extends Controller {
 			$issue->claimed_by_id = Auth::user()->id;
 			$issue->save();
 		}
+		\Session::flash('message', 'Issue(s) claimed by '.Auth::user()->name);
 		return redirect()->back();
 	}
 
@@ -551,6 +557,32 @@ class IssueController extends Controller {
 	            $issue->claimed_by_id  = Auth::user()->id;
 	            $issue->save();
             }
+			\Session::flash('message', 'Issue(s) assigned successfully.');
+            return redirect()->back();
+        }
+        abort(403);
+    }
+
+	/**
+     * Move issue(s) to a different version
+     *
+     * @param  string  $client
+     * @param  string  $stub
+     * @param  string  $idlist
+     * @return Response
+     */
+    public function reversion($client, $stub, $idlist)
+    {
+        if(isset($_GET['version'])) {
+			$version = $_GET['version'];
+			// Check if we have multiple IDs to assign
+            $idArray = explode(',', $idlist);
+            foreach($idArray as $id) {
+				$issue                 = Issue::find($id);
+	 			$issue->version        = $version;
+	            $issue->save();
+            }
+			\Session::flash('message', 'Issue version set to: '.$version);
             return redirect()->back();
         }
         abort(403);

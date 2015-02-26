@@ -48,8 +48,8 @@ function resizeNav() {
 
 }
 
-function closeNotification() {
-    document.getElementById("close-notification").parentNode.style.display = "none"
+function closeNotification(box) {
+    box.style.display = "none";
 }
 
 function selectAll(ele) {

@@ -11,7 +11,7 @@
   padding: 25px 0;
   text-align: center;
   border-radius: 5px;
-  cursor: default;
+  cursor: pointer;
   display: inline-block;
   opacity: 0;
   animation: fadeOut 5s linear forwards;
@@ -19,13 +19,12 @@
     background: $highlight;
     color: $background;
   }
-  #close-notification {
+  #close-icon {
     display: inline-block;
     position: absolute;
     top: 5px;
     right: 7px;
     color: #ffffff;
-    cursor: pointer;
   }
 }
 

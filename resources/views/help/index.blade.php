@@ -12,10 +12,15 @@
     <div id="main" class="help">
         @include('_layout.header')
         <h1>Help</h1>
-        <p>Hi! We're still in the early stages of this help guide. If your question isn't answered here, please send me an email to <a href="mailto:hello@jamie.sh">hello&#64;jamie.sh</a> and I will get back to you as soon as possible with an answer.</p>
+        <p>Hi! We're still in the early stages of this help guide. If your question isn't answered here, please send me an email to <a href="mailto:jamie.shepherd@spongeuk.com">jamie.shepherd&#64;spongeuk.com</a> and I will get back to you as soon as possible.</p>
+        <section>
+            <h2>Why we use this application</h2>
+            <p>The main purpose of the application is to collate and log any of your issues, amendments and changes related to your project, so the team can get to work on making your elearning project perfect.</p>
+            <p>This web-based system gives you the ability to submit your changes at any time, anywhere, simplifying the review process.</p>
+        </section>
         <section>
             <h2>Supported internet browsers</h2>
-            <p>While we would like the system to be as accessible as possible, in order to deliver the best functionality we can't officially support every browser. The system will be usuable in most (if not all) browsers, but might not work 100% as expected if it's not in the supported list. This list includes: </p>
+            <p>While we would like the system to be as accessible as possible, in order to deliver the best functionality we can't officially support every browser. The system will be usuable in most (if not all) browsers, but might not work 100% as expected if your current browser isn't in the supported list. This list includes: </p>
             <ul>
                 <li>Internet Explorer (7/8/9/10/11+)</li>
                 <li>Google Chrome</li>
@@ -23,13 +28,17 @@
                 <li>Safari</li>
             </ul>
         </section>
-        <section>
-            <h2>Viewing issues</h2>
-            <p>To get a list of issues, you can simply navigate to the main project page via the navigation pane on the left. Selecting 'View issues' will bring you to a list of issues for the current version of the project. For example, if a project is currently at version 2, this page will display all of the issues logged for that version only. If you would like to see issues for other versions, issues assigned to you, or a full list of all of the issues in the system, you can use the filter button at the top.</p>
+         <section>
+            <h2>Locating a project</h2>
+            <p>From the left hand navigation pane you should first select <strong>Projects</strong> which will take you to a list of projects you have access to. Selecting a project will take you to the project homepage, here you will find a brief project overview. From here you can, log issues, view issues and navigate to Review Area.</p>
         </section>
         <section>
             <h2>Logging an issue</h2>
-            <p>The main point of the application is to log your issues, amendments and changes to your project, so the team can get to work on making your elearning project perfect. Luckily, logging an issue is incredibly simple. From the left hand navigation pane you should first select <strong>Projects</strong> which will take you to a list of projects you have access to. Selecting your project brings you to the project homepage, with some quick information about it. You can log an issue directly from this page by clicking the 'Log an issue' button at the top in red, or from the overall 'View issues' page in the same place.</p>
+            <p>From your project page you can log an issue by clicking the red 'Log an issue' button located towards the top of the screen. In addition to this, the same button is also available from the 'View issues' page.</p>
+        </section>
+        <section>
+            <h2>Viewing issues</h2>
+            <p>To view a list of issues, navigate to your project page, Selecting 'View issues' will bring you to a list of issues for the current version of the project. For example, if a project is currently at version 2, this page will display all of the issues logged for that version only. If you would like to see issues for other versions, issues assigned to you, or a full list of all of the issues in the system, you can use the 'filter issues' button at the top.</p>
         </section>
         <section>
             <h2>Updating an issue</h2>

@@ -17,10 +17,10 @@ class CreateAttachmentsTable extends Migration {
 			$table->increments('id');
 			// Issue ID
 			$table->integer('issue_id')->unsigned();
-			$table->foreign('issue_id')->references('id')->on('issues');
+			$table->foreign('issue_id')->references('id')->on('issues')->onDelete('cascade');
             // Author
             $table->integer('author_id')->unsigned()->nullable();
-            $table->foreign('author_id')->references('id')->on('users');
+            $table->foreign('author_id')->references('id')->on('users')->onDelete('cascade');
 			// Filename
 			$table->string('filename');
 			// Extension

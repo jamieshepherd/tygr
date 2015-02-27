@@ -14,6 +14,16 @@
         <h1>Help</h1>
         <p>Hi! We're still in the early stages of this help guide. If your question isn't answered here, please send me an email to <a href="mailto:hello@jamie.sh">hello&#64;jamie.sh</a> and I will get back to you as soon as possible with an answer.</p>
         <section>
+            <h2>Supported internet browsers</h2>
+            <p>While we would like the system to be as accessible as possible, in order to deliver the best functionality we can't officially support every browser. The system will be usuable in most (if not all) browsers, but might not work 100% as expected if it's not in the supported list. This list includes: </p>
+            <ul>
+                <li>Internet Explorer (7/8/9/10/11+)</li>
+                <li>Google Chrome</li>
+                <li>Mozilla Firefox</li>
+                <li>Safari</li>
+            </ul>
+        </section>
+        <section>
             <h2>Viewing issues</h2>
             <p>To get a list of issues, you can simply navigate to the main project page via the navigation pane on the left. Selecting 'View issues' will bring you to a list of issues for the current version of the project. For example, if a project is currently at version 2, this page will display all of the issues logged for that version only. If you would like to see issues for other versions, issues assigned to you, or a full list of all of the issues in the system, you can use the filter button at the top.</p>
         </section>

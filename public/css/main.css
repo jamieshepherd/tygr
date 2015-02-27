@@ -911,6 +911,10 @@ section {
 
 #main.help p, #main.help section {
   max-width: 800px; }
+  #main.help p ul li, #main.help section ul li {
+    margin-left: 20px;
+    list-style-type: circle;
+    line-height: 24px; }
 
 body, input, textarea, button {
   font-family: "open-sans", Arial, sans-serif;

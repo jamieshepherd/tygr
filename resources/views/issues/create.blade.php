@@ -15,7 +15,7 @@
         @include('_layout.header')
         @if(Session::has('tip'))
             <div class="tip">
-                <i class="fa fa-info-circle"></i> The issue was logged. You can <a href="/{{ Session::get('tip') }}">view it here</a> or log another.
+                <i class="fa fa-info-circle"></i> The issue was logged. You can <a href="/{{ Session::get('tip') }}">view it here</a>, <a href="/{{ $project->client->stub }}/{{ $project->stub}}/issues">view all issues</a> or log another below.
             </div>
         @else
             <div class="tip">

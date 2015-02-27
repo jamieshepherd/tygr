@@ -909,6 +909,9 @@ section {
       width: 100%;
       padding: 0; } }
 
+#main.help p, #main.help section {
+  max-width: 800px; }
+
 body, input, textarea, button {
   font-family: "open-sans", Arial, sans-serif;
   font-weight: 400; }

@@ -9,6 +9,8 @@ use App\User;
 use App\Group;
 use App\Client;
 use Illuminate\Support\Facades\Hash;
+
+use App\Events\UserWasCreated;
 use Input;
 use Mail;
 
@@ -80,6 +82,7 @@ class UserController extends Controller {
 					$message->to($user->email, $user->name)->subject('Welcome!');
 				}
 			); */
+			event(new UserWasCreated($user->id, $request->password));
 			\Session::flash('message', $user->name.' was created successfully.');
 			return redirect('/users');
 		}

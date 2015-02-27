@@ -3,6 +3,7 @@
 use App\Http\Requests\CreateIssueRequest;
 use App\Http\Requests\UpdateIssueRequest;
 use App\Commands\AddAttachmentCommand;
+use App\Commands\DestroyAttachmentCommand;
 use App\Http\Controllers\Controller;
 use App\Http\Requests;
 use App\IssueHistory;
@@ -204,7 +205,13 @@ class IssueController extends Controller {
 
 		$result = $issue->save();
 		if(Input::file('attachment')) {
-			$file = Input::file('attachment');
+			$attachment = Input::file('attachment');
+			$file = array(
+			    "filename"  => $attachment->getClientOriginalName(),
+				"extension" => $attachment->getClientOriginalExtension(),
+				"filetype"  => $attachment->getMimeType()
+			);
+			$attachment->move("uploads/tmp", $file['filename']);
 			$this->dispatch(new AddAttachmentCommand($file, $issue->id, \Auth::user()->id));
 		}
 
@@ -235,12 +242,17 @@ class IssueController extends Controller {
 	 */
 	public function show($client, $stub, $id)
 	{
-		$project = Project::where('stub', '=', $stub)->firstOrFail();
+		$project = Project::where('stub', '=', $stub)->first();
+		if(!$project) abort(404);
 		$issue = Issue::where('project_id', '=', $project->id)->where('id', '=', $id)->firstOrFail();
+		// Get all of the versions for this project
+		$versions = Issue::where('project_id', '=', $project->id)->distinct()->select('version')->get();
+
         $groups = Group::all();
 		return view('issues.show')
             ->with('project', $project)
             ->with('issue', $issue)
+			->with('versions', $versions)
             ->with('groups', $groups);
 	}
 
@@ -305,9 +317,16 @@ class IssueController extends Controller {
 		$issue = Issue::find($id);
 
 		if(Input::file('attachment')) {
-			$file = Input::file('attachment');
-			$this->dispatch(new AddAttachmentCommand($file, $id, \Auth::user()->id));
+			$attachment = Input::file('attachment');
+			$file = array(
+			    "filename"  => $attachment->getClientOriginalName(),
+				"extension" => $attachment->getClientOriginalExtension(),
+				"filetype"  => $attachment->getMimeType()
+			);
+			$attachment->move("uploads/tmp", $file['filename']);
+			$this->dispatch(new AddAttachmentCommand($file, $issue->id, \Auth::user()->id));
 		}
+
 		if(Input::get('priority')) {
 			$issue->priority = Input::get('priority');
 			$issue->save();
@@ -385,10 +404,15 @@ class IssueController extends Controller {
 			// Check if we have multiple IDs to destroy
 			$idArray = explode(',', $idlist);
 			foreach($idArray as $id) {
+				$issue = Issue::find($id);
+				$attachments = $issue->attachments()->get();
+				foreach($attachments as $attachment) {
+					$this->dispatch(new DestroyAttachmentCommand($attachment));
+				}
 				Issue::destroy($id);
 			}
 
-			\Session::flash('message', 'The issue was removed successfully.');
+			\Session::flash('message', 'The issue(s) were removed successfully.');
 			return redirect('projects/'.$client.'/'.$stub.'/issues');
 		}
 
@@ -501,6 +525,7 @@ class IssueController extends Controller {
 			$issue->claimed_by_id = Auth::user()->id;
 			$issue->save();
 		}
+		\Session::flash('message', 'Issue(s) claimed by '.Auth::user()->name);
 		return redirect()->back();
 	}
 
@@ -515,14 +540,49 @@ class IssueController extends Controller {
      */
     public function assign($client, $stub, $idlist)
     {
-        if(exists($_GET['group'])) {
-            // Check if we have multiple IDs to claim
+        if(isset($_GET['group'])) {
+			if($_GET['group'] == 'sponge') {
+				$groupid = Group::where('name', '=', 'Sponge UK')->first()->id;
+			} elseif($_GET['group'] == 'client') {
+				$groupid = Group::where('name', '=', 'Client')->first()->id;
+			} else {
+				abort(403);
+			}
+
+			// Check if we have multiple IDs to assign
             $idArray = explode(',', $idlist);
             foreach($idArray as $id) {
-                $issue 				  = Issue::find($id);
-                $issue->claimed_by_id = Auth::user()->id;
-                $issue->save();
+				$issue                 = Issue::find($id);
+	 			$issue->assigned_to_id = $groupid;
+	            $issue->claimed_by_id  = Auth::user()->id;
+	            $issue->save();
             }
+			\Session::flash('message', 'Issue(s) assigned successfully.');
+            return redirect()->back();
+        }
+        abort(403);
+    }
+
+	/**
+     * Move issue(s) to a different version
+     *
+     * @param  string  $client
+     * @param  string  $stub
+     * @param  string  $idlist
+     * @return Response
+     */
+    public function reversion($client, $stub, $idlist)
+    {
+        if(isset($_GET['version'])) {
+			$version = $_GET['version'];
+			// Check if we have multiple IDs to assign
+            $idArray = explode(',', $idlist);
+            foreach($idArray as $id) {
+				$issue                 = Issue::find($id);
+	 			$issue->version        = $version;
+	            $issue->save();
+            }
+			\Session::flash('message', 'Issue version set to: '.$version);
             return redirect()->back();
         }
         abort(403);

@@ -524,7 +524,7 @@ a.button-dropdown, span.button-dropdown {
   padding: 25px 0;
   text-align: center;
   border-radius: 5px;
-  cursor: default;
+  cursor: pointer;
   display: inline-block;
   opacity: 0;
   -webkit-animation: fadeOut 5s linear forwards;
@@ -532,13 +532,12 @@ a.button-dropdown, span.button-dropdown {
   .notify-box.error {
     background: #f24a33;
     color: #ffffff; }
-  .notify-box #close-notification {
+  .notify-box #close-icon {
     display: inline-block;
     position: absolute;
     top: 5px;
     right: 7px;
-    color: #ffffff;
-    cursor: pointer; }
+    color: #ffffff; }
 
 @-webkit-keyframes fadeOut {
   0% {
@@ -599,12 +598,13 @@ a.button-dropdown, span.button-dropdown {
   margin-left: -30px;
   bottom: 0; }
   #table-actions span {
-    margin-right: 10px;
     text-transform: uppercase;
     font-size: 12px; }
     #table-actions span#selectedAmount {
       margin: 0;
       font-weight: bold; }
+    #table-actions span.label {
+      margin-right: 10px; }
   #table-actions a, #table-actions span {
     margin-bottom: 0; }
     #table-actions a.button-dropdown, #table-actions span.button-dropdown {
@@ -614,6 +614,8 @@ a.button-dropdown, span.button-dropdown {
         bottom: 100%;
         border-bottom: 1px solid #ffffff;
         border-top: none; }
+  #table-actions a {
+    padding-bottom: 7px; }
 
 .fa.pointer {
   cursor: default; }
@@ -704,6 +706,13 @@ section {
         padding: 3px 5px; }
   section .attachments li {
     line-height: 36px; }
+    section .attachments li .attachment-delete {
+      border: none;
+      margin-left: 10px;
+      opacity: 0.3; }
+      section .attachments li .attachment-delete:hover {
+        opacity: 1;
+        color: #f24a33; }
   section .attachments i {
     margin-right: 5px; }
   section .update {
@@ -899,6 +908,13 @@ section {
     .projects-index .col {
       width: 100%;
       padding: 0; } }
+
+#main.help p, #main.help section {
+  max-width: 800px; }
+  #main.help p ul li, #main.help section ul li {
+    margin-left: 20px;
+    list-style-type: circle;
+    line-height: 24px; }
 
 body, input, textarea, button {
   font-family: "open-sans", Arial, sans-serif;

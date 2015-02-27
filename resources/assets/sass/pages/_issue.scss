@@ -27,6 +27,15 @@ section {
   .attachments {
     li {
       line-height: 36px;
+      .attachment-delete {
+          border: none;
+          margin-left: 10px;
+          opacity: 0.3;
+          &:hover {
+              opacity: 1;
+              color: $highlight;
+          }
+      }
     }
     i {
       margin-right:5px;

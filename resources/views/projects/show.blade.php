@@ -13,9 +13,9 @@
         <a class="action" href="{{ Request::url() }}/issues/create"><i class="fa fa-plus-circle"></i> Log an issue</a>
         @if(Auth::user()->rank <= 2)
             <a class="action" href="{{ Request::url() }}/edit"><i class="fa fa-edit"></i> Edit project</a>
+            <a class="action" href="{{ Request::url() }}/version"><i class="fa fa-diamond"></i> New version</a>
         @endif
         <a class="action" href="{{ Request::url() }}/issues"><i class="fa fa-bug"></i> View issues</a>
-        <a class="action" href="{{ Request::url() }}/version"><i class="fa fa-diamond"></i> New version</a>
         <a class="action" href="http://reviewarea.co.uk/Secure/{{ $project->client->stub }}"><i class="fa fa-desktop"></i> Review area</a>
         <div class="info-box">
             <table>

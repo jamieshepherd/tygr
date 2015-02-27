@@ -724,7 +724,11 @@ section {
     border-radius: 3px;
     position: relative; }
     section .update.status {
-      background: #f6f6f6; }
+      background: #f6f6f6;
+      opacity: 0.5;
+      border-left-width: 1px; }
+      section .update.status:hover {
+        opacity: 1; }
     section .update:hover {
       border-color: #999;
       opacity: 1; }

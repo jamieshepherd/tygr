@@ -51,6 +51,11 @@ section {
       position: relative;
       &.status {
         background: #f6f6f6;
+        opacity: 0.5;
+        border-left-width: 1px;
+        &:hover {
+            opacity: 1.0;
+        }
       }
       &:hover {
         border-color: #999;

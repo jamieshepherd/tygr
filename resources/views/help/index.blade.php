@@ -15,8 +15,9 @@
         <p>Hi! We're still in the early stages of this help guide. If your question isn't answered here, please send me an email to <a href="mailto:jamie.shepherd@spongeuk.com">jamie.shepherd&#64;spongeuk.com</a> and I will get back to you as soon as possible.</p>
         <section>
             <h2>Why we use this application</h2>
-            <p>The main purpose of the application is to collate and log any of your issues, amendments and changes related to your project, so the team can get to work on making your elearning project perfect.</p>
-            <p>This web-based system gives you the ability to submit your changes at any time, anywhere, simplifying the review process.</p>
+            <p>The main purpose of this web-based system is to collate and log any of your issues, amendments and changes related to your project, so the team can get to work on making your elearning project perfect.</p>
+            <p>You can submit your changes at any time, anywhere, simplifying the entire review phase.</p>
+            <p>We've opted for a very simple issue process. An issue is created by you, this is then worked on by the team and then resolved, and finally you'll close off any issues when you're happy that the desired task has been completed successfully.</p>
         </section>
         <section>
             <h2>Supported internet browsers</h2>
@@ -42,15 +43,17 @@
         </section>
         <section>
             <h2>Updating an issue</h2>
-            <p>There are a number of ways to update an issue once it has been created. Firstly, you'll need to be viewing the issue by selecting it from the list of available issues. From this display you can perform a number of actions. If you'd like to add some extra information about an issue, or send a message to the team working on it, you can simply enter a comment in the large comment area. You can also add attachments such as pictures or documents from this area. If you feel the issue needs assigning to a different group of users, you can select this from the dropdown box. Finally, if you're happy the issue has been completed and wish to send it for QA, you can mark it as resolved.</p>
+            <p>There are a number of ways to update an issue once it has been created. Firstly, you'll need to be viewing the issue by selecting it from the list of available issues. From this page you can perform a number of actions. If you'd like to add some extra information about an issue, or send a message to the team working on it, you can simply enter a comment in the large comment area. You can also add attachments such as pictures or documents from this area. Be sure to click the "Update issue" button at the bottom of the page to save any changes.</p>
         </section>
         <section>
             <h2>Closing an issue</h2>
-            <p>We've opted for a very simple issue process. An issue gets created, is worked on by the team and then resolved, and finally it is closed off by the client when you're happy it has been completed successfully. When an issue is set to 'Resolved' (usually by the development team), you won't be able to add anything new to the issue as it will be in review mode. You'll have been sent a link by the Project Manager when the project is available for review, and should go through the issue list that you created ensuring that all of the issues have been completed - they will have been QA'd by our development team, but we want to make sure you're happy with them before we continue. Doing this is easy, as when the issue is resolved by developers, you have a 'Close issue' button at the top available to you. As you can imagine, clicking this will close the issue, and we will consider it complete!</p>
+            <p>When an issue has been set to 'Resolved', you won't be able to add anything new to the issue as it will be in review mode.</p>
+            <p>You'll have been sent a link by your Project Manager when the project is available for review. After launching your project you will need to work your way through the issue list ensuring that all of the issues have been completed to your requirements - they will have been QA'd by our us, but we want to make sure you're happy with them before we continue.</p>
+            <p>Doing this is easy. When the issue is resolved by us, you have a 'Close issue' button at the top available to you. Clicking this will close the issue, and we will consider it complete!</p>
         </section>
         <section>
             <h2>Changing your password</h2>
-            <p>Changing your password from the one that was given to you is available through your personal account settings. To get there, just click on 'Account' on the left navigation pane, and select the red 'Edit details' button at the top. You'll need to enter your old password, and then the new password you would like twice. Please make a note of your password as you can only change it by contacting us if you forget it.</p>
+            <p>Changing your password from the auto-generated password that was send to you in your welcome email is available through your personal account settings. To get there, just click on 'Account' on the left navigation pane, and select the red 'Edit details' button at the top. You'll need to enter your old password, and then the new password you would like twice. Please make a note of your password as you can only change it by contacting us if you forget it.</p>
         </section>
     </div>
 

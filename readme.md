@@ -1,9 +1,7 @@
 ## Tygr - Issue management system
-####Beta, Build 213
+####Version 1.0.0
 
 [![Build Status](https://travis-ci.org/jamieshepherd/tygr.svg?)](https://travis-ci.org/jamieshepherd/tygr)
-
-*This project is now in beta, and expected to be released imminently.*
 
 This repository hosts the source code for the tygr issue management system, a project and issue management system developed primarily for companies in the elearning industry. The project is open source under the MIT license.
 

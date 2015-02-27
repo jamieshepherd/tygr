@@ -6,6 +6,7 @@
 	"type": "project",
 	"require": {
         "laravel/framework": "5.0.*",
+		"guzzlehttp/guzzle": "~4.0",
         "microsoft/windowsazure": "*",
         "pear-pear.php.net/http_request2": "*",
         "pear-pear.php.net/mail_mime": "*",

@@ -41,7 +41,7 @@ return [
 	|
 	*/
 
-	'port' => env('MAIL_HOST', 587),
+	'port' => env('MAIL_PORT', 587),
 
 	/*
 	|--------------------------------------------------------------------------
@@ -54,7 +54,7 @@ return [
 	|
 	*/
 
-	'from' => ['address' => null, 'name' => null],
+	'from' => ['address' => env('MAIL_FROM_EMAIL', null), 'name' => env('MAIL_FROM_NAME', null)],
 
 	/*
 	|--------------------------------------------------------------------------

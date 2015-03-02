@@ -28,7 +28,5 @@
 
             <br/><button type="submit"><i class="fa fa-arrow-circle-right"></i> Confirm new version</button>
         </form>
-
     </div>
-    </body>
 @stop

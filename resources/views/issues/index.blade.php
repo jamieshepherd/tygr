@@ -83,5 +83,4 @@
             var userList = new List('issues', options);
         </script>
     </div>
-    </body>
 @stop

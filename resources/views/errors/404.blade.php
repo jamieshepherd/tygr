@@ -15,5 +15,4 @@
         <h2>Page not found.</h2>
         <p>Sorry, we couldn't find that page. If it's a dead link, <a href="mailto:email@jamie.sh">we'd like to know</a>. Otherwise, you can use the navigation to the left to find what you were looking for.</p>
     </div>
-</body>
 @stop

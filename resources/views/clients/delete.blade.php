@@ -16,5 +16,4 @@
         <a class="action" href="/clients/delete/{{{ $client->id }}}?confirm=true"><i class="fa fa-exclamation-circle"></i> Yes, I'm sure</a>
         <a class="action secondary" href="/clients/show/{{{ $client->stub }}}"><i class="fa fa-arrow-circle-left"></i> No, take me back</a>
     </div>
-    </body>
 @stop

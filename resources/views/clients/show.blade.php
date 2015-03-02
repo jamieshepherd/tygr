@@ -56,5 +56,4 @@
             var userList = new List('projects', options);
         </script>
     </div>
-</body>
 @stop

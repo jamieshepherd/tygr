@@ -32,5 +32,4 @@
         </form>
 
     </div>
-    </body>
 @stop

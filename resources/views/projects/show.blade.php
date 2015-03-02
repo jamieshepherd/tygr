@@ -43,5 +43,4 @@
             <p>You can <a href="{{ Request::url() }}/issues?filter=me">click here</a> to take a look at these issues.</p>
         @endif
     </div>
-</body>
 @stop

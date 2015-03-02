@@ -39,7 +39,5 @@
 
             <br/><button type="submit"><i class="fa fa-arrow-circle-right"></i> Log issue</button>
         </form>
-
     </div>
-    </body>
 @stop

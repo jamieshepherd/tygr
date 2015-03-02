@@ -15,5 +15,4 @@
         <h2>Service unavailable.</h2>
         <p>Sorry, the server is currently unavailable! We'll try to keep you updated as the issue gets resolved.</p>
     </div>
-</body>
 @stop

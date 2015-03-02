@@ -68,7 +68,5 @@
 
             <br/><button type="submit"><i class="fa fa-arrow-circle-right"></i> Create project</button>
         </form>
-
     </div>
-    </body>
 @stop

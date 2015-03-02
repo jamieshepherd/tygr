@@ -25,5 +25,4 @@
         <h2>Rank</h2>
         <p>@if($user->rank == 1) Admin @elseif($user->rank == 2) Employee @else Client @endif</p>
     </div>
-</body>
 @stop

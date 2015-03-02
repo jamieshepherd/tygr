@@ -22,5 +22,4 @@
             </ul>
         @endif
     </div>
-</body>
 @stop

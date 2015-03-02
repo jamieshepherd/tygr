@@ -15,5 +15,4 @@
             <hr/>
             @endif
             @endforeach
-</body>
 @endsection

@@ -45,5 +45,4 @@
             var userList = new List('clients', options);
         </script>
     </div>
-</body>
 @stop

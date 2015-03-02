@@ -98,5 +98,4 @@
         @endif
         @include('issues.history')
     </div>
-</body>
 @stop

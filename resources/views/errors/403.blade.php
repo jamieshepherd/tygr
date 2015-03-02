@@ -15,5 +15,4 @@
         <h2>Forbidden.</h2>
         <p>Oops, it looks like you've tried to go somewhere you aren't supposed to! Nevermind, use the navigation to the left and we'll get you back on the right path.</p>
     </div>
-    </body>
 @stop

@@ -49,7 +49,5 @@
 
             <br/><button type="submit"><i class="fa fa-arrow-circle-right"></i> Create user</button>
         </form>
-
     </div>
-    </body>
 @stop

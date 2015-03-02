@@ -16,5 +16,4 @@
         <a class="action" href="{{ Request::url() }}?confirm=true"><i class="fa fa-exclamation-circle"></i> Yes, I'm sure</a>
         <a class="action secondary" href="/"><i class="fa fa-arrow-circle-left"></i> No, take me back</a>
     </div>
-    </body>
 @stop

@@ -56,6 +56,4 @@
             <p>Changing your password from the auto-generated password that was send to you in your welcome email is available through your personal account settings. To get there, just click on 'Account' on the left navigation pane, and select the red 'Edit details' button at the top. You'll need to enter your old password, and then the new password you would like twice. Please make a note of your password as you can only change it by contacting us if you forget it.</p>
         </section>
     </div>
-
-</body>
 @stop

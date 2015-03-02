@@ -14,5 +14,4 @@
         <h1>503</h1>
         <p>Service unavailable.</p>
     </div>
-</body>
 @stop

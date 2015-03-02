@@ -42,5 +42,4 @@
             @endforeach
             </div>
     </div>
-</body>
 @stop

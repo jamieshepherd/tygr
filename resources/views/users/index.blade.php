@@ -43,5 +43,4 @@
             var userList = new List('users', options);
         </script>
     </div>
-</body>
 @stop

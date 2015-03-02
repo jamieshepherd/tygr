@@ -20,30 +20,35 @@
         @if(Auth::user()->rank == 1)
         <a class="action" href="/clients/delete/{{ $client->id }}"><i class="fa fa-exclamation-circle"></i> Delete client</a>
         @endif
-        <table class="full" data-sortable>
-            <thead>
-                <tr class="head">
-                    <th>Client <i class="fa fa-sort"></i></th>
-                    <th>Project <i class="fa fa-sort"></i></th>
-                    <th>Stub <i class="fa fa-sort"></i></th>
-                    <th>Issues <i class="fa fa-sort"></i></th>
-                    <th>Version <i class="fa fa-sort"></i></th>
-                    <th>Project Manager <i class="fa fa-sort"></i></th>
-                </tr>
-            </thead>
-            <tbody class="list">
-            @foreach($client->projects as $project)
-            <tr onclick="document.location='/projects/{{ $project->client->stub }}/{{{ $project->stub }}}';" style="cursor:pointer">
-                <td class="client">{{{ $client->name }}}</td>
-                <td class="project">{{{ $project->name }}}</td>
-                <td class="stub">{{{ $project->stub }}}</td>
-                <td class="issues">{{{ count($project->issues) }}}</td>
-                <td>{{{ $project->current_version }}}</td>
-                <td class="project_manager">{{{ $project->project_manager }}}</td>
-            </tr>
-            @endforeach
-            </tbody>
-        </table>
+            @if(count($client->projects) > 0)
+                <table class="full" data-sortable>
+                    <thead>
+                    <tr class="head">
+                        <th>Client <i class="fa fa-sort"></i></th>
+                        <th>Project <i class="fa fa-sort"></i></th>
+                        <th>Stub <i class="fa fa-sort"></i></th>
+                        <th>Issues <i class="fa fa-sort"></i></th>
+                        <th>Version <i class="fa fa-sort"></i></th>
+                        <th>Project Manager <i class="fa fa-sort"></i></th>
+                    </tr>
+                    </thead>
+                    <tbody class="list">
+                    @foreach($client->projects as $project)
+                        <tr onclick="document.location='/projects/{{ $project->client->stub }}/{{{ $project->stub }}}';" style="cursor:pointer">
+                            <td class="client">{{{ $client->name }}}</td>
+                            <td class="project">{{{ $project->name }}}</td>
+                            <td class="stub">{{{ $project->stub }}}</td>
+                            <td class="issues">{{{ count($project->issues) }}}</td>
+                            <td>{{{ $project->current_version }}}</td>
+                            <td class="project_manager">{{{ $project->project_manager }}}</td>
+                        </tr>
+                    @endforeach
+                    </tbody>
+                </table>
+            @else
+                <h2>No projects found</h2>
+                <p><i class="fa fa-info-circle"></i> There are no projects associated with this client, would you like to <a href="{{ Request::url() }}/create">create one</a>?</p>
+            @endif
         </div>
         <script src="/js/list.js"></script>
         <script>

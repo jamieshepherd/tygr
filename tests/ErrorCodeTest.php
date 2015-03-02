@@ -24,7 +24,6 @@ class ErrorCodeTest extends TestCase {
     public function test403()
     {
         $user = new User(array('rank'      => 3));
-
         $this->be($user);
 
         $response = $this->call('GET', '/users');

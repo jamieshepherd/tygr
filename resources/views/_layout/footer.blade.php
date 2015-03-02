@@ -12,4 +12,5 @@
         <i class="fa fa-exclamation-triangle"></i> There were errors submitting this form.
     </div>
 @endif
+</body>
 </html>

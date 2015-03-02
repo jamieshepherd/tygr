@@ -1,5 +1,6 @@
 <?php namespace App\Http\Controllers\Auth;
 
+use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Illuminate\Contracts\Auth\Guard;
 use Illuminate\Contracts\Auth\PasswordBroker;
@@ -33,6 +34,42 @@ class PasswordController extends Controller {
         $this->passwords = $passwords;
 
         $this->middleware('guest');
+    }
+
+    /**
+     * Send a reset link to the given user.
+     *
+     * @param  Request  $request
+     * @return Response
+     */
+    public function postEmail(Request $request)
+    {
+        $this->validate($request, ['email' => 'required|email']);
+
+        $response = $this->passwords->sendResetLink($request->only('email'), function($m)
+        {
+            $m->subject($this->getEmailSubject());
+        });
+
+        switch ($response)
+        {
+            case PasswordBroker::RESET_LINK_SENT:
+                \Session::flash('message', 'A reset link was sent to your email.');
+                return redirect('/auth/login');
+
+            case PasswordBroker::INVALID_USER:
+                return redirect()->back()->withErrors(['email' => trans($response)]);
+        }
+    }
+
+    /**
+     * Get the post register / login redirect path.
+     *
+     * @return string
+     */
+    public function redirectPath()
+    {
+        return '/';
     }
 
 }

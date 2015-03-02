@@ -13,8 +13,12 @@
 
 Route::controllers([
 	'auth' => 'Auth\AuthController',
-	'password' => 'Auth\PasswordController'
+	'password' => 'Auth\PasswordController',
 ]);
+
+Route::get('home', function() {
+    return Redirect::to('/');
+});
 
 Route::get('auth/login', 'AuthController@getLogin');
 Route::get('auth/logout', 'AuthController@getLogout');

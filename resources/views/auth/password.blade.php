@@ -4,16 +4,12 @@
 <div class="gradient">
     <div class="login">
         <img class="sponge-logo" src="/images/sponge-logo-red.svg" onerror="this.src='/images/sponge-logo-red.png'; this.onerror=null;">
-        <form action="/auth/login" method="POST">
+        <form action="/password/email" method="POST">
             <input type="hidden" name="_token" value="{{ csrf_token() }}">
             <label for="email">Email address</label>
             <input name="email" type="text" placeholder="Email address">
-            <label for="email">Password</label>
-            <input name="password" type="password" placeholder="Password">
-            <input name="remember" type="checkbox"><span class="remember">Remember me</span>
-            <span class="remember"><a href="/password/email"><i class="fa fa-lock"></i> Reset password</a></span>
-            <input type="submit" value="Sign in">
-            @if($errors->has()) <hr/><span class="error"><i class="fa fa-exclamation-triangle"></i> The details you entered were incorrect</span>@endif
+            <input type="submit" value="Send reset email">
+            @if($errors->has()) <hr/><span class="error"><i class="fa fa-exclamation-triangle"></i> Check for any errors and try again</span>@endif
         </form>
     </div>
 </div>

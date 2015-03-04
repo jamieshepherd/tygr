@@ -2,15 +2,13 @@
   margin-top: 500px;
   display: none;
   background: #fff;
-  border-top: 1px dotted #222;
+  border-top: 1px solid #f3f2f2;
   padding: 20px;
   width: 100%;
   position: fixed;
   margin-left: -30px;
   bottom: 0;
   span {
-    text-transform: uppercase;
-    font-size: 12px;
     &#selectedAmount {
       margin: 0;
       font-weight: bold;
@@ -22,16 +20,14 @@
   a,span {
     margin-bottom: 0;
     &.button-dropdown {
-      font-size: 11px;
       ul {
+        border-bottom: 1px solid #ffffff;
         top: auto;
         bottom: 100%;
-        border-bottom: 1px solid #ffffff;
+        left: 0px;
         border-top: none;
+        min-width: 176px;
       }
     }
-  }
-  a {
-      padding-bottom: 7px;
   }
 }

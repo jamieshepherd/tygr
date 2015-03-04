@@ -19,16 +19,15 @@
                     <i class="fa fa-angle-right"></i>
                     <a href="/projects/{{ $project->client->stub }}/{{ $project->stub }}">{{ $project->name }}</a>
                     <i class="fa fa-angle-right"></i>
-                    <a href="/projects/{{ $project->client->stub }}/{{ $project->stub }}/edit">Edit</a>
+                    <a href="/projects/{{ $project->client->stub }}/{{ $project->stub }}/version">New version</a>
                 </div>
             @endif
-            <h1>Edit project</h1>
+            <h1>New version</h1>
         </header>
         <div class="tip">
             <i class="fa fa-info-circle"></i> Creating a new version will archive all of the current issues.
         </div>
 
-        <h1>New version <em>{{{ $project->name }}}</em></h1>
         <form action="" method="POST" accept-charset="UTF-8">
         <input type="hidden" name="_token" value="<?php echo csrf_token(); ?>">
 

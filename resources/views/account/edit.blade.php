@@ -44,6 +44,7 @@
             <label>Confirm new password</label>
             <input name="confirmpass" type="password">
             <br/><button type="submit"><i class="fa fa-arrow-circle-right"></i> Update details</button>
+            <a class="action red" href="javascript:history.back()"><i class="fa fa-times-circle"></i> Cancel</a>
         </form>
 
     </div>

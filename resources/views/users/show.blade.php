@@ -14,7 +14,7 @@
                 <div class="crumbtrail">
                     <a href="/">Home</a>
                     <i class="fa fa-angle-right"></i>
-                    <a href="/account">Users</a>
+                    <a href="/users">Users</a>
                     <i class="fa fa-angle-right"></i>
                     <a href="/users/show/{{ $user->id }}">{{{ $user->name }}}</a>
                 </div>

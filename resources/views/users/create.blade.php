@@ -45,15 +45,19 @@
             <input value="{{ old('password') }}" id="password" name="password" type="text" placeholder="e.g. qwerty1" @if($errors->has('password')) class="error">
             <span class="error">{{ $errors->first('password') }}</span> @else > @endif
 
-            <div id="assign_groups">
-                <label>Assign groups</label>
-                <input name="spongeuk_project_management" type="checkbox"> Sponge UK (Project Management)<br/>
-                <input name="spongeuk_development" type="checkbox"> Sponge UK (Development) <br/>
-                <input name="spongeuk_visual_design" type="checkbox"> Sponge UK (Visual Design) <br/>
-                <input name="spongeuk_instructional_design" type="checkbox"> Sponge UK (Instructional Design) <br/>
-            </div>
+            <label>Assign departments</label>
+            <input name="spongeuk_project_management" type="checkbox"> Sponge UK (Project Management)<br/>
+            <input name="spongeuk_development" type="checkbox"> Sponge UK (Development) <br/>
+            <input name="spongeuk_visual_design" type="checkbox"> Sponge UK (Visual Design) <br/>
+            <input name="spongeuk_instructional_design" type="checkbox"> Sponge UK (Instructional Design) <br/>
+            <input name="spongeuk_launch_and_learn" type="checkbox"> Sponge UK (Launch &amp; Learn) <br/>
+            <input name="spongeuk_marketing" type="checkbox"> Sponge UK (Marketing) <br/>
+            <input name="spongeuk_human_resources" type="checkbox"> Sponge UK (Human Resources) <br/>
+            <input name="spongeuk_accounting" type="checkbox"> Sponge UK (Accounting) <br/>
+            <input name="spongeuk_administration" type="checkbox"> Sponge UK (Administration)
 
             <br/><button type="submit"><i class="fa fa-arrow-circle-right"></i> Create user</button>
+            <a class="action red" href="javascript:history.back()"><i class="fa fa-times-circle"></i> Cancel</a>
         </form>
     </div>
 @stop

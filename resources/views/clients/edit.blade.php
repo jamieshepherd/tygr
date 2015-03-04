@@ -35,6 +35,7 @@
             <span class="error">{{ $errors->first('stub') }}</span> @else > @endif
 
             <br/><button type="submit"><i class="fa fa-arrow-circle-right"></i> Update details</button>
+            <a class="action red" href="javascript:history.back()"><i class="fa fa-times-circle"></i> Cancel</a>
         </form>
     </div>
 @stop

@@ -31,12 +31,13 @@ p {
 strong {
   font-weight: 700;
 }
+
 a {
-  color: $foreground;
+  color: #888888;
   text-decoration: none;
-  border-bottom: 1px dotted $foreground;
+  border-bottom: 1px dotted #888888;
   &:hover {
-    color: #8BCEDC;
-    border-color: #8BCEDC;
+    color: #354052;
+    border-color: #354052;
   }
 }

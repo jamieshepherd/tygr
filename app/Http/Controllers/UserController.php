@@ -73,15 +73,22 @@ class UserController extends Controller {
 		if(Input::has('spongeuk_instructional_design'))
 			$user->attachToGroup('Sponge UK (Instructional Design)', $user->id);
 
+        if(Input::has('spongeuk_launch_and_learn'))
+            $user->attachToGroup('Sponge UK (Launch & Learn)', $user->id);
+
+        if(Input::has('spongeuk_marketing'))
+            $user->attachToGroup('Sponge UK (Marketing)', $user->id);
+
+        if(Input::has('spongeuk_human_resources'))
+            $user->attachToGroup('Sponge UK (Human Resources)', $user->id);
+
+        if(Input::has('spongeuk_accounting'))
+            $user->attachToGroup('Sponge UK (Accounting)', $user->id);
+
+        if(Input::has('spongeuk_administration'))
+            $user->attachToGroup('Sponge UK (Administration)', $user->id);
+
 		if($result) {
-			/* handle this with an event
-			Mail::send('emails.welcome', array(
-				'name' => $user->name,
-				'email' => $user->email,
-				'password' => $user->password), function($message) use($user) {
-					$message->to($user->email, $user->name)->subject('Welcome!');
-				}
-			); */
 			event(new UserWasCreated($user->id, $request->password));
 			\Session::flash('message', $user->name.' was created successfully.');
 			return redirect('/users');
@@ -170,6 +177,46 @@ class UserController extends Controller {
 		} else {
 			$user->detachFromGroup('Sponge UK (Instructional Design)',$user->id);
 		}
+
+        if(Input::has('spongeuk_launch_and_learn')) {
+            if(!$user->belongsToGroup('Sponge UK (Launch & Learn)')) {
+                $user->attachToGroup('Sponge UK (Launch & Learn)',$user->id);
+            }
+        } else {
+            $user->detachFromGroup('Sponge UK (Launch & Learn)',$user->id);
+        }
+
+        if(Input::has('spongeuk_marketing')) {
+            if(!$user->belongsToGroup('Sponge UK (Marketing)')) {
+                $user->attachToGroup('Sponge UK (Marketing)',$user->id);
+            }
+        } else {
+            $user->detachFromGroup('Sponge UK (Marketing)',$user->id);
+        }
+
+        if(Input::has('spongeuk_human_resources')) {
+            if(!$user->belongsToGroup('Sponge UK (Human Resources)')) {
+                $user->attachToGroup('Sponge UK (Human Resources)',$user->id);
+            }
+        } else {
+            $user->detachFromGroup('Sponge UK (Human Resources)',$user->id);
+        }
+
+        if(Input::has('spongeuk_accounting')) {
+            if(!$user->belongsToGroup('Sponge UK (Accounting)')) {
+                $user->attachToGroup('Sponge UK (Accounting)',$user->id);
+            }
+        } else {
+            $user->detachFromGroup('Sponge UK (Accounting)',$user->id);
+        }
+
+        if(Input::has('spongeuk_administration')) {
+            if(!$user->belongsToGroup('Sponge UK (Administration)')) {
+                $user->attachToGroup('Sponge UK (Administration)',$user->id);
+            }
+        } else {
+            $user->detachFromGroup('Sponge UK (Administration)',$user->id);
+        }
 
 		if($result) {
 			\Session::flash('message', $user->name.' was updated successfully.');

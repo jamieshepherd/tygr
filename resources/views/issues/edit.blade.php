@@ -43,7 +43,8 @@
             <input name="attachment" type="file" @if($errors->has('attachment')) class="error">
             <span class="error">{{ $errors->first('attachment') }}</span> @else > @endif
 
-            <br/><button type="submit"><i class="fa fa-arrow-circle-right"></i> Log issue</button>
+            <br/><button type="submit"><i class="fa fa-arrow-circle-right"></i> Update issue</button>
+            <a class="action red" href="javascript:history.back()"><i class="fa fa-times-circle"></i> Cancel</a>
         </form>
     </div>
 @stop

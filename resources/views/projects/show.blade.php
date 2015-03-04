@@ -18,7 +18,7 @@
         </header>
         <a class="action" href="{{ Request::url() }}/issues/create"><i class="fa fa-plus-circle"></i> Log an issue</a>
         @if(Auth::user()->rank <= 2)
-            <a class="action green" href="{{ Request::url() }}/version"><i class="fa fa-diamond"></i> New version</a>
+            <a class="action green" href="{{ Request::url() }}/version"><i class="fa fa-flask"></i> New version</a>
             <a class="action yellow" href="{{ Request::url() }}/edit"><i class="fa fa-edit"></i> Edit project</a>
         @endif
         <a class="action blue" href="{{ Request::url() }}/issues"><i class="fa fa-bug"></i> View issues</a>

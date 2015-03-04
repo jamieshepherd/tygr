@@ -1,5 +1,5 @@
-a,span {
-  &.action {
+a,span, button {
+  &.action, &[type='submit'] {
     font-size: 14px;
     font-weight: 600;
     min-width: 70px;
@@ -15,6 +15,7 @@ a,span {
     margin-top: -1px;
     margin-bottom: 4px;
     margin-right: 5px;
+    cursor: pointer;
     &.red {
       background: #f34939;
       &:hover {
@@ -45,25 +46,31 @@ a,span {
     &.nofill {
       background: none;
       color: #39d1b4;
-      border-width: 1px;
-      border-style: solid;
+      border: 1px solid;
       &.red {
+        color: #f34939;
         border-color: #f34939;
         &:hover {
           background-color: #f34939;
         }
       }
-      &.green { border-color: #39d1b4;
+      &.green {
+        color: #39d1b4;
+        border-color: #39d1b4;
         &:hover {
           background-color: #39d1b4;
         }
       }
-      &.blue { border-color: #8bcedc;
+      &.blue {
+        color: #8bcedc;
+        border-color: #8bcedc;
         &:hover {
           background-color: #8bcedc;
         }
       }
-      &.yellow { border-color: #fdb45c;
+      &.yellow {
+        color: #fdb45c;
+        border-color: #fdb45c;
         &:hover {
           background-color: #fdb45c;
         }
@@ -77,6 +84,11 @@ a,span {
     }
   }
 }
+button[type="submit"] {
+  margin-top: 20px;
+  padding: 9px 30px 10px;
+}
+/*
 button {
   font-size: 11px;
   text-transform: uppercase;
@@ -94,23 +106,24 @@ button {
     }
   }
 }
+*/
 a,span {
   &.button-dropdown {
-    background: $highlight;
-    color: $background;
+    color: #ffffff;
     position: relative;
     cursor: pointer;
     ul {
+      min-width: 155px;
       border-top: 1px solid #ffffff;
       position: absolute;
-      top: 25px;
-      left: 0;
+      top: 36px;
+      left: 1px;
       display: none;
-      z-index: 1;
+      z-index: 2;
+      text-align: left;
       li {
         padding: 0;
-        background: $highlight;
-        color: $background;
+        background: #fdb45c;
         &:hover {
           background: $tertiary;
         }

@@ -55,6 +55,7 @@
                 <thead>
                     <tr class="head">
                         <th class="select" data-sortable="false" data-sorted="false"><input type="checkbox" onchange="selectAll(this)"></th>
+                        <th>Date <i class="fa fa-sort"></i></th>
                         <th>Reference <i class="fa fa-sort"></i></th>
                         <th>Details <i class="fa fa-sort"></i></th>
                         <th>Assigned <i class="fa fa-sort"></i></th>
@@ -66,11 +67,12 @@
                     @if(!$issue->hidden || Auth::user()->rank <= 2)
                         <tr>
                             <td class="select"><input class="issue-checkbox" type="checkbox" onchange="checkSelected()" value="{{ $issue->id }}"></td>
+                            <td class="date"><i class="fa fa-calendar"></i> &nbsp;{{ date("d M Y",strtotime($issue->created_at)) }}</td>
                             <td class="reference">{{{ $issue->reference }}}</td>
                             <td class="details">
                                 <span class="summary"><a href="/projects/{{ $project->client->stub }}/{{{ $project->stub }}}/issues/show/{{{ $issue->id }}}">{{ $issue->summary }}</a></span>
                                 <span class="description">{{{ substr($issue->description,0,80) }}}...</span>
-                                <span class="details"><i class="fa fa-calendar"></i> {{ date("d M Y",strtotime($issue->created_at)) }} <i class="fa fa-diamond"></i> {{ $issue->version }} @if(Auth::user()->rank < 3) @if($issue->claimed_by) <i class="fa fa-flag"></i> {{ $issue->claimed_by->name }} @endif  @if($issue->hidden) <i class="fa fa-eye-slash"></i> Hidden from client @endif @endif</span>
+                                <span class="details"><i class="fa fa-flask" title="Project version"></i> {{ $issue->version }} @if(Auth::user()->rank < 3) @if($issue->claimed_by) <i class="fa fa-thumb-tack" title="Claimed by"></i> {{ $issue->claimed_by->name }} @endif  @if($issue->hidden) <i class="fa fa-eye-slash" title="Hidden from client"></i> Hidden from client @endif @endif</span>
                             </td>
                             <td class="assigned">
                                 @if($issue->assigned() == 'Client') {{{ $issue->project->client->name }}} @else {{{ $issue->assigned() }}} @endif

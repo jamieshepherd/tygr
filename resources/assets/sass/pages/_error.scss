@@ -7,7 +7,6 @@
   }
   h1 {
     font-size: 72px;
-    font-weight: 500;
     margin-bottom: 10px;
   }
   h2 {
@@ -21,13 +20,5 @@
     max-width: 600px;
     display: inline-block;
     margin: 0 auto;
-    a {
-      color: #888;
-      border-color: #888;
-      &:hover {
-        color: #333;
-        border-color: #333;
-      }
-    }
   }
 }

@@ -63,12 +63,12 @@ strong {
   font-weight: 700; }
 
 a {
-  color: #2F2927;
+  color: #888888;
   text-decoration: none;
-  border-bottom: 1px dotted #2F2927; }
+  border-bottom: 1px dotted #888888; }
   a:hover {
-    color: #8BCEDC;
-    border-color: #8BCEDC; }
+    color: #354052;
+    border-color: #354052; }
 
 html, body {
   height: 100%;
@@ -240,10 +240,10 @@ nav {
 
 table.full {
   width: 100%;
-  border: 1px solid #ddd;
-  border-radius: 5px; }
+  border-radius: 5px;
+  margin-top: 30px; }
   table.full th, table.full td {
-    padding: 15px;
+    padding: 20px;
     text-align: left; }
   table.full th {
     font-weight: 700;
@@ -256,7 +256,9 @@ table.full {
     -khtml-user-select: none;
     /* webkit (konqueror) browsers */
     -ms-user-select: none;
-    /* IE10+ */ }
+    /* IE10+ */
+    color: #354052;
+    padding: 25px 20px; }
     table.full th.select {
       min-width: 0;
       width: 50px;
@@ -291,7 +293,7 @@ table.full {
     table.full td span.details, table.full td span.user {
       font-size: 12px;
       display: block;
-      color: #666; }
+      color: #666666; }
     table.full td.details {
       min-width: 400px; }
     table.full td.select {
@@ -311,12 +313,15 @@ table.full {
         background: #8BCEDC; }
   table.full tr {
     background: #ffffff;
-    border-bottom: 1px solid #ddd; }
+    border-bottom: 1px solid #f1f0f0; }
     table.full tr.head {
-      background: #f6f6f6;
-      border-radius: 5px; }
+      background: #f3f2f2;
+      border-radius: 5px;
+      border-bottom: none; }
+      table.full tr.head:hover {
+        background: #f3f2f2; }
     table.full tr:hover {
-      background: #f6f6f6; }
+      background: #f9f9f9; }
     table.full tr.closed {
       background: none;
       opacity: 0.3; }
@@ -368,6 +373,8 @@ label {
   display: block;
   margin: 20px 0 10px 0;
   font-weight: 600; }
+  label:first-of-type {
+    margin-top: 0; }
   label.radio {
     font-weight: 300;
     display: inline;
@@ -379,9 +386,13 @@ input {
     clear: left;
     float: right; }
   input.filter {
-    font-size: 12px;
+    font-size: 14px;
     margin-top: -10px;
-    margin-bottom: 20px; }
+    margin-bottom: 20px;
+    padding: 12px 12px 12px 40px;
+    background: #ffffff url('/images/magnify.png') 12px center no-repeat;
+    background-size: 19px 18px;
+    color: #666; }
     @media (max-width: 1000px) {
       input.filter {
         min-width: 200px; } }
@@ -442,7 +453,7 @@ span.error {
   .printable hr {
     margin: 10px 0; }
 
-a.action, span.action {
+a.action, a[type='submit'], span.action, span[type='submit'], button.action, button[type='submit'] {
   font-size: 14px;
   font-weight: 600;
   min-width: 70px;
@@ -456,82 +467,94 @@ a.action, span.action {
   clear: left;
   margin-top: -1px;
   margin-bottom: 4px;
-  margin-right: 5px; }
-  a.action.red, span.action.red {
+  margin-right: 5px;
+  cursor: pointer; }
+  a.action.red, a[type='submit'].red, span.action.red, span[type='submit'].red, button.action.red, button[type='submit'].red {
     background: #f34939; }
-    a.action.red:hover, span.action.red:hover {
+    a.action.red:hover, a[type='submit'].red:hover, span.action.red:hover, span[type='submit'].red:hover, button.action.red:hover, button[type='submit'].red:hover {
       background: #f45c4d; }
-  a.action.green, span.action.green {
+  a.action.green, a[type='submit'].green, span.action.green, span[type='submit'].green, button.action.green, button[type='submit'].green {
     background: #39d1b4; }
-    a.action.green:hover, span.action.green:hover {
+    a.action.green:hover, a[type='submit'].green:hover, span.action.green:hover, span[type='submit'].green:hover, button.action.green:hover, button[type='submit'].green:hover {
       background: #4dd6bc; }
-  a.action.blue, span.action.blue {
+  a.action.blue, a[type='submit'].blue, span.action.blue, span[type='submit'].blue, button.action.blue, button[type='submit'].blue {
     background: #8bcedc; }
-    a.action.blue:hover, span.action.blue:hover {
+    a.action.blue:hover, a[type='submit'].blue:hover, span.action.blue:hover, span[type='submit'].blue:hover, button.action.blue:hover, button[type='submit'].blue:hover {
       background: #97d3e0; }
-  a.action.yellow, span.action.yellow {
+  a.action.yellow, a[type='submit'].yellow, span.action.yellow, span[type='submit'].yellow, button.action.yellow, button[type='submit'].yellow {
     background: #fdb45c; }
-    a.action.yellow:hover, span.action.yellow:hover {
+    a.action.yellow:hover, a[type='submit'].yellow:hover, span.action.yellow:hover, span[type='submit'].yellow:hover, button.action.yellow:hover, button[type='submit'].yellow:hover {
       background: #fdbc6d; }
-  a.action:hover, span.action:hover {
+  a.action:hover, a[type='submit']:hover, span.action:hover, span[type='submit']:hover, button.action:hover, button[type='submit']:hover {
     background: #4dd6bc; }
-  a.action.nofill, span.action.nofill {
+  a.action.nofill, a[type='submit'].nofill, span.action.nofill, span[type='submit'].nofill, button.action.nofill, button[type='submit'].nofill {
     background: none;
     color: #39d1b4;
-    border-width: 1px;
-    border-style: solid; }
-    a.action.nofill.red, span.action.nofill.red {
+    border: 1px solid; }
+    a.action.nofill.red, a[type='submit'].nofill.red, span.action.nofill.red, span[type='submit'].nofill.red, button.action.nofill.red, button[type='submit'].nofill.red {
+      color: #f34939;
       border-color: #f34939; }
-      a.action.nofill.red:hover, span.action.nofill.red:hover {
+      a.action.nofill.red:hover, a[type='submit'].nofill.red:hover, span.action.nofill.red:hover, span[type='submit'].nofill.red:hover, button.action.nofill.red:hover, button[type='submit'].nofill.red:hover {
         background-color: #f34939; }
-    a.action.nofill.green, span.action.nofill.green {
+    a.action.nofill.green, a[type='submit'].nofill.green, span.action.nofill.green, span[type='submit'].nofill.green, button.action.nofill.green, button[type='submit'].nofill.green {
+      color: #39d1b4;
       border-color: #39d1b4; }
-      a.action.nofill.green:hover, span.action.nofill.green:hover {
+      a.action.nofill.green:hover, a[type='submit'].nofill.green:hover, span.action.nofill.green:hover, span[type='submit'].nofill.green:hover, button.action.nofill.green:hover, button[type='submit'].nofill.green:hover {
         background-color: #39d1b4; }
-    a.action.nofill.blue, span.action.nofill.blue {
+    a.action.nofill.blue, a[type='submit'].nofill.blue, span.action.nofill.blue, span[type='submit'].nofill.blue, button.action.nofill.blue, button[type='submit'].nofill.blue {
+      color: #8bcedc;
       border-color: #8bcedc; }
-      a.action.nofill.blue:hover, span.action.nofill.blue:hover {
+      a.action.nofill.blue:hover, a[type='submit'].nofill.blue:hover, span.action.nofill.blue:hover, span[type='submit'].nofill.blue:hover, button.action.nofill.blue:hover, button[type='submit'].nofill.blue:hover {
         background-color: #8bcedc; }
-    a.action.nofill.yellow, span.action.nofill.yellow {
+    a.action.nofill.yellow, a[type='submit'].nofill.yellow, span.action.nofill.yellow, span[type='submit'].nofill.yellow, button.action.nofill.yellow, button[type='submit'].nofill.yellow {
+      color: #fdb45c;
       border-color: #fdb45c; }
-      a.action.nofill.yellow:hover, span.action.nofill.yellow:hover {
+      a.action.nofill.yellow:hover, a[type='submit'].nofill.yellow:hover, span.action.nofill.yellow:hover, span[type='submit'].nofill.yellow:hover, button.action.nofill.yellow:hover, button[type='submit'].nofill.yellow:hover {
         background-color: #fdb45c; }
-    a.action.nofill:hover, span.action.nofill:hover {
+    a.action.nofill:hover, a[type='submit'].nofill:hover, span.action.nofill:hover, span[type='submit'].nofill:hover, button.action.nofill:hover, button[type='submit'].nofill:hover {
       color: #fff; }
-  a.action.right, span.action.right {
+  a.action.right, a[type='submit'].right, span.action.right, span[type='submit'].right, button.action.right, button[type='submit'].right {
     float: right; }
 
+button[type="submit"] {
+  margin-top: 20px;
+  padding: 9px 30px 10px; }
+
+/*
 button {
   font-size: 11px;
-  text-transform: uppercase; }
-  button[type='submit'] {
+  text-transform: uppercase;
+  &[type='submit'] {
     min-width: 0;
     margin-top: 10px;
     padding: 7px 8px;
     display: inline-block;
-    background: #f24a33;
-    color: #f8f7f7;
+    background: $highlight;
+    color: $background;
     border: none;
-    cursor: pointer; }
-    button[type='submit']:hover {
-      background: #8BCEDC; }
-
+    cursor: pointer;
+    &:hover {
+      background: $tertiary;
+    }
+  }
+}
+*/
 a.button-dropdown, span.button-dropdown {
-  background: #f24a33;
-  color: #f8f7f7;
+  color: #ffffff;
   position: relative;
   cursor: pointer; }
   a.button-dropdown ul, span.button-dropdown ul {
+    min-width: 155px;
     border-top: 1px solid #ffffff;
     position: absolute;
-    top: 25px;
-    left: 0;
+    top: 36px;
+    left: 1px;
     display: none;
-    z-index: 1; }
+    z-index: 2;
+    text-align: left; }
     a.button-dropdown ul li, span.button-dropdown ul li {
       padding: 0;
-      background: #f24a33;
-      color: #f8f7f7; }
+      background: #fdb45c; }
       a.button-dropdown ul li:hover, span.button-dropdown ul li:hover {
         background: #8BCEDC; }
       a.button-dropdown ul li a, span.button-dropdown ul li a {
@@ -626,31 +649,26 @@ a.button-dropdown, span.button-dropdown {
   margin-top: 500px;
   display: none;
   background: #fff;
-  border-top: 1px dotted #222;
+  border-top: 1px solid #f3f2f2;
   padding: 20px;
   width: 100%;
   position: fixed;
   margin-left: -30px;
   bottom: 0; }
-  #table-actions span {
-    text-transform: uppercase;
-    font-size: 12px; }
-    #table-actions span#selectedAmount {
-      margin: 0;
-      font-weight: bold; }
-    #table-actions span.label {
-      margin-right: 10px; }
+  #table-actions span#selectedAmount {
+    margin: 0;
+    font-weight: bold; }
+  #table-actions span.label {
+    margin-right: 10px; }
   #table-actions a, #table-actions span {
     margin-bottom: 0; }
-    #table-actions a.button-dropdown, #table-actions span.button-dropdown {
-      font-size: 11px; }
-      #table-actions a.button-dropdown ul, #table-actions span.button-dropdown ul {
-        top: auto;
-        bottom: 100%;
-        border-bottom: 1px solid #ffffff;
-        border-top: none; }
-  #table-actions a {
-    padding-bottom: 7px; }
+    #table-actions a.button-dropdown ul, #table-actions span.button-dropdown ul {
+      border-bottom: 1px solid #ffffff;
+      top: auto;
+      bottom: 100%;
+      left: 0px;
+      border-top: none;
+      min-width: 176px; }
 
 .fa.pointer {
   cursor: default; }
@@ -752,16 +770,18 @@ section {
     margin-right: 5px; }
   section .update {
     display: block;
-    border: 1px solid #cccccc;
-    border-left: 5px solid #bbbbbb;
+    border: 1px solid #dddddd;
+    border-left: 3px solid #dddddd;
     padding: 10px;
     margin: 10px 0 15px;
     border-radius: 3px;
-    position: relative; }
+    position: relative;
+    background: #ffffff; }
     section .update.status {
       background: #f6f6f6;
-      opacity: 0.5;
       border-left-width: 1px; }
+      section .update.status h3 {
+        color: #666666; }
       section .update.status:hover {
         opacity: 1.0; }
     section .update:hover {
@@ -796,7 +816,8 @@ section {
       background: #f24a33;
       color: #f8f7f7;
       padding: 3px 5px;
-      border-radius: 5px; }
+      border-radius: 3px;
+      margin-left: 3px; }
 
 .dashboard {
   display: block;
@@ -911,7 +932,6 @@ section {
     margin-bottom: 40px; }
   .error-status h1 {
     font-size: 72px;
-    font-weight: 500;
     margin-bottom: 10px; }
   .error-status h2 {
     font-size: 22px;
@@ -923,12 +943,6 @@ section {
     max-width: 600px;
     display: inline-block;
     margin: 0 auto; }
-    .error-status p a {
-      color: #888;
-      border-color: #888; }
-      .error-status p a:hover {
-        color: #333;
-        border-color: #333; }
 
 .projects-index .col {
   width: 33%;

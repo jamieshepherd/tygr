@@ -9,11 +9,7 @@
                 <div class="crumbtrail">
                     <a href="/">Home</a>
                     <i class="fa fa-angle-right"></i>
-                    <a href="/projects">Projects</a>
-                    <i class="fa fa-angle-right"></i>
-                    <a href="/projects/{{ $project->client->stub }}/{{ $project->stub }}">{{ $project->name }}</a>
-                    <i class="fa fa-angle-right"></i>
-                    <a href="/projects/{{ $project->client->stub }}/{{ $project->stub }}/issues">Issues</a>
+                    <a href="/projects">Issue</a>
                     <i class="fa fa-angle-right"></i>
                     <a href="{{ Request::url() }}">Confirm delete</a>
                 </div>

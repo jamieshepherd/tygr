@@ -1,22 +1,28 @@
 @extends('_layout.base')
-@section('crumbtrail')
-<a href="/"><li><i class="fa fa-home"></i> Home</li></a>
-<a href="/projects"><li>Projects</li></a>
-<li class="current">{{{ $project->name }}}</li>
-@stop
 @section('body')
     <body>
     @include('_layout.nav')
     <div id="main">
-        @include('_layout.header')
-        <h1>{{{ $project->name }}}</h1>
+        <header>
+            @if(Auth::user())
+                <a class="signout action nofill green" href="/auth/logout"><i class="fa fa-sign-out"></i> Sign out</a>
+                <div class="crumbtrail">
+                    <a href="/">Home</a>
+                    <i class="fa fa-angle-right"></i>
+                    <a href="/clients">Clients</a>
+                    <i class="fa fa-angle-right"></i>
+                    <a href="/projects/{{ $project->client->stub }}/{{ $project->stub }}">{{ $project->name }}</a>
+                </div>
+            @endif
+            <h1>{{ $project->name }}</h1>
+        </header>
         <a class="action" href="{{ Request::url() }}/issues/create"><i class="fa fa-plus-circle"></i> Log an issue</a>
         @if(Auth::user()->rank <= 2)
-            <a class="action" href="{{ Request::url() }}/edit"><i class="fa fa-edit"></i> Edit project</a>
-            <a class="action" href="{{ Request::url() }}/version"><i class="fa fa-diamond"></i> New version</a>
+            <a class="action green" href="{{ Request::url() }}/version"><i class="fa fa-diamond"></i> New version</a>
+            <a class="action yellow" href="{{ Request::url() }}/edit"><i class="fa fa-edit"></i> Edit project</a>
         @endif
-        <a class="action" href="{{ Request::url() }}/issues"><i class="fa fa-bug"></i> View issues</a>
-        <a class="action" href="http://reviewarea.co.uk/Secure/{{ $project->client->stub }}"><i class="fa fa-desktop"></i> Review area</a>
+        <a class="action blue" href="{{ Request::url() }}/issues"><i class="fa fa-bug"></i> View issues</a>
+        <a class="action blue" href="http://reviewarea.co.uk/Secure/{{ $project->client->stub }}"><i class="fa fa-desktop"></i> Review area</a>
         <div class="info-box">
             <table>
                 <tr><td><strong>Current version</strong></td><td>{{{ $project->current_version }}}</td></tr>

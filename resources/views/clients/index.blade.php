@@ -3,16 +3,21 @@
     <script src="/js/list.min.js"></script>
     <script src="/js/sortable.min.js"></script>
 @stop
-@section('crumbtrail')
-<a href="/"><li><i class="fa fa-home"></i> Home</li></a>
-<a href=""><li class="current">Clients</li></a>
-@stop
 @section('body')
     <body>
     @include('_layout.nav')
     <div id="main">
-        @include('_layout.header')
-        <h1>All clients</h1>
+        <header>
+            @if(Auth::user())
+                <a class="signout action nofill green" href="/auth/logout"><i class="fa fa-sign-out"></i> Sign out</a>
+                <div class="crumbtrail">
+                    <a href="/">Home</a>
+                    <i class="fa fa-angle-right"></i>
+                    <a href="/clients">Clients</a>
+                </div>
+            @endif
+            <h1>All clients</h1>
+        </header>
         <div id="clients">
         <input class="filter search" placeholder="Search" autofocus/>
         <a class="action" href="/clients/create"><i class="fa fa-plus-circle"></i> New client</a>

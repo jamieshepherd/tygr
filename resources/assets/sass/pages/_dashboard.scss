@@ -11,11 +11,11 @@
       box-sizing: border-box;
       padding-bottom: 20px;
       .content {
-        border: 1px solid $accent;
+        background: #ffffff;
         border-radius: 5px;
-        padding: 20px;
-        &.stats {
-          text-align: center;
+        padding: 35px;
+        h1 {
+          color: #f34939;
         }
       }
       &:first-of-type {
@@ -57,17 +57,54 @@
       }
     }
   }
-  h2 {
-    font-family: "museo-slab", serif;
-    margin-top: 0;
-    font-size: 68px;
-    color: $highlight;
-    font-weight: 300;
-  }
-  h3 {
-    margin-top: 10px;
-    font-size: 16px;
-    color: #999999;
-    font-weight: 500;
+}
+.statistics {
+  background: #ffffff;
+  border-radius: 3px;
+  text-align: center;
+  display: inline-block;
+  width: 100%;
+  clear: both;
+  margin-bottom: 20px;
+  .statistic {
+    width: 25%;
+    display: inline-block;
+    float: left;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    .content {
+      padding: 75px 25px;
+      border-left: 1px solid #e4e4e4;
+      &.first {
+        border: none;
+      }
+      h2 {
+        font-family: "museo-slab", serif;
+        margin-top: 0;
+        font-size: 68px;
+        color: $highlight;
+        font-weight: 900;
+
+        &.red { color: #f34939; }
+        &.green { color: #39d1b4; }
+        &.blue { color: #8bcedc; }
+        &.yellow { color: #fdb45c; }
+      }
+      h3 {
+        margin-top: 10px;
+        font-size: 16px;
+        color: #999999;
+        font-weight: 500;
+      }
+      label {
+        font-family: "museo-slab", serif;
+        font-size: 18px;
+        font-weight: 300;
+        color: #929191;
+        padding: 0;
+        margin: 0;
+      }
+    }
   }
 }

@@ -1,14 +1,21 @@
 @extends('_layout.base')
-@section('crumbtrail')
-    <a href="/account"><li><i class="fa fa-home"></i> Account</li></a>
-    <li class="current">Edit</li>
-@stop
 @section('body')
     <body>
     @include('_layout.nav')
     <div id="main">
-        @include('_layout.header')
-        <h1>Edit account</h1>
+        <header>
+            @if(Auth::user())
+                <a class="signout action nofill green" href="/auth/logout"><i class="fa fa-sign-out"></i> Sign out</a>
+                <div class="crumbtrail">
+                    <a href="/">Home</a>
+                    <i class="fa fa-angle-right"></i>
+                    <a href="/account">Account</a>
+                    <i class="fa fa-angle-right"></i>
+                    <a href="/account/edit">Edit account</a>
+                </div>
+            @endif
+            <h1>Edit account</h1>
+        </header>
         <form action="" method="POST" accept-charset="UTF-8">
         <input type="hidden" name="_token" value="<?php echo csrf_token(); ?>">
 

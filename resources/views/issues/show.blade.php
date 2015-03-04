@@ -1,17 +1,25 @@
 @extends('_layout.base')
-@section('crumbtrail')
-    <a href="/"><li><i class="fa fa-home"></i> Home</li></a>
-    <a href="/projects"><li>Projects</li></a>
-    <a href="/projects/{{ $project->client->stub }}/{{{ $project->stub }}}"><li>{{{ $project->name }}}</li></a>
-    <a href="/projects/{{ $project->client->stub }}/{{{ $project->stub }}}/issues"><li>Issues</li></a>
-    <li class="current">Details</li>
-@stop
 @section('body')
     <body>
     @include('_layout.nav')
     <div id="main">
-        @include('_layout.header')
-        <h1>Issue details</h1>
+        <header>
+            @if(Auth::user())
+                <a class="signout action nofill green" href="/auth/logout"><i class="fa fa-sign-out"></i> Sign out</a>
+                <div class="crumbtrail">
+                    <a href="/">Home</a>
+                    <i class="fa fa-angle-right"></i>
+                    <a href="/projects">Projects</a>
+                    <i class="fa fa-angle-right"></i>
+                    <a href="/projects/{{ $project->client->stub }}/{{ $project->stub }}">{{ $project->name }}</a>
+                    <i class="fa fa-angle-right"></i>
+                    <a href="/projects/{{ $project->client->stub }}/{{ $project->stub }}/issues">Issues</a>
+                    <i class="fa fa-angle-right"></i>
+                    <a href="/projects/{{ $project->client->stub }}/{{ $project->stub }}/issues/show">#{{ $issue->id }}</a>
+                </div>
+            @endif
+            <h1>Issue details</h1>
+        </header>
         <a class="action" href="/projects/{{ $project->client->stub }}/{{{ $issue->project->stub }}}/issues/edit/{{ $issue->id }}"><i class="fa fa-plus-circle"></i> Edit issue</a>
         @if(Auth::user()->rank <= 2)
         <a class="action" href="/projects/{{ $project->client->stub }}/{{{ $issue->project->stub }}}/issues/claim/{{ $issue->id }}"><i class="fa fa-flag"></i> Claim issue</a>

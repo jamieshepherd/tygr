@@ -1,17 +1,19 @@
 @extends('_layout.base')
-@section('headlinks')
-
-@stop
-@section('crumbtrail')
-<a href="/"><li><i class="fa fa-home"></i> Home</li></a>
-<a href=""><li class="current">Help</li></a>
-@stop
 @section('body')
     <body>
     @include('_layout.nav')
     <div id="main" class="help">
-        @include('_layout.header')
-        <h1>Help</h1>
+        <header>
+            @if(Auth::user())
+                <a class="signout action nofill green" href="/auth/logout"><i class="fa fa-sign-out"></i> Sign out</a>
+                <div class="crumbtrail">
+                    <a href="/">Home</a>
+                    <i class="fa fa-angle-right"></i>
+                    <a href="/help">Help</a>
+                </div>
+            @endif
+            <h1>Help</h1>
+        </header>
         <p>Hi! We're still in the early stages of this help guide. If your question isn't answered here, please send me an email to <a href="mailto:jamie.shepherd@spongeuk.com">jamie.shepherd&#64;spongeuk.com</a> and I will get back to you as soon as possible.</p>
         <section>
             <h2>Why we use this application</h2>

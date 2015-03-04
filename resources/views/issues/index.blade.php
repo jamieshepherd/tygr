@@ -3,22 +3,29 @@
     <script src="/js/list.min.js"></script>
     <script src="/js/sortable.min.js"></script>
 @stop
-@section('crumbtrail')
-    <a href="/"><li><i class="fa fa-home"></i> Home</li></a>
-    <a href="/projects"><li>Projects</li></a>
-    <a href="/projects/{{ $project->client->stub }}/{{{ $project->stub }}}"><li>{{{ $project->name }}}</li></a>
-    <li class="current">Issues</li>
-@stop
 @section('body')
     <body>
     @include('_layout.nav')
     <div id="main">
-        @include('_layout.header')
-        <h1>Issues @if(isset($filter)) <em>({{{ $filter }}})</em> @else <em>({{{ $project->current_version }}})</em>@endif</h1>
+        <header>
+            @if(Auth::user())
+                <a class="signout action nofill green" href="/auth/logout"><i class="fa fa-sign-out"></i> Sign out</a>
+                <div class="crumbtrail">
+                    <a href="/">Home</a>
+                    <i class="fa fa-angle-right"></i>
+                    <a href="/projects">Projects</a>
+                    <i class="fa fa-angle-right"></i>
+                    <a href="/projects/{{ $project->client->stub }}/{{ $project->stub }}">{{ $project->name }}</a>
+                    <i class="fa fa-angle-right"></i>
+                    <a href="/projects/{{ $project->client->stub }}/{{ $project->stub }}/issues">Issues</a>
+                </div>
+            @endif
+                <h1>Issues @if(isset($filter)) <em>({{{ $filter }}})</em> @else <em>({{{ $project->current_version }}})</em>@endif</h1>
+        </header>
         <div id="issues">
             <input class="filter search" placeholder="Search" autofocus/>
             <a class="action" href="/projects/{{ $project->client->stub }}/{{ $project->stub }}/issues/create"><i class="fa fa-plus-circle"></i> Log an issue</a>
-            <span class="action button-dropdown">
+            <span class="action yellow button-dropdown">
                 <i class="fa fa-chevron-circle-down"></i> Filter issues
                 <ul>
                     <li>
@@ -40,7 +47,7 @@
                     @endforeach
                 </ul>
             </span>
-            <a class="action" href="{{ Request::url() }}/print"><i class="fa fa-print"></i> Print</a>
+            <a class="action blue" href="{{ Request::url() }}/print"><i class="fa fa-print"></i> Print</a>
             <!--a class="action" href=""><i class="fa fa-bug"></i> All issues</a-->
 
 

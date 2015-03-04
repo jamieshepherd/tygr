@@ -1,29 +1,75 @@
 a,span {
   &.action {
-    font-size: 11px;
-    text-transform: uppercase;
-    font-weight: 400;
-    margin-top: -1px;
-    padding: 6px 8px 6px 8px;
-    background: $highlight;
-    border: 1px solid $highlight;
-    color: $background;
+    font-size: 14px;
+    font-weight: 600;
+    min-width: 70px;
+    text-align: center;
+    //padding: 6px 8px 6px 8px;
+    padding: 12px 30px;
+    background: #39d1b4;
+    border: none;
+    border-radius: 3px;
+    color: #ffffff;
     display: inline-block;
     clear: left;
+    margin-top: -1px;
     margin-bottom: 4px;
-    &:hover {
-      background: $tertiary;
-      border-color: $tertiary;
-      color: $background;
-    }
-    &.secondary {
-      background: $accent;
-      border: 1px solid $accent;
-      color: $foreground;
+    margin-right: 5px;
+    &.red {
+      background: #f34939;
       &:hover {
-        background: $tertiary;
-        border-color: $tertiary;
-        color: $background;
+        background: #f45c4d;
+      }
+    }
+    &.green {
+      background: #39d1b4;
+      &:hover {
+        background: #4dd6bc;
+      }
+    }
+    &.blue {
+      background: #8bcedc;
+      &:hover {
+        background: #97d3e0;
+      }
+    }
+    &.yellow {
+      background: #fdb45c;
+      &:hover {
+        background: #fdbc6d;
+      }
+    }
+    &:hover {
+      background: #4dd6bc;
+    }
+    &.nofill {
+      background: none;
+      color: #39d1b4;
+      border-width: 1px;
+      border-style: solid;
+      &.red {
+        border-color: #f34939;
+        &:hover {
+          background-color: #f34939;
+        }
+      }
+      &.green { border-color: #39d1b4;
+        &:hover {
+          background-color: #39d1b4;
+        }
+      }
+      &.blue { border-color: #8bcedc;
+        &:hover {
+          background-color: #8bcedc;
+        }
+      }
+      &.yellow { border-color: #fdb45c;
+        &:hover {
+          background-color: #fdb45c;
+        }
+      }
+      &:hover {
+        color: #fff;
       }
     }
     &.right {

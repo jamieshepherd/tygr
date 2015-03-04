@@ -9,8 +9,21 @@
     <body>
     @include('_layout.nav')
     <div id="main">
-        @include('_layout.header')
-
+        <header>
+            @if(Auth::user())
+                <a class="signout action nofill green" href="/auth/logout"><i class="fa fa-sign-out"></i> Sign out</a>
+                <div class="crumbtrail">
+                    <a href="/">Home</a>
+                    <i class="fa fa-angle-right"></i>
+                    <a href="/clients">Clients</a>
+                    <i class="fa fa-angle-right"></i>
+                    <a href="/projects/{{ $project->client->stub }}/{{ $project->stub }}">{{ $project->name }}</a>
+                    <i class="fa fa-angle-right"></i>
+                    <a href="/projects/{{ $project->client->stub }}/{{ $project->stub }}/edit">Edit</a>
+                </div>
+            @endif
+            <h1>Edit project</h1>
+        </header>
         <div class="tip">
             <i class="fa fa-info-circle"></i> Creating a new version will archive all of the current issues.
         </div>

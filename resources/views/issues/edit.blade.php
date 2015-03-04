@@ -24,7 +24,7 @@
             <input type="hidden" name="_token" value="<?php echo csrf_token(); ?>">
 
             @if(Auth::user()->rank != 3)
-            <input name="hidden" type="checkbox" @if($issue->hidden) checked @endif> Hidden from client?
+            <input name="hidden" type="checkbox" @if($issue->hidden) checked @endif> Hidden from client?<br/><br/>
             @endif
 
             <label>Provide a brief summary of the issue</label>

@@ -20,37 +20,6 @@ class AccountController extends Controller {
 	}
 
 	/**
-	 * Show the form for creating a new resource.
-	 *
-	 * @return Response
-	 */
-	public function create()
-	{
-		//
-	}
-
-	/**
-	 * Store a newly created resource in storage.
-	 *
-	 * @return Response
-	 */
-	public function store()
-	{
-		//
-	}
-
-	/**
-	 * Display the specified resource.
-	 *
-	 * @param  int  $id
-	 * @return Response
-	 */
-	public function show($id)
-	{
-		//
-	}
-
-	/**
 	 * Show the form for editing the specified resource.
 	 *
 	 * @return Response
@@ -73,7 +42,7 @@ class AccountController extends Controller {
         $user->email = $request->email;
 		$oldpass     = $request->oldpass;
 		$newpass     = $request->newpass;
-		$confirmpass = $request->confirmpass;
+		$confirmpass = $request->newpass_confirmation;
 		if(!empty($oldpass) || !empty($newpass) || $confirmpass) {
 			// Check oldpass is true
 			if(Hash::check($oldpass,$user->password)) {
@@ -83,12 +52,12 @@ class AccountController extends Controller {
 				} else {
 					\Session::flash('notify-type', 'error');
 					\Session::flash('message', 'Passwords provided were not the same.');
-					return redirect('/account');
+					return redirect()->back();
 				}
 			} else {
 				\Session::flash('notify-type', 'error');
 				\Session::flash('message', 'The old password provided was incorrect.');
-				return redirect('/account');
+                return redirect()->back();
 			}
 		}
 		$result = $user->save();
@@ -96,17 +65,6 @@ class AccountController extends Controller {
 			\Session::flash('message', $user->name.' was updated successfully.');
 			return redirect('/account');
 		}
-	}
-
-	/**
-	 * Remove the specified resource from storage.
-	 *
-	 * @param  int  $id
-	 * @return Response
-	 */
-	public function destroy($id)
-	{
-		//
 	}
 
 }

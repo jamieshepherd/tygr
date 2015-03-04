@@ -21,7 +21,7 @@
         <form action="" method="POST" accept-charset="UTF-8">
         <input type="hidden" name="_token" value="<?php echo csrf_token(); ?>">
 
-            <input name="hidden" type="checkbox"> Hidden from client?
+            <input name="hidden" type="checkbox"> Hidden from client?<br/><br/>
 
             <label>Project name</label>
             <input value="{{ old('name') }}" id="name" name="name" type="text" placeholder="e.g. Fire Safety" value="" onkeyup="generateStub()" autofocus @if($errors->has('name')) class="error">
@@ -39,15 +39,16 @@
             <input value="{{ old('status') }}" name="status" type="text" placeholder="e.g. In development, Launched" @if($errors->has('status')) class="error">
             <span class="error">{{ $errors->first('status') }}</span> @else > @endif
 
-            <hr/>
-
             <label>Authoring Tool</label>
             <input value="{{ old('authoring_tool') }}" name="authoring_tool" type="text" placeholder="e.g. Adapt, Storyline, Lectora" @if($errors->has('authoring_tool')) class="error">
             <span class="error">{{ $errors->first('authoring_tool') }}</span> @else > @endif
 
+            <hr/>
+
             <label>Deployment location</label>
             <input type="radio" name="lms_deployment" value="client" checked> Client
             <input type="radio" name="lms_deployment" value="sponge"> Launch &amp; Learn
+            <input type="radio" name="lms_deployment" value="none"> Not applicable
             @if($errors->has('lms_deployment'))
             <span class="error">{{ $errors->first('lms_deployment') }}</span> @endif
 

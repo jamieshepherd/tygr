@@ -37,12 +37,22 @@
 
             <label>Old password</label>
             <input name="oldpass" type="password">
+            @if($errors->has('oldpass'))
+                <span class="error">{{ $errors->first('oldpass') }}</span>
+            @endif
 
             <label>New password</label>
             <input name="newpass" type="password">
+            @if($errors->has('newpass'))
+                <span class="error">{{ $errors->first('newpass') }}</span>
+            @endif
 
             <label>Confirm new password</label>
-            <input name="confirmpass" type="password">
+            <input name="newpass_confirmation" type="password">
+            @if($errors->has('newpass_confirmation'))
+                <span class="error">{{ $errors->first('newpass_confirmation') }}</span>
+            @endif
+
             <br/><button type="submit"><i class="fa fa-arrow-circle-right"></i> Update details</button>
             <a class="action red" href="javascript:history.back()"><i class="fa fa-times-circle"></i> Cancel</a>
         </form>

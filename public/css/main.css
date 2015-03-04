@@ -51,9 +51,17 @@ h2 {
 h3 {
   font-size: 14px;
   margin: 0 0 10px;
-  font-weight: bold; }
+  font-weight: 300; }
   h3 strong {
     color: #f24a33; }
+
+h4 {
+  color: #354052;
+  font-weight: 300;
+  font-size: 18px;
+  padding-bottom: 20px;
+  margin-bottom: 20px;
+  border-bottom: 1px solid #efefef; }
 
 p {
   line-height: 20px;
@@ -151,7 +159,7 @@ hr {
 
 #main {
   margin-left: 245px;
-  padding: 20px 30px; }
+  padding: 20px 30px 40px; }
   @media (max-width: 1000px) {
     #main {
       margin-left: 95px; } }
@@ -363,7 +371,7 @@ input, textarea {
   input.error, textarea.error {
     border-color: #f24a33; }
   input:focus, textarea:focus {
-    border-color: #8BCEDC;
+    border-color: #febd19;
     outline: none; }
   input.short, textarea.short {
     min-width: 0;
@@ -445,7 +453,8 @@ span.error {
     font-size: 14pt;
     margin: 0 0 10pt 0; }
   .printable h3 {
-    font-size: 11pt; }
+    font-size: 12pt;
+    font-weight: bold; }
   .printable ul li {
     list-style-type: circle;
     margin-left: 20px;
@@ -556,7 +565,7 @@ a.button-dropdown, span.button-dropdown {
       padding: 0;
       background: #fdb45c; }
       a.button-dropdown ul li:hover, span.button-dropdown ul li:hover {
-        background: #8BCEDC; }
+        background: #fdbc6d; }
       a.button-dropdown ul li a, span.button-dropdown ul li a {
         display: inline-block;
         color: #ffffff;
@@ -690,7 +699,8 @@ a.button-dropdown, span.button-dropdown {
     padding: 20px;
     width: 260px;
     height: auto;
-    box-shadow: 0px 0px 100px #000; }
+    box-shadow: 0px 0px 100px #000;
+    border-radius: 3px; }
     .photo .login hr {
       margin: 25px 0; }
     .photo .login form {
@@ -820,7 +830,7 @@ section {
       margin-left: 3px; }
 
 .dashboard {
-  display: block;
+  display: inline-block;
   width: 100%; }
   .dashboard .row .col {
     border: none;
@@ -878,6 +888,28 @@ section {
       .dashboard .row .col.col {
         width: 100%;
         padding: 0 0 20px 0; } }
+  .dashboard .activity {
+    display: inline-block;
+    margin-bottom: 20px; }
+    .dashboard .activity .user-icon {
+      float: left;
+      display: inline-block;
+      margin-right: 20px; }
+    .dashboard .activity .details {
+      overflow: hidden; }
+      .dashboard .activity .details p {
+        margin: 0; }
+      .dashboard .activity .details .date {
+        display: inline-block;
+        margin-top: 5px;
+        font-size: 12px;
+        color: #bec0c0; }
+  .dashboard .project-details td {
+    line-height: 36px; }
+    .dashboard .project-details td strong {
+      color: #354052;
+      font-weight: normal;
+      margin-right: 40px; }
 
 .statistics {
   background: #ffffff;
@@ -1007,7 +1039,7 @@ body, input, textarea, button {
   font-family: "open-sans", Arial, sans-serif;
   font-weight: 400; }
 
-h1, nav {
+h1, h4, nav {
   font-family: "museo-slab", Georgia, serif; }
 
 

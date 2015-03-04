@@ -16,10 +16,12 @@
         </header>
         <a class="action yellow" href="/account/edit"><i class="fa fa-edit"></i> Edit details</a>
         <h2>Full name</h2>
-        <p>{{{ Auth::user()->name }}}</p>
+        <p>{{ Auth::user()->name }}</p>
         <h2>Email address</h2>
-        <p>{{{ Auth::user()->email }}}</p>
-        @if(Auth::user()->client_id != 3)
+        <p>{{ Auth::user()->email }}</p>
+        <h2>Organisation</h2>
+        <p>{{ Auth::user()->client->name }}</p>
+        @if(Auth::user()->rank != 3)
             <h2>Groups</h2>
             <ul class="standard">
             @foreach(Auth::user()->groups()->get() as $group)

@@ -19,10 +19,18 @@ h2 {
 h3 {
   font-size: 14px;
   margin: 0 0 10px;
-  font-weight: bold;
+  font-weight: 300;
   strong {
     color: $highlight;
   }
+}
+h4 {
+  color: #354052;
+  font-weight: 300;
+  font-size: 18px;
+  padding-bottom: 20px;
+  margin-bottom: 20px;
+  border-bottom: 1px solid #efefef;
 }
 p {
   line-height: 20px;

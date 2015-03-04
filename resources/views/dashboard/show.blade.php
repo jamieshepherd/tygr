@@ -46,38 +46,44 @@
                 </div>
         <div class="dashboard">
             <div class="row">
-                <div class="col col-1-3">
+                <div class="col col-1-2">
+                    <div class="content stats">
+                        <h4>Issues created this week by project</h4>
+                        <canvas id="issues_by_project"></canvas>
+                        <script>
+
+                            var data = {
+
+                                labels: [@foreach($data['issues_created'] as $project)"{{ $project->name }}", @endforeach],
+                                datasets: [
+                                    {
+                                        label: "Issues by project",
+                                        fillColor: "rgba(57,209,180,1)",
+                                        strokeColor: "rgba(220,220,220,0.8)",
+                                        highlightFill: "rgba(139,206,220,0.5)",
+                                        highlightStroke: "rgba(57,209,180,0.5)",
+                                        data: [@foreach($data['issues_created'] as $project){{ $project->issueCount }}, @endforeach]
+                                    }
+                                ]
+
+                            };
+
+                            var issues_by_project = document.getElementById("issues_by_project").getContext("2d");
+                            new Chart(issues_by_project).Bar(data, {
+                                barShowStroke: false
+                            });
+
+                        </script>
+                    </div>
+                </div>
+                <div class="col col-1-2">
                     <div class="content">
                         <h1>What is the dashboard?</h1>
                         <p>This is just a small snapshot of some of the information that happened in the last 7 days. Eventually this should be a full dashboard of everything you might want to know at a glance.</p>
                         <p>We're looking to add some more interesting statistics, graphs, and notifications as the service improves. If you have any ideas <a href="mailto:email@jamie.sh">let me know!</a></p>
                     </div>
                 </div>
-                <div class="col col-2-3">
-                    <div class="content stats">
-                        <canvas id="issues_by_project"></canvas><br><br><br>
-                        <h3>Issues created this week by project</h3>
-                        <script>
 
-                            var issues_by_project_data = [
-                                @foreach($data['issues_created'] as $project)
-                                {
-                                    value: {{ $project->issueCount }},
-                                    color: "{{ $project->color }}",
-                                    highlight: "#71C8B5",
-                                    label: "{{ $project->client->name }} ({{ $project->name }})"
-                                },
-                                @endforeach
-                            ];
-
-                            var options = { segmentShowStroke : true }
-
-                            var issues_by_project = document.getElementById("issues_by_project").getContext("2d");
-                            new Chart(issues_by_project).Doughnut(issues_by_project_data, options);
-
-                        </script>
-                    </div>
-                </div>
             </div>
         </div>
     </div>

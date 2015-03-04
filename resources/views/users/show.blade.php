@@ -27,13 +27,15 @@
         <p>{{{ $user->name }}}</p>
         <h2>Email address</h2>
         <p>{{{ $user->email }}}</p>
+        <h2>Organisation</h2>
+        <p>{{{ $user->client->name }}}</p>
+        <h2>User rank</h2>
+        <p>@if($user->rank == 1) Admin @elseif($user->rank == 2) Employee @else Client @endif</p>
         <h2>Groups</h2>
             <ul class="standard">
             @foreach($user->groups as $group)
                 <li>{{{ $group->name }}}</li>
             @endforeach
             </ul>
-        <h2>Rank</h2>
-        <p>@if($user->rank == 1) Admin @elseif($user->rank == 2) Employee @else Client @endif</p>
     </div>
 @stop

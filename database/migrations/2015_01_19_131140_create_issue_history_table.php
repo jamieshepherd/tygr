@@ -17,6 +17,9 @@ class CreateIssueHistoryTable extends Migration {
 			$table->increments('id');
             // Hidden from client
             $table->boolean('hidden')->default(false);
+            // Project ID
+            $table->integer('project_id')->unsigned();
+            $table->foreign('project_id')->references('id')->on('projects')->onDelete('cascade');
 			// Issue ID
 			$table->integer('issue_id')->unsigned();
 			$table->foreign('issue_id')->references('id')->on('issues')->onDelete('cascade');
@@ -29,6 +32,7 @@ class CreateIssueHistoryTable extends Migration {
 			$table->string('status')->nullable();
 			// History comment
 			$table->text('comment');
+            // Timestamps
 			$table->timestamps();
 		});
 	}

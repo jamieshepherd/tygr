@@ -33,7 +33,7 @@
         <input type="hidden" name="_token" value="<?php echo csrf_token(); ?>">
 
             @if(Auth::user()->rank != 3)
-            <input name="hidden" type="checkbox"> Hidden from client?
+            <input name="hidden" type="checkbox"> Hidden from client?<br/><br/>
 
             <label>Assign issue</label>
             <input type="radio" name="assigned" value="2" checked> Sponge

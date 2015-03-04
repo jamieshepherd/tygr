@@ -1,5 +1,5 @@
 .dashboard {
-  display: block;
+  display: inline-block;
   width: 100%;
   .row {
     .col {
@@ -54,6 +54,37 @@
           width: 100%;
           padding: 0 0 20px 0;
         }
+      }
+    }
+  }
+  .activity {
+    display: inline-block;
+    margin-bottom: 20px;
+    .user-icon {
+      float: left;
+      display: inline-block;
+      margin-right: 20px;
+    }
+    .details {
+      overflow: hidden;
+      p {
+        margin: 0;
+      }
+      .date {
+        display: inline-block;
+        margin-top: 5px;
+        font-size: 12px;
+        color: #bec0c0;
+      }
+    }
+  }
+  .project-details {
+    td {
+      line-height: 36px;
+      strong {
+        color: #354052;
+        font-weight: normal;
+        margin-right: 40px;
       }
     }
   }

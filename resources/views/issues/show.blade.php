@@ -15,7 +15,7 @@
                     <i class="fa fa-angle-right"></i>
                     <a href="/projects/{{ $project->client->stub }}/{{ $project->stub }}/issues">Issues</a>
                     <i class="fa fa-angle-right"></i>
-                    <a href="/projects/{{ $project->client->stub }}/{{ $project->stub }}/issues/show">#{{ $issue->id }}</a>
+                    <a href="/projects/{{ $project->client->stub }}/{{ $project->stub }}/issues/show">{{ $issue->summary }}</a>
                 </div>
             @endif
             <h1>Issue details</h1>
@@ -85,7 +85,7 @@
                 <textarea name="comment" placeholder="Enter a comment here" autofocus></textarea>
 
                 @if(Auth::user()->rank != 3)
-                    <input name="hidden" type="checkbox"> Internal comment
+                    <input name="hidden" type="checkbox"> Internal comment<br/><br/>
                 @endif
 
                 <label>Add attachment</label>

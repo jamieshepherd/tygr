@@ -27,7 +27,7 @@ class CreateProjectRequest extends Request {
             'current_version' 		 => 'required|numeric',
             'status' 				 => 'required|min:3',
             'authoring_tool' 		 => '',
-            'lms_deployment' 		 => '',
+            'lms_deployment' 		 => 'required',
             'lms_specification' 	 => '',
             'project_manager' 		 => '',
             'lead_developer' 		 => '',

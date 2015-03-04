@@ -50,19 +50,19 @@ class DashboardController extends Controller {
 			$i++;
 			switch($i) {
 				case 1:
-					$project->color = '#8BCEDC';
+					$project->color = '#f7464a';
 					break;
 				case 2:
-					$project->color = '#f24a33';
+					$project->color = '#46bfbd';
 					break;
 				case 3:
-					$project->color = '#be63c5';
+					$project->color = '#fdb45c';
 					break;
 				case 4:
 					$project->color = '#accd4a';
 					break;
 				default:
-					$project->color = '#ff6600';
+					$project->color = '#f7464a';
 			}
 		}
 	}

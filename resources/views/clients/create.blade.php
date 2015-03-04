@@ -1,15 +1,21 @@
 @extends('_layout.base')
-@section('crumbtrail')
-    <a href="/"><li><i class="fa fa-home"></i> Home</li></a>
-    <a href="/clients"><li>Clients</li></a>
-    <li class="current">Create</li>
-@stop
 @section('body')
     <body>
     @include('_layout.nav')
     <div id="main">
-        @include('_layout.header')
-        <h1>Create a client</h1>
+        <header>
+            @if(Auth::user())
+                <a class="signout action nofill green" href="/auth/logout"><i class="fa fa-sign-out"></i> Sign out</a>
+                <div class="crumbtrail">
+                    <a href="/">Home</a>
+                    <i class="fa fa-angle-right"></i>
+                    <a href="/clients">Clients</a>
+                    <i class="fa fa-angle-right"></i>
+                    <a href="/clients">Create</a>
+                </div>
+            @endif
+            <h1>Create a client</h1>
+        </header>
         <form action="{{{ Request::url() }}}" method="POST" accept-charset="UTF-8">
         <input type="hidden" name="_token" value="<?php echo csrf_token(); ?>">
 
@@ -28,7 +34,7 @@
             <span class="error">{{ $errors->first('stub') }}</span> @else > @endif
 
             <br/><button type="submit"><i class="fa fa-arrow-circle-right"></i> Create client</button>
-            <a class="action secondary" href="javascript:history.back()"><i class="fa fa-times-circle"></i> Cancel</a>
+            <a class="action red" href="javascript:history.back()"><i class="fa fa-times-circle"></i> Cancel</a>
         </form>
 
     </div>

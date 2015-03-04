@@ -2,32 +2,28 @@
   width: 100%;
   display: inline-block;
   clear: both;
-  font-size: 10px;
-  font-weight: 600;
-  margin-bottom: 30px;
-  ul {
-    display: inline-block;
-    text-transform: uppercase;
+  margin: 20px 0;
+  font-size: 13px;
+  .crumbtrail {
+    float: left;
+    vertical-align: bottom;
+    margin-bottom: 10px;
     a {
+      color: #354052;
       border: none;
-    }
-    li {
-      display: inline-block;
-      padding: 5px;
-      border: 1px solid $foreground;
-      line-height: normal;
-      &:hover, &.current {
-        background: $foreground;
-        border: 1px solid $foreground;
-        color: #fff;
+      &:hover {
+        border-bottom: 1px dotted #354052;
       }
     }
-    &.crumbtrail {
-      float: left;
+    .fa {
+      font-size: 11px;
+      padding: 0 3px;
     }
-    &.account {
-      float: right;
-    }
+
+  }
+  .signout {
+    display: inline-block;
+    float: right;
   }
 
 }

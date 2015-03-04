@@ -1,22 +1,38 @@
 @extends('_layout.base')
-@section('crumbtrail')
-    <a href="/"><li><i class="fa fa-home"></i> Home</li></a>
-    <a href="/projects"><li>Projects</li></a>
-    <a href="/projects/{{ $project->client->stub }}/{{{ $project->stub }}}"><li>{{{ $project->name }}}</li></a>
-    <a href="/projects/{{ $project->client->stub }}/{{{ $project->stub }}}/issues"><li>Issues</li></a>
-    <li class="current">Details</li>
-@stop
 @section('body')
     <body>
     @include('_layout.nav')
     <div id="main">
-        @include('_layout.header')
-        <h1>Issue details</h1>
-        <a class="action" href="/projects/{{ $project->client->stub }}/{{{ $issue->project->stub }}}/issues/edit/{{ $issue->id }}"><i class="fa fa-plus-circle"></i> Edit issue</a>
+        <header>
+            @if(Auth::user())
+                <a class="signout action nofill green" href="/auth/logout"><i class="fa fa-sign-out"></i> Sign out</a>
+                <div class="crumbtrail">
+                    <a href="/">Home</a>
+                    <i class="fa fa-angle-right"></i>
+                    <a href="/projects">Projects</a>
+                    <i class="fa fa-angle-right"></i>
+                    <a href="/projects/{{ $project->client->stub }}/{{ $project->stub }}">{{ $project->name }}</a>
+                    <i class="fa fa-angle-right"></i>
+                    <a href="/projects/{{ $project->client->stub }}/{{ $project->stub }}/issues">Issues</a>
+                    <i class="fa fa-angle-right"></i>
+                    <a href="/projects/{{ $project->client->stub }}/{{ $project->stub }}/issues/show">{{ $issue->summary }}</a>
+                </div>
+            @endif
+            <h1>Issue details</h1>
+        </header>
+        @if($issue->status == 'Resolved')
+            <a class="action" href="{{ Request::url() }}/close"><i class="fa fa-check-circle"></i> Close issue</a>
+            <a class="action red" href="{{ Request::url() }}/reopen"><i class="fa fa-exclamation-circle"></i> Reopen issue</a>
+        @elseif($issue->status === 'Closed')
+            <a class="action" href="{{ Request::url() }}/reopen"><i class="fa fa-exclamation-circle"></i> Reopen issue</a>
+        @else
+            <a class="action" href="{{ Request::url() }}/resolve"><i class="fa fa-check-circle"></i> Resolve issue</a>
+        @endif
+        <a class="action yellow" href="/projects/{{ $project->client->stub }}/{{{ $issue->project->stub }}}/issues/edit/{{ $issue->id }}"><i class="fa fa-plus-circle"></i> Edit issue</a>
         @if(Auth::user()->rank <= 2)
-        <a class="action" href="/projects/{{ $project->client->stub }}/{{{ $issue->project->stub }}}/issues/claim/{{ $issue->id }}"><i class="fa fa-flag"></i> Claim issue</a>
-        <span class="action button-dropdown">
-            <i class="fa fa-diamond"></i> Move version <i class="fa fa-caret-down"></i>
+        <a class="action blue" href="/projects/{{ $project->client->stub }}/{{{ $issue->project->stub }}}/issues/claim/{{ $issue->id }}"><i class="fa fa-thumb-tack"></i> Claim issue</a>
+        <span class="action yellow button-dropdown">
+            <i class="fa fa-flask"></i> Move version <i class="fa fa-caret-down"></i>
             <ul>
                 @foreach($versions as $version)
                 <li>
@@ -27,14 +43,6 @@
                 @endforeach
             </ul>
         </span>
-        @endif
-        @if($issue->status == 'Resolved')
-            <a class="action" href="{{ Request::url() }}/reopen"><i class="fa fa-exclamation-circle"></i> Reopen issue</a>
-            <a class="action" href="{{ Request::url() }}/close"><i class="fa fa-check-circle"></i> Close issue</a>
-        @elseif($issue->status === 'Closed')
-            <a class="action" href="{{ Request::url() }}/reopen"><i class="fa fa-exclamation-circle"></i> Reopen issue</a>
-        @else
-            <a class="action" href="{{ Request::url() }}/resolve"><i class="fa fa-check-circle"></i> Resolve issue</a>
         @endif
         <section>
             <h2>Details</h2>
@@ -77,7 +85,7 @@
                 <textarea name="comment" placeholder="Enter a comment here" autofocus></textarea>
 
                 @if(Auth::user()->rank != 3)
-                    <input name="hidden" type="checkbox"> Hidden from client?
+                    <input name="hidden" type="checkbox"> Internal comment<br/><br/>
                 @endif
 
                 <label>Add attachment</label>

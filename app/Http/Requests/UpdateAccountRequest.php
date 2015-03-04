@@ -22,11 +22,11 @@ class UpdateAccountRequest extends Request {
 	public function rules()
 	{
 		return [
-            'name'		      =>  'required|min:3',
-            'email'		      =>  'required|email|unique:users,email,'.\Auth::user()->id,
-            'oldpass'         =>  'min:6',
-            'newpass'         =>  'min:6',
-            'confirmpass'     =>  'min:6'
+            'name'		           =>  'required|min:3',
+            'email'		           =>  'required|email|unique:users,email,'.\Auth::user()->id,
+            'oldpass'              =>  'min:6',
+            'newpass'              =>  'min:6',
+            'newpass_confirmation' =>  'min:6|confirmed'
 		];
 	}
 

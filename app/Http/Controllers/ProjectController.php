@@ -10,6 +10,7 @@ use App\Project;
 use App\User;
 use App\Group;
 use App\Issue;
+use App\IssueHistory;
 use Auth;
 use Input;
 use Session;
@@ -93,13 +94,45 @@ class ProjectController extends Controller {
 			->where('stub', '=', $stub)->first();
 		if(!$project) abort(404);
 
-		$userGroups = Auth::user()->groups->lists('id');
-		$count = count(Issue::whereIn('assigned_to_id', $userGroups)
-			->where('project_id', '=', $project->id)
-			->where('status','!=','Closed')
-			->get());
+        $issues = Issue::where('project_id', '=', $project->id)
+            ->get();
 
-		return view('projects.show')->with('project', $project)->with('count', $count);
+        $issueHistory = IssueHistory::with('issue')
+            ->where('project_id', '=', $project->id)
+            ->orderBy('created_at', 'desc')
+            ->take(4)
+            ->get();
+
+		$userGroups = Auth::user()->groups->lists('id');
+
+        $projectStats = array();
+
+        $projectStats['openIssues'] =
+            count(
+                Issue::where('project_id', '=', $project->id)
+                    ->where('status', '!=', 'Resolved')
+                    ->where('status', '!=', 'Closed')
+                    ->get()
+            );
+
+        $projectStats['resolvedIssues'] =
+            count(Issue::where('project_id', '=', $project->id)
+                    ->where('status', '=', 'Resolved')
+                    ->orWhere('status', '=', 'Closed')
+                    ->get()
+            );
+
+        $projectStats['assignedToYou'] =
+            count(Issue::whereIn('assigned_to_id', $userGroups)
+                ->where('project_id', '=', $project->id)
+                ->where('status','!=','Closed')
+                ->get()
+            );
+
+		return view('projects.show')->with('project', $project)
+            ->with('issues', $issues)
+            ->with('issueHistory', $issueHistory)
+            ->with('projectStats', $projectStats);
 	}
 
 	/**

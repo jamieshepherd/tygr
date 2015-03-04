@@ -29,15 +29,15 @@ function resizeNav() {
 
     if(nav.className == 'large') {
         nav.style.width = '80px';
-        document.getElementById('main').style.marginLeft = '80px';
+        document.getElementById('main').style.marginLeft = '95px';
         var children = document.getElementsByClassName('resizable');
         for(var i = 0; i < children.length; i++) {
             children[i].style.display = 'none';
         }
         nav.className  = 'small';
     } else {
-        nav.style.width = '300px';
-        document.getElementById('main').style.marginLeft = '300px';
+        nav.style.width = '230px';
+        document.getElementById('main').style.marginLeft = '245px';
         var children = document.getElementsByClassName('resizable');
         for(var i = 0; i < children.length; i++) {
             children[i].style.display = 'inline';

@@ -1,5 +1,5 @@
 form {
-  margin-top: 30px;
+  //margin-top: 30px;
   max-width: 700px;
 }
 input, textarea {
@@ -16,7 +16,7 @@ input, textarea {
     border-color: $highlight;
   }
   &:focus {
-    border-color: $tertiary;
+    border-color: #febd19;
     outline: none;
   }
   &.short {
@@ -28,6 +28,9 @@ label {
   display: block;
   margin: 20px 0 10px 0;
   font-weight:600;
+  &:first-of-type {
+    margin-top: 0;
+  }
   &.radio {
     font-weight: 300;
     display: inline;
@@ -41,9 +44,13 @@ input {
     float: right;
   }
   &.filter {
-    font-size: 12px;
+    font-size: 14px;
     margin-top: -10px;
     margin-bottom: 20px;
+    padding: 12px 12px 12px 40px;
+    background: #ffffff url('/images/magnify.png') 12px center no-repeat;
+    background-size: 19px 18px;
+    color: #666;
     @media (max-width: 1000px) {
       min-width: 200px;
     }

@@ -1,20 +1,27 @@
 @extends('_layout.base')
-@section('crumbtrail')
-    <a href="/"><li><i class="fa fa-home"></i> Home</li></a>
-    <a href="/clients"><li>Clients</li></a>
-    <a href="/clients/show/{{{ $client->stub }}}"><li>{{{ $client->name }}}</li></a>
-    <li class="current">Create project</li>
-@stop
 @section('body')
     <body>
     @include('_layout.nav')
     <div id="main">
-        @include('_layout.header')
-        <h1>Create project</h1>
+        <header>
+            @if(Auth::user())
+                <a class="signout action nofill green" href="/auth/logout"><i class="fa fa-sign-out"></i> Sign out</a>
+                <div class="crumbtrail">
+                    <a href="/">Home</a>
+                    <i class="fa fa-angle-right"></i>
+                    <a href="/clients">Clients</a>
+                    <i class="fa fa-angle-right"></i>
+                    <a href="/clients/show/{{ $client->stub }}">{{ $client->name }}</a>
+                    <i class="fa fa-angle-right"></i>
+                    <a href="/projects/{{ $client->stub }}/create">Create project</a>
+                </div>
+            @endif
+            <h1>Create project</h1>
+        </header>
         <form action="" method="POST" accept-charset="UTF-8">
         <input type="hidden" name="_token" value="<?php echo csrf_token(); ?>">
 
-            <input name="hidden" type="checkbox"> Hidden from client?
+            <input name="hidden" type="checkbox"> Hidden from client?<br/><br/>
 
             <label>Project name</label>
             <input value="{{ old('name') }}" id="name" name="name" type="text" placeholder="e.g. Fire Safety" value="" onkeyup="generateStub()" autofocus @if($errors->has('name')) class="error">
@@ -32,15 +39,16 @@
             <input value="{{ old('status') }}" name="status" type="text" placeholder="e.g. In development, Launched" @if($errors->has('status')) class="error">
             <span class="error">{{ $errors->first('status') }}</span> @else > @endif
 
-            <hr/>
-
             <label>Authoring Tool</label>
             <input value="{{ old('authoring_tool') }}" name="authoring_tool" type="text" placeholder="e.g. Adapt, Storyline, Lectora" @if($errors->has('authoring_tool')) class="error">
             <span class="error">{{ $errors->first('authoring_tool') }}</span> @else > @endif
 
+            <hr/>
+
             <label>Deployment location</label>
             <input type="radio" name="lms_deployment" value="client" checked> Client
             <input type="radio" name="lms_deployment" value="sponge"> Launch &amp; Learn
+            <input type="radio" name="lms_deployment" value="none"> Not applicable
             @if($errors->has('lms_deployment'))
             <span class="error">{{ $errors->first('lms_deployment') }}</span> @endif
 
@@ -67,6 +75,7 @@
             <span class="error">{{ $errors->first('instructional_designer') }}</span> @else > @endif
 
             <br/><button type="submit"><i class="fa fa-arrow-circle-right"></i> Create project</button>
+            <a class="action red" href="javascript:history.back()"><i class="fa fa-times-circle"></i> Cancel</a>
         </form>
     </div>
 @stop

@@ -1,7 +1,7 @@
 <div id="table-actions">
     <span class="label"><i class="fa fa-check-square-o"></i> <span id="selectedAmount"></span> issues selected</span>
     <!--a href="" class="action" id="resolve">Resolve</a-->
-    <span class="action button-dropdown" id="assign">
+    <span class="action button-dropdown nofill yellow" id="assign">
         Assign selected <i class="fa fa-caret-up"></i>
         <ul>
             <li>
@@ -17,7 +17,7 @@
         </ul>
     </span>
     @if(Auth::user()->rank <= 2)
-    <a href="#" class="action" id="claim">Claim issue</a>
+    <a href="#" class="action nofill blue" id="claim"><i class="fa fa-thumb-tack"></i> Claim issue</a>
     <!--a href="#" class="action button-dropdown" id="version">
         Move version <i class="fa fa-caret-up"></i>
         <ul>
@@ -30,6 +30,6 @@
     </a-->
     @endif
     @if(Auth::user()->rank == 1)
-    <a href="" class="action" id="delete">Delete issue</a>
+    <a href="" class="action nofill red" id="delete"><i class="fa fa-exclamation-circle"></i> Delete issue</a>
     @endif
 </div>

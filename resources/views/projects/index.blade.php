@@ -1,14 +1,19 @@
 @extends('_layout.base')
-@section('crumbtrail')
-<a href="/"><li><i class="fa fa-home"></i> Home</li></a>
-<li class="current">Projects</li>
-@stop
 @section('body')
     <body>
     @include('_layout.nav')
     <div id="main">
-        @include('_layout.header')
-        <h1>Projects</h1>
+        <header>
+            @if(Auth::user())
+                <a class="signout action nofill green" href="/auth/logout"><i class="fa fa-sign-out"></i> Sign out</a>
+                <div class="crumbtrail">
+                    <a href="/">Home</a>
+                    <i class="fa fa-angle-right"></i>
+                    <a href="/projects">Projects</a>
+                </div>
+            @endif
+            <h1>Projects</h1>
+        </header>
             @if(count($client->projects)==0)
                 <p>Sorry, there are no projects listed for this client yet.</p>
             @endif

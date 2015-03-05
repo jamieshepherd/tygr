@@ -94,7 +94,7 @@
                 <label>Assign issue</label>
                 <select name="assigned_to">
                 @foreach($groups as $group)
-                    <option value="{{ $group->id }}" @if($issue->assigned_to_id == $group->id) selected @endif>{{ $group->name }}</option>
+                    <option value="{{ $group->id }}" @if($issue->assigned_to_id == $group->id) selected @endif>@if($group->name == 'Client') {{$project->client->name }} @else{{ $group->name }}@endif</option>
                 @endforeach
                 </select>
                 <label>Mark as resolved</label>

@@ -11,7 +11,7 @@
             </li>
             <li>
                 <a href="#" id="assign_client">
-                    <i class="fa fa-angle-right"></i> Client
+                    <i class="fa fa-angle-right"></i> {{ $project->client->name }}
                 </a>
             </li>
         </ul>

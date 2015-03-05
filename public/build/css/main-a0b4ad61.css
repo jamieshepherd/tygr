@@ -371,7 +371,7 @@ input, textarea {
   input.error, textarea.error {
     border-color: #f24a33; }
   input:focus, textarea:focus {
-    border-color: #febd19;
+    border-color: #8bcedc;
     outline: none; }
   input.short, textarea.short {
     min-width: 0;

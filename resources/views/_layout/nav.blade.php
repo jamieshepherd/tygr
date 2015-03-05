@@ -1,5 +1,5 @@
 <nav id="nav" class="large">
-    <img class="sponge-logo resizable" src="/images/sponge-logo.svg" onerror="this.src='/images/sponge-logo.png'; this.onerror=null;">
+    <img class="sponge-logo resizable" src="/images/sponge-logo.svg" onerror="this.src='/images/sponge-logo.png'; this.onerror=null;"/>
     <ul>
         @if(Auth::guest())
             <a href="/auth/login"><li><i class="fa fa-lock"></i><span class="resizable">Sign in</span></li></a>

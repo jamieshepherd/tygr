@@ -249,7 +249,9 @@ class IssueController extends Controller {
 		// Get all of the versions for this project
 		$versions = Issue::where('project_id', '=', $project->id)->distinct()->select('version')->get();
 
-        $groups = Group::all();
+        // Only get two groups if we're client, otherwise get all
+        $groups = (Auth::user()->rank == 3) ? Group::take(2)->get() : Group::all();
+
 		return view('issues.show')
             ->with('project', $project)
             ->with('issue', $issue)

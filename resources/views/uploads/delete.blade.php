@@ -9,7 +9,7 @@
                 <div class="crumbtrail">
                     <a href="/">Home</a>
                     <i class="fa fa-angle-right"></i>
-                    <a href="/projects">Issue</a>
+                    <a href="/projects">Attachment</a>
                     <i class="fa fa-angle-right"></i>
                     <a href="{{ Request::url() }}">Confirm delete</a>
                 </div>
@@ -21,6 +21,6 @@
         <p>Are you absolutely sure you want to delete the attachment?</p><br/>
 
         <a class="action" href="{{ Request::url() }}?confirm=true"><i class="fa fa-exclamation-circle"></i> Yes, I'm sure</a>
-        <a class="action red" href="/"><i class="fa fa-arrow-circle-left"></i> No, take me back</a>
+        <a class="action red" href="javascript:history.back()"><i class="fa fa-arrow-circle-left"></i> No, take me back</a>
     </div>
 @stop

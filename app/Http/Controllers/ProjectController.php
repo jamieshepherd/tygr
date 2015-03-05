@@ -100,7 +100,7 @@ class ProjectController extends Controller {
         $issueHistory = IssueHistory::with('issue')
             ->where('project_id', '=', $project->id)
             ->orderBy('created_at', 'desc')
-            ->take(4)
+            ->take(5)
             ->get();
 
 		$userGroups = Auth::user()->groups->lists('id');

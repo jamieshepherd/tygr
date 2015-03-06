@@ -1,11 +1,16 @@
 <?php namespace App\Http\Controllers;
 
-use App\Http\Requests;
 use App\Http\Controllers\Controller;
-use App\Client;
+
+use App\Repositories\Contracts\ProjectRepositoryInterface;
+use App\Repositories\Contracts\ClientRepositoryInterface;
+
+use App\Http\Requests;
 use App\Http\Requests\CreateProjectRequest;
 use App\Http\Requests\UpdateProjectRequest;
 use App\Http\Requests\NewVersionRequest;
+
+use App\Client;
 use App\Project;
 use App\User;
 use App\Group;
@@ -17,6 +22,20 @@ use Session;
 
 class ProjectController extends Controller {
 
+    protected $projects;
+    protected $clients;
+
+    /**
+     * Construct the controller with projects repository
+     *
+     * @param ProjectRepositoryInterface $projects
+     * @param ClientRepositoryInterface $clients
+     */
+    public function __construct(ProjectRepositoryInterface $projects, ClientRepositoryInterface $clients) {
+        $this->projects = $projects;
+        $this->clients  = $clients;
+    }
+
 	/**
 	 * Display a listing of the resource.
 	 *
@@ -24,12 +43,11 @@ class ProjectController extends Controller {
 	 */
 	public function index()
 	{
-        if(\Auth::user()->rank < 3) {
-            return redirect('/clients');
+        if(Auth::user()->rank == 3) {
+            $projects = $this->projects->getMyProjects();
+            return view('projects.index')->with(compact('projects'));
         } else {
-            $client_id = Auth::user()->client_id;
-            $client = Client::where('id', '=', $client_id)->firstOrFail();
-            return view('projects.index')->with('client', $client);
+            return redirect('/clients');
         }
 	}
 
@@ -41,8 +59,8 @@ class ProjectController extends Controller {
 	 */
 	public function create($stub)
 	{
-		$client = Client::where('stub', '=', $stub)->firstOrFail();
-		return view('projects.create')->with('client', $client);
+		$client = $this->clients->findByStub($stub);
+		return view('projects.create')->with(compact('client'));
 	}
 
 	/**
@@ -54,28 +72,17 @@ class ProjectController extends Controller {
 	 */
 	public function store($stub, CreateProjectRequest $request)
 	{
-		$client = Client::where('stub', '=', $stub)->firstOrFail();
+		$client = $this->clients->findByStub($stub);
+        $result = $this->projects->create($client, $request);
 
-		$project = new Project();
-		$project->client_id					 = $client->id;
-		$project->hidden 					 = Input::has('hidden');
-		$project->name				         = $request->name;
-		$project->stub				         = $request->stub;
-		$project->current_version	         = $request->current_version;
-		$project->status			         = $request->status;
-		$project->authoring_tool             = $request->authoring_tool;
-		$project->lms_deployment             = $request->lms_deployment;
-		$project->lms_specification          = $request->lms_specification;
-		$project->project_manager   		 = $request->project_manager;
-		$project->lead_developer    		 = $request->lead_developer;
-		$project->lead_designer     		 = $request->lead_designer;
-		$project->instructional_designer     = $request->instructional_designer;
-
-		$result = $project->save();
-		if($result) {
-			Session::flash('message', $project->name.' was created successfully.');
-			return redirect('/clients/show/'.$stub);
-		}
+        if($result) {
+            session()->flash('message', $request->name.' was created successfully.');
+            return redirect()->back();
+        } else {
+            session()->flash('notify-type', 'error');
+            session()->flash('message', 'This was unsuccessful, please try again.');
+            return redirect()->back();
+        }
 	}
 
 	/**

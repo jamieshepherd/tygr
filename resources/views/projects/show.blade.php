@@ -27,7 +27,7 @@
         <div class="statistics">
             <div class="statistic">
                 <div class="content first">
-                    <h2 class="blue">1.0</h2>
+                    <h2 class="blue">{{ $project->current_version }}</h2>
                     <label>Current version</label>
                 </div>
             </div>

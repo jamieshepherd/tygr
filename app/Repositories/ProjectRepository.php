@@ -5,6 +5,8 @@ use App\Repositories\Contracts\ProjectRepositoryInterface;
 use Auth;
 use Hash;
 use App\Project;
+use App\Issue;
+use App\IssueHistory;
 use App\Http\Requests\CreateProjectRequest;
 use App\Http\Requests\UpdateProjectRequest;
 
@@ -43,6 +45,30 @@ class ProjectRepository implements ProjectRepositoryInterface {
     }
 
     /*
+     * Find a specific project by stub
+     *
+     * @param  string  stub
+     */
+    public function findByStub($stub)
+    {
+        return Project::where('stub', '=', $stub)->first();
+    }
+
+    /*
+     * Return the recent activity of a project
+     *
+     * @param  string  stub
+     */
+    public function recentActivity($id)
+    {
+        return IssueHistory::with('issue')
+            ->where('project_id', '=', $id)
+            ->orderBy('created_at', 'desc')
+            ->take(5)
+            ->get();
+    }
+
+    /*
      * Create a new user
      *
      * @param  CreateUserRequest $request
@@ -68,99 +94,30 @@ class ProjectRepository implements ProjectRepositoryInterface {
     }
 
     /*
-     * Update a user
+     * Update a project
      *
-     * @param  int  $id
-     * @param  UpdateUserRequest  $request
+     * @param  string  $stub
+     * @param  UpdateProjectRequest  $request
      */
-    public function update($id, UpdateProjectRequest $request) {
-        $user            = $this->find($id);
-        $user->name      = $request->name;
-        $user->email     = $request->email;
-        $user->client_id = $request->client_id;
-        $user->rank      = $request->rank;
+    public function update($stub, UpdateProjectRequest $request)
+    {
+        $project = $this->findByStub($stub);
+        if(!$project) abort(404);
 
-        // If the password field is not empty, change the password
-        if($request->input('password')) {
-            $user->password = Hash::make($request->password);
-        }
+        $project->hidden 					 = $request->has('hidden');
+        $project->name				         = $request->name;
+        $project->stub				         = $request->stub;
+        $project->current_version	         = $request->current_version;
+        $project->status			         = $request->status;
+        $project->authoring_tool             = $request->authoring_tool;
+        $project->lms_deployment             = $request->lms_deployment;
+        $project->lms_specification          = $request->lms_specification;
+        $project->project_manager   		 = $request->project_manager;
+        $project->lead_developer    		 = $request->lead_developer;
+        $project->lead_designer     		 = $request->lead_designer;
+        $project->instructional_designer     = $request->instructional_designer;
 
-        $result = $user->save();
-
-        // Set and unset groups for the user if needed
-        if($request->has('spongeuk_project_management')) {
-            if(!$user->belongsToGroup('Sponge UK (Project Management)')) {
-                $user->attachToGroup('Sponge UK (Project Management)',$user->id);
-            }
-        } else {
-            $user->detachFromGroup('Sponge UK (Project Management)',$user->id);
-        }
-
-        if($request->has('spongeuk_development')) {
-            if(!$user->belongsToGroup('Sponge UK (Development)')) {
-                $user->attachToGroup('Sponge UK (Development)',$user->id);
-            }
-        } else {
-            $user->detachFromGroup('Sponge UK (Development)',$user->id);
-        }
-
-        if($request->has('spongeuk_visual_design')) {
-            if(!$user->belongsToGroup('Sponge UK (Visual Design)')) {
-                $user->attachToGroup('Sponge UK (Visual Design)',$user->id);
-            }
-        } else {
-            $user->detachFromGroup('Sponge UK (Visual Design)',$user->id);
-        }
-
-        if($request->has('spongeuk_instructional_design')) {
-            if(!$user->belongsToGroup('Sponge UK (Instructional Design)')) {
-                $user->attachToGroup('Sponge UK (Instructional Design)',$user->id);
-            }
-        } else {
-            $user->detachFromGroup('Sponge UK (Instructional Design)',$user->id);
-        }
-
-        if($request->has('spongeuk_launch_and_learn')) {
-            if(!$user->belongsToGroup('Sponge UK (Launch & Learn)')) {
-                $user->attachToGroup('Sponge UK (Launch & Learn)',$user->id);
-            }
-        } else {
-            $user->detachFromGroup('Sponge UK (Launch & Learn)',$user->id);
-        }
-
-        if($request->has('spongeuk_marketing')) {
-            if(!$user->belongsToGroup('Sponge UK (Marketing)')) {
-                $user->attachToGroup('Sponge UK (Marketing)',$user->id);
-            }
-        } else {
-            $user->detachFromGroup('Sponge UK (Marketing)',$user->id);
-        }
-
-        if($request->has('spongeuk_human_resources')) {
-            if(!$user->belongsToGroup('Sponge UK (Human Resources)')) {
-                $user->attachToGroup('Sponge UK (Human Resources)',$user->id);
-            }
-        } else {
-            $user->detachFromGroup('Sponge UK (Human Resources)',$user->id);
-        }
-
-        if($request->has('spongeuk_accounting')) {
-            if(!$user->belongsToGroup('Sponge UK (Accounting)')) {
-                $user->attachToGroup('Sponge UK (Accounting)',$user->id);
-            }
-        } else {
-            $user->detachFromGroup('Sponge UK (Accounting)',$user->id);
-        }
-
-        if($request->has('spongeuk_administration')) {
-            if(!$user->belongsToGroup('Sponge UK (Administration)')) {
-                $user->attachToGroup('Sponge UK (Administration)',$user->id);
-            }
-        } else {
-            $user->detachFromGroup('Sponge UK (Administration)',$user->id);
-        }
-
-        return $result;
+        return $project->save();
     }
 
     /*
@@ -170,4 +127,49 @@ class ProjectRepository implements ProjectRepositoryInterface {
         return User::destroy($id);
     }
 
+    /*
+     * Return the recent activity of a project
+     *
+     * @param  string  stub
+     * @return array
+     */
+    public function getStatistics($id)
+    {
+        $projectStats = array();
+
+        $projectStats['openIssues'] = count(Issue::where('project_id', '=', $id)
+                    ->where('status', '!=', 'Resolved')
+                    ->where('status', '!=', 'Closed')
+                    ->get()
+            );
+
+        $projectStats['resolvedIssues'] = count(Issue::where('project_id', '=', $id)
+                ->where('status', '=', 'Resolved')
+                ->orWhere('status', '=', 'Closed')
+                ->get()
+            );
+
+        $projectStats['assignedToYou'] = count(Issue::whereIn('assigned_to_id', Auth::user()->groups->lists('id'))
+                ->where('project_id', '=', $id)
+                ->where('status','!=','Closed')
+                ->get()
+            );
+
+        return $projectStats;
+    }
+
+
+    /*
+     * Change version
+     *
+     * @param  string  $stub
+     * @param  float  $version
+     */
+    public function changeVersion($stub, $version)
+    {
+        $project = $this->findByStub($stub);
+        $project->current_version = $version;
+
+        return $project->save();
+    }
 }

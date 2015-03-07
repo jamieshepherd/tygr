@@ -60,7 +60,7 @@ Route::group(array('middleware' => 'auth'), function() {
 		Route::get('projects/{client}/{stub}/edit', 'ProjectController@edit');
 		Route::post('projects/{client}/{stub}/edit', 'ProjectController@update');
         Route::get('projects/{client}/{stub}/version', 'ProjectController@version');
-        Route::post('projects/{client}/{stub}/version', 'ProjectController@newVersion');
+        Route::post('projects/{client}/{stub}/version', 'ProjectController@changeVersion');
 	});
 
     //>> Make sure user has at least CLIENT priviliges

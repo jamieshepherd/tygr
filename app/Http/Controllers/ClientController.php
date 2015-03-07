@@ -104,7 +104,7 @@ class ClientController extends Controller {
 
         if($result) {
             session()->flash('message', $request->name.' was updated successfully.');
-            return redirect('/clients');
+            return redirect('/clients/show/'.$request->stub);
         } else {
             session()->flash('notify-type', 'error');
             session()->flash('message', 'This was unsuccessful, please try again.');

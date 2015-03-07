@@ -10,15 +10,7 @@ use App\Http\Requests\CreateProjectRequest;
 use App\Http\Requests\UpdateProjectRequest;
 use App\Http\Requests\NewVersionRequest;
 
-use App\Client;
-use App\Project;
-use App\User;
-use App\Group;
-use App\Issue;
-use App\IssueHistory;
 use Auth;
-use Input;
-use Session;
 
 class ProjectController extends Controller {
 
@@ -94,52 +86,12 @@ class ProjectController extends Controller {
 	 */
 	public function show($client, $stub)
 	{
-		$client = Client::where('stub', '=', $client)->first();
-		if(!$client) abort(404);
+        $project = $this->projects->findByStub($stub);
+        if(!$project) abort(404);
 
-		$project = Project::where('client_id', '=', $client->id)
-			->where('stub', '=', $stub)->first();
-		if(!$project) abort(404);
-
-        $issues = Issue::where('project_id', '=', $project->id)
-            ->get();
-
-        $issueHistory = IssueHistory::with('issue')
-            ->where('project_id', '=', $project->id)
-            ->orderBy('created_at', 'desc')
-            ->take(5)
-            ->get();
-
-		$userGroups = Auth::user()->groups->lists('id');
-
-        $projectStats = array();
-
-        $projectStats['openIssues'] =
-            count(
-                Issue::where('project_id', '=', $project->id)
-                    ->where('status', '!=', 'Resolved')
-                    ->where('status', '!=', 'Closed')
-                    ->get()
-            );
-
-        $projectStats['resolvedIssues'] =
-            count(Issue::where('project_id', '=', $project->id)
-                    ->where('status', '=', 'Resolved')
-                    ->orWhere('status', '=', 'Closed')
-                    ->get()
-            );
-
-        $projectStats['assignedToYou'] =
-            count(Issue::whereIn('assigned_to_id', $userGroups)
-                ->where('project_id', '=', $project->id)
-                ->where('status','!=','Closed')
-                ->get()
-            );
-
-		return view('projects.show')->with('project', $project)
-            ->with('issues', $issues)
-            ->with('issueHistory', $issueHistory)
-            ->with('projectStats', $projectStats);
+		return view('projects.show')->with(compact('project'))
+            ->with('issueHistory', $this->projects->recentActivity($project->id))
+            ->with('projectStats', $this->projects->getStatistics($project->id));
 	}
 
 	/**
@@ -151,14 +103,10 @@ class ProjectController extends Controller {
 	 */
 	public function edit($client, $stub)
 	{
-		$client = Client::where('stub', '=', $client)->first();
-		if(!$client) abort(404);
-
-		$project = Project::where('client_id', '=', $client->id)
-			->where('stub', '=', $stub)->first();
+		$project = $this->projects->findByStub($stub);
 		if(!$project) abort(404);
 
-		return view('projects.edit')->with('project', $project);
+		return view('projects.edit')->with(compact('project'));
 	}
 
 	/**
@@ -171,31 +119,16 @@ class ProjectController extends Controller {
 	 */
 	public function update($client, $stub, UpdateProjectRequest $request)
 	{
-		$client = Client::where('stub', '=', $client)->first();
-		if(!$client) abort(404);
+        $result = $this->projects->update($stub, $request);
 
-		$project = Project::where('client_id', '=', $client->id)
-			->where('stub', '=', $stub)->first();
-		if(!$project) abort(404);
-
-		$project->hidden 					 = Input::has('hidden');
-		$project->name				         = $request->name;
-		$project->stub				         = $request->stub;
-		$project->current_version	         = $request->current_version;
-		$project->status			         = $request->status;
-		$project->authoring_tool             = $request->authoring_tool;
-		$project->lms_deployment             = $request->lms_deployment;
-		$project->lms_specification          = $request->lms_specification;
-		$project->project_manager   		 = $request->project_manager;
-		$project->lead_developer    		 = $request->lead_developer;
-		$project->lead_designer     		 = $request->lead_designer;
-		$project->instructional_designer     = $request->instructional_designer;
-		$result = $project->save();
-
-		if($result) {
-			Session::flash('message', 'Project details updated successfully.');
-			return redirect('/projects/'.$project->client->stub.'/'.$project->stub);
-		}
+        if($result) {
+            session()->flash('message', 'Project updated successfully.');
+            return redirect('/projects/'.$client.'/'.$request->stub);
+        } else {
+            session()->flash('notify-type', 'error');
+            session()->flash('message', 'This was unsuccessful, please try again.');
+            return redirect()->back();
+        }
 	}
 
 	/**
@@ -218,14 +151,10 @@ class ProjectController extends Controller {
      */
     public function version($client, $stub)
     {
-        $client = Client::where('stub', '=', $client)->first();
-        if(!$client) abort(404);
-
-        $project = Project::where('client_id', '=', $client->id)
-            ->where('stub', '=', $stub)->first();
+        $project = $this->projects->findByStub($stub);
         if(!$project) abort(404);
 
-        return view('projects.version')->with('project', $project);
+        return view('projects.version')->with(compact('project', $project));
     }
 
     /**
@@ -236,24 +165,18 @@ class ProjectController extends Controller {
      * @param  NewVersionRequest  $request
      * @return Response
      */
-    public function newVersion($client, $stub, NewVersionRequest $request)
+    public function changeVersion($client, $stub, NewVersionRequest $request)
     {
-        $client = Client::where('stub', '=', $client)->first();
-        if(!$client) abort(404);
-
-        $project = Project::where('client_id', '=', $client->id)
-            ->where('stub', '=', $stub)->first();
-        if(!$project) abort(404);
-
-        $project->current_version	         = $request->new_version;
-        $result = $project->save();
+        $result = $this->projects->changeVersion($stub, $request->new_version);
 
         if($result) {
-            Session::flash('message', 'Project moved to version '.$request->current_version.'.');
-            return redirect('/projects/'.$project->client->stub.'/'.$project->stub);
+            session()->flash('message', 'Project was moved to version '.$request->new_version.'.');
+            return redirect()->back();
+        } else {
+            session()->flash('notify-type', 'error');
+            session()->flash('message', 'This was unsuccessful, please try again.');
+            return redirect()->back();
         }
-
-        return view('projects.version')->with('project', $project);
     }
 
 }

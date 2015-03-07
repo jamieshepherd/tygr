@@ -1,5 +1,7 @@
 <?php namespace App\Http\Controllers;
 
+use App\Repositories\Contracts\IssueRepositoryInterface;
+
 use App\Http\Requests\CreateIssueRequest;
 use App\Http\Requests\UpdateIssueRequest;
 use App\Commands\AddAttachmentCommand;
@@ -17,6 +19,17 @@ use Auth;
 use DB;
 
 class IssueController extends Controller {
+
+    protected $issues;
+
+    /**
+     * Construct the controller with projects repository
+     *
+     * @param IssueRepositoryInterface $issues
+     */
+    public function __construct(IssueRepositoryInterface $issues) {
+        $this->issues = $issues;
+    }
 
 	/**
 	 * Display a listing of the resource.

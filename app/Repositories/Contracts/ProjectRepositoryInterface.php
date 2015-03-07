@@ -6,6 +6,16 @@ use App\Http\Requests\UpdateProjectRequest;
 interface ProjectRepositoryInterface {
 
     /*
+     * Create a new project
+     */
+    public function create($client, CreateProjectRequest $request);
+
+    /*
+     * Update a project
+     */
+    public function update($id, UpdateProjectRequest $request);
+
+    /*
      * Retrieve all projects
      */
     public function getAll();
@@ -16,19 +26,45 @@ interface ProjectRepositoryInterface {
     public function getMyProjects();
 
     /*
-     * Find a specific project
+     * Find a specific project by ID
      */
     public function find($id);
 
     /*
-     * Create a new project
+     * Find a specific project by stub
+     *
+     * @param  string  $stub
      */
-    public function create($client, CreateProjectRequest $request);
+    public function findByStub($stub);
 
     /*
-     * Update a project
+     * Return the recent activity of a project
+     *
+     * @param  string  $stub
      */
-    public function update($id, UpdateProjectRequest $request);
+    public function recentActivity($id);
+
+    /*
+     * Return the recent activity of a project
+     *
+     * @param  string  $stub
+     */
+    public function getStatistics($id);
+
+    /*
+     * Delete a project
+     *
+     * @param  int  $id
+     */
+    public function delete($id);
+
+    /*
+     * Change version
+     *
+     * @param  string  $stub
+     * @param  float  $version
+     */
+    public function changeVersion($stub, $version);
 
 }
 

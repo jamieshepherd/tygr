@@ -11,11 +11,11 @@
                     <i class="fa fa-angle-right"></i>
                     <a href="/projects">Projects</a>
                     <i class="fa fa-angle-right"></i>
-                    <a href="/projects/{{ $project->client->stub }}/{{ $project->stub }}">{{ $project->name }}</a>
+                    <a href="/projects/{{ $issue->project->client->stub }}/{{ $issue->project->stub }}">{{ $issue->project->name }}</a>
                     <i class="fa fa-angle-right"></i>
-                    <a href="/projects/{{ $project->client->stub }}/{{ $project->stub }}/issues">Issues</a>
+                    <a href="/projects/{{ $issue->project->client->stub }}/{{ $issue->project->stub }}/issues">Issues</a>
                     <i class="fa fa-angle-right"></i>
-                    <a href="/projects/{{ $project->client->stub }}/{{ $project->stub }}/issues/show">{{ $issue->summary }}</a>
+                    <a href="/projects/{{ $issue->project->client->stub }}/{{ $issue->project->stub }}/issues/show">{{ $issue->summary }}</a>
                 </div>
             @endif
             <h1>Issue details</h1>
@@ -28,15 +28,15 @@
         @else
             <a class="action" href="{{ Request::url() }}/resolve"><i class="fa fa-check-circle"></i> Resolve issue</a>
         @endif
-        <a class="action yellow" href="/projects/{{ $project->client->stub }}/{{{ $issue->project->stub }}}/issues/edit/{{ $issue->id }}"><i class="fa fa-plus-circle"></i> Edit issue</a>
+        <a class="action yellow" href="/projects/{{ $issue->project->client->stub }}/{{{ $issue->project->stub }}}/issues/edit/{{ $issue->id }}"><i class="fa fa-plus-circle"></i> Edit issue</a>
         @if(Auth::user()->rank <= 2)
-        <a class="action blue" href="/projects/{{ $project->client->stub }}/{{{ $issue->project->stub }}}/issues/claim/{{ $issue->id }}"><i class="fa fa-thumb-tack"></i> Claim issue</a>
+        <a class="action blue" href="/projects/{{ $issue->project->client->stub }}/{{{ $issue->project->stub }}}/issues/claim/{{ $issue->id }}"><i class="fa fa-thumb-tack"></i> Claim issue</a>
         <span class="action yellow button-dropdown">
             <i class="fa fa-flask"></i> Move version <i class="fa fa-caret-down"></i>
             <ul>
                 @foreach($versions as $version)
                 <li>
-                    <a href="/projects/{{ $project->client->stub }}/{{{ $issue->project->stub }}}/issues/reversion/{{ $issue->id }}?version={{ $version->version }}">
+                    <a href="/projects/{{ $issue->project->client->stub }}/{{{ $issue->project->stub }}}/issues/reversion/{{ $issue->id }}?version={{ $version->version }}">
                         <i class="fa fa-angle-right"></i> {{ $version->version }}
                     </a>
                 </li>
@@ -94,7 +94,7 @@
                 <label>Assign issue</label>
                 <select name="assigned_to">
                 @foreach($groups as $group)
-                    <option value="{{ $group->id }}" @if($issue->assigned_to_id == $group->id) selected @endif>@if($group->name == 'Client') {{$project->client->name }} @else{{ $group->name }}@endif</option>
+                    <option value="{{ $group->id }}" @if($issue->assigned_to_id == $group->id) selected @endif>@if($group->name == 'Client') {{ $issue->project->client->name }} @else{{ $group->name }}@endif</option>
                 @endforeach
                 </select>
                 <label>Mark as resolved</label>

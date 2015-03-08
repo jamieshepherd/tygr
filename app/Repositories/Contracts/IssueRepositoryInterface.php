@@ -18,7 +18,7 @@ interface IssueRepositoryInterface {
     /*
      * Create a new client
      */
-    public function create(CreateIssueRequest $request);
+    public function create($project, CreateIssueRequest $request);
 
     /*
      * Update a client

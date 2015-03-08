@@ -39,6 +39,11 @@ class RepositoryServiceProvider extends ServiceProvider {
             'App\Repositories\Contracts\ProjectRepositoryInterface',
             'App\Repositories\ProjectRepository'
         );
+
+        $this->app->bind(
+            'App\Repositories\Contracts\IssueRepositoryInterface',
+            'App\Repositories\IssueRepository'
+        );
     }
 
 }

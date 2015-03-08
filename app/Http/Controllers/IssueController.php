@@ -1,6 +1,7 @@
 <?php namespace App\Http\Controllers;
 
 use App\Repositories\Contracts\IssueRepositoryInterface;
+use App\Repositories\Contracts\ProjectRepositoryInterface;
 
 use App\Http\Requests\CreateIssueRequest;
 use App\Http\Requests\UpdateIssueRequest;
@@ -21,14 +22,16 @@ use DB;
 class IssueController extends Controller {
 
     protected $issues;
+    protected $projects;
 
     /**
      * Construct the controller with projects repository
      *
      * @param IssueRepositoryInterface $issues
      */
-    public function __construct(IssueRepositoryInterface $issues) {
-        $this->issues = $issues;
+    public function __construct(IssueRepositoryInterface $issues, ProjectRepositoryInterface $projects) {
+        $this->issues   = $issues;
+        $this->projects = $projects;
     }
 
 	/**
@@ -180,9 +183,10 @@ class IssueController extends Controller {
 	 */
 	public function create($client, $stub)
 	{
-		$project = Project::where('stub', '=', $stub)->firstOrFail();
+		$project = $this->projects->findByStub($stub);
+        if(!$project) abort(404);
 
-		return view("issues.create")->with('project', $project);
+		return view("issues.create")->with(compact('project'));
 	}
 
 	/**
@@ -195,55 +199,18 @@ class IssueController extends Controller {
 	 */
 	public function store($client, $stub, CreateIssueRequest $request)
 	{
-		$issue = new Issue();
-		$project = Project::where('stub', '=', $stub)->firstOrFail();
+		$project = $this->projects->findByStub($stub);
+        $result = $this->issues->create($project, $request);
 
-		$issue->hidden 	    = Input::has('hidden');
-		$issue->author_id   = \Auth::user()->id;
-		$issue->project_id  = $project->id;
-		$issue->summary     = $request->summary;
-		$issue->priority    = 'Medium';
-		if(Input::get('assigned') == '1') {
-            $groupid = Group::where('name', '=', 'Client')->first()->id;
-			$issue->status         = 'Awaiting Client';
-			$issue->assigned_to_id = $groupid;
-		} else {
-            $groupid = Group::where('name', '=', 'Sponge UK')->first()->id;
-			$issue->status      = 'New';
-			$issue->assigned_to_id = $groupid;
-		}
-		$issue->version		   = $project->current_version;
-		$issue->reference   = $request->reference;
-		$issue->description = $request->description;
-
-		$result = $issue->save();
-		if(Input::file('attachment')) {
-			$attachment = Input::file('attachment');
-			$file = array(
-			    "filename"  => $attachment->getClientOriginalName(),
-				"extension" => $attachment->getClientOriginalExtension(),
-				"filetype"  => $attachment->getMimeType()
-			);
-			$attachment->move("uploads/tmp", $file['filename']);
-			$this->dispatch(new AddAttachmentCommand($file, $issue->id, \Auth::user()->id));
-		}
-
-		if($result) {
-			$update = new IssueHistory();
-            $update->hidden     = false;
-            $update->project_id = $issue->project->id;
-			$update->issue_id   = $issue->id;
-			$update->author_id  = $issue->author->id;
-			$update->type		= 'status';
-			$update->status     = 'created';
-			$update->comment    = 'Issue was created';
-			$update->save();
-
-			\Session::flash('message', 'Your issue was created successfully');
-			$successURL = 'projects/'.$client.'/'.$stub.'/issues/show/'.$issue->id;
-            \Session::flash('tip', $successURL);
-            return redirect('projects/'.$client.'/'.$stub.'/issues/create');
-		}
+        if($result) {
+            session()->flash('tip', 'projects/'.$client.'/'.$stub.'/issues/show/'.$result);
+            session()->flash('message', 'Your issue was created successfully.');
+            return redirect()->back();
+        } else {
+            session()->flash('notify-type', 'error');
+            session()->flash('message', 'This was unsuccessful, please try again.');
+            return redirect()->back();
+        }
 	}
 
 	/**
@@ -256,17 +223,16 @@ class IssueController extends Controller {
 	 */
 	public function show($client, $stub, $id)
 	{
-		$project = Project::where('stub', '=', $stub)->first();
-		if(!$project) abort(404);
-		$issue = Issue::where('project_id', '=', $project->id)->where('id', '=', $id)->firstOrFail();
+		$issue = $this->issues->find($id);
+        if(!$issue) abort(404);
+
 		// Get all of the versions for this project
-		$versions = Issue::where('project_id', '=', $project->id)->distinct()->select('version')->get();
+		$versions = Issue::where('project_id', '=', $issue->project->id)->distinct()->select('version')->get();
 
         // Only get two groups if we're client, otherwise get all
         $groups = (Auth::user()->rank == 3) ? Group::take(2)->get() : Group::all();
 
 		return view('issues.show')
-            ->with('project', $project)
             ->with('issue', $issue)
 			->with('versions', $versions)
             ->with('groups', $groups);
@@ -282,8 +248,9 @@ class IssueController extends Controller {
 	 */
 	public function edit($client, $stub, $id)
 	{
-		$issue = Issue::find($id);
-		return view('issues.edit')->with('issue', $issue);
+		$issue = $this->issues->find($id);
+
+		return view('issues.edit')->with(compact('issue'));
 	}
 
 	/**
@@ -297,8 +264,8 @@ class IssueController extends Controller {
 	 */
 	public function update($client, $stub, $id, UpdateIssueRequest $request)
 	{
-		$issue              = Issue::find($id);
-		$issue->hidden 	    = Input::has('hidden');
+		$issue              = $this->issues->find($id);
+		$issue->hidden 	    = $request->has('hidden');
 		$issue->summary     = $request->summary;
 		$issue->priority    = 'Medium';
 		$issue->reference   = $request->reference;
@@ -331,7 +298,7 @@ class IssueController extends Controller {
 	 */
 	public function updateIssueHistory($client, $stub, $id)
 	{
-		$issue = Issue::find($id);
+		$issue = $this->issues->find($id);
 
 		if(Input::file('attachment')) {
 			$attachment = Input::file('attachment');
@@ -449,7 +416,7 @@ class IssueController extends Controller {
 	 */
 	public function resolve($client, $stub, $id)
 	{
-		$issue                 = Issue::where('id', '=', $id)->firstOrFail();
+		$issue                 = $this->issues->find($id);
         $assigned_to_id        = Group::where('name', '=', 'Client')->first()->id;
 		$issue->status      = 'Resolved';
 		$issue->assigned_to_id = $assigned_to_id;
@@ -481,7 +448,7 @@ class IssueController extends Controller {
 	 */
 	public function close($client, $stub, $id)
 	{
-		$issue = Issue::where('id', '=', $id)->firstOrFail();
+		$issue = $this->issues->find($id);
 		$issue->status = 'Closed';
 		$result = $issue->save();
 
@@ -511,7 +478,7 @@ class IssueController extends Controller {
 	 */
 	public function reopen($client, $stub, $id)
 	{
-		$issue = Issue::where('id', '=', $id)->firstOrFail();
+		$issue = $this->issues->find($id);
 		$issue->status = 'Assigned';
 		$result = $issue->save();
 

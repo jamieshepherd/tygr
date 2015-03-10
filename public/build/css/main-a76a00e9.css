@@ -212,8 +212,7 @@ nav {
         background-size: 16px 13px; } }
   @media (max-width: 1000px) {
     nav {
-      width: 95px;
-      padding-top: 10px; }
+      width: 75px; }
       nav span {
         display: none; }
       nav .sponge-logo {

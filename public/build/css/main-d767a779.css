@@ -40,7 +40,8 @@ h1 {
   clear: left; }
   h1 em {
     font-size: 22px;
-    color: #999999; }
+    color: #999999;
+    text-transform: capitalize; }
 
 h2 {
   font-size: 20px;

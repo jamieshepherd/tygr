@@ -85,7 +85,6 @@ Route::group(array('middleware' => 'auth'), function() {
 		Route::get('projects/{client}/{stub}/issues/claim/{idlist}', 'IssueController@claim');
 		Route::get('projects/{client}/{stub}/issues/resolve/{idlist}', 'IssueController@resolve');
         Route::get('projects/{client}/{stub}/issues/assign/{idlist}', 'IssueController@assign');
-        Route::get('projects/{client}/{stub}/issues/reversion/{idlist}', 'IssueController@reversion');
-
+        Route::get('projects/{client}/{stub}/issues/version/{idlist}', 'IssueController@changeVersion');
 	});
 });

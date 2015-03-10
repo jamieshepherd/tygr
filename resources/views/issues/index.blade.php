@@ -20,7 +20,7 @@
                     <a href="/projects/{{ $project->client->stub }}/{{ $project->stub }}/issues">Issues</a>
                 </div>
             @endif
-                <h1>Issues @if(isset($filter)) <em>({{{ $filter }}})</em> @else <em>({{{ $project->current_version }}})</em>@endif</h1>
+                <h1>Issues <em class="filter">({{ $_GET['filter'] or $project->current_version }})</em></h1>
         </header>
         <div id="issues">
             <input class="filter search" placeholder="Search" autofocus/>
@@ -47,7 +47,7 @@
                     @endforeach
                 </ul>
             </span>
-            <a class="action blue" href="{{ Request::url() }}/print"><i class="fa fa-print"></i> Print</a>
+            <a class="action blue" href="{{ Request::url() }}/print?filter={{ $_GET['filter'] or $project->current_version }}"><i class="fa fa-print"></i> Print</a>
             <!--a class="action" href=""><i class="fa fa-bug"></i> All issues</a-->
 
 

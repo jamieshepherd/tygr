@@ -59,12 +59,24 @@ interface ProjectRepositoryInterface {
     public function delete($id);
 
     /*
+     * Return all versions associated with a project
+     *
+     * @param  int  $id
+     */
+    public function getVersions($id);
+
+    /*
      * Change version
      *
      * @param  string  $stub
      * @param  float  $version
      */
     public function changeVersion($stub, $version);
+
+    /*
+     * Return all the possible user groups an issue can be assigned to
+     */
+    public function getGroups();
 
 }
 

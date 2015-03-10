@@ -18,7 +18,7 @@
                     <a href="/projects/{{ $issue->project->client->stub }}/{{ $issue->project->stub }}/issues/show">{{ $issue->summary }}</a>
                 </div>
             @endif
-            <h1>Issue details</h1>
+            <h1>{{ $issue->summary }}</h1>
         </header>
         @if($issue->status == 'Resolved')
             <a class="action" href="{{ Request::url() }}/close"><i class="fa fa-check-circle"></i> Close issue</a>
@@ -36,7 +36,7 @@
             <ul>
                 @foreach($versions as $version)
                 <li>
-                    <a href="/projects/{{ $issue->project->client->stub }}/{{{ $issue->project->stub }}}/issues/reversion/{{ $issue->id }}?version={{ $version->version }}">
+                    <a href="/projects/{{ $issue->project->client->stub }}/{{{ $issue->project->stub }}}/issues/version/{{ $issue->id }}?version={{ $version->version }}">
                         <i class="fa fa-angle-right"></i> {{ $version->version }}
                     </a>
                 </li>
@@ -62,7 +62,7 @@
             </ul>
         </section>
         <section>
-            <h2>{{ $issue->summary }}</h2>
+            <h2>Description</h2>
             <p>{{{ $issue->description }}}</p>
         </section>
         @if(count($issue->attachments) > 0)
@@ -88,17 +88,17 @@
                     <input name="hidden" type="checkbox"> Internal comment<br/><br/>
                 @endif
 
+                <label>Assign issue</label>
+                <select name="assigned_to">
+                    @foreach($groups as $group)
+                        <option value="{{ $group->id }}" @if($issue->assigned_to_id == $group->id) selected @endif>@if($group->name == 'Client') {{ $issue->project->client->name }} @else{{ $group->name }}@endif</option>
+                    @endforeach
+                </select>
+
                 <label>Add attachment</label>
                 <input type="file" name="attachment" />
 
-                <label>Assign issue</label>
-                <select name="assigned_to">
-                @foreach($groups as $group)
-                    <option value="{{ $group->id }}" @if($issue->assigned_to_id == $group->id) selected @endif>@if($group->name == 'Client') {{ $issue->project->client->name }} @else{{ $group->name }}@endif</option>
-                @endforeach
-                </select>
-                <label>Mark as resolved</label>
-                <input name="resolved" type="checkbox"> Resolved<br/>
+                <br/>
                 <button type="submit"><i class="fa fa-arrow-circle-right"></i> Update issue</button>
 
             </form>

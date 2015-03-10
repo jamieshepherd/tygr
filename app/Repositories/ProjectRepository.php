@@ -4,6 +4,7 @@ use App\Repositories\Contracts\ProjectRepositoryInterface;
 
 use Auth;
 use Hash;
+use App\Group;
 use App\Project;
 use App\Issue;
 use App\IssueHistory;
@@ -158,6 +159,14 @@ class ProjectRepository implements ProjectRepositoryInterface {
         return $projectStats;
     }
 
+    /*
+     * Return all versions associated with a project
+     */
+    public function getVersions($id)
+    {
+        return Issue::where('project_id', '=', $id)->distinct()->select('version')->get();
+    }
+
 
     /*
      * Change version
@@ -171,5 +180,14 @@ class ProjectRepository implements ProjectRepositoryInterface {
         $project->current_version = $version;
 
         return $project->save();
+    }
+
+    /*
+     * Return all the possible user groups an issue can be assigned to
+     */
+    public function getGroups()
+    {
+        // Only get two groups if we're client, otherwise get all
+        return (Auth::user()->rank == 3) ? Group::take(2)->get() : Group::all();
     }
 }

@@ -25,7 +25,7 @@
             <h1>New version</h1>
         </header>
         <div class="tip">
-            <i class="fa fa-info-circle"></i> Creating a new version will archive all of the current issues.
+            <i class="fa fa-info-circle"></i> Creating a new version will archive all of the current amendments.
         </div>
 
         <form action="" method="POST" accept-charset="UTF-8">

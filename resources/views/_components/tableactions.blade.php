@@ -17,7 +17,7 @@
         </ul>
     </span>
     @if(Auth::user()->rank <= 2)
-    <a href="#" class="action nofill blue" id="claim"><i class="fa fa-thumb-tack"></i> Claim issue</a>
+    <a href="#" class="action nofill blue" id="claim"><i class="fa fa-thumb-tack"></i> Claim selected</a>
     <!--a href="#" class="action button-dropdown" id="version">
         Move version <i class="fa fa-caret-up"></i>
         <ul>

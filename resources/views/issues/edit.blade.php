@@ -13,12 +13,12 @@
                     <i class="fa fa-angle-right"></i>
                     <a href="/projects/{{ $issue->project->client->stub }}/{{ $issue->project->stub }}">{{ $issue->project->name }}</a>
                     <i class="fa fa-angle-right"></i>
-                    <a href="/projects/{{ $issue->project->client->stub }}/{{ $issue->project->stub }}/issues">Issues</a>
+                    <a href="/projects/{{ $issue->project->client->stub }}/{{ $issue->project->stub }}/issues">Amendments</a>
                     <i class="fa fa-angle-right"></i>
                     <a href="/projects/{{ $issue->project->client->stub }}/{{ $issue->project->stub }}/issues/edit/{{ $issue->id }}">Edit issue</a>
                 </div>
             @endif
-            <h1>Edit issue</h1>
+            <h1>Edit amendment</h1>
         </header>
         <form action="{{{ Request::url() }}}" method="POST" accept-charset="UTF-8">
             <input type="hidden" name="_token" value="<?php echo csrf_token(); ?>">
@@ -27,7 +27,7 @@
             <input name="hidden" type="checkbox" @if($issue->hidden) checked @endif> Hidden from client?<br/><br/>
             @endif
 
-            <label>Provide a brief summary of the issue</label>
+            <label>Provide a brief summary of the change</label>
             <input name="summary" type="text" placeholder="e.g. Bug, text amend, design" autofocus value="{{{ $issue->summary }}}" @if($errors->has('summary')) class="error">
             <span class="error">{{ $errors->first('summary') }}</span> @else > @endif
 
@@ -35,7 +35,7 @@
             <input name="reference" type="text" placeholder="e.g. Page 7 or b-09" value="{{{ $issue->reference }}}" @if($errors->has('reference')) class="error">
             <span class="error">{{ $errors->first('reference') }}</span> @else > @endif
 
-            <label>Describe the issue</label>
+            <label>Describe the amendment</label>
             <textarea name="description" class="large" placeholder="Please be as specific as you can, including details such as text you would like to replace, design changes you require etc." @if($errors->has('description')) class="error" @endif>{{ $issue->description }}</textarea>
             @if($errors->has('description')) <span class="error">{{ $errors->first('description') }}</span> @endif
 
@@ -43,7 +43,7 @@
             <input name="attachment" type="file" @if($errors->has('attachment')) class="error">
             <span class="error">{{ $errors->first('attachment') }}</span> @else > @endif
 
-            <br/><button type="submit"><i class="fa fa-arrow-circle-right"></i> Update issue</button>
+            <br/><button type="submit"><i class="fa fa-arrow-circle-right"></i> Update</button>
             <a class="action red" href="javascript:history.back()"><i class="fa fa-times-circle"></i> Cancel</a>
         </form>
     </div>

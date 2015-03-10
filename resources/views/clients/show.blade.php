@@ -33,7 +33,7 @@
                         <th>Client <i class="fa fa-sort"></i></th>
                         <th>Project <i class="fa fa-sort"></i></th>
                         <th>Stub <i class="fa fa-sort"></i></th>
-                        <th>Issues <i class="fa fa-sort"></i></th>
+                        <th>Amendments <i class="fa fa-sort"></i></th>
                         <th>Version <i class="fa fa-sort"></i></th>
                         <th>Project Manager <i class="fa fa-sort"></i></th>
                     </tr>

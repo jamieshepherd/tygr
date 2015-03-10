@@ -34,7 +34,7 @@
                     <div class="statistic">
                         <div class="content">
                         <h2 class="red">{{ $data['issue_count'] }}</h2>
-                        <label>Open issues</label>
+                        <label>Open amendments</label>
                         </div>
                     </div>
                     <div class="statistic">
@@ -48,7 +48,7 @@
             <div class="row">
                 <div class="col col-1-2">
                     <div class="content stats">
-                        <h4>Issues created this week by project</h4>
+                        <h4>Amendments created this week by project</h4>
                         <canvas id="issues_by_project"></canvas>
                         <script>
 

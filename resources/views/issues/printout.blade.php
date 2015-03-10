@@ -2,7 +2,7 @@
 
 @section('body')
     <body class="printable">
-        <h2>Issues printout</h2>
+        <h2>Project printout</h2>
         <ul>
             <li>Client: {{ $project->client->name }}</li>
             <li>Project: {{ $project->name }}</li>

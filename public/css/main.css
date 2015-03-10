@@ -956,6 +956,23 @@ section {
         color: #929191;
         padding: 0;
         margin: 0; }
+  @media (max-width: 1000px) {
+    .statistics .statistic {
+      width: 50%;
+      display: block; }
+      .statistics .statistic .content.third {
+        border-left: none;
+        border-top: 1px solid #e4e4e4; }
+      .statistics .statistic .content.fourth {
+        border-top: 1px solid #e4e4e4; } }
+  @media (max-width: 650px) {
+    .statistics .statistic {
+      width: 100%; }
+      .statistics .statistic .content.second {
+        border-left: none;
+        border-top: 1px solid #e4e4e4; }
+      .statistics .statistic .content.fourth {
+        border-left: none; } }
 
 .error-status {
   text-align: center; }

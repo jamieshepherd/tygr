@@ -32,19 +32,19 @@
                 </div>
             </div>
             <div class="statistic">
-                <div class="content">
+                <div class="content second">
                     <h2 class="yellow">{{ $projectStats['assignedToYou'] }}</h2>
                     <label>Assigned to you</label>
                 </div>
             </div>
             <div class="statistic">
-                <div class="content">
+                <div class="content third">
                     <h2 class="red">{{ $projectStats['openIssues'] }}</h2>
                     <label>Open amendments</label>
                 </div>
             </div>
             <div class="statistic">
-                <div class="content">
+                <div class="content fourth">
                     <h2 class="green">{{ $projectStats['resolvedIssues'] }}</h2>
                     <label>Resolved this week</label>
                 </div>

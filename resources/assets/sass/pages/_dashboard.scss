@@ -138,4 +138,33 @@
       }
     }
   }
+  @media (max-width: 1000px) {
+    .statistic {
+      width: 50%;
+      display: block;
+      .content {
+        &.third {
+          border-left: none;
+          border-top: 1px solid #e4e4e4;
+        }
+        &.fourth {
+          border-top: 1px solid #e4e4e4;
+        }
+      }
+    }
+  }
+  @media (max-width: 650px) {
+    .statistic {
+      width: 100%;
+      .content {
+        &.second {
+          border-left: none;
+          border-top: 1px solid #e4e4e4;
+        }
+        &.fourth {
+          border-left: none;
+        }
+      }
+    }
+  }
 }

@@ -26,19 +26,19 @@
                         </div>
                     </div>
                     <div class="statistic">
-                        <div class="content">
+                        <div class="content second">
                         <h2 class="yellow">{{ $data['project_count'] }}</h2>
                         <label>Total projects</label>
                         </div>
                     </div>
                     <div class="statistic">
-                        <div class="content">
+                        <div class="content third">
                         <h2 class="red">{{ $data['issue_count'] }}</h2>
                         <label>Open amendments</label>
                         </div>
                     </div>
                     <div class="statistic">
-                        <div class="content">
+                        <div class="content fourth">
                         <h2 class="green">{{ $data['issues_resolved'] }}</h2>
                         <label>Resolved this week</label>
                         </div>

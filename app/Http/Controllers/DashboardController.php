@@ -29,42 +29,15 @@ class DashboardController extends Controller {
 			->take(5)
 			->get();
 
-		$this->makeColourful($projects);
-
 		$data = array(
 			'project_count'        => count(Project::all()),
 			'client_count'         => count(Client::all()),
-			'issue_count'          => count(Issue::where('status', '!=', 'Closed')->get()),
+			'issue_count'          => count(Issue::where('status', '!=', 'Closed')->where('status', '!=', 'Resolved')->get()),
 			'issues_created'       => $projects,
 			'issues_resolved'      => count(IssueHistory::where('status', '=', 'resolved')
 				->where('created_at', '>=', $end_week)->get())
 		);
 		return view('dashboard.show')->with('data',$data)->with('start_week',$start_week);
-	}
-
-	public function makeColourful($projects)
-	{
-		// Give each alternating project a different colour
-		$i = 0;
-		foreach($projects as $project) {
-			$i++;
-			switch($i) {
-				case 1:
-					$project->color = '#f7464a';
-					break;
-				case 2:
-					$project->color = '#46bfbd';
-					break;
-				case 3:
-					$project->color = '#fdb45c';
-					break;
-				case 4:
-					$project->color = '#accd4a';
-					break;
-				default:
-					$project->color = '#f7464a';
-			}
-		}
 	}
 
 }

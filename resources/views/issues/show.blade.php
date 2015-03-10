@@ -13,7 +13,7 @@
                     <i class="fa fa-angle-right"></i>
                     <a href="/projects/{{ $issue->project->client->stub }}/{{ $issue->project->stub }}">{{ $issue->project->name }}</a>
                     <i class="fa fa-angle-right"></i>
-                    <a href="/projects/{{ $issue->project->client->stub }}/{{ $issue->project->stub }}/issues">Issues</a>
+                    <a href="/projects/{{ $issue->project->client->stub }}/{{ $issue->project->stub }}/issues">Amendments</a>
                     <i class="fa fa-angle-right"></i>
                     <a href="/projects/{{ $issue->project->client->stub }}/{{ $issue->project->stub }}/issues/show">{{ $issue->summary }}</a>
                 </div>
@@ -21,18 +21,18 @@
             <h1>{{ $issue->summary }}</h1>
         </header>
         @if($issue->status == 'Resolved')
-            <a class="action" href="{{ Request::url() }}/close"><i class="fa fa-check-circle"></i> Close issue</a>
-            <a class="action red" href="{{ Request::url() }}/reopen"><i class="fa fa-exclamation-circle"></i> Reopen issue</a>
+            <a class="action" href="{{ Request::url() }}/close"><i class="fa fa-check-circle"></i> Close</a>
+            <a class="action red" href="{{ Request::url() }}/reopen"><i class="fa fa-exclamation-circle"></i> Reopen</a>
         @elseif($issue->status === 'Closed')
-            <a class="action" href="{{ Request::url() }}/reopen"><i class="fa fa-exclamation-circle"></i> Reopen issue</a>
+            <a class="action" href="{{ Request::url() }}/reopen"><i class="fa fa-exclamation-circle"></i> Reopen</a>
         @else
-            <a class="action" href="{{ Request::url() }}/resolve"><i class="fa fa-check-circle"></i> Resolve issue</a>
+            <a class="action" href="{{ Request::url() }}/resolve"><i class="fa fa-check-circle"></i> Resolve</a>
         @endif
-        <a class="action yellow" href="/projects/{{ $issue->project->client->stub }}/{{{ $issue->project->stub }}}/issues/edit/{{ $issue->id }}"><i class="fa fa-plus-circle"></i> Edit issue</a>
+        <a class="action yellow" href="/projects/{{ $issue->project->client->stub }}/{{{ $issue->project->stub }}}/issues/edit/{{ $issue->id }}"><i class="fa fa-plus-circle"></i> Edit</a>
         @if(Auth::user()->rank <= 2)
-        <a class="action blue" href="/projects/{{ $issue->project->client->stub }}/{{{ $issue->project->stub }}}/issues/claim/{{ $issue->id }}"><i class="fa fa-thumb-tack"></i> Claim issue</a>
+        <a class="action blue" href="/projects/{{ $issue->project->client->stub }}/{{{ $issue->project->stub }}}/issues/claim/{{ $issue->id }}"><i class="fa fa-thumb-tack"></i> Claim</a>
         <span class="action yellow button-dropdown">
-            <i class="fa fa-flask"></i> Move version <i class="fa fa-caret-down"></i>
+            <i class="fa fa-flask"></i> Change version <i class="fa fa-caret-down"></i>
             <ul>
                 @foreach($versions as $version)
                 <li>
@@ -79,7 +79,7 @@
         @endif
         @if($issue->status != 'Resolved' && $issue->status != 'Closed')
         <section>
-            <h2>Update issue</h2>
+            <h2>Update amendment</h2>
             <form action="" method="POST" accept-charset="UTF-8" enctype="multipart/form-data">
             <input type="hidden" name="_token" value="<?php echo csrf_token(); ?>">
                 <textarea name="comment" placeholder="Enter a comment here" autofocus></textarea>
@@ -88,7 +88,7 @@
                     <input name="hidden" type="checkbox"> Internal comment<br/><br/>
                 @endif
 
-                <label>Assign issue</label>
+                <label>Reassign</label>
                 <select name="assigned_to">
                     @foreach($groups as $group)
                         <option value="{{ $group->id }}" @if($issue->assigned_to_id == $group->id) selected @endif>@if($group->name == 'Client') {{ $issue->project->client->name }} @else{{ $group->name }}@endif</option>
@@ -99,7 +99,7 @@
                 <input type="file" name="attachment" />
 
                 <br/>
-                <button type="submit"><i class="fa fa-arrow-circle-right"></i> Update issue</button>
+                <button type="submit"><i class="fa fa-arrow-circle-right"></i> Update</button>
 
             </form>
         </section>

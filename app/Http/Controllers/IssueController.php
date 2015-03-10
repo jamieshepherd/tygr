@@ -103,7 +103,7 @@ class IssueController extends Controller {
 
         if($result) {
             session()->flash('tip', 'projects/'.$client.'/'.$stub.'/issues/show/'.$result);
-            session()->flash('message', 'Your issue was created successfully.');
+            session()->flash('message', 'Your amendment was created successfully.');
             return redirect()->back();
         } else {
             session()->flash('notify-type', 'error');
@@ -162,7 +162,7 @@ class IssueController extends Controller {
         $result = $this->issues->update($id, $request);
 
         if($result) {
-            session()->flash('message', 'The issue was updated.');
+            session()->flash('message', 'The amendment was updated.');
             return redirect('/projects/'.$client.'/'.$stub.'/issues/show/'.$id);
         } else {
             session()->flash('notify-type', 'error');
@@ -185,7 +185,7 @@ class IssueController extends Controller {
 		$result = $this->issues->updateIssueHistory($id, $request);
 
         if($result) {
-            session()->flash('message', 'The issue was updated.');
+            session()->flash('message', 'The amendment was updated.');
             return redirect('/projects/'.$client.'/'.$stub.'/issues/show/'.$id);
         } else {
             session()->flash('notify-type', 'error');
@@ -208,7 +208,7 @@ class IssueController extends Controller {
             $result = $this->issues->delete($idlist);
 
             if($result) {
-                session()->flash('message', 'The issue(s) were deleted.');
+                session()->flash('message', 'The amendment(s) were deleted.');
                 return redirect('/projects/'.$client.'/'.$stub.'/issues');
             } else {
                 session()->flash('notify-type', 'error');
@@ -233,7 +233,7 @@ class IssueController extends Controller {
         $result = $this->issues->resolve($id);
 
         if($result) {
-            session()->flash('message', 'The issue was updated.');
+            session()->flash('message', 'The amendment was updated.');
             return redirect('/projects/'.$client.'/'.$stub.'/issues/show/'.$id);
         } else {
             session()->flash('notify-type', 'error');
@@ -255,7 +255,7 @@ class IssueController extends Controller {
         $result = $this->issues->close($id);
 
         if($result) {
-            session()->flash('message', 'The issue was marked as closed.');
+            session()->flash('message', 'The amendment was marked as closed.');
             return redirect('/projects/'.$client.'/'.$stub.'/issues');
         } else {
             session()->flash('notify-type', 'error');
@@ -277,7 +277,7 @@ class IssueController extends Controller {
         $result = $this->issues->reopen($id);
 
         if($result) {
-            session()->flash('message', 'The issue was reopened.');
+            session()->flash('message', 'The amendment was reopened.');
             return redirect('projects/'.$client.'/'.$stub.'/issues/show/'.$id);
         } else {
             session()->flash('notify-type', 'error');
@@ -299,7 +299,7 @@ class IssueController extends Controller {
         $result = $this->issues->claim($idlist);
 
         if($result) {
-            session()->flash('message', 'The issue(s) were set claimed.');
+            session()->flash('message', 'The amendment(s) were set claimed.');
             return redirect()->back();
         } else {
             session()->flash('notify-type', 'error');

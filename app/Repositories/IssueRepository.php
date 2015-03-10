@@ -131,7 +131,7 @@ class IssueRepository implements IssueRepositoryInterface {
             $update->author_id  = $issue->author->id;
             $update->type       = 'status';
             $update->status     = 'created';
-            $update->comment    = 'Issue was created';
+            $update->comment    = 'Amendment was created';
             $update->save();
         }
 
@@ -162,7 +162,7 @@ class IssueRepository implements IssueRepositoryInterface {
             $update->author_id  = $issue->author->id;
             $update->type       = 'status';
             $update->status     = 'updated';
-            $update->comment    = 'Issue was edited';
+            $update->comment    = 'Amendment was edited';
             $update->save();
         }
 
@@ -216,11 +216,11 @@ class IssueRepository implements IssueRepositoryInterface {
             if($issue->assigned_to->name == 'Client') {
                 $issue->status   = 'Awaiting Client';
                 $issue->save();
-                $update->comment = 'Issue was assigned to '.$issue->project->client->name;
+                $update->comment = 'Amendment was assigned to '.$issue->project->client->name;
             } else {
                 $issue->status   = 'Assigned';
                 $issue->save();
-                $update->comment = 'Issue was assigned to '.$issue->assigned_to->name;
+                $update->comment = 'Amendment was assigned to '.$issue->assigned_to->name;
             }
             $update->save();
         }
@@ -281,7 +281,7 @@ class IssueRepository implements IssueRepositoryInterface {
             $update->author_id  = \Auth::user()->id;
             $update->type       = 'status';
             $update->status     = 'resolved';
-            $update->comment    = 'Issue was changed to resolved';
+            $update->comment    = 'Amendment was changed to resolved';
             $update->save();
         }
 
@@ -302,7 +302,7 @@ class IssueRepository implements IssueRepositoryInterface {
             $update->author_id  = Auth::user()->id;
             $update->type       = 'status';
             $update->status     = 'closed';
-            $update->comment    = 'Issue was closed';
+            $update->comment    = 'Amendment was closed';
             $update->save();
         }
 
@@ -323,7 +323,7 @@ class IssueRepository implements IssueRepositoryInterface {
             $update->author_id  = \Auth::user()->id;
             $update->type       = 'status';
             $update->status     = 'reopened';
-            $update->comment    = 'Issue was reopened';
+            $update->comment    = 'Amendment was reopened';
             $update->save();
         }
 

@@ -17,20 +17,20 @@
                     <i class="fa fa-angle-right"></i>
                     <a href="/projects/{{ $project->client->stub }}/{{ $project->stub }}">{{ $project->name }}</a>
                     <i class="fa fa-angle-right"></i>
-                    <a href="/projects/{{ $project->client->stub }}/{{ $project->stub }}/issues">Issues</a>
+                    <a href="/projects/{{ $project->client->stub }}/{{ $project->stub }}/issues">Amendments</a>
                 </div>
             @endif
-                <h1>Issues <em class="filter">({{ $_GET['filter'] or $project->current_version }})</em></h1>
+                <h1>Amendments <em class="filter">({{ $_GET['filter'] or $project->current_version }})</em></h1>
         </header>
         <div id="issues">
             <input class="filter search" placeholder="Search" autofocus/>
-            <a class="action" href="/projects/{{ $project->client->stub }}/{{ $project->stub }}/issues/create"><i class="fa fa-plus-circle"></i> Log an issue</a>
+            <a class="action" href="/projects/{{ $project->client->stub }}/{{ $project->stub }}/issues/create"><i class="fa fa-plus-circle"></i> Log amendment</a>
             <span class="action yellow button-dropdown">
-                <i class="fa fa-chevron-circle-down"></i> Filter issues
+                <i class="fa fa-chevron-circle-down"></i> Filter
                 <ul>
                     <li>
                         <a href="/projects/{{ $project->client->stub }}/{{{ $project->stub }}}/issues?filter=all">
-                            <i class="fa fa-angle-right"></i> All issues
+                            <i class="fa fa-angle-right"></i> All amendments
                         </a>
                     </li>
                     <li>
@@ -47,7 +47,7 @@
                     @endforeach
                 </ul>
             </span>
-            <a class="action blue" href="{{ Request::url() }}/print?filter={{ $_GET['filter'] or $project->current_version }}"><i class="fa fa-print"></i> Print</a>
+            <a class="action blue" href="{{ Request::url() }}/print?filter=({{ $_GET['filter'] or $project->current_version }})"><i class="fa fa-print"></i> Print</a>
             <!--a class="action" href=""><i class="fa fa-bug"></i> All issues</a-->
 
 

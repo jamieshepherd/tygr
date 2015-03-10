@@ -16,12 +16,12 @@
             @endif
             <h1>{{ $project->name }}</h1>
         </header>
-        <a class="action" href="{{ Request::url() }}/issues/create"><i class="fa fa-plus-circle"></i> Log an issue</a>
+        <a class="action" href="{{ Request::url() }}/issues/create"><i class="fa fa-plus-circle"></i> New amendment</a>
         @if(Auth::user()->rank <= 2)
             <a class="action green" href="{{ Request::url() }}/version"><i class="fa fa-flask"></i> New version</a>
             <a class="action yellow" href="{{ Request::url() }}/edit"><i class="fa fa-edit"></i> Edit project</a>
         @endif
-        <a class="action blue" href="{{ Request::url() }}/issues"><i class="fa fa-bug"></i> View issues</a>
+        <a class="action blue" href="{{ Request::url() }}/issues"><i class="fa fa-bug"></i> View amendments</a>
         <a class="action blue" href="http://reviewarea.co.uk/Secure/{{ $project->client->stub }}"><i class="fa fa-desktop"></i> Review area</a>
         <br/><br/><br/>
         <div class="statistics">
@@ -40,7 +40,7 @@
             <div class="statistic">
                 <div class="content">
                     <h2 class="red">{{ $projectStats['openIssues'] }}</h2>
-                    <label>Open issues</label>
+                    <label>Open amendments</label>
                 </div>
             </div>
             <div class="statistic">
@@ -56,13 +56,13 @@
                     <div class="content">
                         <h4>Recent activity</h4>
                         @if(count($issueHistory) == 0)
-                            <p>No recent activity. Perhaps you would like to <a href="{{ Request::url() }}/issues/create">log an issue</a>?</p>
+                            <p>No recent activity. Perhaps you would like to <a href="{{ Request::url() }}/issues/create">log an amendment</a>?</p>
                         @endif
                         @foreach($issueHistory as $activity)
                         <div class="activity">
                             <img class="user-icon" src="/images/user-icon.png"/>
                             <div class="details">
-                                <p><strong>{{ $activity->author->name }}</strong> {{ $activity->status }} @if($activity->type == 'comment') commented on @endif the issue <a href="{{ Request::url() }}/issues/show/{{ $activity->issue_id }}">{{ $activity->issue->summary }}</a>.</p>
+                                <p><strong>{{ $activity->author->name }}</strong> {{ $activity->status }} @if($activity->type == 'comment') commented on @endif the amendment <a href="{{ Request::url() }}/issues/show/{{ $activity->issue_id }}">{{ $activity->issue->summary }}</a>.</p>
                                 <span class="date">{{ date("d M Y @ H:i",strtotime($activity->created_at)) }}</span>
                             </div>
                         </div>

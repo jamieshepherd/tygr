@@ -14,11 +14,11 @@
             @endif
             <h1>Projects</h1>
         </header>
-            @if(count($client->projects)==0)
+            @if(count($projects)==0)
                 <p>Sorry, there are no projects listed for this client yet.</p>
             @endif
             <div class="projects-index">
-            @foreach ($client->projects as $project)
+            @foreach ($projects as $project)
                 @if(!$project->hidden || $client->id == 1)
                 <div class="col">
                 <a href="/projects/{{ $project->client->stub }}/{{ $project->stub }}" class="project-preview">

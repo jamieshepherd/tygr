@@ -60,7 +60,7 @@ Route::group(array('middleware' => 'auth'), function() {
 		Route::get('projects/{client}/{stub}/edit', 'ProjectController@edit');
 		Route::post('projects/{client}/{stub}/edit', 'ProjectController@update');
         Route::get('projects/{client}/{stub}/version', 'ProjectController@version');
-        Route::post('projects/{client}/{stub}/version', 'ProjectController@newVersion');
+        Route::post('projects/{client}/{stub}/version', 'ProjectController@changeVersion');
 	});
 
     //>> Make sure user has at least CLIENT priviliges
@@ -85,7 +85,6 @@ Route::group(array('middleware' => 'auth'), function() {
 		Route::get('projects/{client}/{stub}/issues/claim/{idlist}', 'IssueController@claim');
 		Route::get('projects/{client}/{stub}/issues/resolve/{idlist}', 'IssueController@resolve');
         Route::get('projects/{client}/{stub}/issues/assign/{idlist}', 'IssueController@assign');
-        Route::get('projects/{client}/{stub}/issues/reversion/{idlist}', 'IssueController@reversion');
-
+        Route::get('projects/{client}/{stub}/issues/version/{idlist}', 'IssueController@changeVersion');
 	});
 });

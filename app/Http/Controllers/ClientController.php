@@ -1,14 +1,25 @@
 <?php namespace App\Http\Controllers;
 
-use App\Http\Requests;
 use App\Http\Controllers\Controller;
-use App\Client;
+
+use App\Repositories\Contracts\ClientRepositoryInterface;
+
+use App\Http\Requests;
 use App\Http\Requests\CreateClientRequest;
 use App\Http\Requests\UpdateClientRequest;
-use App\Project;
-use Input;
 
 class ClientController extends Controller {
+
+    protected $clients;
+
+    /**
+     * Construct the controller with users repository
+     *
+     * @param ClientRepositoryInterface $clients
+     */
+    public function __construct(ClientRepositoryInterface $clients) {
+        $this->clients = $clients;
+    }
 
 	/**
 	 * Display a listing of the resource.
@@ -17,9 +28,9 @@ class ClientController extends Controller {
 	 */
 	public function index()
 	{
-		$clients = Client::all();
+		$clients = $this->clients->getAll();
 
-		return view('clients.index')->with('clients', $clients);
+		return view('clients.index')->with(compact('clients'));
 	}
 
 	/**
@@ -40,15 +51,16 @@ class ClientController extends Controller {
 	 */
 	public function store(CreateClientRequest $request)
 	{
-		$client = new Client();
-		$client->name	= $request->name;
-		$client->stub	= $request->stub;
-		$client->type	= $request->type;
-		$result = $client->save();
-		if($result) {
-			\Session::flash('message', $client->name.' was created successfully.');
-			return redirect('/clients/show/'.$client->stub);
-		}
+		$result = $this->clients->create($request);
+
+        if($result) {
+            session()->flash('message', $request->name.' was created successfully.');
+            return redirect()->back();
+        } else {
+            session()->flash('notify-type', 'error');
+            session()->flash('message', 'This was unsuccessful, please try again.');
+            return redirect()->back();
+        }
 	}
 
 	/**
@@ -59,12 +71,11 @@ class ClientController extends Controller {
 	 */
 	public function show($stub)
 	{
-		$client = Client::where('stub', '=', $stub)->first();
-		if(!$client) {
-			abort(404);
-		}
+		$client = $this->clients->findByStub($stub);
 
-		return view('clients.show')->with('client', $client);
+		if(!$client) abort(404);
+
+		return view('clients.show')->with(compact('client'));
 	}
 
 	/**
@@ -75,9 +86,9 @@ class ClientController extends Controller {
 	 */
 	public function edit($id)
 	{
-		$client = Client::where('id', '=', $id)->firstOrFail();
+		$client = $this->clients->find($id);
 
-		return view('clients.edit')->with('client', $client);
+		return view('clients.edit')->with(compact('client'));
 	}
 
 	/**
@@ -89,23 +100,16 @@ class ClientController extends Controller {
 	 */
 	public function update($id, UpdateClientRequest $request)
 	{
-		$client = Client::where('id', '=', $id)->first();
-		if(!$client) {
-			abort(404);
-		}
-		if($client->name != $request->name) {
-			$client->name	= $request->name;
-		}
-		if($client->stub != $request->stub) {
-			$client->stub	= $request->stub;
-		}
-		$client->type	= $request->type;
-		$result = $client->save();
+		$result = $this->clients->update($id, $request);
 
-		if($result) {
-			\Session::flash('message', $client->name.' was updated successfully.');
-			return redirect('/clients/show/'.$client->stub);
-		}
+        if($result) {
+            session()->flash('message', $request->name.' was updated successfully.');
+            return redirect('/clients/show/'.$request->stub);
+        } else {
+            session()->flash('notify-type', 'error');
+            session()->flash('message', 'This was unsuccessful, please try again.');
+            return redirect()->back();
+        }
 	}
 
 	/**
@@ -116,17 +120,20 @@ class ClientController extends Controller {
 	 */
 	public function delete($id)
 	{
-		$client = Client::where('id', '=', $id)->firstOrFail();
+        if(isset($_GET['confirm']) && $_GET['confirm'] == true) {
+            $result = $this->clients->delete($id);
+            if($result) {
+                session()->flash('message', 'This client was removed successfully.');
+                return redirect('/clients');
+            } else {
+                session()->flash('notify-type', 'error');
+                session()->flash('message', 'This was unsuccessful, please try again.');
+                return redirect()->back();
+            }
+        }
 
-		// If confirmation exists, go ahead and destroy
-		if(isset($_GET['confirm']) && $_GET['confirm'] == true) {
-			Client::destroy($id);
-
-			\Session::flash('message', 'This client was removed successfully.');
-			return redirect('/clients');
-		}
-
-		return view ('clients.delete')->with('client', $client);
+        $client = $this->clients->find($id);
+        return view ('clients.delete')->with(compact('client'));
 	}
 
 }

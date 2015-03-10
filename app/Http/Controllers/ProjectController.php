@@ -89,7 +89,9 @@ class ProjectController extends Controller {
         $project = $this->projects->findByStub($stub);
         if(!$project) abort(404);
 
-		return view('projects.show')->with(compact('project'))
+        $title = $project->name;
+
+		return view('projects.show')->with(compact('title', 'project'))
             ->with('issueHistory', $this->projects->recentActivity($project->id))
             ->with('projectStats', $this->projects->getStatistics($project->id));
 	}

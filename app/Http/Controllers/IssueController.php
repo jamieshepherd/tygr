@@ -48,8 +48,9 @@ class IssueController extends Controller {
         }
 
         $versions = $this->projects->getVersions($project->id);
+        $title   = $project->name.' Amendments';
 
-		return view('issues.index')->with(compact('project', 'issues', 'versions'));
+		return view('issues.index')->with(compact('title', 'project', 'issues', 'versions'));
 	}
 
 	/**
@@ -128,8 +129,9 @@ class IssueController extends Controller {
 		// Get all of the versions for this project
 		$versions = $this->projects->getVersions($issue->project->id);
         $groups   = $this->projects->getGroups();
+        $title = $issue->summary;
 
-		return view('issues.show')->with(compact('issue', 'versions', 'groups'));
+		return view('issues.show')->with(compact('title', 'issue', 'versions', 'groups'));
 	}
 
 	/**

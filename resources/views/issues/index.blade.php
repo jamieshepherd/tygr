@@ -24,7 +24,7 @@
         </header>
         <div id="issues">
             <input class="filter search" placeholder="Search" autofocus/>
-            <a class="action" href="/projects/{{ $project->client->stub }}/{{ $project->stub }}/issues/create"><i class="fa fa-plus-circle"></i> Log amendment</a>
+            <a class="action" href="/projects/{{ $project->client->stub }}/{{ $project->stub }}/issues/create"><i class="fa fa-plus-circle"></i> New amendment</a>
             <span class="action yellow button-dropdown">
                 <i class="fa fa-chevron-circle-down"></i> Filter
                 <ul>

@@ -25,8 +25,7 @@ class UpdateAccountRequest extends Request {
             'name'		           =>  'required|min:3',
             'email'		           =>  'required|email|unique:users,email,'.\Auth::user()->id,
             'oldpass'              =>  'min:6',
-            'newpass'              =>  'min:6',
-            'newpass_confirmation' =>  'min:6|confirmed'
+            'newpass'              =>  'min:6|confirmed'
 		];
 	}
 

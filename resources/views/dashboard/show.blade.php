@@ -80,7 +80,7 @@
                     <div class="content">
                         <h1>What is the dashboard?</h1>
                         <p>This is just a small snapshot of some of the information that happened in the last 7 days. Eventually this should be a full dashboard of everything you might want to know at a glance.</p>
-                        <p>We're looking to add some more interesting statistics, graphs, and notifications as the service improves. If you have any ideas <a href="mailto:email@jamie.sh">let me know!</a></p>
+                        <p>We're looking to add some more interesting statistics, graphs, and notifications as the service improves. If you have any ideas <a href="mailto:jamie.shepherd&#64;spongeuk.com">let me know!</a></p>
                     </div>
                 </div>
 

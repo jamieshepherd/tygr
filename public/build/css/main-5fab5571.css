@@ -31,6 +31,28 @@ table {
   border-collapse: collapse;
   border-spacing: 0; }
 
+.formatted h1, .formatted h2, .formatted h3, .formatted h4, .formatted h5 {
+  font-family: "Open Sans", Arial, sans-serif;
+  font-size: 20px;
+  font-weight: 700;
+  color: #354052;
+  margin: 20px 0;
+  border: none;
+  padding: 0; }
+.formatted ul li {
+  list-style-type: disc;
+  margin-left: 20px;
+  line-height: 20px; }
+.formatted code {
+  font-family: monospace;
+  line-height: 20px;
+  background: #f0f0f0;
+  border-radius: 3px;
+  padding: 3px 5px; }
+.formatted pre code {
+  padding: 15px;
+  border-radius: 3px; }
+
 h1 {
   font-size: 32px;
   font-weight: 900;

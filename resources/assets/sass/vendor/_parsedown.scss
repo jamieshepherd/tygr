@@ -1,0 +1,30 @@
+// Custom styles for when Parsedown is implemented
+.formatted {
+  h1, h2, h3, h4, h5 {
+    font-family: "Open Sans", Arial, sans-serif;
+    font-size: 20px;
+    font-weight: 700;
+    color: #354052;
+    margin: 20px 0;
+    border: none;
+    padding: 0;
+  }
+  ul {
+    li {
+      list-style-type: disc;
+      margin-left: 20px;
+      line-height: 20px;
+    }
+  }
+  code {
+    font-family: monospace;
+    line-height: 20px;
+    background: #f0f0f0;
+    border-radius: 3px;
+    padding: 3px 5px;
+  }
+  pre code {
+    padding: 15px;
+    border-radius: 3px;
+  }
+}

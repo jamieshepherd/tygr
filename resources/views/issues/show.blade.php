@@ -61,9 +61,10 @@
                 <li><strong>Last updated:</strong> {{ date("d M Y",strtotime($issue->updated_at)) }}</li>
             </ul>
         </section>
-        <section>
+        <section class="formatted">
             <h2>Description</h2>
-            <p>{{{ $issue->description }}}</p>
+            <script>hljs.initHighlightingOnLoad();</script>
+            {!! (new Parsedown())->setMarkupEscaped(true)->text($issue->description) !!}
         </section>
         @if(count($issue->attachments) > 0)
         <section>

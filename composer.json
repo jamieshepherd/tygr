@@ -8,6 +8,7 @@
         "laravel/framework": "5.0.*",
 		"guzzlehttp/guzzle": "~4.0",
         "erusev/parsedown": "~1.5",
+        "composer/composer": "dev-master",
         "microsoft/windowsazure": "*",
         "pear-pear.php.net/http_request2": "*",
         "pear-pear.php.net/mail_mime": "*",

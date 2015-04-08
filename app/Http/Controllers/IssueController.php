@@ -6,8 +6,6 @@ use App\Repositories\Contracts\ProjectRepositoryInterface;
 use App\Http\Requests\CreateIssueRequest;
 use App\Http\Requests\UpdateIssueRequest;
 use App\Http\Requests\UpdateIssueHistoryRequest;
-use App\Commands\AddAttachmentCommand;
-use App\Commands\DestroyAttachmentCommand;
 use App\Http\Controllers\Controller;
 use App\Http\Requests;
 use Input;

@@ -5,6 +5,7 @@ use App\Repositories\Contracts\IssueRepositoryInterface;
 use DB;
 use Auth;
 use Hash;
+use Illuminate\Foundation\Bus\DispatchesCommands;
 use App\Issue;
 use App\IssueHistory;
 use App\Group;
@@ -16,6 +17,8 @@ use App\Commands\AddAttachmentCommand;
 use App\Commands\DestroyAttachmentCommand;
 
 class IssueRepository implements IssueRepositoryInterface {
+
+    use DispatchesCommands;
 
     /*
      * Retrieve all issues

@@ -356,7 +356,6 @@ table.full {
       background: none;
       opacity: 0.3; }
       table.full tr.closed:hover {
-        background: #dddddd;
         opacity: 1; }
       table.full tr.closed td.priority {
         border: none; }

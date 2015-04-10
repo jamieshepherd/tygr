@@ -65,7 +65,7 @@
                 <tbody class="list">
                 @foreach($issues as $issue)
                     @if(!$issue->hidden || Auth::user()->rank <= 2)
-                        <tr>
+                        <tr @if($issue->status == 'Closed') class="closed" @endif>
                             <td class="select"><input class="issue-checkbox" type="checkbox" onchange="checkSelected()" value="{{ $issue->id }}"></td>
                             <td class="date"><i class="fa fa-calendar"></i> &nbsp;{{ date("d M Y",strtotime($issue->created_at)) }}</td>
                             <td class="reference">{{{ $issue->reference }}}</td>

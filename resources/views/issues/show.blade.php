@@ -15,7 +15,7 @@
                     <i class="fa fa-angle-right"></i>
                     <a href="/projects/{{ $issue->project->client->stub }}/{{ $issue->project->stub }}/issues">Amendments</a>
                     <i class="fa fa-angle-right"></i>
-                    <a href="/projects/{{ $issue->project->client->stub }}/{{ $issue->project->stub }}/issues/show">{{ $issue->summary }}</a>
+                    <a href="/projects/{{ $issue->project->client->stub }}/{{ $issue->project->stub }}/issues/show/{{ $issue->id }}">{{ $issue->summary }}</a>
                 </div>
             @endif
             <h1>{{ $issue->summary }}</h1>

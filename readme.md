@@ -1,5 +1,5 @@
 ## Tygr - Issue management system
-####Version 1.0.8
+####Version 1.0.9
 
 [![Build Status](https://travis-ci.org/jamieshepherd/tygr.svg?)](https://travis-ci.org/jamieshepherd/tygr)
 

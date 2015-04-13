@@ -24,7 +24,6 @@ class UpdateIssueHistoryRequest extends Request {
         return [
             'comment'     => 'min:3',
             'hidden'      => '',
-            'attachment'  => 'file',
             'assigned_to' => ''
         ];
     }

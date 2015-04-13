@@ -112,18 +112,6 @@ table.full {
     &:hover {
       background: #f9f9f9;
     }
-    &.closed {
-      background: none;
-      opacity: 0.3;
-      &:hover {
-        opacity: 1;
-      }
-      td {
-        &.priority {
-          border: none;
-        }
-      }
-    }
   }
 
   @media (max-width: 650px) {

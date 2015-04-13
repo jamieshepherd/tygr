@@ -30,6 +30,7 @@ class IssueRepository implements IssueRepositoryInterface {
         // Check if the results should be filtered
         if(!$filter) {
             $issues = Issue::where('project_id','=',$project->id)
+                ->where('status', '!=', 'Closed')
                 ->where('version', '=', $project->current_version)
                 ->orderBy(DB::raw("CASE WHEN status = 'New' THEN '1'
                                             WHEN status = 'Assigned' THEN '2'
@@ -41,6 +42,7 @@ class IssueRepository implements IssueRepositoryInterface {
         } elseif($filter == 'me') {
                 $userGroups = Auth::User()->groups->lists('id');
                 $issues = Issue::whereIn('assigned_to_id', $userGroups)
+                    ->where('status', '!=', 'Closed')
                     ->where('project_id','=',$project->id)
                     ->orderBy(DB::raw("CASE WHEN status = 'New' THEN '1'
                                             WHEN status = 'Assigned' THEN '2'
@@ -49,7 +51,17 @@ class IssueRepository implements IssueRepositoryInterface {
                                             WHEN status = 'Closed' THEN '5'
                                         END"), 'ASC')
                     ->get();
-        } elseif($filter == 'all') {
+        } elseif($filter == 'closed') {
+            $issues = Issue::where('project_id', '=', $project->id)
+                ->where('status', '=', 'Closed')
+                ->orderBy(DB::raw("CASE WHEN status = 'New' THEN '1'
+                                        WHEN status = 'Assigned' THEN '2'
+                                        WHEN status = 'Awaiting Client' THEN '3'
+                                        WHEN status = 'Resolved' THEN '4'
+                                        WHEN status = 'Closed' THEN '5'
+                                    END"), 'ASC')
+                ->get();
+        }  elseif($filter == 'all') {
             $issues = Issue::where('project_id', '=', $project->id)
                 ->orderBy(DB::raw("CASE WHEN status = 'New' THEN '1'
                                         WHEN status = 'Assigned' THEN '2'
@@ -61,6 +73,7 @@ class IssueRepository implements IssueRepositoryInterface {
         }
         else {
             $issues = Issue::where('project_id','=',$project->id)
+                ->where('status', '!=', 'Closed')
                 ->where('version', '=', $filter)
                 ->orderBy(DB::raw("CASE WHEN status = 'New' THEN '1'
                                         WHEN status = 'Assigned' THEN '2'

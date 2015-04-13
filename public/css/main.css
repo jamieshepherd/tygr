@@ -352,13 +352,6 @@ table.full {
         background: #f3f2f2; }
     table.full tr:hover {
       background: #f9f9f9; }
-    table.full tr.closed {
-      background: none;
-      opacity: 0.3; }
-      table.full tr.closed:hover {
-        opacity: 1; }
-      table.full tr.closed td.priority {
-        border: none; }
   @media (max-width: 650px) {
     table.full {
       margin-top: 30px; }

@@ -47,7 +47,8 @@
                     @endforeach
                 </ul>
             </span>
-            <a class="action blue" href="{{ Request::url() }}/print?filter=({{ $_GET['filter'] or $project->current_version }})"><i class="fa fa-print"></i> Print</a>
+            <a class="action blue" href="{{ Request::url() }}?filter=closed"><i class="fa fa-trash-o"></i> View closed</a>
+            <a class="action blue" href="{{ Request::url() }}/print?filter={{ $_GET['filter'] or $project->current_version }}"><i class="fa fa-print"></i> Print</a>
             <!--a class="action" href=""><i class="fa fa-bug"></i> All issues</a-->
 
 

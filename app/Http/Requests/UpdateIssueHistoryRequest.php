@@ -24,7 +24,8 @@ class UpdateIssueHistoryRequest extends Request {
         return [
             'comment'     => 'min:3',
             'hidden'      => '',
-            'assigned_to' => ''
+            'assigned_to' => '',
+			'attachment'  => 'max:20480',
         ];
     }
 

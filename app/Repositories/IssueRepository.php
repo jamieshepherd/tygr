@@ -189,7 +189,7 @@ class IssueRepository implements IssueRepositoryInterface {
     {
         $issue = $this->find($id);
 
-        if($request->attachment) {
+        if($request->file('attachment')) {
             $attachment = $request->file('attachment');
             $file = array(
                 "filename"  => $attachment->getClientOriginalName(),

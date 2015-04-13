@@ -97,7 +97,7 @@
                 </select>
 
                 <label>Add attachment</label>
-                <input type="file" name="attachment" />
+                <input name="attachment" type="file">
 
                 <br/>
                 <button type="submit"><i class="fa fa-arrow-circle-right"></i> Update</button>

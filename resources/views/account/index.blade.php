@@ -15,6 +15,7 @@
             <h1>Account</h1>
         </header>
         <a class="action yellow" href="/account/edit"><i class="fa fa-edit"></i> Edit details</a>
+        <a class="action yellow" href="/account/edit"><i class="fa fa-lock"></i> Change password</a>
         <h2>Full name</h2>
         <p>{{ Auth::user()->name }}</p>
         <h2>Email address</h2>

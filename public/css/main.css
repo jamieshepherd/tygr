@@ -32,13 +32,15 @@ table {
   border-spacing: 0; }
 
 .formatted h1, .formatted h2, .formatted h3, .formatted h4, .formatted h5 {
-  font-family: "Open Sans", Arial, sans-serif;
-  font-size: 20px;
+  font-family: 'open-sans', Arial, sans-serif;
+  font-size: 16px;
   font-weight: 700;
   color: #354052;
   margin: 20px 0;
   border: none;
   padding: 0; }
+  .formatted h1.title, .formatted h2.title, .formatted h3.title, .formatted h4.title, .formatted h5.title {
+    font-size: 20px; }
 .formatted ul li {
   list-style-type: disc;
   margin-left: 20px;
@@ -806,10 +808,15 @@ section {
     border-radius: 3px;
     position: relative;
     background: #ffffff; }
+    section .update.comment h3 {
+      font-size: 14px;
+      color: #666666;
+      font-weight: 500; }
     section .update.status {
       background: #f6f6f6;
       border-left-width: 1px; }
       section .update.status h3 {
+        font-size: 14px;
         color: #666666; }
       section .update.status:hover {
         opacity: 1.0; }

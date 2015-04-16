@@ -1,8 +1,12 @@
 // Custom styles for when Parsedown is implemented
 .formatted {
+
   h1, h2, h3, h4, h5 {
-    font-family: "Open Sans", Arial, sans-serif;
-    font-size: 20px;
+    &.title {
+      font-size: 20px;
+    }
+    font-family: 'open-sans', Arial, sans-serif;
+    font-size: 16px;
     font-weight: 700;
     color: #354052;
     margin: 20px 0;

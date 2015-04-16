@@ -41,67 +41,74 @@ section {
       margin-right:5px;
     }
   }
-    .update {
-      display: block;
-      border: 1px solid #dddddd;
-      border-left: 3px solid #dddddd;
-      padding: 10px;
-      margin: 10px 0 15px;
-      border-radius: 3px;
-      position: relative;
-      background: #ffffff;
-      &.status {
-        background: #f6f6f6;
-        h3 {
-          color: #666666;
-        }
-        border-left-width: 1px;
-        &:hover {
-            opacity: 1.0;
-        }
-      }
-      &:hover {
-        border-color: #999;
-        opacity: 1.0;
-      }
-      .timestamp {
-        margin-top: 1px;
-        z-index: 2;
-        position: absolute;
-        top: 10px;
-        right: 10px;
-        font-size: 12px;
-        display: none;
-        color: #ccc;
-        border-radius: 3px;
-        clear: both;
-      }
-      &:hover .timestamp {
-        display: inline-block;
-      }
+  .update {
+    display: block;
+    border: 1px solid #dddddd;
+    border-left: 3px solid #dddddd;
+    padding: 10px;
+    margin: 10px 0 15px;
+    border-radius: 3px;
+    position: relative;
+    background: #ffffff;
+    &.comment {
       h3 {
-        i {
-          color: #999999;
-        }
-        color: #333;
-        margin:0;
-        em {
-          font-weight: 600;
-          color: #999999;
-        }
-      }
-      p {
-        margin: 10px 0 0 0;
-        color: #666;
-      }
-      .tag {
-        font-size: 12px;
-        background: $highlight;
-        color: $background;
-        padding: 3px 5px;
-        border-radius: 3px;
-        margin-left: 3px;
+        font-size: 14px;
+        color: #666666;
+        font-weight: 500;
       }
     }
-
+    &.status {
+      background: #f6f6f6;
+      h3 {
+        font-size: 14px;
+        color: #666666;
+      }
+      border-left-width: 1px;
+      &:hover {
+        opacity: 1.0;
+      }
+    }
+    &:hover {
+      border-color: #999;
+      opacity: 1.0;
+    }
+    .timestamp {
+      margin-top: 1px;
+      z-index: 2;
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      font-size: 12px;
+      display: none;
+      color: #ccc;
+      border-radius: 3px;
+      clear: both;
+    }
+    &:hover .timestamp {
+      display: inline-block;
+    }
+    h3 {
+      i {
+        color: #999999;
+      }
+      color: #333;
+      margin: 0;
+      em {
+        font-weight: 600;
+        color: #999999;
+      }
+    }
+    p {
+      margin: 10px 0 0 0;
+      color: #666;
+    }
+    .tag {
+      font-size: 12px;
+      background: $highlight;
+      color: $background;
+      padding: 3px 5px;
+      border-radius: 3px;
+      margin-left: 3px;
+    }
+  }
 }

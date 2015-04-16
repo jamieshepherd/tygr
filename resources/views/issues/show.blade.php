@@ -62,10 +62,25 @@
             </ul>
         </section>
         <section class="formatted">
-            <h2>Description</h2>
+            <h2 class="title">Description</h2>
             <script>hljs.initHighlightingOnLoad();</script>
             {!! (new Parsedown())->setMarkupEscaped(true)->text($issue->description) !!}
         </section>
+
+        <section>
+            <h2>Comments</h2>
+            @foreach($issue->issue_history as $update)
+                @if($update->type == 'comment')
+
+                    <div class="update {{ $update->type }}">
+                        <h3><i class="fa fa-user"></i> {{{ $update->author->name }}} <span class="tag">{{  $update->author->client->name }}</span> @if($update->hidden) <i class="fa fa-eye-slash pointer" alt="Hidden" title="Hidden from client"></i>  @endif</h3>
+                        <p>{{{ $update->comment }}}</p>
+                    </div>
+
+                @endif
+            @endforeach
+        </section>
+
         @if(count($issue->attachments) > 0)
         <section>
             <h2>Attachments</h2>
@@ -78,6 +93,7 @@
             </ul>
         </section>
         @endif
+
         @if($issue->status != 'Resolved' && $issue->status != 'Closed')
         <section>
             <h2>Update amendment</h2>

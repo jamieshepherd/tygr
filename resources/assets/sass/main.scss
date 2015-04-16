@@ -1,9 +1,11 @@
 @import
+'utils/variables';
+
+@import
 'vendor/reset',
 'vendor/parsedown';
 
 @import
-'utils/variables',
 'utils/typography',
 'utils/functions',
 'utils/mixins';

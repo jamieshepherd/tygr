@@ -52,7 +52,7 @@
             <textarea name="description" class="large" placeholder="Please be as specific as you can, including details such as text you would like to replace, design changes you require etc." @if($errors->has('description')) class="error" @endif>{{ old('description') }}</textarea>
             @if($errors->has('description')) <span class="error">{{ $errors->first('description') }}</span> @endif
 
-            <label>Attachment (screenshot, document)</label>
+            <label>Attachment (you can add more later)</label>
             <input name="attachment" type="file" @if($errors->has('attachment')) class="error">
             <span class="error">{{ $errors->first('attachment') }}</span> @else > @endif
 

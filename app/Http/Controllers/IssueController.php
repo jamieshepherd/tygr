@@ -46,9 +46,10 @@ class IssueController extends Controller {
         }
 
         $versions = $this->projects->getVersions($project->id);
+        $closed   = count($this->projects->getClosed($project->id));
         $title   = $project->name.' Amendments';
 
-		return view('issues.index')->with(compact('title', 'project', 'issues', 'versions'));
+		return view('issues.index')->with(compact('title', 'project', 'issues', 'versions', 'closed'));
 	}
 
 	/**

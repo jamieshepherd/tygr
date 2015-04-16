@@ -37,7 +37,7 @@
             <tr onclick="document.location='/clients/show/{{{ $client->stub }}}';" style="cursor:pointer">
                 <td class="name">{{{ $client->name }}}</td>
                 <td class="stub">{{{ $client->stub }}}</td>
-                <td>{{{ $client->type }}}</td>
+                <td class="type">{{{ $client->type }}}</td>
                 <td class="project_count">{{{ count($client->projects) }}}</td>
                 <td><a href="http://reviewarea.co.uk/Secure/{{{ $client->stub }}}" target="_blank">reviewarea.co.uk/Secure/{{{ $client->stub }}}</a></td>
             </tr>
@@ -46,7 +46,7 @@
         </table>
         </div>
         <script>
-            var options = { valueNames: ['name'] };
+            var options = { valueNames: ['name', 'stub', 'type', 'project_count'] };
             var userList = new List('clients', options);
         </script>
     </div>

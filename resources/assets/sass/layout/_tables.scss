@@ -40,6 +40,7 @@ table.full {
   }
   td {
     vertical-align: middle;
+    line-height: 20px;
     span {
       i {
         margin-left: 10px;
@@ -53,10 +54,10 @@ table.full {
       &.summary {
         font-weight: bold;
         display: block;
-        margin-bottom: 10px;
+        margin-bottom: 5px;
       }
       &.description, &.group {
-        margin-bottom: 10px;
+        margin-bottom: 5px;
         display: block;
       }
       &.group {
@@ -71,8 +72,11 @@ table.full {
         color: #666666;
       }
     }
+    &.date, &.status {
+      min-width: 100px;
+    }
     &.reference {
-
+      max-width: 150px;
     }
     &.details {
       min-width: 400px;

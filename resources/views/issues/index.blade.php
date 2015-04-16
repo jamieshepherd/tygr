@@ -22,6 +22,7 @@
             @endif
                 <h1>Amendments <em class="filter">({{ $_GET['filter'] or $project->current_version }})</em></h1>
         </header>
+
         <div id="issues">
             <input class="filter search" placeholder="Search" autofocus/>
             <a class="action" href="/projects/{{ $project->client->stub }}/{{ $project->stub }}/issues/create"><i class="fa fa-plus-circle"></i> New amendment</a>
@@ -47,7 +48,7 @@
                     @endforeach
                 </ul>
             </span>
-            <a class="action blue" href="{{ Request::url() }}?filter=closed"><i class="fa fa-trash-o"></i> View closed</a>
+            <a class="action blue" href="{{ Request::url() }}?filter=closed"><i class="fa fa-trash-o"></i> View closed ({{ $closed }})</a>
             <a class="action blue" href="{{ Request::url() }}/print?filter={{ $_GET['filter'] or $project->current_version }}"><i class="fa fa-print"></i> Print</a>
             <!--a class="action" href=""><i class="fa fa-bug"></i> All issues</a-->
 
@@ -72,7 +73,7 @@
                             <td class="reference">{{{ $issue->reference }}}</td>
                             <td class="details">
                                 <span class="summary"><a href="/projects/{{ $project->client->stub }}/{{{ $project->stub }}}/issues/show/{{{ $issue->id }}}">{{ $issue->summary }}</a></span>
-                                <span class="description">{{{ substr($issue->description,0,80) }}}...</span>
+                                <span class="description">{{{ substr($issue->description,0,64) }}}...</span>
                                 <span class="details"><i class="fa fa-flask" title="Project version"></i> {{ $issue->version }} @if(Auth::user()->rank < 3) @if($issue->claimed_by) <i class="fa fa-thumb-tack" title="Claimed by"></i> {{ $issue->claimed_by->name }} @endif  @if($issue->hidden) <i class="fa fa-eye-slash" title="Hidden from client"></i> Hidden from client @endif @endif</span>
                             </td>
                             <td class="assigned">

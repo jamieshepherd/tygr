@@ -302,7 +302,8 @@ table.full {
       margin-left: 3px;
       color: #ccc; }
   table.full td {
-    vertical-align: middle; }
+    vertical-align: middle;
+    line-height: 20px; }
     table.full td span i {
       margin-left: 10px; }
       table.full td span i:first-of-type {
@@ -312,9 +313,9 @@ table.full {
     table.full td span.summary {
       font-weight: bold;
       display: block;
-      margin-bottom: 10px; }
+      margin-bottom: 5px; }
     table.full td span.description, table.full td span.group {
-      margin-bottom: 10px;
+      margin-bottom: 5px;
       display: block; }
     table.full td span.group {
       color: #666; }
@@ -324,6 +325,10 @@ table.full {
       font-size: 12px;
       display: block;
       color: #666666; }
+    table.full td.date, table.full td.status {
+      min-width: 100px; }
+    table.full td.reference {
+      max-width: 150px; }
     table.full td.details {
       min-width: 400px; }
     table.full td.select {

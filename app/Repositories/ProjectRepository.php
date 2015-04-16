@@ -167,6 +167,14 @@ class ProjectRepository implements ProjectRepositoryInterface {
         return Issue::where('project_id', '=', $id)->distinct()->select('version')->get();
     }
 
+    /*
+     * Return an amount of closed issues frmo a project
+     */
+    public function getClosed($id)
+    {
+        return Issue::where('project_id', '=', $id)->where('status','=','closed')->get();
+    }
+
 
     /*
      * Change version

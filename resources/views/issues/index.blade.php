@@ -73,7 +73,7 @@
                             <td class="reference">{{{ $issue->reference }}}</td>
                             <td class="details">
                                 <span class="summary"><a href="/projects/{{ $project->client->stub }}/{{{ $project->stub }}}/issues/show/{{{ $issue->id }}}">{{ $issue->summary }}</a></span>
-                                <span class="description">{{{ substr($issue->description,0,64) }}}...</span>
+                                <span class="description">{{{ substr(strip_tags((new Parsedown())->text($issue->description)),0,64) }}}...</span>
                                 <span class="details"><i class="fa fa-flask" title="Project version"></i> {{ $issue->version }} @if(Auth::user()->rank < 3) @if($issue->claimed_by) <i class="fa fa-thumb-tack" title="Claimed by"></i> {{ $issue->claimed_by->name }} @endif  @if($issue->hidden) <i class="fa fa-eye-slash" title="Hidden from client"></i> Hidden from client @endif @endif</span>
                             </td>
                             <td class="assigned">

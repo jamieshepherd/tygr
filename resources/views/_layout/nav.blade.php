@@ -16,6 +16,9 @@
             @endif
             <a href="/help"><li><i class="fa fa-question-circle"></i><span class="resizable">Help</span></li></a>
             <a href="/account"><li><i class="fa fa-lock"></i><span class="resizable">Account</span></li></a>
+            @if(Auth::user()->rank == 1)
+                <a href="/system"><li><i class="fa fa-cogs"></i><span class="resizable">System</span></li></a>
+            @endif
             <!--a href="/auth/logout"><li><i class="fa fa-sign-out"></i><span class="resizable">Sign out</span></li></a-->
         @endif
     </ul>

@@ -6,7 +6,7 @@
 
     <h2>Welcome</h2>
 
-    <p><strong>Hello {{ $name }}, you've been created as a user on the Sponge UK issue tracking system.</strong></p>
+    <p><strong>Hello {{ $name }}, you've been created as a user on the Sponge UK amendment tracker.</strong></p>
 
     <p>You can use this area to log any amendments, changes, or issues with your projects as they are developed.</p>
 

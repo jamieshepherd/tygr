@@ -73,6 +73,7 @@
                 @if($update->type == 'comment')
 
                     <div class="update {{ $update->type }}">
+                        <div class="timestamp">{{ $update->created_at }}</div>
                         <h3><i class="fa fa-user"></i> {{{ $update->author->name }}} <span class="tag">{{  $update->author->client->name }}</span> @if($update->hidden) <i class="fa fa-eye-slash pointer" alt="Hidden" title="Hidden from client"></i>  @endif</h3>
                         <p>{{{ $update->comment }}}</p>
                     </div>
